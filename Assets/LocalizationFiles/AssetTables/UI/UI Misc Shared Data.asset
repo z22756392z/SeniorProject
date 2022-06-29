@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Misc Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Misc
+  m_TableCollectionNameGuidString: 49f13021d4c226248b8fff4a012b2320
+  m_Entries:
+  - m_Id: 95733264384
+    m_Key: Quit_Popup_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242705870848
+    m_Key: Quit_Popup_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308975874048
+    m_Key: Confirm_Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3479689342976
+    m_Key: Cancel_Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12905292869632
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13001942216704
+    m_Key: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13047471386624
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13740517208064
+    m_Key: Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74462160859136
+    m_Key: Volume_SFx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93590896619520
+    m_Key: Volume_Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94026688999424
+    m_Key: Volume_Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98984691871744
+    m_Key: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101368985923584
+    m_Key: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101407334445056
+    m_Key: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277036004651008
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330747762552832
+    m_Key: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331573293854720
+    m_Key: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331673806155776
+    m_Key: FullScreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331739241492480
+    m_Key: AntiAliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332192402485248
+    m_Key: FullScreen_On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332321125675008
+    m_Key: FullScreen_Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 727110073561088
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 727804012769280
+    m_Key: Popup_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 731420979212288
+    m_Key: Unpause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 731707290791936
+    m_Key: Setting_PauseMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 731844155125760
+    m_Key: BackToMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734301266489344
+    m_Key: BackToMenu_Popup_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734461308547072
+    m_Key: BackToMenu_Popup_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734777450016768
+    m_Key: Confirm_BackToMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734999517442048
+    m_Key: Cancel_BackToMenu
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7230551901061775360
+  references:
+    version: 2
+    RefIds:
+    - rid: 7230551901061775360
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1653981748016
