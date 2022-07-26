@@ -33,16 +33,16 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Managers/Gameplay.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ef131aaa79dcd1543a3fc09dc96bfe37
-    m_Address: Assets/Scenes/Location/Hand.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: e9a64c914b936f2479620fdc5890b8dd
     m_Address: Assets/ScriptableObjects/EventChannels/SceneManagement/ColdStartup_Channel.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: f214dd285385cdb4f9fbe9e559c32e0c
     m_Address: Assets/Scenes/Location/FaceTracking/FaceTracking.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31fd033ba207b8245b90e079f497b0b3
+    m_Address: Assets/Scenes/Location/Holistic/Holistic.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

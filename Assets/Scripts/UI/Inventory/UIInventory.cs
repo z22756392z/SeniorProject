@@ -82,7 +82,7 @@ public class UIInventory : MonoBehaviour
 		}
 	}
 
-	public void FillInventory(InventoryTabType _selectedTabType = InventoryTabType.CookingItem, bool isNearPot = false)
+	public void FillInventory(InventoryTabType _selectedTabType, bool isNearPot = false)
 	{
 		_isNearPot = isNearPot;
 
@@ -222,12 +222,7 @@ public class UIInventory : MonoBehaviour
 			bool isInteractable = true;
 			_actionButton.gameObject.SetActive(true);
 			_errorPotMessage.SetActive(false);
-			if (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook)
-			{
-				isInteractable = _currentInventory.hasIngredients(itemToInspect.IngredientsList) && _isNearPot;
-				_errorPotMessage.SetActive(!_isNearPot);
-			}
-			else if (itemToInspect.ItemType.ActionType == ItemInventoryActionType.DoNothing)
+			if (itemToInspect.ItemType.ActionType == ItemInventoryActionType.DoNothing)
 			{
 				isInteractable = false;
 				_actionButton.gameObject.SetActive(false);
@@ -240,9 +235,9 @@ public class UIInventory : MonoBehaviour
 
 	void ShowItemInformation(ItemSO item)
 	{
-		bool[] availabilityArray = _currentInventory.IngredientsAvailability(item.IngredientsList);
+		//bool[] availabilityArray = _currentInventory.IngredientsAvailability(item.IngredientsList);
 
-		_inspectorPanel.FillInspector(item, availabilityArray);
+		//_inspectorPanel.FillInspector(item, availabilityArray);
 		_inspectorPanel.gameObject.SetActive(true);
 	}
 
@@ -278,9 +273,6 @@ public class UIInventory : MonoBehaviour
 			//call action function depending on the itemType
 			switch (itemToActOn.ItemType.ActionType)
 			{
-				case ItemInventoryActionType.Cook:
-					CookRecipe(itemToActOn);
-					break;
 				case ItemInventoryActionType.Use:
 					UseItem(itemToActOn);
 					break;
@@ -296,8 +288,6 @@ public class UIInventory : MonoBehaviour
 
 	void UseItem(ItemSO itemToUse)
 	{
-		if (itemToUse.HealthResorationValue > 0)
-		{ _restoreHealth.RaiseEvent(itemToUse.HealthResorationValue); }
 		_useItemEvent.RaiseEvent(itemToUse);
 		UpdateInventory();
 	}

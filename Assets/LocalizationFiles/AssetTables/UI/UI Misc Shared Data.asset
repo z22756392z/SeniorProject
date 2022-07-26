@@ -135,6 +135,10 @@ MonoBehaviour:
     m_Key: Cancel_BackToMenu
     m_Metadata:
       m_Items: []
+  - m_Id: 20267882660712448
+    m_Key: Acupuncture
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

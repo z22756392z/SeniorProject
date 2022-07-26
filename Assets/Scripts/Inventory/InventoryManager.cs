@@ -8,7 +8,6 @@ public class InventoryManager : MonoBehaviour
 	[SerializeField] private SaveSystem _saveSystem;
 
 	[Header("Listening on")]
-	[SerializeField] private ItemEventChannelSO _cookRecipeEvent = default;
 	[SerializeField] private ItemEventChannelSO _useItemEvent = default;
 	[SerializeField] private ItemEventChannelSO _equipItemEvent = default;
 	[SerializeField] private ItemStackEventChannelSO _rewardItemEvent = default;
@@ -18,7 +17,6 @@ public class InventoryManager : MonoBehaviour
 	
 	private void OnEnable()
 	{
-		_cookRecipeEvent.OnEventRaised += CookRecipeEventRaised;
 		_useItemEvent.OnEventRaised += UseItemEventRaised;
 		_equipItemEvent.OnEventRaised += EquipItemEventRaised;
 		_addItemEvent.OnEventRaised += AddItem;
@@ -29,7 +27,6 @@ public class InventoryManager : MonoBehaviour
 
 	private void OnDisable()
 	{
-		_cookRecipeEvent.OnEventRaised -= CookRecipeEventRaised;
 		_useItemEvent.OnEventRaised -= UseItemEventRaised;
 		_equipItemEvent.OnEventRaised -= EquipItemEventRaised;
 		_addItemEvent.OnEventRaised -= AddItem;
@@ -74,27 +71,6 @@ public class InventoryManager : MonoBehaviour
 	private void RemoveItem(ItemSO item)
 	{
 		_currentInventory.Remove(item);
-		_saveSystem.SaveDataToDisk();
-	}
-
-	private void CookRecipeEventRaised(ItemSO recipe)
-	{
-		if (_currentInventory.Contains(recipe))
-		{
-			List<ItemStack> ingredients = recipe.IngredientsList;
-
-			//remove ingredients (when it's a consumable)
-			if (_currentInventory.hasIngredients(ingredients))
-			{
-				for (int i = 0; i < ingredients.Count; i++)
-				{
-					if ((ingredients[i].Item.ItemType.ActionType == ItemInventoryActionType.Use))
-						_currentInventory.Remove(ingredients[i].Item, ingredients[i].Amount);
-				}
-				_currentInventory.Add(recipe.ResultingDish);
-			}
-		}
-
 		_saveSystem.SaveDataToDisk();
 	}
 

@@ -6,8 +6,7 @@ using UnityEngine.Localization;
 public enum InventoryTabType
 {
 	Customization,
-	CookingItem,
-	Recipe
+	AcupuncturePoint
 }
 
 [CreateAssetMenu(fileName = "InventoryTabType", menuName = "Inventory/Inventory Tab Type")]
