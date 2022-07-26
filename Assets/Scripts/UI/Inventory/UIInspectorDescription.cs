@@ -10,6 +10,7 @@ public class UIInspectorDescription : MonoBehaviour
 
 	public void FillDescription(ItemSO itemToInspect)
 	{
+		/*
 		_textName.StringReference = itemToInspect.Name;
 		_textName.StringReference.Arguments = new[] { new { Purpose = 0, Amount = 1 } };
 		_textDescription.StringReference = itemToInspect.Description;
@@ -24,5 +25,6 @@ public class UIInspectorDescription : MonoBehaviour
 		}
 		_textName.gameObject.SetActive(true);
 		_textDescription.gameObject.SetActive(true);
+		*/
 	}
 }

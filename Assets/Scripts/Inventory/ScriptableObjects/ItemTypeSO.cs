@@ -5,17 +5,15 @@ using UnityEngine.Localization;
 
 public enum itemInventoryType
 {
-	Recipe,
+	AcupuncturePoint,
 	Utensil,
-	Ingredient,
 	Customisation,
-	Dish,
 }
 
 public enum ItemInventoryActionType
 {
-	Cook,
 	Use,
+	Click,
 	Equip,
 	DoNothing
 }

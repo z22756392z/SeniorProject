@@ -1357,7 +1357,7 @@ MonoBehaviour:
   screen: {fileID: 17352105}
   graphRunner: {fileID: 887620775}
   textureFramePool: {fileID: 887620774}
-  runningMode: 0
+  runningMode: 1
   _worldAnnotationArea: {fileID: 473437040}
   _poseDetectionAnnotationController: {fileID: 2003423796}
   _holisticAnnotationController: {fileID: 2003423797}

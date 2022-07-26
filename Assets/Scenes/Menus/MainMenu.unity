@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ecefb9fe27f1f4b8cf3ecc3fad707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationsToLoad: {fileID: 11400000, guid: d4226932dcd84f94a8fd1e982f32c4ad, type: 2}
+  _locationsToLoad: {fileID: 11400000, guid: 3506d45f0597db142bc4550300eaf319, type: 2}
   _saveSystem: {fileID: 11400000, guid: 582ca457d4e39214fa34a22ef2e5eaee, type: 2}
   _showLoadScreen: 1
   _loadLocation: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd, type: 2}
