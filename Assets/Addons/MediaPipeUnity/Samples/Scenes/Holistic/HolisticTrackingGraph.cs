@@ -168,7 +168,19 @@ namespace Mediapipe.Unity.Holistic
       return r1 || r2 || r3 || r4 || r5 || r6 || r7 || r8;
     }
 
-    protected override IList<WaitForResult> RequestDependentAssets()
+        public bool TryGetNext(out NormalizedLandmarkList faceLandmarks, out NormalizedLandmarkList leftHandLandmarks,
+                                  out NormalizedLandmarkList rightHandLandmarks, bool allowBlock = true)
+        {
+            var currentTimestampMicrosec = GetCurrentTimestampMicrosec();
+            var r2 = TryGetNext(_faceLandmarksStream, out faceLandmarks, allowBlock, currentTimestampMicrosec);
+            var r3 = TryGetNext(_leftHandLandmarksStream, out leftHandLandmarks, allowBlock, currentTimestampMicrosec);
+            var r4 = TryGetNext(_rightHandLandmarksStream, out rightHandLandmarks, allowBlock, currentTimestampMicrosec);
+
+
+            return  r2 || r3 || r4;
+        }
+
+        protected override IList<WaitForResult> RequestDependentAssets()
     {
       return new List<WaitForResult> {
         WaitForAsset("face_detection_short_range.bytes"),

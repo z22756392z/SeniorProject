@@ -13,6 +13,12 @@ public class InventorySO : ScriptableObject
 	
 	public List<ItemStack> Items => _items;
 
+	public void AddDefaultAndItems(List<ItemStack> items)
+	{
+		_defaultItems = items;
+		_items = items;
+	}
+
 	public void Init()
 	{
 		if (_items == null)

@@ -34,5 +34,9 @@ public class ItemSO : SerializableScriptableObject
 	public GameObject Prefab => _prefab;
 	public virtual bool IsLocalized { get; }
 	public virtual LocalizedSprite LocalizePreviewImage { get; }
+	public virtual string Disease { get; }
+	public virtual int LandMark { get; }
+	public virtual Vector2 Offest { get; }
+	public virtual float Customize { get; }
 
 }

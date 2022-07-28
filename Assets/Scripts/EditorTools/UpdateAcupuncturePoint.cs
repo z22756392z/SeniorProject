@@ -49,7 +49,7 @@ public class UpdateAcupuncturePoint
         }
     }
 
-    [MenuItem("SeniorProject/Update Spot ScriptableObjects")]
+    [MenuItem("SeniorProject/Update acupunture point ScriptableObjects")]
     public static void UpdateSpotSOs()
     {
         UpdateSpots("acupuncture_point", true);
@@ -73,9 +73,9 @@ public class UpdateAcupuncturePoint
             using (command = connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM " + Spots;
-                int id;
+                int id, rel_position;
                 string name, title, content, disease;
-                float offset_x, offset_y, customize, rel_position;
+                float offset_x, offset_y, customize;
                 using (IDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -84,7 +84,7 @@ public class UpdateAcupuncturePoint
                         title = reader["title"].ToString();
                         content = reader["content"].ToString();
                         disease = reader["disease_type"].ToString();
-                        rel_position = float.Parse(reader["rel_position"].ToString());
+                        rel_position = int.Parse(reader["rel_position"].ToString());
                         offset_x = float.Parse(reader["offset_x"].ToString());
                         offset_y = float.Parse(reader["offset_y"].ToString());
                         customize = float.Parse(reader["customize"].ToString());
@@ -102,7 +102,7 @@ public class UpdateAcupuncturePoint
         Debug.Log("Update DateBase Sciptable Object.");
     }
 
-    private static void UpdateAcupuncturePointSO(string name, string title, string content, string disease, float offset_x, float offset_y, float rel_position,float customize, bool IsChinese)
+    private static void UpdateAcupuncturePointSO(string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position,float customize, bool IsChinese)
     {
         string titleKeyID = name + "_title";
         string descritpionKeyID = name + "_description";
@@ -118,7 +118,7 @@ public class UpdateAcupuncturePoint
         acupuncturePoint.Setup(titleKeyID, descritpionKeyID,AcupuncturePoint,disease, offset_x, offset_y,rel_position, customize,AcupuncturePointPrefab);
     }
 
-    private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, float rel_position, float customize)
+    private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, int rel_position, float customize)
     {
         ItemAcupuncturePointSO asset = ScriptableObject.CreateInstance<ItemAcupuncturePointSO>();
 
