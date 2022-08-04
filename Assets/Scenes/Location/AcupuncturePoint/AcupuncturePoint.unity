@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -488,6 +488,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003423792}
     m_Modifications:
+    - target: {fileID: 1297232476517155413, guid: cf645f1af5f90246e87c443ab2154263,
+        type: 3}
+      propertyPath: _setPointDisable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297232476517155413, guid: cf645f1af5f90246e87c443ab2154263,
+        type: 3}
+      propertyPath: _annotationPrefab
+      value: 
+      objectReference: {fileID: 6133709255799386540, guid: d097feb4a1034464887bb6cedffdbbea,
+        type: 3}
     - target: {fileID: 1314261227135839417, guid: cf645f1af5f90246e87c443ab2154263,
         type: 3}
       propertyPath: m_RootOrder
@@ -548,9 +559,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: HolisticLandmarks Annotation
       objectReference: {fileID: 0}
+    - target: {fileID: 7911686807350250789, guid: cf645f1af5f90246e87c443ab2154263,
+        type: 3}
+      propertyPath: _annotationPrefab
+      value: 
+      objectReference: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba,
+        type: 3}
     - target: {fileID: 8443471368909570199, guid: cf645f1af5f90246e87c443ab2154263,
         type: 3}
       propertyPath: _drawConnection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443471368909570199, guid: cf645f1af5f90246e87c443ab2154263,
+        type: 3}
+      propertyPath: _setLandmarkDisable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2229,6 +2251,7 @@ GameObject:
   - component: {fileID: 1681358209}
   - component: {fileID: 1681358208}
   - component: {fileID: 1681358207}
+  - component: {fileID: 1681358211}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2320,6 +2343,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1681358211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681358206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af38c0740d43a4f419a21ea970c9cf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
+  _defaultSelection: {fileID: 0}
+  _currentSelection: {fileID: 0}
+  _mouseSelection: {fileID: 0}
 --- !u!1001 &1841787452
 PrefabInstance:
   m_ObjectHideFlags: 0
