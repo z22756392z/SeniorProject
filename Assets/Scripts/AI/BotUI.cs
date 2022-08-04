@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 /// </summary>
 public class BotUI : MonoBehaviour {
     public GameObject   contentDisplayObject;       // Text gameobject where all the conversation is shown
-    public InputField   input;                      // InputField gameobject wher user types their message
+    public TMP_InputField   input;                      // InputField gameobject wher user types their message
 
     public GameObject   userBubble;                 // reference to user chat bubble prefab
     public GameObject   botBubble;                  // reference to bot chat bubble prefab
@@ -25,6 +26,13 @@ public class BotUI : MonoBehaviour {
     /// </summary>
     /// <param name="sender">The one who wrote this message</param>
     /// <param name="message">The message</param>
+    /// 
+
+    private void Awake()
+    {
+        input.onSubmit.AddListener(networkManager.SendNetMessage);
+    }
+
     public void UpdateDisplay (string sender, string message, string messageType) {
         // Create chat bubble and add components
         GameObject chatBubbleChild = CreateChatBubble(sender);
@@ -65,7 +73,7 @@ public class BotUI : MonoBehaviour {
         }
 
         // set the chat bubble in correct place
-        allMessagesHeight += 15 + (int)chatBubblePos.sizeDelta.y;
+        allMessagesHeight += 45 + (int)chatBubblePos.sizeDelta.y;
         chatBubblePos.anchoredPosition3D = new Vector3(horizontalPos, -allMessagesHeight, 0);
 
         if (allMessagesHeight > 340) {
@@ -150,10 +158,10 @@ public class BotUI : MonoBehaviour {
         switch (messageType) {
             case "text":
                 // Create and init Text component
-                Text chatMessage = chatBubbleObject.AddComponent<Text>();
-                chatMessage.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
-                chatMessage.fontSize = 18;
-                chatMessage.alignment = TextAnchor.MiddleLeft;
+                TextMeshProUGUI chatMessage = chatBubbleObject.AddComponent<TextMeshProUGUI>();
+                chatMessage.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as TMP_FontAsset;
+                chatMessage.autoSizeTextContainer = true;
+                chatMessage.alignment = TextAlignmentOptions.MidlineLeft;
                 chatMessage.text = message;
                 break;
             case "image":

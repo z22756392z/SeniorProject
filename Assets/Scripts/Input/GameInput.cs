@@ -107,6 +107,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenChatBot"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec3272fc-0ee2-4742-9c33-f38060a9c639"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -505,6 +514,17 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d891d1ff-a7db-4bb8-bfa7-fb3df05832ce"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenChatBot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -642,6 +662,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""name"": ""CloseInventory"",
                     ""type"": ""Button"",
                     ""id"": ""43e7e8b3-1957-4ce6-9d0e-92ed54cb4e41"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseChatBot"",
+                    ""type"": ""Button"",
+                    ""id"": ""150a98f6-37cd-4e42-a5d4-d0951c8f642e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1440,6 +1469,17 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""ResetActionButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dea5c1c7-4fa7-421b-9b77-287dd5a07a60"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseChatBot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1808,6 +1848,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Gameplay_RotateCamera = m_Gameplay.FindAction("RotateCamera", throwIfNotFound: true);
         m_Gameplay_MouseControlCamera = m_Gameplay.FindAction("MouseControlCamera", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
+        m_Gameplay_OpenChatBot = m_Gameplay.FindAction("OpenChatBot", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_MoveSelection = m_Menus.FindAction("MoveSelection", throwIfNotFound: true);
@@ -1825,6 +1866,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Menus_Point = m_Menus.FindAction("Point", throwIfNotFound: true);
         m_Menus_RightClick = m_Menus.FindAction("RightClick", throwIfNotFound: true);
         m_Menus_CloseInventory = m_Menus.FindAction("CloseInventory", throwIfNotFound: true);
+        m_Menus_CloseChatBot = m_Menus.FindAction("CloseChatBot", throwIfNotFound: true);
         // Dialogues
         m_Dialogues = asset.FindActionMap("Dialogues", throwIfNotFound: true);
         m_Dialogues_MoveSelection = m_Dialogues.FindAction("MoveSelection", throwIfNotFound: true);
@@ -1900,6 +1942,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_RotateCamera;
     private readonly InputAction m_Gameplay_MouseControlCamera;
     private readonly InputAction m_Gameplay_Run;
+    private readonly InputAction m_Gameplay_OpenChatBot;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -1913,6 +1956,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @RotateCamera => m_Wrapper.m_Gameplay_RotateCamera;
         public InputAction @MouseControlCamera => m_Wrapper.m_Gameplay_MouseControlCamera;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
+        public InputAction @OpenChatBot => m_Wrapper.m_Gameplay_OpenChatBot;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1949,6 +1993,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Run.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRun;
                 @Run.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRun;
                 @Run.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRun;
+                @OpenChatBot.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenChatBot;
+                @OpenChatBot.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenChatBot;
+                @OpenChatBot.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenChatBot;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -1980,6 +2027,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Run.started += instance.OnRun;
                 @Run.performed += instance.OnRun;
                 @Run.canceled += instance.OnRun;
+                @OpenChatBot.started += instance.OnOpenChatBot;
+                @OpenChatBot.performed += instance.OnOpenChatBot;
+                @OpenChatBot.canceled += instance.OnOpenChatBot;
             }
         }
     }
@@ -2003,6 +2053,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Menus_Point;
     private readonly InputAction m_Menus_RightClick;
     private readonly InputAction m_Menus_CloseInventory;
+    private readonly InputAction m_Menus_CloseChatBot;
     public struct MenusActions
     {
         private @GameInput m_Wrapper;
@@ -2022,6 +2073,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @Point => m_Wrapper.m_Menus_Point;
         public InputAction @RightClick => m_Wrapper.m_Menus_RightClick;
         public InputAction @CloseInventory => m_Wrapper.m_Menus_CloseInventory;
+        public InputAction @CloseChatBot => m_Wrapper.m_Menus_CloseChatBot;
         public InputActionMap Get() { return m_Wrapper.m_Menus; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2076,6 +2128,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @CloseInventory.started -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseInventory;
                 @CloseInventory.performed -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseInventory;
                 @CloseInventory.canceled -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseInventory;
+                @CloseChatBot.started -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseChatBot;
+                @CloseChatBot.performed -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseChatBot;
+                @CloseChatBot.canceled -= m_Wrapper.m_MenusActionsCallbackInterface.OnCloseChatBot;
             }
             m_Wrapper.m_MenusActionsCallbackInterface = instance;
             if (instance != null)
@@ -2125,6 +2180,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @CloseInventory.started += instance.OnCloseInventory;
                 @CloseInventory.performed += instance.OnCloseInventory;
                 @CloseInventory.canceled += instance.OnCloseInventory;
+                @CloseChatBot.started += instance.OnCloseChatBot;
+                @CloseChatBot.performed += instance.OnCloseChatBot;
+                @CloseChatBot.canceled += instance.OnCloseChatBot;
             }
         }
     }
@@ -2223,6 +2281,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnRotateCamera(InputAction.CallbackContext context);
         void OnMouseControlCamera(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnOpenChatBot(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {
@@ -2241,6 +2300,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnPoint(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnCloseInventory(InputAction.CallbackContext context);
+        void OnCloseChatBot(InputAction.CallbackContext context);
     }
     public interface IDialoguesActions
     {

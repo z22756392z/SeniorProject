@@ -49,6 +49,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Location/AcupuncturePoint/AcupuncturePoint.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: dc93d86dec9a18340b9a515f49fa9c9f
+    m_Address: Assets/Scenes/Location/AI/Rasa.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

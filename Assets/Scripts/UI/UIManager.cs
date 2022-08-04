@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private UIInteraction _interactionPanel = default;
 	[SerializeField] private GameObject _switchTabDisplay = default;
 	[SerializeField] private UIPause _pauseScreen = default;
+	[SerializeField] private BotUI _botScreen = default;
 	[SerializeField] private UISettingsController _settingScreen = default;
 
 	[Header("Gameplay")]
@@ -23,8 +24,8 @@ public class UIManager : MonoBehaviour
 	[Header("Listening on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default;
 
-	[Header("Inventory Events")]
-	[SerializeField] private VoidEventChannelSO _openInventoryScreenForCookingEvent = default;
+	//[Header("Inventory Events")]
+	//[SerializeField] private VoidEventChannelSO _openInventoryScreenForCookingEvent = default;
 
 	[Header("Interaction Events")]
 	[SerializeField] private InteractionUIEventChannelSO _setInteractionEvent = default;
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
 		_setInteractionEvent.OnEventRaised += SetInteractionPanel;
 		//_inputReader.OpenInventoryEvent += SetInventoryScreen;
 		//_inventoryPanel.Closed += CloseInventoryScreen;
+		_inputReader.OpenChatBotEvent += OpenChatBotScreen;
 	}
 
 	private void OnDisable()
@@ -53,12 +55,14 @@ public class UIManager : MonoBehaviour
 		_setInteractionEvent.OnEventRaised -= SetInteractionPanel;
 		//_inputReader.OpenInventoryEvent -= SetInventoryScreen;
 		//_inventoryPanel.Closed -= CloseInventoryScreen;
+		_inputReader.OpenChatBotEvent -= OpenChatBotScreen;
 	}
 
 	void ResetUI()
 	{
 		//_inventoryPanel.gameObject.SetActive(false);
 		_pauseScreen.gameObject.SetActive(false);
+		_botScreen.gameObject.SetActive(false);
 		//_interactionPanel.gameObject.SetActive(false);
 		//_switchTabDisplay.SetActive(false);
 
@@ -217,6 +221,24 @@ public class UIManager : MonoBehaviour
 		_gameStateManager.ResetToPreviousGameState();
 		if (_gameStateManager.CurrentGameState == GameState.Gameplay)
 			_inputReader.EnableGameplayInput();
+	}
+
+	void OpenChatBotScreen()
+    {
+		_inputReader.MenuCloseEvent += CloseChatBotScreen;
+		_inputReader.CloseChatBotEvent += CloseChatBotScreen;
+
+		_botScreen.gameObject.SetActive(true);
+		_inputReader.EnableMenuInput();
+	}
+
+	void CloseChatBotScreen()
+    {
+		_inputReader.MenuCloseEvent -= CloseChatBotScreen;
+		_inputReader.CloseChatBotEvent -= CloseChatBotScreen;
+
+		_botScreen.gameObject.SetActive(false);
+		_inputReader.EnableGameplayInput();
 	}
 
 	void SetInteractionPanel(bool isOpen, InteractionType interactionType)

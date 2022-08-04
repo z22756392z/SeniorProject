@@ -41,6 +41,8 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 	public event UnityAction MenuCloseEvent = delegate { };
 	public event UnityAction OpenInventoryEvent = delegate { }; // Used to bring up the inventory
 	public event UnityAction CloseInventoryEvent = delegate { }; // Used to bring up the inventory
+	public event UnityAction OpenChatBotEvent = delegate { };
+	public event UnityAction CloseChatBotEvent = delegate { };
 	public event UnityAction<float> TabSwitched = delegate { };
 
 	// Cheats (has effect only in the Editor)
@@ -144,6 +146,17 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 				StoppedRunning.Invoke();
 				break;
 		}
+	}
+
+	public void OnOpenChatBot(InputAction.CallbackContext context)
+    {
+		if (context.phase == InputActionPhase.Performed)
+			OpenChatBotEvent.Invoke();
+	}
+
+	public void OnCloseChatBot(InputAction.CallbackContext context)
+    {
+		CloseChatBotEvent.Invoke();
 	}
 
 	public void OnPause(InputAction.CallbackContext context)

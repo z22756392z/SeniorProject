@@ -22,10 +22,10 @@ public class NetworkManager : MonoBehaviour
     /// the send button. It calls the <see cref="NetworkManager.PostRequest"/> coroutine
     /// to send the user message to bot and also updates UI with the users message.
     /// </summary>
-    public void SendMessage()
+    public void SendNetMessage(string value)
     {
         // Get message from textbox and clear the input field
-        string message = botUI.input.text;
+        string message = value;
         botUI.input.text = "";
 
         // Create a json object from user message
@@ -107,6 +107,11 @@ public class NetworkManager : MonoBehaviour
         yield return request.SendWebRequest();
 
         // Show response on UI
+        if(request.downloadHandler.text.Length == 0)
+        {
+            Debug.LogWarning("There's no response from server. Check if the server is ready!");
+            yield break;
+        }
         RecieveMessage(request.downloadHandler.text);
 
         // Dispose of this !!!
