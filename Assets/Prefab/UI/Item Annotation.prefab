@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6133709255799386538}
   - component: {fileID: 6133709255799386539}
   - component: {fileID: 6133709255799386711}
+  - component: {fileID: 349246747007468574}
   m_Layer: 0
   m_Name: Item Annotation
   m_TagString: Untagged
@@ -113,7 +114,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _color: {r: 0, g: 1, b: 0, a: 1}
   _radius: 15
-  _setPointDisable: 1
+  _setPointDisable: 0
+--- !u!114 &349246747007468574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133709255799386540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb7be431a6f4ca4196954cc008b8479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventorySO: {fileID: 11400000, guid: eb4436e20fe73ab4e9398a03c2540da0, type: 2}
+  _itemStack:
+    _item: {fileID: 0}
+    Amount: 0
 --- !u!1001 &6156546326509359100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +138,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6133709255799386536}
     m_Modifications:
+    - target: {fileID: 151566559, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: itemEventChannelSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bbd641cc0e80d642bc8fdea3b96c1d7,
+        type: 2}
+    - target: {fileID: 377764689, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 1985079888, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
@@ -134,10 +160,23 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2136969673, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136969675, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
+        type: 2}
+    - target: {fileID: 2136969675, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3436543367045413437, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_Name
-      value: InventoryItem
+      value: UIInventoryItem
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
@@ -187,17 +226,17 @@ PrefabInstance:
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
@@ -222,17 +261,17 @@ PrefabInstance:
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}

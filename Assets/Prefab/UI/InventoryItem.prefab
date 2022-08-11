@@ -808,7 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:41b74adf4121a468e9dbe8958eb2f813
+      m_TableCollectionName: GUID:bb01e39152fadc44cb4e86a0d2367bfb
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 

@@ -149,25 +149,26 @@ using UnityEngine;
 namespace Mediapipe.Unity
 {
 #pragma warning disable IDE0065
-  using Color = UnityEngine.Color;
+    using Color = UnityEngine.Color;
 #pragma warning restore IDE0065
 
-  public sealed class HandLandmarkListAnnotation : HierarchicalAnnotation
-  {
-    [SerializeField] private PointListAnnotation _landmarkListAnnotation;
-    [SerializeField] private ConnectionListAnnotation _connectionListAnnotation;
-    [SerializeField] private Color _leftLandmarkColor = Color.green;
-    [SerializeField] private Color _rightLandmarkColor = Color.green;
+    public sealed class HandLandmarkListAnnotation : HierarchicalAnnotation
+    {
+        [SerializeField] private PointListAnnotation _landmarkListAnnotation;
+        [SerializeField] private ConnectionListAnnotation _connectionListAnnotation;
+        [SerializeField] private Color _leftLandmarkColor = Color.green;
+        [SerializeField] private Color _rightLandmarkColor = Color.green;
         [SerializeField] private bool _drawConnection = true;
 
-    public enum Hand
-    {
-      Left,
-      Right,
-    }
+        public enum Hand
+        {
+            Left,
+            Right,
+        }
 
-    private const int _LandmarkCount = 21;
-    private readonly List<(int, int)> _connections = new List<(int, int)> {
+        public int LandmarkCount = 21;
+        
+        private readonly List<(int, int)> _connections = new List<(int, int)> {
       (0, 1),
       (1, 2),
       (2, 3),
@@ -191,106 +192,106 @@ namespace Mediapipe.Unity
       (19, 20),
     };
 
-    public override bool isMirrored
-    {
-      set
-      {
-        _landmarkListAnnotation.isMirrored = value;
-        _connectionListAnnotation.isMirrored = value;
-        base.isMirrored = value;
-      }
-    }
+        public override bool isMirrored
+        {
+            set
+            {
+                _landmarkListAnnotation.isMirrored = value;
+                _connectionListAnnotation.isMirrored = value;
+                base.isMirrored = value;
+            }
+        }
 
-    public override RotationAngle rotationAngle
-    {
-      set
-      {
-        _landmarkListAnnotation.rotationAngle = value;
-        _connectionListAnnotation.rotationAngle = value;
-        base.rotationAngle = value;
-      }
-    }
+        public override RotationAngle rotationAngle
+        {
+            set
+            {
+                _landmarkListAnnotation.rotationAngle = value;
+                _connectionListAnnotation.rotationAngle = value;
+                base.rotationAngle = value;
+            }
+        }
 
-    public PointAnnotation this[int index] => _landmarkListAnnotation[index];
+        public PointAnnotation this[int index] => _landmarkListAnnotation[index];
 
-    private void Start()
-    {
-      _landmarkListAnnotation.Fill(_LandmarkCount);
-      _connectionListAnnotation.Fill(_connections, _landmarkListAnnotation);
-    }
+        private void Start()
+        {
+            _landmarkListAnnotation.Fill(LandmarkCount < 21 ? 21 : LandmarkCount);
+            _connectionListAnnotation.Fill(_connections, _landmarkListAnnotation);
+        }
 
-    public void SetLeftLandmarkColor(Color leftLandmarkColor)
-    {
-      _leftLandmarkColor = leftLandmarkColor;
-    }
+        public void SetLeftLandmarkColor(Color leftLandmarkColor)
+        {
+            _leftLandmarkColor = leftLandmarkColor;
+        }
 
-    public void SetRightLandmarkColor(Color rightLandmarkColor)
-    {
-      _rightLandmarkColor = rightLandmarkColor;
-    }
+        public void SetRightLandmarkColor(Color rightLandmarkColor)
+        {
+            _rightLandmarkColor = rightLandmarkColor;
+        }
 
-    public void SetLandmarkRadius(float landmarkRadius)
-    {
-      _landmarkListAnnotation.SetRadius(landmarkRadius);
-    }
+        public void SetLandmarkRadius(float landmarkRadius)
+        {
+            _landmarkListAnnotation.SetRadius(landmarkRadius);
+        }
 
-    public void SetConnectionColor(Color connectionColor)
-    {
-      _connectionListAnnotation.SetColor(connectionColor);
-    }
+        public void SetConnectionColor(Color connectionColor)
+        {
+            _connectionListAnnotation.SetColor(connectionColor);
+        }
 
-    public void SetConnectionWidth(float connectionWidth)
-    {
-      _connectionListAnnotation.SetLineWidth(connectionWidth);
-    }
+        public void SetConnectionWidth(float connectionWidth)
+        {
+            _connectionListAnnotation.SetLineWidth(connectionWidth);
+        }
 
-    public void SetHandedness(Hand handedness)
-    {
-      if (handedness == Hand.Left)
-      {
-        _landmarkListAnnotation.SetColor(_leftLandmarkColor);
-      }
-      else if (handedness == Hand.Right)
-      {
-        _landmarkListAnnotation.SetColor(_rightLandmarkColor);
-      }
-    }
+        public void SetHandedness(Hand handedness)
+        {
+            if (handedness == Hand.Left)
+            {
+                _landmarkListAnnotation.SetColor(_leftLandmarkColor);
+            }
+            else if (handedness == Hand.Right)
+            {
+                _landmarkListAnnotation.SetColor(_rightLandmarkColor);
+            }
+        }
 
-    public void SetHandedness(IList<Classification> handedness)
-    {
-      if (handedness == null || handedness.Count == 0 || handedness[0].Label == "Left")
-      {
-        SetHandedness(Hand.Left);
-      }
-      else if (handedness[0].Label == "Right")
-      {
-        SetHandedness(Hand.Right);
-      }
-      // ignore unknown label
-    }
+        public void SetHandedness(IList<Classification> handedness)
+        {
+            if (handedness == null || handedness.Count == 0 || handedness[0].Label == "Left")
+            {
+                SetHandedness(Hand.Left);
+            }
+            else if (handedness[0].Label == "Right")
+            {
+                SetHandedness(Hand.Right);
+            }
+            // ignore unknown label
+        }
 
-    public void SetHandedness(ClassificationList handedness)
-    {
-      SetHandedness(handedness.Classification);
-    }
+        public void SetHandedness(ClassificationList handedness)
+        {
+            SetHandedness(handedness.Classification);
+        }
 
-    public void Draw(IList<NormalizedLandmark> target, bool visualizeZ = false)
-    {
-      if (ActivateFor(target))
-      {
-        _landmarkListAnnotation.Draw(target, visualizeZ);
+        public void Draw(IList<NormalizedLandmark> target, bool visualizeZ = false)
+        {
+            if (ActivateFor(target))
+            {
+                _landmarkListAnnotation.Draw(target, visualizeZ);
                 // Draw explicitly because connection annotation's targets remain the same.
-                if(_drawConnection)
+                if (_drawConnection)
                     _connectionListAnnotation.Redraw();
-      }
-    }
+            }
+        }
 
 
-    public void Draw(NormalizedLandmarkList target, bool visualizeZ = false)
-    {
-      Draw(target?.Landmark, visualizeZ);
+        public void Draw(NormalizedLandmarkList target, bool visualizeZ = false)
+        {
+            Draw(target?.Landmark, visualizeZ);
+        }
     }
-  }
 }
 
 ```
@@ -695,6 +696,257 @@ namespace Mediapipe.Unity
                 if (point != null) { point.SetPointDisable(value); }
             }
         }
+  }
+}
+
+```
+
+> ListAnnotation
+
+```c#
+// Copyright (c) 2021 homuler
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Mediapipe.Unity
+{
+    public abstract class ListAnnotation<T> : HierarchicalAnnotation where T : HierarchicalAnnotation
+    {
+        [SerializeField] private GameObject _annotationPrefab;
+
+        private List<T> _children;
+        protected List<T> children
+        {
+            get
+            {
+                if (_children == null)
+                {
+                    _children = new List<T>();
+                }
+                return _children;
+            }
+        }
+
+        public T this[int index] => children[index];
+
+        public int count => children.Count;
+
+        public void Fill(int count, bool isSetupItemCore = false)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if(isSetupItemCore)
+                    children.Add(InstantiateChild(i, false));
+                else
+                    children.Add(InstantiateChild(false));
+            }
+        }
+
+        public void Add(T element)
+        {
+            children.Add(element);
+        }
+
+        public override bool isMirrored
+        {
+            set
+            {
+                foreach (var child in children)
+                {
+                    child.isMirrored = value;
+                }
+                base.isMirrored = value;
+            }
+        }
+
+        public override RotationAngle rotationAngle
+        {
+            set
+            {
+                foreach (var child in children)
+                {
+                    child.rotationAngle = value;
+                }
+                base.rotationAngle = value;
+            }
+        }
+
+        protected virtual void Destroy()
+        {
+            foreach (var child in children)
+            {
+                Destroy(child);
+            }
+            _children = null;
+        }
+
+        protected virtual T InstantiateChild(bool isActive = true)
+        {
+            var annotation = InstantiateChild<T>(_annotationPrefab);
+            annotation.SetActive(isActive);
+            return annotation;
+        }
+
+        protected virtual T InstantiateChild(int index, bool isActive = true)
+        {
+            var annotation = InstantiateChild<T>(_annotationPrefab);
+            annotation.gameObject.SendMessage("SetupItemCore", index,SendMessageOptions.DontRequireReceiver);
+            annotation.SetActive(isActive);
+            return annotation;
+        }
+
+        /// <summary>
+        ///   Zip <see cref="children" /> and <paramref name="argumentList" />, and call <paramref name="action" /> with each pair.
+        ///   If <paramref name="argumentList" /> has more elements than <see cref="children" />, <see cref="children" /> elements will be initialized with <see cref="InstantiateChild" />.
+        /// </summary>
+        /// <param name="action">
+        ///   This will receive 2 arguments and return void.
+        ///   The 1st argument is <typeparamref name="T" />, that is an ith element in <see cref="children" />.
+        ///   The 2nd argument is <typeparamref name="TArg" />, that is also an ith element in <paramref name="argumentList" />.
+        /// </param>
+        protected void CallActionForAll<TArg>(IList<TArg> argumentList, Action<T, TArg> action)
+        {
+            for (var i = 0; i < Mathf.Max(children.Count, argumentList.Count); i++)
+            {
+                if (i >= argumentList.Count)
+                {
+                    // children.Count > argumentList.Count
+                    action(children[i], default);
+                    continue;
+                }
+
+                // reset annotations
+                if (i >= children.Count)
+                {
+                    // children.Count < argumentList.Count
+                    children.Add(InstantiateChild());
+                }
+                else if (children[i] == null)
+                {
+                    // child is not initialized yet
+                    children[i] = InstantiateChild();
+                }
+                action(children[i], argumentList[i]);
+            }
+        }
+    }
+}
+
+```
+
+
+
+> HolisticLandmarkListAnnotation
+
+```c#
+// Copyright (c) 2021 homuler
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Mediapipe.Unity
+{
+  public sealed class HolisticLandmarkListAnnotation : HierarchicalAnnotation
+  {
+    [SerializeField] private FaceLandmarkListWithIrisAnnotation _faceLandmarkListAnnotation;
+    [SerializeField] private PoseLandmarkListAnnotation _poseLandmarkListAnnotation;
+    [SerializeField] public HandLandmarkListAnnotation _leftHandLandmarkListAnnotation;
+    [SerializeField] private HandLandmarkListAnnotation _rightHandLandmarkListAnnotation;
+    [SerializeField] private ConnectionListAnnotation _connectionListAnnotation;
+
+    public override bool isMirrored
+    {
+      set
+      {
+        _faceLandmarkListAnnotation.isMirrored = value;
+        _poseLandmarkListAnnotation.isMirrored = value;
+        _leftHandLandmarkListAnnotation.isMirrored = value;
+        _rightHandLandmarkListAnnotation.isMirrored = value;
+        _connectionListAnnotation.isMirrored = value;
+        base.isMirrored = value;
+      }
+    }
+
+    public override RotationAngle rotationAngle
+    {
+      set
+      {
+        _faceLandmarkListAnnotation.rotationAngle = value;
+        _poseLandmarkListAnnotation.rotationAngle = value;
+        _leftHandLandmarkListAnnotation.rotationAngle = value;
+        _rightHandLandmarkListAnnotation.rotationAngle = value;
+        _connectionListAnnotation.rotationAngle = value;
+        base.rotationAngle = value;
+      }
+    }
+
+    private void Start()
+    {
+      _leftHandLandmarkListAnnotation.SetHandedness(HandLandmarkListAnnotation.Hand.Left);
+      _rightHandLandmarkListAnnotation.SetHandedness(HandLandmarkListAnnotation.Hand.Right);
+      _connectionListAnnotation.Fill(2); // left/right wrist joint
+    }
+
+    public void Draw(IList<NormalizedLandmark> faceLandmarks, IList<NormalizedLandmark> poseLandmarks,
+                     IList<NormalizedLandmark> leftHandLandmarks, IList<NormalizedLandmark> rightHandLandmarks, bool visualizeZ = false, int circleVertices = 128)
+    {
+      var mask = PoseLandmarkListAnnotation.BodyParts.All;
+      if (faceLandmarks != null)
+      {
+        mask ^= PoseLandmarkListAnnotation.BodyParts.Face;
+      }
+      if (leftHandLandmarks != null)
+      {
+        mask ^= PoseLandmarkListAnnotation.BodyParts.LeftHand;
+      }
+      if (rightHandLandmarks != null)
+      {
+        mask ^= PoseLandmarkListAnnotation.BodyParts.RightHand;
+      }
+      _faceLandmarkListAnnotation.Draw(faceLandmarks, visualizeZ, circleVertices);
+      _poseLandmarkListAnnotation.Draw(poseLandmarks, mask, visualizeZ);
+      _leftHandLandmarkListAnnotation.Draw(leftHandLandmarks, visualizeZ);
+      _rightHandLandmarkListAnnotation.Draw(rightHandLandmarks, visualizeZ);
+      RedrawWristJoints();
+    }
+
+    public void Draw(NormalizedLandmarkList faceLandmarks, NormalizedLandmarkList poseLandmarks,
+                     NormalizedLandmarkList leftHandLandmarks, NormalizedLandmarkList rightHandLandmarks, bool visualizeZ = false, int circleVertices = 128)
+    {
+      Draw(
+        faceLandmarks?.Landmark,
+        poseLandmarks?.Landmark,
+        leftHandLandmarks?.Landmark,
+        rightHandLandmarks?.Landmark,
+        visualizeZ,
+        circleVertices
+      );
+    }
+
+    private void RedrawWristJoints()
+    {
+      if (_connectionListAnnotation[0].isEmpty)
+      {
+        // connect left elbow and wrist
+        _connectionListAnnotation[0].Draw(new Connection(_poseLandmarkListAnnotation[13], _leftHandLandmarkListAnnotation[0]));
+      }
+      if (_connectionListAnnotation[1].isEmpty)
+      {
+        // connect right elbow and wrist
+        _connectionListAnnotation[1].Draw(new Connection(_poseLandmarkListAnnotation[14], _rightHandLandmarkListAnnotation[0]));
+      }
+      _connectionListAnnotation.Redraw();
+    }
   }
 }
 

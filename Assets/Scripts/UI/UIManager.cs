@@ -9,11 +9,12 @@ public class UIManager : MonoBehaviour
 	[Header("Scene UI")]
 	[SerializeField] private MenuSelectionHandler _selectionHandler = default;
 	[SerializeField] private UIPopup _popupPanel = default;
-	[SerializeField] private UIInventory _inventoryPanel = default;
+	//[SerializeField] private UIInventory _inventoryPanel = default;
 	[SerializeField] private UIInteraction _interactionPanel = default;
 	[SerializeField] private GameObject _switchTabDisplay = default;
 	[SerializeField] private UIPause _pauseScreen = default;
 	[SerializeField] private BotUI _botScreen = default;
+	[SerializeField] private UIInventoryInspector _inventoryInspector = default;
 	[SerializeField] private UISettingsController _settingScreen = default;
 
 	[Header("Gameplay")]
@@ -63,6 +64,7 @@ public class UIManager : MonoBehaviour
 		//_inventoryPanel.gameObject.SetActive(false);
 		_pauseScreen.gameObject.SetActive(false);
 		_botScreen.gameObject.SetActive(false);
+		_inventoryInspector.HideItemInformation();
 		//_interactionPanel.gameObject.SetActive(false);
 		//_switchTabDisplay.SetActive(false);
 
@@ -115,7 +117,7 @@ public class UIManager : MonoBehaviour
 		_pauseScreen.gameObject.SetActive(false); // Set pause screen to inactive
 
 		_settingScreen.gameObject.SetActive(true);// set Setting screen to active 
-
+		_inventoryInspector.HideItemInformation();
 		// time is still set to 0 and Input is still set to menuInput 
 	}
 
@@ -128,7 +130,7 @@ public class UIManager : MonoBehaviour
 		_pauseScreen.gameObject.SetActive(true); // Set pause screen to inactive
 
 		_settingScreen.gameObject.SetActive(false);
-
+		_inventoryInspector.HideItemInformation();
 		// time is still set to 0 and Input is still set to menuInput 
 		//going out from setting screen gets us back to the pause screen
 	}
@@ -196,7 +198,7 @@ public class UIManager : MonoBehaviour
 			//_inventoryPanel.FillInventory();
 		}
 
-		_inventoryPanel.gameObject.SetActive(true);
+		//_inventoryPanel.gameObject.SetActive(true);
 		_switchTabDisplay.SetActive(true);
 		_inputReader.EnableMenuInput();
 
@@ -211,7 +213,7 @@ public class UIManager : MonoBehaviour
 		_inputReader.CloseInventoryEvent -= CloseInventoryScreen;
 
 		_switchTabDisplay.SetActive(false);
-		_inventoryPanel.gameObject.SetActive(false);
+		//_inventoryPanel.gameObject.SetActive(false);
 
 		if (isForCooking)
 		{

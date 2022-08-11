@@ -24,7 +24,7 @@ MonoBehaviour:
   _typeColor: {r: 0.17738998, g: 1, b: 0, a: 0}
   _type: 0
   _actionType: 0
-  _tabType: {fileID: 0}
+  _tabType: {fileID: 11400000, guid: 63e76432498d2a34593b0ea90e41e085, type: 2}
   references:
     version: 2
     RefIds: []

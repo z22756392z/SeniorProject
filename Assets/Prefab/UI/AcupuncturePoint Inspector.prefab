@@ -305,6 +305,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inspectorDescription: {fileID: 245239217533408034}
+  _itemEventChannelSO: {fileID: 11400000, guid: 7bbd641cc0e80d642bc8fdea3b96c1d7,
+    type: 2}
+  _inspector: {fileID: 6561198984233327147}
 --- !u!1001 &8893544385466909102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
       propertyPath: m_fontSize
-      value: 32.7
+      value: 27.45
       objectReference: {fileID: 0}
     - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
