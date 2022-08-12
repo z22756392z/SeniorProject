@@ -255,14 +255,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7499314617860786457}
   - component: {fileID: 1125162379129252214}
-  - component: {fileID: 635454430512939246}
   m_Layer: 5
   m_Name: AcupuncturePoint Inspector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7499314617860786457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -292,22 +291,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7499314617860786458}
   m_CullTransparentMesh: 0
---- !u!114 &635454430512939246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7499314617860786458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22db440a2cce4752b6edaa61c9b41b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inspectorDescription: {fileID: 245239217533408034}
-  _itemEventChannelSO: {fileID: 11400000, guid: 7bbd641cc0e80d642bc8fdea3b96c1d7,
-    type: 2}
-  _inspector: {fileID: 6561198984233327147}
 --- !u!1001 &8893544385466909102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,6 +327,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418752264980940646, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
+      propertyPath: m_text
+      value: Acupuncture Inspector
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418752264980940646, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 56.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418752264980940646, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -38.5889
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418752264980940646, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8b35e1a935e95f0479d81b68b2436a26,
@@ -354,6 +352,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2666786613665901543, guid: 8b35e1a935e95f0479d81b68b2436a26,
         type: 2}
+    - target: {fileID: 5418752264980940646, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6885412833861187076, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
@@ -476,8 +479,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
+      propertyPath: m_text
+      value: Acupuncture Description
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
       propertyPath: m_fontSize
-      value: 27.45
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -177.13237
       objectReference: {fileID: 0}
     - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
@@ -487,24 +500,17 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
         type: 3}
+      propertyPath: m_fontSizeMax
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385809990148588569, guid: 2407b81aff8139042a70deb4c9e56b9e,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -2666786613665901543, guid: 8b35e1a935e95f0479d81b68b2436a26,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2407b81aff8139042a70deb4c9e56b9e, type: 3}
---- !u!114 &245239217533408034 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8650135857950233228, guid: 2407b81aff8139042a70deb4c9e56b9e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8893544385466909102}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d09ce02a0d7e477f8344b3a5c9729a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2297399471485460060 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7245790260144332786, guid: 2407b81aff8139042a70deb4c9e56b9e,

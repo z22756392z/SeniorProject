@@ -2,34 +2,33 @@
 
 public class UIInventoryInspector : MonoBehaviour
 {
+    [SerializeField] private VoidEventChannelSO _hideInspector = default;
     [SerializeField] private UIInspectorDescription _inspectorDescription = default;
-    [SerializeField] private ItemEventChannelSO _itemEventChannelSO = default;
+    [SerializeField] private FillInspectorChannelSO _fillInspectorChannelSO = default;
     [SerializeField] private GameObject _inspector = default;
+    private UIInventoryItem _preUIInventoryInspector;
 
     private void OnEnable()
     {
-        _itemEventChannelSO.OnEventRaised += FillInspector;
+        _fillInspectorChannelSO.OnEventRaised += FillInspector;
+        _hideInspector.OnEventRaised += HideItemInformation;
     }
 
     private void OnDisable()
     {
-        _itemEventChannelSO.OnEventRaised -= FillInspector;
+        _fillInspectorChannelSO.OnEventRaised -= FillInspector;
+        _hideInspector.OnEventRaised -= HideItemInformation;
     }
 
-    public void FillInspector(ItemSO itemToInspect/*, bool[] availabilityArray = null*/)
+    public void FillInspector(ItemSO itemToInspect, UIInventoryItem ui)
     {
-
-        //bool isForCooking = (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook);
-
         _inspectorDescription.FillDescription(itemToInspect);
+        if (ui != _preUIInventoryInspector)
+        {
+            _preUIInventoryInspector?.UnClicked();
+            _preUIInventoryInspector = ui;
+        }
         ShowInspector();
-        //if (isForCooking && availabilityArray!= null)
-        //{
-        //_recipeIngredients.FillIngredients(itemToInspect.IngredientsList, availabilityArray);
-        //_recipeIngredients.gameObject.SetActive(true);
-        //}
-        //else
-        //_recipeIngredients.gameObject.SetActive(false);
     }
 
     public void ShowInspector()

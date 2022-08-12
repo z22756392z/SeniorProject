@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Localization.Components;
 using UnityEngine.Events;
+using UnityEngine.Localization;
+using System.Collections;
 
 public class UIInventoryItem : ItemCoreComponent
 {
@@ -15,12 +17,15 @@ public class UIInventoryItem : ItemCoreComponent
 	[SerializeField] private Button _itemButton = default;
 	[SerializeField] private LocalizeSpriteEvent _bgLocalizedImage = default;
 
-	public UnityAction<ItemSO> ItemSelected;
-	[SerializeField] private ItemEventChannelSO itemEventChannelSO = default;
+	public UnityAction<ItemSO> ItemClicked;
+	[SerializeField] private FillInspectorChannelSO _fillInspectorChannelSO = default;
+	[SerializeField] private LocalizedStringEventChannelSO _fillHintPanel = default;
+	[SerializeField] private VoidEventChannelSO _hideHintPanel = default;
+	[SerializeField] private VoidEventChannelSO _hideInspector = default;
 	[HideInInspector] public ItemStack currentItem;
 	
 	bool _isSelected = false;
-
+	bool _isClicked = false;
     public override void Init(ItemCore core)
     {
         base.Init(core);
@@ -74,49 +79,73 @@ public class UIInventoryItem : ItemCoreComponent
 	{
 		_isSelected = true;
 		_itemButton.Select();
-		SelectItem();
+		ClickItem();
 	}
 
 	private void OnEnable()
 	{
 		if (_isSelected)
-		{ SelectItem(); }
-		ItemSelected += ShowItemInformation;
+		{ ClickItem(); }
+		ItemClicked += ShowItemInformation;
 	}
     private void OnDisable()
     {
-		ItemSelected -= ShowItemInformation;
-    }
+		ItemClicked -= ShowItemInformation;
+	}
 
     public void HoverItem()
 	{
 		_imgHover.gameObject.SetActive(true);
+		StartCoroutine(ShowHint());
 	}
 
 	public void UnhoverItem()
 	{
 		_imgHover.gameObject.SetActive(false);
+		StopCoroutine(ShowHint());
+		_hideHintPanel.RaiseEvent();
+	}
+
+	public void ClickItem()
+	{
+		_isClicked = !_isClicked;
+		if (ItemClicked != null && currentItem != null && currentItem.Item != null)
+		{
+			if (_isClicked) {
+				ItemClicked.Invoke(currentItem.Item);
+				_imgSelected.gameObject.SetActive(true);
+			}
+				
+			else
+            {
+				_hideInspector.RaiseEvent();
+				_imgSelected.gameObject.SetActive(false);
+			}
+		}
+	}
+
+	public void UnClicked()
+    {
+		_imgSelected.gameObject.SetActive(false);
+		_isClicked = false;
 	}
 
 	public void SelectItem()
 	{
 		_isSelected = true;
-		if (ItemSelected != null && currentItem != null && currentItem.Item != null)
-
+		if (currentItem != null && currentItem.Item != null)
 		{
-			_imgSelected.gameObject.SetActive(true);
-			ItemSelected.Invoke(currentItem.Item);
+			
 		}
 		else
 		{
-			_imgSelected.gameObject.SetActive(false);
+			
 		}
 	}
 
 	public void UnselectItem()
 	{
 		_isSelected = false;
-		_imgSelected.gameObject.SetActive(false);
 	}
 
 	public void InspectItem(ItemSO itemToInspect)
@@ -126,6 +155,19 @@ public class UIInventoryItem : ItemCoreComponent
 	}
 	void ShowItemInformation(ItemSO item)
 	{
-		itemEventChannelSO.RaiseEvent(item);
+		_fillInspectorChannelSO.FillInspector(item,this);
 	}
+
+	private IEnumerator ShowHint()
+    {
+		Debug.LogWarning("Start");
+		yield return new WaitForSeconds(0.5f);
+		Debug.LogWarning("End");
+		FillHintInformation();
+	}
+
+	void FillHintInformation()
+    {
+		_fillHintPanel.RaiseEvent(currentItem.Item.Name);
+    }
 }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ee1f4193e7cac488aad6442034451d, type: 3}
-  m_Name: FillInspector
+  m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
+  m_Name: HideHintPanel
   m_EditorClassIdentifier: 
   _guid: 
   description: 

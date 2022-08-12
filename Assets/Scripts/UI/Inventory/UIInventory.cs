@@ -38,7 +38,7 @@ public class UIInventory : MonoBehaviour
 
 		for (int i = 0; i < _availableItemSlots.Count; i++)
 		{
-			_availableItemSlots[i].ItemSelected += InspectItem;
+			_availableItemSlots[i].ItemClicked += InspectItem;
 		}
 
 		_inputReader.TabSwitched += OnSwitchTab;
@@ -52,7 +52,7 @@ public class UIInventory : MonoBehaviour
 
 		for (int i = 0; i < _availableItemSlots.Count; i++)
 		{
-			_availableItemSlots[i].ItemSelected -= InspectItem;
+			_availableItemSlots[i].ItemClicked -= InspectItem;
 		}
 
 		_inputReader.TabSwitched -= OnSwitchTab;
