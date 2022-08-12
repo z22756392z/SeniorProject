@@ -53,6 +53,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Location/AI/Rasa.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: ceb4d719a77aa734e94e3c496fa02029
+    m_Address: Assets/Scenes/Location/Exercise/Exercise.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

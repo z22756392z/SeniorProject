@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Localization.Components;
 using UnityEngine.Events;
-using UnityEngine.Localization;
 using System.Collections;
 
 public class UIInventoryItem : ItemCoreComponent
@@ -96,13 +95,13 @@ public class UIInventoryItem : ItemCoreComponent
     public void HoverItem()
 	{
 		_imgHover.gameObject.SetActive(true);
-		StartCoroutine(ShowHint());
+		StartCoroutine("ShowHint");
 	}
 
 	public void UnhoverItem()
 	{
 		_imgHover.gameObject.SetActive(false);
-		StopCoroutine(ShowHint());
+		StopCoroutine("ShowHint");
 		_hideHintPanel.RaiseEvent();
 	}
 
@@ -160,9 +159,7 @@ public class UIInventoryItem : ItemCoreComponent
 
 	private IEnumerator ShowHint()
     {
-		Debug.LogWarning("Start");
 		yield return new WaitForSeconds(0.5f);
-		Debug.LogWarning("End");
 		FillHintInformation();
 	}
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class HintPanelUI : MonoBehaviour
 {
@@ -14,13 +13,7 @@ public class HintPanelUI : MonoBehaviour
     private void Update()
     {
         if (Camera.main == null) return;
-        _vec3WorkSpace = Input.mousePosition;
-        _vec3WorkSpace.Set(_vec3WorkSpace.x + _rectTransform.rect.width / 2, _vec3WorkSpace.y + _rectTransform.rect.y / 2, _vec3WorkSpace.z);
-        transform.position = _vec3WorkSpace;
-        /*
-        _vec3WorkSpace = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        transform.position.Set(_vec3WorkSpace.x, _vec3WorkSpace.y, transform.position.z); 
-        */
+        UpdatePos();
     }
 
     public void HideHintPanel()
@@ -31,5 +24,13 @@ public class HintPanelUI : MonoBehaviour
     public void ShowHintPanel()
     {
         gameObject.SetActive(true);
+        UpdatePos();
+    }
+
+    private void UpdatePos()
+    {
+        _vec3WorkSpace = Input.mousePosition;
+        _vec3WorkSpace.Set(_vec3WorkSpace.x + _rectTransform.rect.width / 2, _vec3WorkSpace.y + _rectTransform.rect.y / 2, _vec3WorkSpace.z);
+        transform.position = _vec3WorkSpace;
     }
 }

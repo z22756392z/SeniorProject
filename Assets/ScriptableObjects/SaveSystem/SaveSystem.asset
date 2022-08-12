@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saveSettingsEvent: {fileID: 11400000, guid: 2df7b3b82d859d744aa64a524458172e, type: 2}
   _loadLocation: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd, type: 2}
-  _playerInventory: {fileID: 0}
+  _playerInventory: {fileID: 11400000, guid: eb4436e20fe73ab4e9398a03c2540da0, type: 2}
   _currentSettings: {fileID: 11400000, guid: 787ba6291ff544346b253b6fc9e83763, type: 2}
-  _questManagerSO: {fileID: 0}
   saveFilename: save.senior_project
   backupSaveFilename: save.senior_project.bak
   saveData:
@@ -30,4 +29,4 @@ MonoBehaviour:
     _antiAliasingIndex: 0
     _shadowDistance: 0
     _isFullscreen: 0
-    _currentLocale: {fileID: 0}
+    _currentLocale: {fileID: 11400000, guid: b831eb08990f6d846be9bde0652c3c0b, type: 2}
