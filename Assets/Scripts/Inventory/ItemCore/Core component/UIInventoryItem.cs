@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -31,7 +29,6 @@ public class UIInventoryItem : ItemCoreComponent
 
 	public void SetItem(ItemStack itemStack, bool isSelected)
 	{
-		Debug.Log(itemStack.Item.Name.Keys);
 		_isSelected = isSelected;
 		_itemPreviewImage.gameObject.SetActive(true);
 		_itemCount.gameObject.SetActive(true);
