@@ -113,7 +113,7 @@ public class NetworkManager : MonoBehaviour
             yield break;
         }
         RecieveMessage(request.downloadHandler.text);
-
+        // Debug.Log(request.downloadHandler.text);
         // Dispose of this !!!
         request.Dispose();
     }
@@ -174,8 +174,8 @@ public class NetworkManager : MonoBehaviour
 
     private string ConvertJsonStringToSting(string json_string)
     {
-        json_string.Replace("[", "'").Replace("]", "'");
-        JObject json = JObject.Parse(json_string.Replace("]", "").Replace("[", ""));
+        if (json_string == "[]") return "聽不懂";
+        JObject json = JObject.Parse(json_string.Replace("]", "").Replace("[", "").Replace("},{", ","));
         foreach (var e in json)
         {
             Debug.Log(e);

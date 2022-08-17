@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class BotUI : MonoBehaviour {
     public GameObject   contentDisplayObject;       // Text gameobject where all the conversation is shown
     public TMP_InputField   input;                      // InputField gameobject wher user types their message
+    public TMP_FontAsset tMP_FontAsset;
 
     public GameObject   userBubble;                 // reference to user chat bubble prefab
     public GameObject   botBubble;                  // reference to bot chat bubble prefab
@@ -159,7 +160,7 @@ public class BotUI : MonoBehaviour {
             case "text":
                 // Create and init Text component
                 TextMeshProUGUI chatMessage = chatBubbleObject.AddComponent<TextMeshProUGUI>();
-                chatMessage.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as TMP_FontAsset;
+                chatMessage.font = tMP_FontAsset;
                 chatMessage.autoSizeTextContainer = true;
                 chatMessage.alignment = TextAlignmentOptions.MidlineLeft;
                 chatMessage.text = message;
