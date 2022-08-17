@@ -8,6 +8,7 @@ public enum GameState
 	Inventory, //when inventory UI open
 	Dialogue,
 	LocationTransition	, // LocationExit trigger, fade to black begins and control is removed
+	Cutscene,
 }
 
 //[CreateAssetMenu(fileName = "GameState", menuName = "Gameplay/GameState", order = 51)]
