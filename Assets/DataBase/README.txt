@@ -1,7 +1,5 @@
 資料庫變數:
 
-
-
 | var          | mean                                                         | type   |
 | ------------ | ------------------------------------------------------------ | ------ |
 | id           | 資料編號                                                     | int    |
@@ -11,7 +9,7 @@
 | rel_position | 定位的mediapipe編號                                          | int    |
 | offset_x     | x偏移量(-10~10，間距可以再做調整)                            | int    |
 | offset_y     | y偏移量(-10~10)                                              | int    |
-| customize    | 1: 正面, 2: 背面,3: 正面左邊, 4: 背面左邊, 5: 正面右邊, 6: 背面右邊, 7: 其他 | int    |
+| customize    | 1: 正面, 2: 背面,3: 正面左邊(手), 4: 背面左邊(手), 5: 正面右邊(手), 6: 背面右邊(手), 7: 其他 | int    |
 
 ![](picture/mediapipeLandmark.png)
 
@@ -31,6 +29,22 @@
 
 ![](picture/hand03.png)
 
-穴位參考網站: http://cht.a-hospital.com/w/%E4%BA%BA%E4%BD%93%E7%A9%B4%E4%BD%8D%E5%9B%BE
+左手背面
+
+![左手背面](D:\DataBase\picture\左手背面.jpg)
+
+左手正面
+
+![左手正面](D:\DataBase\picture\左手正面.jpg)
+
+穴位參考網站: 
+
+http://cht.a-hospital.com/w/%E4%BA%BA%E4%BD%93%E7%A9%B4%E4%BD%8D%E5%9B%BE
+
+https://www.acupoint361.com/2018/09/plam-acupoints.html
+
+穴位資料:
+
+https://yibian.hopto.org/db/?ano=429
 
 手部mediapipe參考網站: https://google.github.io/mediapipe/solutions/hands.html
