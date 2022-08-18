@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Question Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Question
+  m_TableCollectionNameGuidString: ae31f74cbc2a48f4297c9458cfb40582
+  m_Entries:
+  - m_Id: 6166748286976
+    m_Key: Q0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6763161538560
+    m_Key: Q0_ANS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6763169927168
+    m_Key: Q0_OptA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6763169927169
+    m_Key: Q0_OptB
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6763174121472
+    m_Key: Q0_OptC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6763174121473
+    m_Key: Q0_OptD
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6003001847680860162
+  references:
+    version: 2
+    RefIds:
+    - rid: 6003001847680860162
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1660812035866
