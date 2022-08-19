@@ -1,8 +1,32 @@
-﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
 [Database](./Assets/DataBase/README.md)
+
+## Dialogueformat
+
+* Symbol
+
+  * Q -- Question
+
+  * C -- choice (選項)
+
+  * L -- line  (行)
+  * D -- Default(述說者 -- 現在使用預設 之後可能會有其他人物)
+
+| id   | Dialogue(對話) | Type(類型) | content(內容)                                                | narrator(誰說的) | Opt(選擇項) |
+| ---- | -------------- | ---------- | ------------------------------------------------------------ | ---------------- | ----------- |
+| 0    | Q1             | L1         | 下列何者屬手太陽小腸經。輸（木）穴。八脈交會穴之一，通督脈。在手掌尺側，微握拳， | D(Default)       | null        |
+| 1    | Q1             | L2         | 當第5掌指關節後的遠側掌橫紋頭赤白肉際處。                    | D                | Correct     |
+| 2    | Q1             | C1         | 後溪穴                                                       | D                | Wrong       |
+| 3    | Q1             | C2         | 二間穴                                                       | D                | Wrong       |
+| 4    | Q1             | C3         | 中魁穴                                                       | D                | Wrong       |
+| 5    | Q1             | C4         | 太淵穴                                                       | D                | Wrong       |
+| 6    | Q2             | L1         | 下列哪些穴位超過兩個以上                                     | D                | null        |
+| ...  | ...            | ...        | ...                                                          | ...              | ...         |
+
+
 
 ## Log
 
