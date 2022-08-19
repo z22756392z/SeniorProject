@@ -29,11 +29,11 @@
 
 背面左手(4)? 資料庫裡面的資料左右手有些還需要確認，因為有完整左右手穴位的網站很少..
 
-![](https://github.com/derek120432/SeniorProject/blob/main/DataBase/picture/hand05.png)
+![](https://github.com/derek120432/SeniorProject/blob/main/DataBase/picture/hand03.png)
 
 左手背面
 
-![左手背面](picture\hand05.jpg)
+![左手背面](https://github.com/derek120432/SeniorProject/blob/main/DataBase/picture/hand05.png)
 
 左手正面
 
