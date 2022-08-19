@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 225613161}
-  - component: {fileID: 225613160}
+  - component: {fileID: 225613162}
   m_Layer: 0
   m_Name: QusetionManager
   m_TagString: Untagged
@@ -140,30 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &225613160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225613159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98bb9d8f0d490324795e76238bb313bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questionsGroup:
-    sequenceMode: 1
-    questions:
-    - {fileID: 11400000, guid: 33e88b0dfe2a450408c91ea2ac0b5d2a, type: 2}
-  _winDialogue: {fileID: 11400000, guid: 39ffedee9cefad34cb101ab36f6413ce, type: 2}
-  _loseDialogue: {fileID: 11400000, guid: b081b6b479dadb847aa6f35c565f2a0e, type: 2}
-  _startDialogueEvent: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4,
-    type: 2}
-  _winDialogueEvent: {fileID: 11400000, guid: 81e75c1e072f9774aa007090c260df10, type: 2}
-  _loseDialogueEvent: {fileID: 11400000, guid: f247b0e59f8401443a54e776e22c3dbd, type: 2}
-  _endDialogueEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337, type: 2}
-  _endOfANSEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991, type: 2}
 --- !u!4 &225613161
 Transform:
   m_ObjectHideFlags: 0
@@ -179,6 +155,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &225613162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225613159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe28c59f6584990449a4d6e429221ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questionsGroup:
+    sequenceMode: 1
+    questions:
+    - {fileID: 11400000, guid: b0cba63ccd809c04a8c09a8535a3cb77, type: 2}
+    - {fileID: 11400000, guid: 37fbdd0b478b8b246afcf657d7a80878, type: 2}
+    - {fileID: 11400000, guid: 3b1fc0068ea9ac54383bcd81b9b4fd31, type: 2}
+    - {fileID: 11400000, guid: 6c54361f87c5eeb429fe1deb3b2884d7, type: 2}
+    - {fileID: 11400000, guid: 65815a282cefa1c47bdb1f8187af19fc, type: 2}
+    - {fileID: 11400000, guid: fe87153270dc323459d8c3988d646392, type: 2}
+    - {fileID: 11400000, guid: 67cb178a8b3f37d4da3789408a17a494, type: 2}
+    - {fileID: 11400000, guid: bed40232b46992341ad43e897385e7ba, type: 2}
+    - {fileID: 11400000, guid: 8221299e695d8f54ca3c2fcabb793fce, type: 2}
+    - {fileID: 11400000, guid: 6f23eb77c717f384e8e2163ee4345525, type: 2}
+  _winDialogue: {fileID: 11400000, guid: 39ffedee9cefad34cb101ab36f6413ce, type: 2}
+  _loseDialogue: {fileID: 11400000, guid: b081b6b479dadb847aa6f35c565f2a0e, type: 2}
+  _startDialogueEvent: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4,
+    type: 2}
+  _buttonText: {fileID: 1877967102}
+  _winDialogueEvent: {fileID: 11400000, guid: 81e75c1e072f9774aa007090c260df10, type: 2}
+  _loseDialogueEvent: {fileID: 11400000, guid: f247b0e59f8401443a54e776e22c3dbd, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337, type: 2}
+  _endOfANSEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991, type: 2}
 --- !u!1001 &420158788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,7 +696,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225613160}
+      - m_Target: {fileID: 225613162}
         m_TargetAssemblyTypeName: QuestionManager, Assembly-CSharp
         m_MethodName: PlayDefaultQuest
         m_Mode: 1
@@ -794,7 +804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u7B54\u984C(\u76EE\u524D\u984C\u76EE\u6578\u91CF:1)"
+  m_text: "\u7B54\u984C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b35e1a935e95f0479d81b68b2436a26, type: 2}
   m_sharedMaterial: {fileID: -2666786613665901543, guid: 8b35e1a935e95f0479d81b68b2436a26,

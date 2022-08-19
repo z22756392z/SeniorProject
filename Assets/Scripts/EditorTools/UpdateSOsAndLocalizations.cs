@@ -169,12 +169,13 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "ANS", out string ANS)) continue;
 
                         //TODO: base on database set dialogue , line, choice and so on...
-                        int lineIndex = 0, choiceIndex = 0;
+                        int lineIndex = 0, choiceIndex = 0,dialogueIndex = 0;
                         questionIndex++;
                         lineIndex++;
                         choiceIndex++;
+                        dialogueIndex++;
 
-                        name = "Q" + questionIndex + "-" + "Default";
+                        name = "D" + dialogueIndex + "-" + "Q" + questionIndex;
                         
                         string Lkey = "L" + lineIndex + "-" + name;
                         string Ckey = "C" + choiceIndex + "-" + name;
@@ -244,10 +245,10 @@ public class UpdateSOsAndLocalizations
     private static void UpdateQuestionLocalization(StringTable stringTable, string actor, string Lkey, string name, string question, string ANS, string A, string B, string C, string D)
     {
         UpdateStringTableEntryANDComment(stringTable, Lkey, question, actor);
-        UpdateStringTableEntryANDComment(stringTable, "C1-" + name, A, IsANS(ANS, "1"));
-        UpdateStringTableEntryANDComment(stringTable, "C2-" + name, B, IsANS(ANS, "2"));
-        UpdateStringTableEntryANDComment(stringTable, "C3-" + name, C, IsANS(ANS, "3"));
-        UpdateStringTableEntryANDComment(stringTable, "C4-" + name, D, IsANS(ANS, "4"));
+        UpdateStringTableEntryANDComment(stringTable, "C1-" + name, A, IsANS(ANS, "A"));
+        UpdateStringTableEntryANDComment(stringTable, "C2-" + name, B, IsANS(ANS, "B"));
+        UpdateStringTableEntryANDComment(stringTable, "C3-" + name, C, IsANS(ANS, "C"));
+        UpdateStringTableEntryANDComment(stringTable, "C4-" + name, D, IsANS(ANS, "D"));
     }
 
     private static string IsANS(string ans,string opt)

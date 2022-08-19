@@ -73,7 +73,7 @@ public class DialogueDataSO : ScriptableObject
 		do
 		{
 			dialogueIndex++;
-			_dialogueLine = new Line("Q" + dialogueIndex + "-" + dialogueName);
+			_dialogueLine = new Line("D" + dialogueIndex + "-" + dialogueName);
 			if (_dialogueLine.TextList != null)
 				_lines.Add(_dialogueLine);
 
