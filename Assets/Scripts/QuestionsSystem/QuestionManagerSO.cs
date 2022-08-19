@@ -2,33 +2,32 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class QuestionManager : MonoBehaviour
+[CreateAssetMenu(fileName = "QuestionManager", menuName = "Quests/QuestManager")]
+public class QuestionManagerSO : ScriptableObject
 {
-    [SerializeField] private QuestionsGroup _questionsGroup;
+    [SerializeField] private QuestionsGroup[] _questionGroups;
 
 	[SerializeField] private DialogueDataSO _winDialogue;
 	[SerializeField] private DialogueDataSO _loseDialogue;
 
 	[SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
 
-	[SerializeField] private TextMeshProUGUI _buttonText = default;
 	[Header("Listening to channels")]
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _loseDialogueEvent = default;
     [SerializeField] private IntEventChannelSO _endDialogueEvent = default;
 	[SerializeField] private VoidEventChannelSO _endOfANSEvent = default;
 
-	
-
+	private QuestionsGroup _currentQuestionGroup;
     private DialogueDataSO _currentDialogue;
+
     private void OnEnable()
     {
-		_buttonText.text = "答題(目前題目數量:" + _questionsGroup.questions.Length + ")";
-
+		_currentQuestionGroup = _questionGroups[0];
 	}
     public void PlayDefaultQuest()
 	{
-		_currentDialogue = _questionsGroup.GetQusetion();
+		_currentDialogue = _currentQuestionGroup.GetQusetion();
 		StartDialogue();
 	}
 
@@ -69,7 +68,7 @@ public class QuestionManager : MonoBehaviour
 
 	void NextQuestion()
     {
-		_currentDialogue = _questionsGroup.GetQusetion();
+		_currentDialogue = _currentQuestionGroup.GetQusetion();
 		StartDialogue();
 		_endOfANSEvent.OnEventRaised -= NextQuestion;
 	}
@@ -78,6 +77,7 @@ public class QuestionManager : MonoBehaviour
 [Serializable]
 public class QuestionsGroup
 {
+	[TextArea] public string description;
 	public SequenceMode sequenceMode = SequenceMode.RandomNoImmediateRepeat;
 	public DialogueDataSO[] questions;
 

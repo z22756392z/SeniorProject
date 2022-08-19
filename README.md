@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -116,5 +116,7 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 * modify
   * Question DataBase Ans fixed
   * finish Questions
+  * QuestionManager -- SO -- more flexable
+  * Auto Create DialougeDataSO
 * add
   * about ui panel

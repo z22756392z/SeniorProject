@@ -88,14 +88,14 @@ public class UpdateSOsAndLocalizations
         }
     }
 
-    [MenuItem("SeniorProject/AcupunturePointSOs Update")]
+    [MenuItem("SeniorProject/LocalizationAndSO/AcupunturePointSOs Update")]
     public static void UpdateAcupuncturePointSOs()
     {
         ReadAcupunturePointDB("acupuncture_point", true);
         //ReadAcupunturePointDB("EN_acupuncture_point", false);
     }
 
-    [MenuItem("SeniorProject/QuestionLocals Update")]
+    [MenuItem("SeniorProject/LocalizationAndSO/Question Locals Update")]
     public static void UpdateQuestionLocals()
     {
         ReadQuestionDB("questioon", true);
@@ -184,6 +184,8 @@ public class UpdateSOsAndLocalizations
                             UpdateQuestionLocalization(QuestionPointChineseTable,"D", Lkey, name, question, ANS, A, B, C, D);
                         else
                             UpdateQuestionLocalization(QuestionEnglishTable, "D", Lkey, name, question, ANS, A, B, C, D);
+
+                        UpdateQuestionSOs(questionIndex);
                     }
 
                 }
@@ -227,6 +229,16 @@ public class UpdateSOsAndLocalizations
         acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab);
     }
 
+    public static void UpdateQuestionSOs(int questionIndex)
+    {
+        string name = "Q" + questionIndex.ToString();
+        if (!File.Exists(name))
+        {
+            CreateDialogueDataSO(name);
+        }
+
+    }
+
     private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, int rel_position, float customize)
     {
         ItemAcupuncturePointSO asset = ScriptableObject.CreateInstance<ItemAcupuncturePointSO>();
@@ -235,6 +247,18 @@ public class UpdateSOsAndLocalizations
         asset.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y,rel_position,customize, AcupuncturePointPrefab);
 
         AssetDatabase.CreateAsset(asset, "Assets/ScriptableObjects/Inventory/Item/AcupuncturePoint/" + name + ".asset");  // creat new scriptable
+        AssetDatabase.SaveAssets();
+
+        EditorUtility.FocusProjectWindow();
+
+        Selection.activeObject = asset;
+    }
+
+    private static void CreateDialogueDataSO(string name)
+    {
+        DialogueDataSO asset = ScriptableObject.CreateInstance<DialogueDataSO>();
+
+        AssetDatabase.CreateAsset(asset, "Assets/ScriptableObjects/Dialogue/Question/" + name + ".asset");  // creat new scriptable
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();

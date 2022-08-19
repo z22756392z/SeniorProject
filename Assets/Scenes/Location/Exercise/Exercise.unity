@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &225613162 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7352895125452604865, guid: 17a95b084beac924d8829bc0c645b0e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7352895125501989035}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe28c59f6584990449a4d6e429221ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &420158788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,7 +292,7 @@ RectTransform:
   m_Children:
   - {fileID: 1770617040}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -642,8 +630,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225613162}
-        m_TargetAssemblyTypeName: QuestionManager, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 671958cbebd555146b334da3d8b5a5b0, type: 2}
+        m_TargetAssemblyTypeName: QuestionManagerSO, Assembly-CSharp
         m_MethodName: PlayDefaultQuest
         m_Mode: 1
         m_Arguments:
@@ -828,77 +816,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877967100}
   m_CullTransparentMesh: 1
---- !u!1001 &7352895125501989035
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7352895125452604865, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: _buttonText
-      value: 
-      objectReference: {fileID: 1877967102}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 360.32538
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 235.32498
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.4777279
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604866, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352895125452604876, guid: 17a95b084beac924d8829bc0c645b0e1,
-        type: 3}
-      propertyPath: m_Name
-      value: QusetionManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 17a95b084beac924d8829bc0c645b0e1, type: 3}
