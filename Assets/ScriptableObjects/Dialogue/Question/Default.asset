@@ -68,6 +68,61 @@ MonoBehaviour:
         m_LocalVariables: []
       _nextDialogue: {fileID: 0}
       _actionType: 3
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: Question
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L1-Q1-Default
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices:
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Question
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C1-Q1-Default
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 3
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Question
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C2-Q1-Default
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 2
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Question
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C3-Q1-Default
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 3
+    - _response:
+        m_TableReference:
+          m_TableCollectionName: Question
+        m_TableEntryReference:
+          m_KeyId: 0
+          m_Key: C4-Q1-Default
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      _nextDialogue: {fileID: 0}
+      _actionType: 3
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
   references:

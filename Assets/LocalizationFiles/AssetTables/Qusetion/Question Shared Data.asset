@@ -45,6 +45,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 6003001852026945543
+  - m_Id: 246779917848576
+    m_Key: L1-Q1-Default-WinningChoice
+    m_Metadata:
+      m_Items:
+      - rid: 6003001866304880642
+  - m_Id: 247204964421632
+    m_Key: L1-Q1-Default-LosingChoice
+    m_Metadata:
+      m_Items:
+      - rid: 6003001866304880643
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -81,3 +91,11 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: LosingChoice
+    - rid: 6003001866304880642
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 6003001866304880643
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D

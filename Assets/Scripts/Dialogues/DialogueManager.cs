@@ -115,7 +115,7 @@ public class DialogueManager : MonoBehaviour
 	private void MakeDialogueChoice(Choice choice)
 	{
 		_makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
-
+		
 		switch (choice.ActionType)
 		{
 			case ChoiceActionType.ContinueWithStep:

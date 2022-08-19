@@ -44,7 +44,7 @@ public class QuestionManager : MonoBehaviour
 	{
 		if (_winDialogue != null)
 		{
-			_currentDialogue = _winDialogue;
+			_currentDialogue = _loseDialogue;
 			StartDialogue();
 
 		}

@@ -1,4 +1,4 @@
-﻿資料庫變數:
+資料庫變數:
 
 
 
@@ -33,11 +33,11 @@
 
 左手背面
 
-![左手背面](D:\DataBase\picture\左手背面.jpg)
+![左手背面](picture\hand05.jpg)
 
 左手正面
 
-![左手正面](D:\DataBase\picture\左手正面.jpg)
+![左手正面](picture\hand04.jpg)
 
 穴位參考網站: 
 
