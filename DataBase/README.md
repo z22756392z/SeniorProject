@@ -29,7 +29,7 @@
 
 背面左手(4)? 資料庫裡面的資料左右手有些還需要確認，因為有完整左右手穴位的網站很少..
 
-![](picture/hand03.png)
+![](https://github.com/derek120432/SeniorProject/blob/main/DataBase/picture/hand05.png)
 
 左手背面
 
@@ -37,7 +37,7 @@
 
 左手正面
 
-![左手正面](picture\hand04.jpg)
+![左手正面](https://github.com/derek120432/SeniorProject/blob/main/DataBase/picture/hand04.png)
 
 穴位參考網站: 
 
