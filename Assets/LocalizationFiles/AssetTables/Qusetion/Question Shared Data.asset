@@ -15,46 +15,41 @@ MonoBehaviour:
   m_TableCollectionName: Question
   m_TableCollectionNameGuidString: ae31f74cbc2a48f4297c9458cfb40582
   m_Entries:
-  - m_Id: 69819459653632
+  - m_Id: 301191927386112
     m_Key: L1-Q1-Default
     m_Metadata:
       m_Items:
-      - rid: 6003001852026945538
-  - m_Id: 69819459653633
-    m_Key: A1-Q1-Default
-    m_Metadata:
-      m_Items:
-      - rid: 6003001852026945539
-  - m_Id: 69819459653634
+      - rid: 6003001869845921792
+  - m_Id: 301191956746240
     m_Key: C1-Q1-Default
     m_Metadata:
       m_Items:
-      - rid: 6003001852026945540
-  - m_Id: 69819459653635
+      - rid: 6003001869845921793
+  - m_Id: 301191956746241
     m_Key: C2-Q1-Default
     m_Metadata:
       m_Items:
-      - rid: 6003001852026945541
-  - m_Id: 69819459653636
+      - rid: 6003001869845921794
+  - m_Id: 301191956746242
     m_Key: C3-Q1-Default
     m_Metadata:
       m_Items:
-      - rid: 6003001852026945542
-  - m_Id: 69819459653637
+      - rid: 6003001869845921795
+  - m_Id: 301191956746243
     m_Key: C4-Q1-Default
     m_Metadata:
       m_Items:
-      - rid: 6003001852026945543
-  - m_Id: 246779917848576
-    m_Key: L1-Q1-Default-WinningChoice
+      - rid: 6003001869845921796
+  - m_Id: 305176700735488
+    m_Key: L1-Q1-Default-WiningChoice
     m_Metadata:
       m_Items:
-      - rid: 6003001866304880642
-  - m_Id: 247204964421632
+      - rid: 6003001870082637826
+  - m_Id: 305286209818624
     m_Key: L1-Q1-Default-LosingChoice
     m_Metadata:
       m_Items:
-      - rid: 6003001866304880643
+      - rid: 6003001870082637827
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -67,35 +62,31 @@ MonoBehaviour:
         asm: Unity.Localization}
       data:
         m_CustomEpoch: 1660812035866
-    - rid: 6003001852026945538
+    - rid: 6003001869845921792
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D
-    - rid: 6003001852026945539
+    - rid: 6003001869845921793
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: LosingChoice
+    - rid: 6003001869845921794
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: LosingChoice
+    - rid: 6003001869845921795
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: LosingChoice
+    - rid: 6003001869845921796
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: LosingChoice
+    - rid: 6003001870082637826
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D
-    - rid: 6003001852026945540
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: LosingChoice
-    - rid: 6003001852026945541
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: WinningChoice
-    - rid: 6003001852026945542
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: LosingChoice
-    - rid: 6003001852026945543
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: LosingChoice
-    - rid: 6003001866304880642
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 6003001866304880643
+    - rid: 6003001870082637827
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D

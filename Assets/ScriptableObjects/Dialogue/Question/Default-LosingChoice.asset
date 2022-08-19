@@ -24,8 +24,9 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
-  _dialogueType: 0
-  _endOfDialogueEvent: {fileID: 0}
+  _dialogueType: 2
+  _endOfDialogueEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991,
+    type: 2}
   references:
     version: 2
     RefIds: []

@@ -159,8 +159,7 @@ public class DialogueManager : MonoBehaviour
 
 	private void DialogueEndedAndCloseDialogueUI()
 	{
-		//raise the special event for end of dialogue if any 
-		_currentDialogue.FinishDialogue();
+		
 
 		//raise end dialogue event 
 		if (_endDialogueWithTypeEvent != null)
@@ -171,5 +170,8 @@ public class DialogueManager : MonoBehaviour
 
 		if (_gameState.CurrentGameState == GameState.Gameplay)
 			_inputReader.EnableGameplayInput();
+
+		//raise the special event for end of dialogue if any 
+		_currentDialogue.FinishDialogue();
 	}
 }

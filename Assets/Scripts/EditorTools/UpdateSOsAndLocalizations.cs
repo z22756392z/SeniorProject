@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System;
+using UnityEngine.Localization.Metadata;
 #if UNITY_EDITOR
 using UnityEditor;
 using Mono.Data.Sqlite;
@@ -128,8 +129,10 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "customize", out int customize)) continue;
 
                         name = title + " " + id.ToString();
-
-                        UpdateAcupuncturePointSO(name, title, content, disease, offset_x, offset_y, rel_position, customize, IsChinese);
+                        if(IsChinese)
+                            UpdateAcupuncturePointSO(AcupuncturePointChineseTable,name, title, content, disease, offset_x, offset_y, rel_position, customize);
+                        else 
+                            UpdateAcupuncturePointSO(AcupuncturePointEnglishTable,name, title, content, disease, offset_x, offset_y, rel_position, customize);
                     }
 
                 }
@@ -168,33 +171,18 @@ public class UpdateSOsAndLocalizations
                         //TODO: base on database set dialogue , line, choice and so on...
                         int lineIndex = 0, choiceIndex = 0;
                         questionIndex++;
-
-                        name = "Q" + questionIndex + "-" + "Default";
                         lineIndex++;
                         choiceIndex++;
+
+                        name = "Q" + questionIndex + "-" + "Default";
+                        
                         string Lkey = "L" + lineIndex + "-" + name;
                         string Ckey = "C" + choiceIndex + "-" + name;
                         
-
-
-                        if (IsChinese)
-                        {
-                            UpdateStringTableEntry(QuestionPointChineseTable, Lkey, question);
-                            UpdateStringTableEntry(QuestionPointChineseTable, "A1-"+ name, ANS);
-                            UpdateStringTableEntry(QuestionPointChineseTable, "C1-" + name, A);
-                            UpdateStringTableEntry(QuestionPointChineseTable, "C2-" + name, B);
-                            UpdateStringTableEntry(QuestionPointChineseTable, "C3-" + name, C);
-                            UpdateStringTableEntry(QuestionPointChineseTable, "C4-" + name, D);
-                        }
+                        if(IsChinese)
+                            UpdateQuestionLocalization(QuestionPointChineseTable,"D", Lkey, name, question, ANS, A, B, C, D);
                         else
-                        {
-                            UpdateStringTableEntry(QuestionEnglishTable, Lkey, question);
-                            UpdateStringTableEntry(QuestionEnglishTable, "A1-" + name, ANS);
-                            UpdateStringTableEntry(QuestionEnglishTable, "C1-" + name, A);
-                            UpdateStringTableEntry(QuestionEnglishTable, "C2-" + name, B);
-                            UpdateStringTableEntry(QuestionEnglishTable, "C3-" + name, C);
-                            UpdateStringTableEntry(QuestionEnglishTable, "C4-" + name, D);
-                        }
+                            UpdateQuestionLocalization(QuestionEnglishTable, "D", Lkey, name, question, ANS, A, B, C, D);
                     }
 
                 }
@@ -218,30 +206,24 @@ public class UpdateSOsAndLocalizations
         return true;
     }
 
-    private static void UpdateAcupuncturePointSO(string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position,float customize, bool IsChinese)
+    private static void UpdateAcupuncturePointSO(StringTable stringTable, string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position, float customize)
     {
         string titleKeyID = name + "_title";
         string descritpionKeyID = name + "_description";
-        if(IsChinese)
-        {
-            UpdateStringTableEntry(AcupuncturePointChineseTable, titleKeyID, title);
-            UpdateStringTableEntry(AcupuncturePointChineseTable, descritpionKeyID, content);
-        }
-        else
-        {
-            UpdateStringTableEntry(AcupuncturePointEnglishTable, titleKeyID, title);
-            UpdateStringTableEntry(AcupuncturePointEnglishTable, descritpionKeyID, content);
-        }
+
+        UpdateStringTableEntry(stringTable, titleKeyID, title);
+        UpdateStringTableEntry(stringTable, descritpionKeyID, content);
+
 
 
         if (!File.Exists(name))
         {
-            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y,rel_position, customize);
+            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize);
             return;
         }
 
         ItemAcupuncturePointSO acupuncturePoint = (ItemAcupuncturePointSO)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Spots/Spot", typeof(ItemAcupuncturePointSO));
-        acupuncturePoint.Setup(titleKeyID, descritpionKeyID,AcupuncturePoint,disease, offset_x, offset_y,rel_position, customize,AcupuncturePointPrefab);
+        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab);
     }
 
     private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, int rel_position, float customize)
@@ -257,6 +239,27 @@ public class UpdateSOsAndLocalizations
         EditorUtility.FocusProjectWindow();
 
         Selection.activeObject = asset;
+    }
+
+    private static void UpdateQuestionLocalization(StringTable stringTable, string actor, string Lkey, string name, string question, string ANS, string A, string B, string C, string D)
+    {
+        UpdateStringTableEntryANDComment(stringTable, Lkey, question, actor);
+        UpdateStringTableEntryANDComment(stringTable, "C1-" + name, A, IsANS(ANS, "1"));
+        UpdateStringTableEntryANDComment(stringTable, "C2-" + name, B, IsANS(ANS, "2"));
+        UpdateStringTableEntryANDComment(stringTable, "C3-" + name, C, IsANS(ANS, "3"));
+        UpdateStringTableEntryANDComment(stringTable, "C4-" + name, D, IsANS(ANS, "4"));
+    }
+
+    private static string IsANS(string ans,string opt)
+    {
+        return ans == opt ? "WinningChoice" : "LosingChoice";
+    }
+
+    public static void UpdateStringTableEntryANDComment(StringTable StringTable, string KeyID, string entryValue,string commentValue)
+    {
+        StringTableEntry TitleEntry = StringTable.GetEntry(KeyID);
+        UpdateLocalizeEntry(StringTable, TitleEntry, KeyID, entryValue);
+        UpdateEntryComment(StringTable,KeyID ,commentValue);
     }
 
     public static void UpdateStringTableEntry(StringTable StringTable,string KeyID, string value)
@@ -277,6 +280,23 @@ public class UpdateSOsAndLocalizations
             //update entry
             Entry.Value = value;
         }
+    }
+
+    public static void UpdateEntryComment(StringTable stringTable,string KeyID ,string actor)
+    {
+        Comment comment = stringTable.SharedData.GetEntry(KeyID).Metadata.GetMetadata<Comment>();
+        if (comment == null) 
+        {
+            Comment newComment = new Comment();
+            newComment.CommentText = actor;
+            stringTable.SharedData.GetEntry(KeyID).Metadata.AddMetadata(newComment);
+        }
+
+        else
+        {
+            comment.CommentText = actor;
+        }
+            
     }
 
     private static ItemTypeSO GetType(string name)
