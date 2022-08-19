@@ -5,6 +5,7 @@ public class UIMenuManager : MonoBehaviour
 {
 	[SerializeField] private UIPopup _popupPanel = default;
 	[SerializeField] private UISettingsController _settingsPanel = default;
+	[SerializeField] private UIAboutPanel _aboutPanel = default;
 	[SerializeField] private UIMainMenu _mainMenuPanel = default;
 
 	[SerializeField] private SaveSystem _saveSystem = default;
@@ -27,6 +28,7 @@ public class UIMenuManager : MonoBehaviour
 		_saveSystem.LoadSaveDataFromDisk();
 		_mainMenuPanel.StartButtonAction += _startGameEvent.RaiseEvent;
 		_mainMenuPanel.SettingsButtonAction += OpenSettingsScreen;
+		_mainMenuPanel.AboutButtonAction += OpenAboutScreen;
 		_mainMenuPanel.ExitButtonAction += ShowExitConfirmationPopup;
 	}
 
@@ -40,6 +42,19 @@ public class UIMenuManager : MonoBehaviour
 	{
 		_settingsPanel.Closed -= CloseSettingsScreen;
 		_settingsPanel.gameObject.SetActive(false);
+	}
+
+	public void OpenAboutScreen()
+    {
+		_aboutPanel.gameObject.SetActive(true);
+
+		_aboutPanel.OnCloseAbout += CloseAboutScreen;
+	}
+
+	public void CloseAboutScreen()
+	{
+		_aboutPanel.OnCloseAbout -= CloseAboutScreen;
+		_aboutPanel.gameObject.SetActive(false);
 	}
 
 	public void ShowExitConfirmationPopup()

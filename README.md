@@ -92,3 +92,5 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 * modify
   * Question DataBase Ans fixed
   * finish Questions
+* add
+  * about ui panel

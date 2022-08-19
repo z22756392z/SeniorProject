@@ -1601,6 +1601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actorsList:
   - {fileID: 11400000, guid: 48b6506f315cf084aa078bc310b2d61b, type: 2}
+  - {fileID: 11400000, guid: 2e642299ec48bd94c9962c6e16f459e6, type: 2}
   _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
   _gameState: {fileID: 11400000, guid: ee38f1a3ad67a3a438b6011e93b9fa8f, type: 2}
   _startDialogue: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4, type: 2}
@@ -3843,7 +3844,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _lastLocationTeleportedTo
       value: 
-      objectReference: {fileID: 11400000, guid: d4226932dcd84f94a8fd1e982f32c4ad,
+      objectReference: {fileID: 11400000, guid: 49e4407f50e8730408df86d83e3ce972,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce2c2e1c87e44d8459d84303c9a515d4, type: 3}

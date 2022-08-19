@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class UIMainMenu : MonoBehaviour
 {
-	[SerializeField] private Button _startButton = default;
-
 	public UnityAction StartButtonAction;
 	public UnityAction SettingsButtonAction;
+	public UnityAction AboutButtonAction;
 	public UnityAction ExitButtonAction;
 
 	public void StartButton()
@@ -18,6 +16,11 @@ public class UIMainMenu : MonoBehaviour
 	public void SettingsButton()
 	{
 		SettingsButtonAction.Invoke();
+	}
+
+	public void AboutButton()
+    {
+		AboutButtonAction.Invoke();
 	}
 
 	public void ExitButton()

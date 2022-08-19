@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7352895125452604876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7352895125452604866}
+  - component: {fileID: 7352895125452604865}
+  m_Layer: 0
+  m_Name: QusetionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7352895125452604866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352895125452604876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 360.32538, y: 235.32498, z: 1.4777279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7352895125452604865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352895125452604876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe28c59f6584990449a4d6e429221ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questionsGroup:
+    sequenceMode: 1
+    questions:
+    - {fileID: 11400000, guid: b0cba63ccd809c04a8c09a8535a3cb77, type: 2}
+    - {fileID: 11400000, guid: 37fbdd0b478b8b246afcf657d7a80878, type: 2}
+    - {fileID: 11400000, guid: 3b1fc0068ea9ac54383bcd81b9b4fd31, type: 2}
+    - {fileID: 11400000, guid: 6c54361f87c5eeb429fe1deb3b2884d7, type: 2}
+    - {fileID: 11400000, guid: 65815a282cefa1c47bdb1f8187af19fc, type: 2}
+    - {fileID: 11400000, guid: fe87153270dc323459d8c3988d646392, type: 2}
+    - {fileID: 11400000, guid: 67cb178a8b3f37d4da3789408a17a494, type: 2}
+    - {fileID: 11400000, guid: bed40232b46992341ad43e897385e7ba, type: 2}
+    - {fileID: 11400000, guid: 8221299e695d8f54ca3c2fcabb793fce, type: 2}
+    - {fileID: 11400000, guid: 6f23eb77c717f384e8e2163ee4345525, type: 2}
+  _winDialogue: {fileID: 11400000, guid: 39ffedee9cefad34cb101ab36f6413ce, type: 2}
+  _loseDialogue: {fileID: 11400000, guid: b081b6b479dadb847aa6f35c565f2a0e, type: 2}
+  _startDialogueEvent: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4,
+    type: 2}
+  _buttonText: {fileID: 0}
+  _winDialogueEvent: {fileID: 11400000, guid: 81e75c1e072f9774aa007090c260df10, type: 2}
+  _loseDialogueEvent: {fileID: 11400000, guid: f247b0e59f8401443a54e776e22c3dbd, type: 2}
+  _endDialogueEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337, type: 2}
+  _endOfANSEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991, type: 2}
