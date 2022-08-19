@@ -149,7 +149,7 @@ public class UpdateSOsAndLocalizations
         {
             connection.Open();
 
-            int id = 0; string name;
+            int questionIndex = 0; string name;
             using (command = connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM " + TableName;
@@ -164,25 +164,36 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "C", out string C)) continue;
                         if (!Read(reader, "D", out string D)) continue;
                         if (!Read(reader, "ANS", out string ANS)) continue;
-                        name = "Q" + id.ToString();
-                        id++;
+
+                        //TODO: base on database set dialogue , line, choice and so on...
+                        int lineIndex = 0, choiceIndex = 0;
+                        questionIndex++;
+
+                        name = "Q" + questionIndex + "-" + "Default";
+                        lineIndex++;
+                        choiceIndex++;
+                        string Lkey = "L" + lineIndex + "-" + name;
+                        string Ckey = "C" + choiceIndex + "-" + name;
+                        
+
+
                         if (IsChinese)
                         {
-                            UpdateStringTableEntry(QuestionPointChineseTable, name, question);
-                            UpdateStringTableEntry(QuestionPointChineseTable, name + "_ANS", ANS);
-                            UpdateStringTableEntry(QuestionPointChineseTable, name + "_OptA", A);
-                            UpdateStringTableEntry(QuestionPointChineseTable, name + "_OptB", B);
-                            UpdateStringTableEntry(QuestionPointChineseTable, name + "_OptC", C);
-                            UpdateStringTableEntry(QuestionPointChineseTable, name + "_OptD", D);
+                            UpdateStringTableEntry(QuestionPointChineseTable, Lkey, question);
+                            UpdateStringTableEntry(QuestionPointChineseTable, "A1-"+ name, ANS);
+                            UpdateStringTableEntry(QuestionPointChineseTable, "C1-" + name, A);
+                            UpdateStringTableEntry(QuestionPointChineseTable, "C2-" + name, B);
+                            UpdateStringTableEntry(QuestionPointChineseTable, "C3-" + name, C);
+                            UpdateStringTableEntry(QuestionPointChineseTable, "C4-" + name, D);
                         }
                         else
                         {
-                            UpdateStringTableEntry(QuestionEnglishTable,name,question);
-                            UpdateStringTableEntry(QuestionEnglishTable, name + "_ANS", ANS);
-                            UpdateStringTableEntry(QuestionEnglishTable, name + "_OptA", A);
-                            UpdateStringTableEntry(QuestionEnglishTable, name + "_OptB", B);
-                            UpdateStringTableEntry(QuestionEnglishTable, name + "_OptC", C);
-                            UpdateStringTableEntry(QuestionEnglishTable, name + "_OptD", D);
+                            UpdateStringTableEntry(QuestionEnglishTable, Lkey, question);
+                            UpdateStringTableEntry(QuestionEnglishTable, "A1-" + name, ANS);
+                            UpdateStringTableEntry(QuestionEnglishTable, "C1-" + name, A);
+                            UpdateStringTableEntry(QuestionEnglishTable, "C2-" + name, B);
+                            UpdateStringTableEntry(QuestionEnglishTable, "C3-" + name, C);
+                            UpdateStringTableEntry(QuestionEnglishTable, "C4-" + name, D);
                         }
                     }
 
@@ -191,7 +202,7 @@ public class UpdateSOsAndLocalizations
             }
             connection.Close();
         }
-        Debug.Log("Acupunture Point SOs Update completed");
+        Debug.Log("Question Update completed");
     }
 
     private static bool Read<T>(IDataReader reader,string id,out T value)

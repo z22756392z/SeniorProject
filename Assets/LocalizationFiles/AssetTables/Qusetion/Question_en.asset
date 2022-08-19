@@ -17,7 +17,31 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ae31f74cbc2a48f4297c9458cfb40582, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 69819459653632
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69819459653633
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69819459653634
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69819459653635
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69819459653636
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69819459653637
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

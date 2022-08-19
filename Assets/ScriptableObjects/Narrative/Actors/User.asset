@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb4b995f77c201043bd1b2b554bf7e7d, type: 3}
-  m_Name: Default
+  m_Name: User
   m_EditorClassIdentifier: 
-  _actorId: 0
+  _actorId: 1
   _actorName:
     m_TableReference:
       m_TableCollectionName: GUID:5e0010d3744b628448544c025869eac8
     m_TableEntryReference:
-      m_KeyId: 36173205504
+      m_KeyId: 609361962946560
       m_Key: 
     m_FallbackState: 0
-    m_WaitForCompletion: 1
+    m_WaitForCompletion: 0
     m_LocalVariables: []
   references:
     version: 2

@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 		_inputReader.AdvanceDialogueEvent += OnAdvance;
 		_currentDialogue = dialogueDataSO;
 
-		if (_currentDialogue.Lines != null)
+		if (_currentDialogue.Lines != null && _currentDialogue.Lines.Count != 0)
 		{
 			ActorSO currentActor = _actorsList.Find(o => o.ActorId == _currentDialogue.Lines[_counterDialogue].Actor); // we don't add a controle, because we need a null reference exeption if the actor is not in the list
 			DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);

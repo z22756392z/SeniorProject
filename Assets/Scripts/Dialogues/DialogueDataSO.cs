@@ -73,7 +73,7 @@ public class DialogueDataSO : ScriptableObject
 		do
 		{
 			dialogueIndex++;
-			_dialogueLine = new Line("D" + dialogueIndex + "-" + dialogueName);
+			_dialogueLine = new Line("Q" + dialogueIndex + "-" + dialogueName);
 			if (_dialogueLine.TextList != null)
 				_lines.Add(_dialogueLine);
 
@@ -149,7 +149,7 @@ public class Line
 #if UNITY_EDITOR
 	public Line(string _name)
 	{
-		StringTableCollection collection = LocalizationEditorSettings.GetStringTableCollection("Questline Dialogue");
+		StringTableCollection collection = LocalizationEditorSettings.GetStringTableCollection("Question");
 		_textList = null;
 		if (collection != null)
 		{
@@ -164,7 +164,7 @@ public class Line
 				{
 
 					SetActor(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
-					_dialogueLine = new LocalizedString() { TableReference = "Questline Dialogue", TableEntryReference = key };
+					_dialogueLine = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
 					if (_textList == null)
 						_textList = new List<LocalizedString>();
 					_textList.Add(_dialogueLine);
@@ -185,7 +185,7 @@ public class Line
 
 				if (collection.SharedData.Contains(key))
 				{
-					LocalizedString _choiceLine = new LocalizedString() { TableReference = "Questline Dialogue", TableEntryReference = key };
+					LocalizedString _choiceLine = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
 					choice = new Choice(_choiceLine);
 					choice.SetChoiceAction(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
 

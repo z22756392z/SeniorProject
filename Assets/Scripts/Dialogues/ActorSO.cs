@@ -3,7 +3,8 @@ using UnityEngine.Localization;
 
 public enum ActorID
 {
-	Df//default ?? currently don't know
+	D,//default ?? currently don't know
+	U,//User ?? same currently don't know user name
 }
 
 /// <summary>

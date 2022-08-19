@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: Default
     m_Metadata:
       m_Items: []
+  - m_Id: 609361962946560
+    m_Key: User
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

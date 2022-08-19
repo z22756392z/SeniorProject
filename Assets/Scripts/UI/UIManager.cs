@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 
 public class UIManager : MonoBehaviour
 {
 	[Header("Scene UI")]
 	[SerializeField] private MenuSelectionHandler _selectionHandler = default;
 	[SerializeField] private UIPopup _popupPanel = default;
+	[SerializeField] private UIDialogueManager _dialogueController = default;
 	//[SerializeField] private UIInventory _inventoryPanel = default;
 	[SerializeField] private UIInteraction _interactionPanel = default;
 	[SerializeField] private GameObject _switchTabDisplay = default;
@@ -17,12 +19,14 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameStateSO _gameStateManager = default;
 	[SerializeField] private MenuSO _mainMenu = default;
 	[SerializeField] private InputReader _inputReader = default;
+	[SerializeField] private ActorSO _mainProtagonist = default;
 
 	[Header("Listening on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default;
 
-	//[Header("Inventory Events")]
-	//[SerializeField] private VoidEventChannelSO _openInventoryScreenForCookingEvent = default;
+	[Header("Dialogue Events")]
+	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
+	[SerializeField] private IntEventChannelSO _closeUIDialogueEvent = default;
 
 	[Header("Interaction Events")]
 	[SerializeField] private InteractionUIEventChannelSO _setInteractionEvent = default;
@@ -37,7 +41,8 @@ public class UIManager : MonoBehaviour
 	{
 		_onSceneReady.OnEventRaised += ResetUI;
 		_inputReader.MenuPauseEvent += OpenUIPause; // subscription to open Pause UI event happens in OnEnabled, but the close Event is only subscribed to when the popup is open
-		//_openInventoryScreenForCookingEvent.OnEventRaised += SetInventoryScreenForCooking;
+		_openUIDialogueEvent.OnEventRaised += OpenUIDialogue;
+		_closeUIDialogueEvent.OnEventRaised += CloseUIDialogue;
 		_setInteractionEvent.OnEventRaised += SetInteractionPanel;
 		//_inputReader.OpenInventoryEvent += SetInventoryScreen;
 		//_inventoryPanel.Closed += CloseInventoryScreen;
@@ -57,6 +62,7 @@ public class UIManager : MonoBehaviour
 
 	void ResetUI()
 	{
+		_dialogueController.gameObject.SetActive(false);
 		//_inventoryPanel.gameObject.SetActive(false);
 		_pauseScreen.gameObject.SetActive(false);
 		_botScreen.gameObject.SetActive(false);
@@ -65,6 +71,21 @@ public class UIManager : MonoBehaviour
 		//_switchTabDisplay.SetActive(false);
 
 		Time.timeScale = 1;
+	}
+
+	void OpenUIDialogue(LocalizedString dialogueLine, ActorSO actor)
+	{
+		bool isProtagonistTalking = (actor == _mainProtagonist);
+		_dialogueController.SetDialogue(dialogueLine, actor, isProtagonistTalking);
+		_interactionPanel?.gameObject.SetActive(false);
+		_dialogueController.gameObject.SetActive(true);
+	}
+
+	void CloseUIDialogue(int dialogueType)
+	{
+		_selectionHandler.Unselect();
+		_dialogueController.gameObject.SetActive(false);
+		_onInteractionEndedEvent.RaiseEvent();
 	}
 
 	void OpenUIPause()

@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: Default
     m_Metadata:
       m_Items: []
+  - m_Id: 609361962946560
+    m_Localized: User
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
