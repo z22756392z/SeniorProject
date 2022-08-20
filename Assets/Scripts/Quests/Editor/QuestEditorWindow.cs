@@ -23,7 +23,7 @@ public class QuestEditorWindow : EditorWindow
 	private int _idStepSelected = default;
 
 	//Note: Hidden from the tools because it's not fully functional at the moment
-	[MenuItem("ChopChop/Quest Editor")]
+	[MenuItem("SeniorProject/Quest Editor")]
 	public static void ShowWindow()
 	{
 		QuestEditorWindow wnd = GetWindow<QuestEditorWindow>();
