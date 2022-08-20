@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "QuestionManager", menuName = "Quests/QuestManager")]
+[CreateAssetMenu(fileName = "QuestionManager", menuName = "Question/QuestionManager")]
 public class QuestionManagerSO : ScriptableObject
 {
     [SerializeField] private QuestionsGroup[] _questionGroups;
