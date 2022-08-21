@@ -2513,7 +2513,7 @@ MonoBehaviour:
   _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
   _gameState: {fileID: 11400000, guid: ee38f1a3ad67a3a438b6011e93b9fa8f, type: 2}
   _playCutsceneEvent: {fileID: 11400000, guid: 2eb7b20cad86cde46a95c9d357b9c20e, type: 2}
-  _playDialogueEvent: {fileID: 11400000, guid: 03e455d9503bb0443a612455126039d7, type: 2}
+  _playDialogueEvent: {fileID: 11400000, guid: 45210d0d2ee580c4dbd2ed46f3eb06db, type: 2}
   _pauseTimelineEvent: {fileID: 11400000, guid: d6f474a18d9aa0d46a0474b201c77079,
     type: 2}
   _onLineEndedEvent: {fileID: 11400000, guid: a35e51b1442bc7b44a54c2c0eb36f0e2, type: 2}

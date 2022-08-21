@@ -68,7 +68,7 @@ MonoBehaviour:
         m_LocalVariables: []
       _nextDialogue: {fileID: 0}
       _actionType: 3
-  _dialogueType: 0
+  _dialogueType: 3
   _endOfDialogueEvent: {fileID: 0}
   references:
     version: 2
