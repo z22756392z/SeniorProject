@@ -147,6 +147,10 @@ MonoBehaviour:
     m_Key: AboutProject
     m_Metadata:
       m_Items: []
+  - m_Id: 29998700366876672
+    m_Key: OnHoverStart
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
