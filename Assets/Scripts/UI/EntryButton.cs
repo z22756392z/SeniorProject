@@ -7,15 +7,22 @@ public class EntryButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public LocalizeStringEvent _stringEvent = default;
     public TextMeshProUGUI _text = default;
-    
+
+    private float fontSize;
+
+    private void Awake()
+    {
+        fontSize = _text.fontSize;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        _text.fontSize = 70;
+        _text.fontSize = fontSize - 20;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _text.fontSize = 90;
+        _text.fontSize = fontSize;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

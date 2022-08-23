@@ -57,6 +57,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Location/Exercise/Exercise.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9fcee4348f7d0824385561080b33470b
+    m_Address: Assets/Scenes/Location/Town/Town.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:
