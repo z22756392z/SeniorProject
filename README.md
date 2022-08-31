@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -140,3 +140,10 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 
 * modify
   * MainMenu -- tweaking
+
+> 8/31
+
+* add
+  * Stage1 -- Setup
+  * tilemap package
+  * CameraManager
