@@ -239,6 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentDisplayObject: {fileID: 1659261732}
   input: {fileID: 2109669704}
+  messages_font_asset: {fileID: 11400000, guid: cab398663d2b224419a008e77b5f0f8f,
+    type: 2}
   userBubble: {fileID: 1372271997962941977, guid: 90acf04f8ae6d3f4db36d4c4c25dcf82,
     type: 3}
   botBubble: {fileID: 5859546451615242341, guid: c156518159d7ef9459af53ec32d514d9,
@@ -669,6 +671,11 @@ PrefabInstance:
     - target: {fileID: 4790034819858822634, guid: 9ae1830a1b690fc4ba92e801638f429f,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790034819858822634, guid: 9ae1830a1b690fc4ba92e801638f429f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4790034820447327056, guid: 9ae1830a1b690fc4ba92e801638f429f,

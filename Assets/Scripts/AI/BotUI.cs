@@ -8,12 +8,14 @@ using UnityEngine.UI;
 /// This class contains the gameobjects and methods for interacting
 /// with the UI.
 /// </summary>
-public class BotUI : MonoBehaviour {
-    public GameObject   contentDisplayObject;       // Text gameobject where all the conversation is shown
-    public TMP_InputField   input;                      // InputField gameobject wher user types their message
+public class BotUI : MonoBehaviour
+{
+    public GameObject contentDisplayObject;       // Text gameobject where all the conversation is shown
+    public TMP_InputField input;                      // InputField gameobject wher user types their message
+    public TMP_FontAsset messages_font_asset;                      // InputField gameobject wher user types their message
 
-    public GameObject   userBubble;                 // reference to user chat bubble prefab
-    public GameObject   botBubble;                  // reference to bot chat bubble prefab
+    public GameObject userBubble;                 // reference to user chat bubble prefab
+    public GameObject botBubble;                  // reference to bot chat bubble prefab
 
     private const int messagePadding = 15;          // space between chat bubbles 
     private int allMessagesHeight = messagePadding;     // int to keep track of where next message should be rendered
@@ -33,20 +35,22 @@ public class BotUI : MonoBehaviour {
         input.onSubmit.AddListener(networkManager.SendNetMessage);
     }
 
-    public void UpdateDisplay (string sender, string message, string messageType) {
+    public void UpdateDisplay(string sender, string message, string messageType)
+    {
         // Create chat bubble and add components
         GameObject chatBubbleChild = CreateChatBubble(sender);
 
         StartCoroutine(AddChatComponentAfterDelay(sender, chatBubbleChild, message, messageType));
     }
 
-    private IEnumerator AddChatComponentAfterDelay (string sender, GameObject chatBubbleChild, string message, string messageType) {
+    private IEnumerator AddChatComponentAfterDelay(string sender, GameObject chatBubbleChild, string message, string messageType)
+    {
 
         // Set chat bubble position
         StartCoroutine(SetChatBubblePosition(chatBubbleChild.transform.parent.GetComponent<RectTransform>(), sender));
 
         yield return new WaitForSeconds(2f);
-        
+
         // Show component after a short animation
         AddChatComponent(chatBubbleChild, message, messageType);
 
@@ -60,15 +64,19 @@ public class BotUI : MonoBehaviour {
     /// </summary>
     /// <param name="chatBubblePos">RectTransform of chat bubble</param>
     /// <param name="sender">Sender who sent the message</param>
-    private IEnumerator SetChatBubblePosition (RectTransform chatBubblePos, string sender) {
+    private IEnumerator SetChatBubblePosition(RectTransform chatBubblePos, string sender)
+    {
         // Wait for end of frame before calculating UI transform
         yield return new WaitForEndOfFrame();
 
         // get horizontal position based on sender
         int horizontalPos = 0;
-        if (sender == "Doku") {
+        if (sender == "Doku")
+        {
             horizontalPos = -20;
-        } else if (sender == "Bot") {
+        }
+        else if (sender == "Bot")
+        {
             horizontalPos = 20;
         }
 
@@ -76,7 +84,8 @@ public class BotUI : MonoBehaviour {
         allMessagesHeight += 45 + (int)chatBubblePos.sizeDelta.y;
         chatBubblePos.anchoredPosition3D = new Vector3(horizontalPos, -allMessagesHeight, 0);
 
-        if (allMessagesHeight > 340) {
+        if (allMessagesHeight > 340)
+        {
             // update contentDisplayObject hieght
             RectTransform contentRect = contentDisplayObject.GetComponent<RectTransform>();
             contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, allMessagesHeight + messagePadding);
@@ -87,16 +96,21 @@ public class BotUI : MonoBehaviour {
     /// <summary>
     /// Coroutine to update chat bubble positions based on their size.
     /// </summary>
-    public IEnumerator RefreshChatBubblePosition () {
+    public IEnumerator RefreshChatBubblePosition()
+    {
         // Wait for end of frame before calculating UI transform
         yield return new WaitForEndOfFrame();
-        
+
         // refresh position of all gameobjects based on size
         int localAllMessagesHeight = messagePadding;
-        foreach (RectTransform chatBubbleRect in contentDisplayObject.GetComponent<RectTransform>()) {
-            if (chatBubbleRect.sizeDelta.y < 35) {
+        foreach (RectTransform chatBubbleRect in contentDisplayObject.GetComponent<RectTransform>())
+        {
+            if (chatBubbleRect.sizeDelta.y < 35)
+            {
                 localAllMessagesHeight += 35 + messagePadding;
-            } else {
+            }
+            else
+            {
                 localAllMessagesHeight += (int)chatBubbleRect.sizeDelta.y + messagePadding;
             }
             chatBubbleRect.anchoredPosition3D =
@@ -105,7 +119,8 @@ public class BotUI : MonoBehaviour {
 
         // Update global message Height variable
         allMessagesHeight = localAllMessagesHeight;
-        if (allMessagesHeight > 340) {
+        if (allMessagesHeight > 340)
+        {
             // update contentDisplayObject hieght
             RectTransform contentRect = contentDisplayObject.GetComponent<RectTransform>();
             contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, allMessagesHeight + messagePadding);
@@ -118,13 +133,17 @@ public class BotUI : MonoBehaviour {
     /// </summary>
     /// <param name="sender">The sender of message for which bubble is rendered</param>
     /// <returns>Reference to empty gameobject on which message components can be added</returns>
-    private GameObject CreateChatBubble (string sender) {
+    private GameObject CreateChatBubble(string sender)
+    {
         GameObject chat = null;
-        if (sender == "Doku") {
+        if (sender == "Doku")
+        {
             // Create user chat bubble from prefabs and set it's position
             chat = Instantiate(userBubble);
             chat.transform.SetParent(contentDisplayObject.transform, false);
-        } else if (sender == "Bot") {
+        }
+        else if (sender == "Bot")
+        {
             // Create bot chat bubble from prefabs and set it's position
             chat = Instantiate(botBubble);
             chat.transform.SetParent(contentDisplayObject.transform, false);
@@ -137,9 +156,12 @@ public class BotUI : MonoBehaviour {
 
         // Add vertical layout group
         VerticalLayoutGroup verticalLayout = chat.AddComponent<VerticalLayoutGroup>();
-        if (sender == "Doku") {
+        if (sender == "Doku")
+        {
             verticalLayout.padding = new RectOffset(10, 20, 5, 5);
-        } else if (sender == "Bot") {
+        }
+        else if (sender == "Bot")
+        {
             verticalLayout.padding = new RectOffset(20, 10, 5, 5);
         }
         verticalLayout.childAlignment = TextAnchor.MiddleCenter;
@@ -154,12 +176,15 @@ public class BotUI : MonoBehaviour {
     /// <param name="chatBubbleObject">The empty gameobject under chat bubble</param>
     /// <param name="message">message to be shown</param>
     /// <param name="messageType">The type of message (text, image etc)</param>
-    private void AddChatComponent (GameObject chatBubbleObject, string message, string messageType) {
-        switch (messageType) {
+    private void AddChatComponent(GameObject chatBubbleObject, string message, string messageType)
+    {
+        switch (messageType)
+        {
             case "text":
                 // Create and init Text component
+
                 TextMeshProUGUI chatMessage = chatBubbleObject.AddComponent<TextMeshProUGUI>();
-                chatMessage.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as TMP_FontAsset;
+                chatMessage.font = messages_font_asset;
                 chatMessage.autoSizeTextContainer = true;
                 chatMessage.alignment = TextAlignmentOptions.MidlineLeft;
                 chatMessage.text = message;
@@ -180,3 +205,4 @@ public class BotUI : MonoBehaviour {
         }
     }
 }
+

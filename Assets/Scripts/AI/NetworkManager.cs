@@ -36,6 +36,7 @@ public class NetworkManager : MonoBehaviour
         };
 
         string jsonBody = JsonUtility.ToJson(postMessage);
+        Debug.Log(jsonBody);
 
         // Update display
         botUI.UpdateDisplay("Doku", message, "text");
@@ -54,11 +55,13 @@ public class NetworkManager : MonoBehaviour
         RootMessages recieveMessages =
             JsonUtility.FromJson<RootMessages>("{\"messages\":" + response + "}");
 
-        Debug.Log(ConvertJsonStringToSting(response));
+        Debug.Log(response);
+        //Debug.Log(ConvertJsonStringToSting(response));
 
         // show message based on message type on UI
         foreach (RecieveData message in recieveMessages.messages)
         {
+            Debug.Log(message.text);
             FieldInfo[] fields = typeof(RecieveData).GetFields();
             foreach (FieldInfo field in fields)
             {
@@ -107,7 +110,7 @@ public class NetworkManager : MonoBehaviour
         yield return request.SendWebRequest();
 
         // Show response on UI
-        if(request.downloadHandler.text.Length == 0)
+        if (request.downloadHandler.text.Length == 0)
         {
             Debug.LogWarning("There's no response from server. Check if the server is ready!");
             yield break;
