@@ -147,3 +147,7 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
   * Stage1 -- Setup
   * tilemap package
   * CameraManager
+
+> 9/5
+* modify
+  * Stage1 -- tweaking
