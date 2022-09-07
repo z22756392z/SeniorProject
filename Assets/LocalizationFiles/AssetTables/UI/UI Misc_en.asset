@@ -154,6 +154,14 @@ MonoBehaviour:
     m_Localized: < S t a r t >
     m_Metadata:
       m_Items: []
+  - m_Id: 35454009260593152
+    m_Localized: Space to continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35544053128318976
+    m_Localized: Deafult Questions
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

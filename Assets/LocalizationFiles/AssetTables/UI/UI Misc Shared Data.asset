@@ -151,6 +151,14 @@ MonoBehaviour:
     m_Key: OnHoverStart
     m_Metadata:
       m_Items: []
+  - m_Id: 35454009260593152
+    m_Key: SpaceToContinue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35544053128318976
+    m_Key: DefaultQuestion
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

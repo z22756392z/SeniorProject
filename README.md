@@ -161,3 +161,7 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
   * Assets/Art/TeachMode -- TeachMode Scene UI sprite
   * Assets/Animation -- include TeachMode Scene UI animations
   * Chinese_Characters_6151 and new TextMeshPro
+
+> 9/7
+* modify
+  * Exersice Scene -- update
