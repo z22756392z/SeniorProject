@@ -15,17 +15,70 @@ MonoBehaviour:
   _saveSettingsEvent: {fileID: 11400000, guid: 2df7b3b82d859d744aa64a524458172e, type: 2}
   _loadLocation: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd, type: 2}
   _playerInventory: {fileID: 11400000, guid: eb4436e20fe73ab4e9398a03c2540da0, type: 2}
+  _questManagerSO: {fileID: 11400000, guid: dacb138678b7c2344b59c68de5dc18db, type: 2}
   _currentSettings: {fileID: 11400000, guid: 787ba6291ff544346b253b6fc9e83763, type: 2}
   saveFilename: save.senior_project
   backupSaveFilename: save.senior_project.bak
   saveData:
-    _locationId: 
-    _itemStacks: []
+    _locationId: 49e4407f50e8730408df86d83e3ce972
+    _itemStacks:
+    - itemGuid: 76f931d16693d79418cdf79a73501ada
+      amount: 1
+    - itemGuid: 009eb9726a48cc4419744444b0c0379d
+      amount: 1
+    - itemGuid: 662edf47d6d7e0e4d8ed24466e4e53d3
+      amount: 1
+    - itemGuid: 9c4ff2ee76f2b3640a8bc42e5de349d5
+      amount: 1
+    - itemGuid: 865dbc44d3f6f654db869c58c5b1cf4d
+      amount: 1
+    - itemGuid: f17278643e9e6f44ba4eb7d19737b5a5
+      amount: 1
+    - itemGuid: 43c9493eeed6f574dba3c0d11d4c8a4d
+      amount: 1
+    - itemGuid: 022551cd565be32459d77e1b5f6289e2
+      amount: 1
+    - itemGuid: bf1feb927d5d01443b50cd68e0093d85
+      amount: 1
+    - itemGuid: bb34e87b2d1a22b4183897788be92305
+      amount: 1
+    - itemGuid: 3755b7bfd1c4cfe4dac6eea6e4212422
+      amount: 1
+    - itemGuid: 776b39676a225a849a2a174e7ecb5e3f
+      amount: 1
+    - itemGuid: 3c5c7b6279eb04f46abffa5c2fa67d54
+      amount: 1
+    - itemGuid: a548ef31ac69e4a4f9384f9672f68db2
+      amount: 1
+    - itemGuid: 0f1071c3fbd45784a95a8564b9c2857f
+      amount: 1
+    - itemGuid: 2dc4525067da12a439c0d11a76c5fb0b
+      amount: 1
+    - itemGuid: a48cc503d0bc7f64e8f57f224c9cf629
+      amount: 1
+    - itemGuid: cff459160f0ae5347b427e102810fb81
+      amount: 1
+    - itemGuid: 71b793343dd34f44798428e1c259cfe7
+      amount: 1
+    - itemGuid: 1d0eca8ed02edc646802435ee98ca862
+      amount: 1
+    - itemGuid: 0137fb638f2e3234496235e728f2afdd
+      amount: 1
+    - itemGuid: 8abc9f21e13290e40b830461fa2606a9
+      amount: 1
+    - itemGuid: 24e93949a2e9dd443baabada3895afef
+      amount: 1
+    - itemGuid: 30030a5a0fe6d6d4e89a4eca193b4443
+      amount: 1
+    - itemGuid: c6308fc8a60b3694da9c705c4c2a089a
+      amount: 1
+    - itemGuid: dce5ac2190e9f23469bfc8e2bdf35665
+      amount: 1
     _finishedQuestlineItemsGUIds: []
     _masterVolume: 1
     _musicVolume: 1
     _sfxVolume: 0.9
-    _resolutionsIndex: 0
+    _resolutionsIndex: 9
     _antiAliasingIndex: 0
     _shadowDistance: 0
     _isFullscreen: 0

@@ -9,6 +9,7 @@ public class SaveSystem : ScriptableObject
 	[SerializeField] private VoidEventChannelSO _saveSettingsEvent = default;
 	[SerializeField] private LoadEventChannelSO _loadLocation = default;
 	[SerializeField] private InventorySO _playerInventory = default;
+	[SerializeField] private QuestManagerSO _questManagerSO = default;
 	[SerializeField] private SettingsSO _currentSettings = default;
 
 	public string saveFilename = "save.senior_project";
@@ -67,13 +68,14 @@ public class SaveSystem : ScriptableObject
 	public void SaveDataToDisk()
 	{
 		saveData._itemStacks.Clear();
-		/*foreach (var itemStack in _playerInventory.Items)
+		foreach (var itemStack in _playerInventory.Items)
 		{
 			saveData._itemStacks.Add(new SerializedItemStack(itemStack.Item.Guid, itemStack.Amount));
 		}
+		
 		saveData._finishedQuestlineItemsGUIds.Clear();
 
-		foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
+		/*foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
 		{
 			saveData._finishedQuestlineItemsGUIds.Add(item);
 
