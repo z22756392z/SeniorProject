@@ -596,12 +596,14 @@ PlayableDirector:
   m_GameObject: {fileID: 1207243045}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: ddfae7ce0af2f4744bdf96c48ff0abb5, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 2634897922910440910, guid: b65fdafc376b24c299287b2dd86c0bc2, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &1273589489
@@ -802,6 +804,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CameraSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549844087277712962, guid: df670ac88f9933d4581416777e6f4305,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.14522009
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549844087277712962, guid: df670ac88f9933d4581416777e6f4305,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.11829034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549844088124646130, guid: df670ac88f9933d4581416777e6f4305,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.76161075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549844088124646130, guid: df670ac88f9933d4581416777e6f4305,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.11829035
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df670ac88f9933d4581416777e6f4305, type: 3}

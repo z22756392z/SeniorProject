@@ -290,6 +290,126 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8589006729603710982
+  - m_Id: 7215215352958976
+    m_Key: L2-D1-Teach-Intro
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834498
+  - m_Id: 7215446110982144
+    m_Key: L3-D1-Teach-Intro
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834499
+  - m_Id: 7215523181318144
+    m_Key: L4-D1-Teach-Intro
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834500
+  - m_Id: 7215601832906752
+    m_Key: L1-D1-Teach-End
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834502
+  - m_Id: 7215694246006784
+    m_Key: L2-D1-Teach-End
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834503
+  - m_Id: 7217091452555264
+    m_Key: L1-D1-Teach-Intro
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834505
+  - m_Id: 7233733058318336
+    m_Key: L1-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834519
+  - m_Id: 7233824385093632
+    m_Key: L2-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834518
+  - m_Id: 7233882841108480
+    m_Key: L3-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834517
+  - m_Id: 7233982963339264
+    m_Key: L1-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834516
+  - m_Id: 7234021655793664
+    m_Key: L2-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834515
+  - m_Id: 7234081214910464
+    m_Key: L3-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834514
+  - m_Id: 7336658141138944
+    m_Key: L1-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834513
+  - m_Id: 7499759004110848
+    m_Key: L1-D1-Teach-Holistic
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834512
+  - m_Id: 7500080900165632
+    m_Key: L2-D1-Teach-Holistic
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834511
+  - m_Id: 7500188987379712
+    m_Key: L3-D1-Teach-Holistic
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834510
+  - m_Id: 7620550567874560
+    m_Key: L2-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834524
+  - m_Id: 7620736702697472
+    m_Key: L3-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834523
+  - m_Id: 7620753115009024
+    m_Key: L1-D1-Teach-FaceMesh
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834522
+  - m_Id: 7620850821320704
+    m_Key: L2-D1-Teach-FaceMesh
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834521
+  - m_Id: 7620877899747328
+    m_Key: L3-D1-Teach-FaceMesh
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834520
+  - m_Id: 7628611047084032
+    m_Key: L3-D1-Teach-End
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834531
+  - m_Id: 7628714818359296
+    m_Key: C1-D1-Teach-End
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834530
+  - m_Id: 7628760121036800
+    m_Key: C2-D1-Teach-End
+    m_Metadata:
+      m_Items:
+      - rid: 8589006768585834529
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -519,6 +639,102 @@ MonoBehaviour:
       data:
         m_CommentText: D
     - rid: 8589006729603710982
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834498
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834499
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834500
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834502
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834503
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834505
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834510
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834511
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834512
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834513
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834514
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834515
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834516
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834517
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834518
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834519
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834520
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834521
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834522
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834523
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834524
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 8589006768585834529
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: LosingChoice
+    - rid: 8589006768585834530
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: WinningChoice
+    - rid: 8589006768585834531
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D
