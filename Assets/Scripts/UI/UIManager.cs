@@ -53,6 +53,8 @@ public class UIManager : MonoBehaviour
 	{
 		_onSceneReady.OnEventRaised -= ResetUI;
 		_inputReader.MenuPauseEvent -= OpenUIPause;
+		_openUIDialogueEvent.OnEventRaised -= OpenUIDialogue;
+		_closeUIDialogueEvent.OnEventRaised -= CloseUIDialogue;
 		//_openInventoryScreenForCookingEvent.OnEventRaised -= SetInventoryScreenForCooking;
 		_setInteractionEvent.OnEventRaised -= SetInteractionPanel;
 		//_inputReader.OpenInventoryEvent -= SetInventoryScreen;
@@ -101,7 +103,7 @@ public class UIManager : MonoBehaviour
 		_pauseScreen.gameObject.SetActive(true);
 
 		_inputReader.EnableMenuInput();
-		//_gameStateManager.UpdateGameState(GameState.Pause);
+		_gameStateManager.UpdateGameState(GameState.Pause);
 	}
 
 	void CloseUIPause()

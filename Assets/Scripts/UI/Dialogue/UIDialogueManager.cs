@@ -25,7 +25,7 @@ public class UIDialogueManager : MonoBehaviour
 	}
 
 	public void SetDialogue(LocalizedString dialogueLine, ActorSO actor, bool isMainProtagonist)
-	{
+	{ 
 		_choicesManager.gameObject.SetActive(false);
 		_lineText.StringReference = dialogueLine;
 

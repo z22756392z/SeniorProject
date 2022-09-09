@@ -182,7 +182,8 @@ public class SceneLoader : MonoBehaviour
 
 		_isLoading = false;
 
-		_toggleLoadingScreen.RaiseEvent(false);
+		if(_showLoadingScreen)
+			_toggleLoadingScreen.RaiseEvent(false);
 
 		_fadeRequestChannel.FadeIn(_fadeDuration);
 

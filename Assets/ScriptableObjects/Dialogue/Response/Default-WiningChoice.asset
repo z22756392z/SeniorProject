@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb462aa634fbee640a0f980c72932b1f, type: 3}
   m_Name: Default-WiningChoice
   m_EditorClassIdentifier: 
-  _lines: []
+  _lines:
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: Question
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: L1-D1-Default-WiningChoice
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
   _dialogueType: 2
-  _endOfDialogueEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991,
+  _endOfDialogueEvent: {fileID: 11400000, guid: 495390f40ed94a244a26011abc5a10ac,
     type: 2}
   references:
     version: 2

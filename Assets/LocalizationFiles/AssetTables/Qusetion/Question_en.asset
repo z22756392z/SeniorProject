@@ -19,15 +19,136 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 305176700735488
-    m_Localized: 
+    m_Localized: Correct!
     m_Metadata:
       m_Items: []
   - m_Id: 305286209818624
-    m_Localized: 
+    m_Localized: It is wrong.
     m_Metadata:
       m_Items: []
   - m_Id: 7217091452555264
     m_Localized: click space to start teach mode.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293747834880
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7215215352958976
+    m_Localized: 'Howdy~  Welcome to tutorial!
+
+      I''m your tutor, @#$%^ !'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6868880489664512
+    m_Localized: This is exercise mode. Here you can test your acupuncture proficiency
+      by answering questions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6869284799598592
+    m_Localized: what kind of exercise do you want?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6885605457219584
+    m_Localized: You choose the preset question group.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7215523181318144
+    m_Localized: Here are a few scenarios. Is there anything you want to know?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7215601832906752
+    m_Localized: Thank you for reading this tutorial!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7215694246006784
+    m_Localized: tutorial is over~~
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7215446110982144
+    m_Localized: 'Press B to call out the robot.
+
+      Press C to choose another
+      scene'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233733058318336
+    m_Localized: In the AcupuncturePoint scene, put your hand in front of the screen,
+      and acupuncture points will appear on the hand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233824385093632
+    m_Localized: Click on the acupoint to see the medical knowledge and short stories
+      of the it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233882841108480
+    m_Localized: The introduction is complete. Back to category screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233982963339264
+    m_Localized: Press B to call this scene. In AI scenarios, medical questions can
+      be asked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234021655793664
+    m_Localized: Rasa artificial intelligence will try to help you solve your problems.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234081214910464
+    m_Localized: The introduction is complete. Back to category screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336658141138944
+    m_Localized: In the practice scene, put your hand in front of the screen, and
+      acupuncture points will appear on the hand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7499759004110848
+    m_Localized: In the Holistic scene, standing in front of the screen, the whole
+      body structure will appear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7500080900165632
+    m_Localized: You can try to swing your body, the point above will move with the
+      person.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7500188987379712
+    m_Localized: The introduction is complete. Back to category screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7620753115009024
+    m_Localized: In the FaceMesh scene, when the face is in front of the screen,
+      acupuncture points will appear it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7620550567874560
+    m_Localized: This translation has not been completed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7620736702697472
+    m_Localized: This translation has not been completed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7620850821320704
+    m_Localized: This translation has not been completed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7620877899747328
+    m_Localized: This translation has not been completed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7628611047084032
+    m_Localized: Do you want to start over?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7628714818359296
+    m_Localized: Yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7628760121036800
+    m_Localized: No.
     m_Metadata:
       m_Items: []
   references:

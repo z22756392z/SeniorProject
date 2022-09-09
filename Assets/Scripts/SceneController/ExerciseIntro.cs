@@ -25,7 +25,7 @@ public class ExerciseIntro : MonoBehaviour
 
     IEnumerator PlayIntroDialogue()
     {
-        yield return new WaitForSeconds(0.4f); //waiting time for all scenes to be loaded 
+        yield return new WaitForSeconds(1f); //waiting time for all scenes to be loaded 
         _startDialogueEvent.RaiseEvent(_introDialogue);
         _endDialogueEvent.OnEventRaised += EndDialogue;
     }

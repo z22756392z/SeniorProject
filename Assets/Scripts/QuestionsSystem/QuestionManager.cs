@@ -42,10 +42,10 @@ public class QuestionManager : MonoBehaviour
         if (_currentQusetionCount + 1> _totalQuestionCount)
         {
             _onQuestionFinish.RaiseEvent();
-            _questionsSO.StopQuestion();
             return;
         }
         _currentQusetionCount++;
         _setCurrentQestionCount.RaiseEvent(_currentQusetionCount);
+        _questionsSO.NextQuestion();
     }
 }

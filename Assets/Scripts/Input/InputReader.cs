@@ -245,6 +245,10 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     {
 		_gameInput.Cheats.Enable();
     }
+	public void DisalbeCheatInput()
+    {
+		_gameInput.Cheats.Disable();
+    }
 
 	public void DisableAllInput()
 	{

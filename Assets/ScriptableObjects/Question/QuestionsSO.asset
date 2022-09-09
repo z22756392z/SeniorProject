@@ -31,8 +31,9 @@ MonoBehaviour:
   _loseDialogue: {fileID: 11400000, guid: b081b6b479dadb847aa6f35c565f2a0e, type: 2}
   _startDialogueEvent: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4,
     type: 2}
+  _EndOfChoiceDialogue: {fileID: 11400000, guid: 495390f40ed94a244a26011abc5a10ac,
+    type: 2}
   _questionAnswered: {fileID: 11400000, guid: 1d6050d740e74074bb4069540d3e4a74, type: 2}
+  _questionFinish: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df, type: 2}
   _winDialogueEvent: {fileID: 11400000, guid: 81e75c1e072f9774aa007090c260df10, type: 2}
   _loseDialogueEvent: {fileID: 11400000, guid: f247b0e59f8401443a54e776e22c3dbd, type: 2}
-  _endDialogueEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337, type: 2}
-  _endOfANSEvent: {fileID: 11400000, guid: f30c7ec11763a184fa97b64e99b4d991, type: 2}

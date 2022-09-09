@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -165,3 +165,11 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 > 9/7
 * modify
   * Exersice Scene -- update
+
+> 9/9
+
+* add
+  * Translation
+* modify
+  * tweaking
+  * fix bug

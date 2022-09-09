@@ -2201,6 +2201,8 @@ MonoBehaviour:
     type: 2}
   _openUIDialogueEvent: {fileID: 11400000, guid: 03e455d9503bb0443a612455126039d7,
     type: 2}
+  _closeUIDialogueEvent: {fileID: 11400000, guid: 31a367ca4f470c148961ad1428407f41,
+    type: 2}
   _showChoicesUIEvent: {fileID: 11400000, guid: a00e4f8d80451684f8e7621b962d8e57,
     type: 2}
   _endDialogueWithTypeEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337,

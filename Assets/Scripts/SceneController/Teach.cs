@@ -12,6 +12,8 @@ public class Teach : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _leave = default;
 
     [SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
+    [SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // only used for teach scene
+
     [SerializeField] private IntEventChannelSO _endDialogueEvent = default;
 
     [SerializeField] private DialogueDataSO _introDialogue = default;
@@ -33,6 +35,10 @@ public class Teach : MonoBehaviour
     private void OnDisable()
     {
         _onSceneReady.OnEventRaised -= StartIntro;
+        if(_endDialogueEvent.OnEventRaised != null)
+        {
+            _endDialogueEvent.OnEventRaised -= EndDialogue;
+        }
     }
 
     IEnumerator PlayIntroDialogue()
@@ -81,6 +87,7 @@ public class Teach : MonoBehaviour
     IEnumerator EndTeachMode()
     {
         _leave.RaiseEvent();
+        _closeUIDialogueEvent.RaiseEvent();
         yield return new WaitForSeconds(1f);
         _loadEventChannelSO.RaiseEvent(_menuMenu, false); //load main menu
     }

@@ -11,19 +11,30 @@ public class QuestionsSO : ScriptableObject
 	[SerializeField] private DialogueDataSO _loseDialogue;
 
 	[SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
+	[SerializeField] private VoidEventChannelSO _EndOfChoiceDialogue = default;
+
 	[SerializeField] private VoidEventChannelSO _questionAnswered = default;
+	[SerializeField] private VoidEventChannelSO _questionFinish = default;
 	[Header("Listening to channels")]
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _loseDialogueEvent = default;
-    [SerializeField] private IntEventChannelSO _endDialogueEvent = default;
-	[SerializeField] private VoidEventChannelSO _endOfANSEvent = default;
 
 	private QuestionsGroup _currentQuestionGroup;
     private DialogueDataSO _currentDialogue;
 
 	public int CurrentQusetionGroupCount => _currentQuestionGroup.questions.Length;
 
-	public void SetCurrentQuestoinGroup(int value)
+    public void OnEnable()
+    {
+		_questionFinish.OnEventRaised += Reset;
+    }
+
+	public void OnDisable()
+    {
+		_questionFinish.OnEventRaised -= Reset;
+    }
+
+    public void SetCurrentQuestoinGroup(int value)
     {
 		if(_questionGroups.Length - 1 >= value && value >= 0)
 			_currentQuestionGroup = _questionGroups[value];
@@ -33,22 +44,25 @@ public class QuestionsSO : ScriptableObject
 	{
 		if (_currentDialogue == null) _currentQuestionGroup = _questionGroups[0];
 		_currentDialogue = _currentQuestionGroup.GetQusetion();
+		_winDialogueEvent.OnEventRaised += PlayWinDialogue;
+		_loseDialogueEvent.OnEventRaised += PlayLoseDialogue;
+		
 		StartDialogue();
 	}
 
     void StartDialogue()
     {
         _startDialogueEvent.RaiseEvent(_currentDialogue);
-        _endDialogueEvent.OnEventRaised += EndDialogue;
-        _winDialogueEvent.OnEventRaised += PlayWinDialogue;
-        _loseDialogueEvent.OnEventRaised += PlayLoseDialogue;
     }
 
-	void EndDialogue(int dialogueType)
+	void PlayWinDialogue()
 	{
-		_endDialogueEvent.OnEventRaised -= EndDialogue;
-		_winDialogueEvent.OnEventRaised -= PlayWinDialogue;
-		_loseDialogueEvent.OnEventRaised -= PlayLoseDialogue;
+		if (_winDialogue != null)
+		{
+			_currentDialogue = _winDialogue;
+			StartDialogue();
+			_EndOfChoiceDialogue.OnEventRaised += EndChoiceDialogue;
+		}
 	}
 
 	void PlayLoseDialogue()
@@ -57,35 +71,27 @@ public class QuestionsSO : ScriptableObject
 		{
 			_currentDialogue = _loseDialogue;
 			StartDialogue();
-			_endOfANSEvent.OnEventRaised += NextQuestion;
+			_EndOfChoiceDialogue.OnEventRaised += EndChoiceDialogue;
 		}
-		_questionAnswered.RaiseEvent();
 	}
 
-	void PlayWinDialogue()
+	void EndChoiceDialogue()
 	{
-		
-		if (_winDialogue != null)
-		{
-			_currentDialogue = _winDialogue;
-			StartDialogue();
-			_endOfANSEvent.OnEventRaised += NextQuestion;
-		}
+		_EndOfChoiceDialogue.OnEventRaised -= EndChoiceDialogue;
 		_questionAnswered.RaiseEvent();
 	}
 
-	void NextQuestion()
+	public void NextQuestion()
     {
 		_currentDialogue = _currentQuestionGroup.GetQusetion();
 		StartDialogue();
-		_endOfANSEvent.OnEventRaised -= NextQuestion;
 	}
 
-	public void StopQuestion()
+	void Reset()
     {
-		if(_endOfANSEvent.OnEventRaised != null)
-			_endOfANSEvent.OnEventRaised -= NextQuestion;
-    }
+		_winDialogueEvent.OnEventRaised -= PlayWinDialogue;
+		_loseDialogueEvent.OnEventRaised -= PlayLoseDialogue;
+	}
 }
 
 [Serializable]

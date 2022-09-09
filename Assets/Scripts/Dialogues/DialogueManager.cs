@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
 	[Header("Broadcasting on")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
+	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // only used for teach scene
 	[SerializeField] private DialogueChoicesChannelSO _showChoicesUIEvent = default;
 	[SerializeField] private IntEventChannelSO _endDialogueWithTypeEvent = default;
 	[SerializeField] private VoidEventChannelSO _continueWithStep = default;
@@ -36,11 +37,17 @@ public class DialogueManager : MonoBehaviour
 		_startDialogue.OnEventRaised += DisplayDialogueData;
 	}
 
-	/// <summary>
-	/// Displays DialogueData in the UI, one by one.
-	/// </summary>
-	public void DisplayDialogueData(DialogueDataSO dialogueDataSO)
+    private void OnDisable()
+    {
+		_startDialogue.OnEventRaised -= DisplayDialogueData;
+	}
+
+    /// <summary>
+    /// Displays DialogueData in the UI, one by one.
+    /// </summary>
+    public void DisplayDialogueData(DialogueDataSO dialogueDataSO)
 	{
+		_closeUIDialogueEvent.OnEventRaised += DialogueEndedAndCloseDialogueUI;
 		if (_gameState.CurrentGameState != GameState.Cutscene) // the dialogue state is implied in the cutscene state
 			_gameState.UpdateGameState(GameState.Dialogue);
 
@@ -48,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 		_counterLine = 0;
 		_inputReader.EnableDialogueInput();
 		_inputReader.AdvanceDialogueEvent += OnAdvance;
+		_inputReader.DisalbeCheatInput();
 		_currentDialogue = dialogueDataSO;
 
 		if (_currentDialogue.Lines != null && _currentDialogue.Lines.Count != 0)
@@ -115,7 +123,7 @@ public class DialogueManager : MonoBehaviour
 	private void MakeDialogueChoice(Choice choice)
 	{
 		_makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
-		
+			
 		switch (choice.ActionType)
 		{
 			case ChoiceActionType.ContinueWithStep:
@@ -159,13 +167,14 @@ public class DialogueManager : MonoBehaviour
 
 	private void DialogueEndedAndCloseDialogueUI()
 	{
-		
+		_closeUIDialogueEvent.OnEventRaised -= DialogueEndedAndCloseDialogueUI;
 
 		//raise end dialogue event 
 		if (_endDialogueWithTypeEvent != null)
 			_endDialogueWithTypeEvent.RaiseEvent((int)_currentDialogue.DialogueType);
 
 		_inputReader.AdvanceDialogueEvent -= OnAdvance;
+		_inputReader.EnableCheatInput();
 		_gameState.ResetToPreviousGameState();
 
 		if (_gameState.CurrentGameState == GameState.Gameplay)
