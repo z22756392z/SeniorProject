@@ -73,6 +73,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Menus/ScenesMenu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8f8b82961b2c8804cb6039524b854a27
+    m_Address: Assets/Scenes/Location/HandTracking/Hand Tracking.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

@@ -543,8 +543,9 @@ namespace Mediapipe.Unity
 
         private void Start()
         {
-            _landmarkListAnnotation.Fill(LandmarkCount < 21 ? 21 : LandmarkCount);
-            _connectionListAnnotation.Fill(_connections, _landmarkListAnnotation);
+            _landmarkListAnnotation.Fill(LandmarkCount < 21 ? 21 : LandmarkCount,true);
+            if(_drawConnection)
+                _connectionListAnnotation.Fill(_connections, _landmarkListAnnotation);
         }
 
         public void SetLeftLandmarkColor(Color leftLandmarkColor)
@@ -1066,12 +1067,14 @@ namespace Mediapipe.Unity
 
         public void Fill(int count, bool isSetupItemCore = false)
         {
-            for (int i = 0; i < count; i++)
+            int i = 0;
+            while (children.Count < count)
             {
                 if(isSetupItemCore)
                     children.Add(InstantiateChild(i, false));
                 else
                     children.Add(InstantiateChild(false));
+                i++;
             }
         }
 
@@ -1152,12 +1155,12 @@ namespace Mediapipe.Unity
                 if (i >= children.Count)
                 {
                     // children.Count < argumentList.Count
-                    children.Add(InstantiateChild());
+                    children.Add(InstantiateChild(i, false));
                 }
                 else if (children[i] == null)
                 {
                     // child is not initialized yet
-                    children[i] = InstantiateChild();
+                    children.Add(InstantiateChild(i, false));
                 }
                 action(children[i], argumentList[i]);
             }

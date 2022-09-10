@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
+  _gameStateSO: {fileID: 11400000, guid: ee38f1a3ad67a3a438b6011e93b9fa8f, type: 2}
   _onSceneReady: {fileID: 11400000, guid: bd594da1708c85a4ca5cd7b2257fd1b7, type: 2}

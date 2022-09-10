@@ -103,6 +103,7 @@ public class UIManager : MonoBehaviour
 		_pauseScreen.gameObject.SetActive(true);
 
 		_inputReader.EnableMenuInput();
+		_inputReader.DisalbeCheatInput();
 		_gameStateManager.UpdateGameState(GameState.Pause);
 	}
 
@@ -120,12 +121,12 @@ public class UIManager : MonoBehaviour
 		_pauseScreen.gameObject.SetActive(false);
 
 		_gameStateManager.ResetToPreviousGameState();
-		
-		if (_gameStateManager.CurrentGameState == GameState.Gameplay)
-			{
-				_inputReader.EnableGameplayInput();
-			}
 
+		if (_gameStateManager.CurrentGameState == GameState.Gameplay)
+		{
+			_inputReader.EnableGameplayInput();
+		}
+		_inputReader.EnableCheatInput();
 		_selectionHandler.Unselect();
 	}
 
@@ -247,18 +248,20 @@ public class UIManager : MonoBehaviour
 	void OpenChatBotScreen()
     {
 		_inputReader.MenuCloseEvent += CloseChatBotScreen;
-		_inputReader.CloseChatBotEvent += CloseChatBotScreen;
+		//_inputReader.CloseChatBotEvent += CloseChatBotScreen;
 
 		_botScreen.gameObject.SetActive(true);
+		_inputReader.DisalbeCheatInput();
 		_inputReader.EnableMenuInput();
 	}
 
 	void CloseChatBotScreen()
     {
 		_inputReader.MenuCloseEvent -= CloseChatBotScreen;
-		_inputReader.CloseChatBotEvent -= CloseChatBotScreen;
+		//_inputReader.CloseChatBotEvent -= CloseChatBotScreen;
 
 		_botScreen.gameObject.SetActive(false);
+		_inputReader.EnableCheatInput();
 		_inputReader.EnableGameplayInput();
 	}
 

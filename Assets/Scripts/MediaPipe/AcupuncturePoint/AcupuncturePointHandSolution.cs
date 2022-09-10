@@ -7,11 +7,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using pbc = global::Google.Protobuf.Collections;
 
 namespace Mediapipe.Unity.HandTracking
 {
-    public class HandTrackingSolution : ImageSourceSolution<HandTrackingGraph>
+    public class AcupuncturePointHandSolution : ImageSourceSolution<HandTrackingGraph>
     {
+        [SerializeField] private InventorySO _handAcupunturePointsInventory = default;
         [SerializeField] private DetectionListAnnotationController _palmDetectionsAnnotationController;
         [SerializeField] private NormalizedRectListAnnotationController _handRectsFromPalmDetectionsAnnotationController;
         [SerializeField] private MultiHandLandmarkListAnnotationController _handLandmarksAnnotationController;
@@ -76,18 +78,49 @@ namespace Mediapipe.Unity.HandTracking
 
             if (runningMode == RunningMode.Sync)
             {
-                var _ = graphRunner.TryGetNext(out handLandmarks,out handedness,true);
+                var _ = graphRunner.TryGetNext(out handLandmarks, out handedness,true);
                 //var _ = graphRunner.TryGetNext(out palmDetections, out handRectsFromPalmDetections, out handLandmarks, out handWorldLandmarks, out handRectsFromLandmarks, out handedness, true);
             }
             else if (runningMode == RunningMode.NonBlockingSync)
             {
-                yield return new WaitUntil(() => graphRunner.TryGetNext( out handLandmarks,out handedness,false));
+                yield return new WaitUntil(() => graphRunner.TryGetNext(out handLandmarks, out handedness,false));
                 //yield return new WaitUntil(() => graphRunner.TryGetNext(out palmDetections, out handRectsFromPalmDetections, out handLandmarks, out handWorldLandmarks, out handRectsFromLandmarks, out handedness, false));
+            }
+
+            IList<NormalizedLandmark> _currentHandLandmark1 = handLandmarks?[0]?.Landmark;
+            IList<NormalizedLandmark> _currentHandLandmark2 = null;
+            if (handLandmarks != null && handLandmarks.Count > 1)
+                _currentHandLandmark2 = handLandmarks?[1]?.Landmark;
+            pbc::RepeatedField<NormalizedLandmarkList> _newHandLandarkList = new pbc::RepeatedField<NormalizedLandmarkList>();
+            if (_currentHandLandmark1 != null)
+            {
+                NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
+                foreach (var itemStack in _handAcupunturePointsInventory.Items)
+                {
+                    NormalizedLandmark landmark = new NormalizedLandmark(_currentHandLandmark1[itemStack.Item.LandMark]);
+                    landmark.X += itemStack.Item.Offest.x / 100;
+                    landmark.Y += itemStack.Item.Offest.y / 100;
+                    normalizedLandmarkList.Landmark.Add(landmark);
+                }
+                _newHandLandarkList.Add(normalizedLandmarkList);
+            }
+            
+            if (_currentHandLandmark2 != null)
+            {
+                NormalizedLandmarkList normalizedLandmarkList2 = new NormalizedLandmarkList();
+                foreach (var itemStack in _handAcupunturePointsInventory.Items)
+                {
+                    NormalizedLandmark landmark2 = new NormalizedLandmark(_currentHandLandmark2[itemStack.Item.LandMark]);
+                    landmark2.X += itemStack.Item.Offest.x / 100;
+                    landmark2.Y += itemStack.Item.Offest.y / 100;
+                    normalizedLandmarkList2.Landmark.Add(landmark2);
+                }
+                _newHandLandarkList.Add(normalizedLandmarkList2);
             }
 
             //_palmDetectionsAnnotationController.DrawNow(palmDetections);
             //_handRectsFromPalmDetectionsAnnotationController.DrawNow(handRectsFromPalmDetections);
-            _handLandmarksAnnotationController.DrawNow(handLandmarks, handedness);
+            _handLandmarksAnnotationController.DrawNow(_newHandLandarkList, handedness);
             // TODO: render HandWorldLandmarks annotations
             //_handRectsFromLandmarksAnnotationController.DrawNow(handRectsFromLandmarks);
         }
@@ -118,3 +151,6 @@ namespace Mediapipe.Unity.HandTracking
         }
     }
 }
+
+
+

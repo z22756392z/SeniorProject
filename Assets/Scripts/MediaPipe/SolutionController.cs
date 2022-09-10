@@ -1,36 +1,46 @@
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SolutionController : MonoBehaviour
+namespace Mediapipe.Unity.UI
 {
-    [Header("Listening to")]
-    [SerializeField] private VoidEventChannelSO onSceneReady = default;
-
-    public List<GameObject> elements = default;
-
-    private void Awake()
+    public class SolutionController : MonoBehaviour
     {
-        foreach (var item in elements)
+        [Header("Listening to")]
+        [SerializeField] private VoidEventChannelSO onSceneReady = default;
+        [SerializeField] private InputReader _inputReader;
+        public Solution solution = default;
+
+        private void Awake()
         {
-            item.SetActive(false);
+            solution.gameObject.SetActive(false);
         }
-    }
 
-    private void OnEnable()
-    {
-        onSceneReady.OnEventRaised += _Start;
-    }
-
-    private void OnDisable()
-    {
-        onSceneReady.OnEventRaised -= _Start;
-    }
-
-    private void _Start()
-    {
-        foreach (var item in elements)
+        private void OnEnable()
         {
-            item.SetActive(true);
+            onSceneReady.OnEventRaised += _Start;
+            _inputReader.MenuPauseEvent += PauseSolution;
+            _inputReader.MenuCloseEvent += UnpauseSolution;
+        }
+
+        private void OnDisable()
+        {
+            onSceneReady.OnEventRaised -= _Start;
+            _inputReader.MenuPauseEvent -= PauseSolution;
+            _inputReader.MenuCloseEvent -= UnpauseSolution;
+        }
+
+        private void _Start()
+        {
+            solution.gameObject.SetActive(true);
+        }
+
+        void PauseSolution()
+        {
+            solution.Pause();
+        }
+
+        void UnpauseSolution()
+        {
+            solution.Resume();
         }
     }
 }
