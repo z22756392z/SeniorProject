@@ -180,3 +180,5 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 
 * add
   * HandAcupunturePoint -- display acupunturepoint function
+* modify
+  * tweaking

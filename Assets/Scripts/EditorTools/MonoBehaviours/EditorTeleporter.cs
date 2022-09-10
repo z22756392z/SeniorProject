@@ -6,6 +6,7 @@ public class EditorTeleporter : MonoBehaviour
     [SerializeField] private InputReader _inputReader;
 	[SerializeField] private GameObject _cheatMenu;
 	[SerializeField] private PathStorageSO _path;
+	[SerializeField] private VoidEventChannelSO _onSceneReady;
 
 	[Header("Broadcast on")]
 	[SerializeField] private LoadEventChannelSO _loadLocationRequest;
@@ -14,9 +15,17 @@ public class EditorTeleporter : MonoBehaviour
 
 	[SerializeField] private LocationSO _lastLocationTeleportedTo = default;
 
-	private void OnEnable() => _inputReader.CheatMenuEvent += ToggleCheatMenu;
+	private void OnEnable()
+	{
+		_inputReader.CheatMenuEvent += ToggleCheatMenu;
+		_onSceneReady.OnEventRaised += Close;
+	}
 
-	private void OnDisable() => _inputReader.CheatMenuEvent -= ToggleCheatMenu;
+	private void OnDisable()
+	{
+		_inputReader.CheatMenuEvent -= ToggleCheatMenu;
+		_onSceneReady.OnEventRaised -= Close;
+	}
 
 	private void Start()
 	{
@@ -38,5 +47,10 @@ public class EditorTeleporter : MonoBehaviour
 		_path.lastPathTaken = whichEntrance;
 		_lastLocationTeleportedTo = where;
 		_loadLocationRequest.RaiseEvent(where);
+	}
+
+	private void Close()
+    {
+		_cheatMenu.SetActive(false);
 	}
 }

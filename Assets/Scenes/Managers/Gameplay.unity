@@ -4484,6 +4484,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9109352226389895716, guid: ce2c2e1c87e44d8459d84303c9a515d4,
         type: 3}
+      propertyPath: _onSceneReady
+      value: 
+      objectReference: {fileID: 11400000, guid: bd594da1708c85a4ca5cd7b2257fd1b7,
+        type: 2}
+    - target: {fileID: 9109352226389895716, guid: ce2c2e1c87e44d8459d84303c9a515d4,
+        type: 3}
       propertyPath: _enableCheatMenuInBuild
       value: 0
       objectReference: {fileID: 0}
