@@ -20,4 +20,10 @@ public class LocationExit : MonoBehaviour
 			_locationExitLoadChannel.RaiseEvent(_locationToLoad, false, true);
 		}
 	}
+
+	public void SceneLoad()
+    {
+		_pathStorage.lastPathTaken = _leadsToPath;
+		_locationExitLoadChannel.RaiseEvent(_locationToLoad, false, true);
+	}
 }

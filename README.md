@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -182,3 +182,15 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
   * HandAcupunturePoint -- display acupunturepoint function
 * modify
   * tweaking
+
+
+
+> 9/11
+
+* add
+  * new UI element (in art file) include 3 scene
+    * over 40 sprite (int Art)
+    * over 20 pattern (int Art)
+  * add new scene Main (Menu to other Scene)
+  * add SceneUI to save script file (Assets\Scripts\UI\ScnenUI )
+  * Add transition animation
