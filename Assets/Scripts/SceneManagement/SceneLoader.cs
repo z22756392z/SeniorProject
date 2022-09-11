@@ -34,7 +34,7 @@ public class SceneLoader : MonoBehaviour
 	private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
 	private float _fadeDuration = .5f;
 	private bool _isLoading = false; //To prevent a new loading request while already loading a new scene
-
+	private bool _isFade = false;
 	private void OnEnable()
 	{
 		_loadLocation.OnLoadingRequested += LoadLocation;
@@ -60,7 +60,7 @@ public class SceneLoader : MonoBehaviour
 	private void LocationColdStartup(GameSceneSO currentlyOpenedLocation, bool showLoadingScreen, bool fadeScreen)
 	{
 		_currentlyLoadedScene = currentlyOpenedLocation;
-
+		_isFade = fadeScreen;
 		if (_currentlyLoadedScene.sceneType == GameSceneSO.GameSceneType.Location)
 		{
 			//Gameplay managers is loaded synchronously
@@ -84,7 +84,7 @@ public class SceneLoader : MonoBehaviour
 		_sceneToLoad = locationToLoad;
 		_showLoadingScreen = showLoadingScreen;
 		_isLoading = true;
-
+		_isFade = fadeScreen;
 		//In case we are coming from the main menu, we need to load the Gameplay manager scene first
 		if (_gameplayManagerSceneInstance.Scene == null
 			|| !_gameplayManagerSceneInstance.Scene.isLoaded)
@@ -117,7 +117,7 @@ public class SceneLoader : MonoBehaviour
 		_sceneToLoad = menuToLoad;
 		_showLoadingScreen = showLoadingScreen;
 		_isLoading = true;
-
+		_isFade = fadeScreen;
 		//In case we are coming from a Location back to the main menu, we need to get rid of the persistent Gameplay manager scene
 		if (_gameplayManagerSceneInstance.Scene != null
 			&& _gameplayManagerSceneInstance.Scene.isLoaded)
@@ -132,7 +132,8 @@ public class SceneLoader : MonoBehaviour
 	private IEnumerator UnloadPreviousScene()
 	{
 		_inputReader.DisableAllInput();
-		_fadeRequestChannel.FadeOut(_fadeDuration);
+		if(_isFade)
+			_fadeRequestChannel.FadeOut(_fadeDuration);
 
 		yield return new WaitForSeconds(_fadeDuration);
 

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3546e1f9ebb6f054fb677b86f543542b, type: 3}
   m_Name: ScenesMenu
   m_EditorClassIdentifier: 
-  _guid: d4a2d5a77fe67554e8fa598b1e68e628
-  description: 
+  _guid: 71d5c6bd3978b6d498b9c31469a9215a
+  description: Main/title menu, the only menu that exists as a standalone scene
   sceneType: 1
   sceneReference:
-    m_AssetGUID: 75050f5a1a23cbe488713d32630a9194
+    m_AssetGUID: 9fc0d4010bbf28b4594072e72b8655ab
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

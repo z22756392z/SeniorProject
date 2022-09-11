@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,7 @@ MonoBehaviour:
     type: 2}
   _onQestionGroupSelected: {fileID: 11400000, guid: 36670e5d0a8a2424fa985bcdceb7771f,
     type: 2}
+  _leaveScene: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507, type: 2}
   _questionsSO: {fileID: 11400000, guid: 671958cbebd555146b334da3d8b5a5b0, type: 2}
 --- !u!4 &184082619
 Transform:
@@ -583,6 +584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCanvas: {fileID: 428025544}
+  _introEnd: {fileID: 11400000, guid: aeb98ea879f2a4a4791620dc71b56c54, type: 2}
+  _closeDialogue: {fileID: 11400000, guid: 31a367ca4f470c148961ad1428407f41, type: 2}
+  _leaveScene: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507, type: 2}
 --- !u!114 &428025546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +685,7 @@ MonoBehaviour:
   _locationToLoad: {fileID: 11400000, guid: 71d5c6bd3978b6d498b9c31469a9215a, type: 2}
   _leadsToPath: {fileID: 11400000, guid: ef2173408fad24744870274317a50d76, type: 2}
   _pathStorage: {fileID: 11400000, guid: 8ded5b803c531e240821692e8fee6f3a, type: 2}
+  _beforeLeaveTime: 1
   _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
     type: 2}
 --- !u!1 &430612398

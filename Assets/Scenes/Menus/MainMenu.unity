@@ -2379,9 +2379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ecefb9fe27f1f4b8cf3ecc3fad707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _locationsToLoad: {fileID: 11400000, guid: 49e4407f50e8730408df86d83e3ce972, type: 2}
+  _locationsToLoad: {fileID: 11400000, guid: 71d5c6bd3978b6d498b9c31469a9215a, type: 2}
   _saveSystem: {fileID: 11400000, guid: 582ca457d4e39214fa34a22ef2e5eaee, type: 2}
-  _showLoadScreen: 1
+  _showLoadScreen: 0
   _loadLocation: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd, type: 2}
   _onStartButton: {fileID: 11400000, guid: 5d9716587997b2047b20f512e28cd75d, type: 2}
 --- !u!4 &1724285025

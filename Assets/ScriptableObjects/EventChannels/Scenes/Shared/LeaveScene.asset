@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fedb6eda6181441209c70ac00d6e7cc8, type: 3}
-  m_Name: HandTracking
+  m_Script: {fileID: 11500000, guid: 7fafac715ff920c4383fed91a38a351e, type: 3}
+  m_Name: LeaveScene
   m_EditorClassIdentifier: 
+  _guid: 
+  description: 

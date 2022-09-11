@@ -18,7 +18,8 @@ public class DialogueManager : MonoBehaviour
 
 	[Header("Broadcasting on")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
-	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // only used for teach scene
+	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // before leave scene
+
 	[SerializeField] private DialogueChoicesChannelSO _showChoicesUIEvent = default;
 	[SerializeField] private IntEventChannelSO _endDialogueWithTypeEvent = default;
 	[SerializeField] private VoidEventChannelSO _continueWithStep = default;
@@ -47,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void DisplayDialogueData(DialogueDataSO dialogueDataSO)
 	{
-		_closeUIDialogueEvent.OnEventRaised += DialogueEndedAndCloseDialogueUI;
+		_closeUIDialogueEvent.OnEventRaised += DialogueForceClose;
 		if (_gameState.CurrentGameState != GameState.Cutscene) // the dialogue state is implied in the cutscene state
 			_gameState.UpdateGameState(GameState.Dialogue);
 
@@ -167,7 +168,7 @@ public class DialogueManager : MonoBehaviour
 
 	private void DialogueEndedAndCloseDialogueUI()
 	{
-		_closeUIDialogueEvent.OnEventRaised -= DialogueEndedAndCloseDialogueUI;
+		_closeUIDialogueEvent.OnEventRaised -= DialogueForceClose;
 
 		//raise end dialogue event 
 		if (_endDialogueWithTypeEvent != null)
@@ -182,5 +183,11 @@ public class DialogueManager : MonoBehaviour
 
 		//raise the special event for end of dialogue if any 
 		_currentDialogue.FinishDialogue();
+	}
+
+	void DialogueForceClose()
+    {
+		_endDialogueWithTypeEvent.OnEventRaised = null;
+		DialogueEndedAndCloseDialogueUI();
 	}
 }

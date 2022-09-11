@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 public class SwitchScene : MonoBehaviour
 {
     public Animator MainCanvas;
+    [SerializeField] private VoidEventChannelSO _introEnd = default;
+    [SerializeField] private VoidEventChannelSO _closeDialogue = default;
+    [SerializeField] private VoidEventChannelSO _leaveScene = default;
+    public void IntroEnd()
+    {
+        _introEnd?.RaiseEvent();
+    }
 
     public void TriggerAnimation()
     {
         MainCanvas.SetTrigger("GoNextStage");
-        Debug.Log("Onclick");
+        _leaveScene?.RaiseEvent();
+        _closeDialogue?.RaiseEvent();
     }
 
     public void TriggerAnimationExercise()
@@ -48,29 +56,4 @@ public class SwitchScene : MonoBehaviour
         MainCanvas.SetTrigger("MirrorOnclick");
         Debug.Log("Open");
     }
-    public void GoToExercise()
-    {
-        SceneManager.LoadScene("000");
-    }
-    public void GoToTeachMode()
-    {
-        SceneManager.LoadScene("001");
-    }
-    public void GoToAR()
-    {
-        SceneManager.LoadScene("002");
-    }
-    public void GoToAI()
-    {
-        SceneManager.LoadScene("003");
-    }
-    public void GoToStory()
-    {
-        SceneManager.LoadScene("004");
-    }
-    public void GoToMain()
-    {
-        SceneManager.LoadScene("Main");
-    }
-
 }

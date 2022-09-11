@@ -65,10 +65,6 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Location/Stage1/Stage1.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 75050f5a1a23cbe488713d32630a9194
-    m_Address: Assets/Scenes/Menus/ScenesMenu.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 8f8b82961b2c8804cb6039524b854a27
     m_Address: Assets/Scenes/Location/HandTracking/Hand Tracking.unity
     m_ReadOnly: 0

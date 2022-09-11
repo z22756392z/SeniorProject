@@ -5,31 +5,34 @@ namespace Mediapipe.Unity.UI
     public class SolutionController : MonoBehaviour
     {
         [Header("Listening to")]
-        [SerializeField] private VoidEventChannelSO onSceneReady = default;
+        [SerializeField] private VoidEventChannelSO _onEventRaisedStartSolution = default;
         [SerializeField] private InputReader _inputReader;
         public Solution solution = default;
+        public GameObject annotation = default;
 
         private void Awake()
         {
+            if (annotation != null) annotation.SetActive(false);
             solution.gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
-            onSceneReady.OnEventRaised += _Start;
+            _onEventRaisedStartSolution.OnEventRaised += _Start;
             _inputReader.MenuPauseEvent += PauseSolution;
             _inputReader.MenuCloseEvent += UnpauseSolution;
         }
 
         private void OnDisable()
         {
-            onSceneReady.OnEventRaised -= _Start;
+            _onEventRaisedStartSolution.OnEventRaised -= _Start;
             _inputReader.MenuPauseEvent -= PauseSolution;
             _inputReader.MenuCloseEvent -= UnpauseSolution;
         }
 
         private void _Start()
         {
+            if (annotation != null) annotation.SetActive(true);
             solution.gameObject.SetActive(true);
         }
 

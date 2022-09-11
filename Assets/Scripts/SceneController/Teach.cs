@@ -5,6 +5,7 @@ public class Teach : MonoBehaviour
 {
     [SerializeField] private VoidEventChannelSO _onSceneReady = default;
     [SerializeField] private LoadEventChannelSO _loadEventChannelSO = default;
+    [SerializeField] private VoidEventChannelSO _leaveScene = default;
     [SerializeField] private MenuSO _menuMenu = default;
 
     [SerializeField] private GameObject _choices = default;
@@ -23,19 +24,21 @@ public class Teach : MonoBehaviour
     [SerializeField] private DialogueDataSO _faceMeshDialogue = default;
     [SerializeField] private DialogueDataSO _holisticDialogue = default;
     [SerializeField] private DialogueDataSO _introEndDialogue = default;
-
+    
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _loseDialogueEvent = default;
 
     private void OnEnable()
     {
         _onSceneReady.OnEventRaised += StartIntro;
+        _leaveScene.OnEventRaised += LeaveTeachMode;
     }
 
     private void OnDisable()
     {
         _onSceneReady.OnEventRaised -= StartIntro;
-        if(_endDialogueEvent.OnEventRaised != null)
+        _leaveScene.OnEventRaised -= LeaveTeachMode;
+        if (_endDialogueEvent.OnEventRaised != null)
         {
             _endDialogueEvent.OnEventRaised -= EndDialogue;
         }
@@ -78,7 +81,7 @@ public class Teach : MonoBehaviour
         _endDialogueEvent.OnEventRaised += EndDialogue;
     }
 
-    void LeaveTeachMode()
+    public void LeaveTeachMode()
     {
         _loseDialogueEvent.OnEventRaised -= LeaveTeachMode;
         StartCoroutine( EndTeachMode());
