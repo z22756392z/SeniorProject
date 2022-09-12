@@ -9,7 +9,6 @@ public class QuestionManager : MonoBehaviour
     [Header("Listening to")]
     [SerializeField] private VoidEventChannelSO _onQuestionAnswered = default;
     [SerializeField] private IntEventChannelSO _onQestionGroupSelected = default;
-    [SerializeField] private VoidEventChannelSO _leaveScene = default;
 
     [SerializeField] private QuestionsSO _questionsSO = default;
     
@@ -20,14 +19,13 @@ public class QuestionManager : MonoBehaviour
     {
         _onQestionGroupSelected.OnEventRaised += SetQuestionGroup;
         _onQuestionAnswered.OnEventRaised += OnQuestionAnswered;
-        _leaveScene.OnEventRaised += _onQuestionFinish.OnEventRaised;
+        
     }
 
     private void OnDisable()
     {
         _onQestionGroupSelected.OnEventRaised -= SetQuestionGroup;
         _onQuestionAnswered.OnEventRaised -= OnQuestionAnswered;
-        _leaveScene.OnEventRaised -= _onQuestionFinish.OnEventRaised;
     }
 
     void SetQuestionGroup(int value)

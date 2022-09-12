@@ -6,11 +6,15 @@ public class Teach : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _onSceneReady = default;
     [SerializeField] private LoadEventChannelSO _loadEventChannelSO = default;
     [SerializeField] private VoidEventChannelSO _leaveScene = default;
-    [SerializeField] private MenuSO _menuMenu = default;
+    [SerializeField] private VoidEventChannelSO _leaveFromCurrentScene = default;
 
+    [SerializeField] private MenuSO _menuMenu = default;
     [SerializeField] private GameObject _choices = default;
+
+    [Header("Actor")]
     [SerializeField] private VoidEventChannelSO _salute = default;
     [SerializeField] private VoidEventChannelSO _leave = default;
+
 
     [SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // only used for teach scene
@@ -31,13 +35,13 @@ public class Teach : MonoBehaviour
     private void OnEnable()
     {
         _onSceneReady.OnEventRaised += StartIntro;
-        _leaveScene.OnEventRaised += LeaveTeachMode;
+        _leaveScene.OnEventRaised += BeforeLeaveTeachMode;
     }
 
     private void OnDisable()
     {
         _onSceneReady.OnEventRaised -= StartIntro;
-        _leaveScene.OnEventRaised -= LeaveTeachMode;
+        _leaveScene.OnEventRaised -= BeforeLeaveTeachMode;
         if (_endDialogueEvent.OnEventRaised != null)
         {
             _endDialogueEvent.OnEventRaised -= EndDialogue;
@@ -84,15 +88,12 @@ public class Teach : MonoBehaviour
     public void LeaveTeachMode()
     {
         _loseDialogueEvent.OnEventRaised -= LeaveTeachMode;
-        StartCoroutine( EndTeachMode());
+        _leaveFromCurrentScene.RaiseEvent();
     }
 
-    IEnumerator EndTeachMode()
+    void BeforeLeaveTeachMode()
     {
         _leave.RaiseEvent();
-        _closeUIDialogueEvent.RaiseEvent();
-        yield return new WaitForSeconds(1f);
-        _loadEventChannelSO.RaiseEvent(_menuMenu, false); //load main menu
     }
 
     public void OnAupuncturePointClicked()

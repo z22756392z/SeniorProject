@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,19 +19,19 @@ public class ScrollScript : MonoBehaviour
     {
         if (SpriteRenderer != null)
         {
-            GetComponent<SpriteRenderer>().material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
+            SpriteRenderer.material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
         }
         if (LineRenderer != null)
         {
-            GetComponent<LineRenderer>().material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
+            LineRenderer.material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
         }
         if (TrailRenderer != null)
         {
-            GetComponent<TrailRenderer>().material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
+            TrailRenderer.material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
         }
         if (image != null)
         {
-            GetComponent<Image>().material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
+            image.material.mainTextureOffset = new Vector2(Time.time * speed_x, Time.time * speed_y);
         }
     }
 }

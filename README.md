@@ -197,3 +197,7 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 * modiy
   * merge
   * tweaking
+
+> 9/12
+*modify
+  * tweaking

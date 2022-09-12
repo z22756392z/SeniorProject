@@ -32,7 +32,6 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
 	// Dialogues
 	public event UnityAction AdvanceDialogueEvent = delegate { };
-
 	// Menus
 	public event UnityAction MenuMouseMoveEvent = delegate { };
 	public event UnityAction MenuClickButtonEvent = delegate { };

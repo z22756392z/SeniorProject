@@ -1897,6 +1897,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5203720248706126552, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
+        type: 3}
+      propertyPath: _leaveFromUIPause
+      value: 
+      objectReference: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3,
+        type: 2}
     - target: {fileID: 5203720248706126553, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2002,6 +2008,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5203720248706126557, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
+        type: 3}
+      propertyPath: _leaveScene
+      value: 
+      objectReference: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3,
+        type: 2}
     - target: {fileID: 5203720248706126559, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
         type: 3}
       propertyPath: m_Name

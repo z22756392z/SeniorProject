@@ -7,6 +7,7 @@ public class StartInput : MonoBehaviour
 	[Header("Asset References")]
 	[SerializeField] private InputReader _inputReader = default;
 	[SerializeField] private GameStateSO _gameStateSO = default;
+	
 	[Header("Scene Ready Event")]
     [SerializeField] private VoidEventChannelSO _onSceneReady = default; //Raised by SceneLoader when the scene is set to active
 	private void OnEnable()

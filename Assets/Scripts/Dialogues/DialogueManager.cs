@@ -187,7 +187,11 @@ public class DialogueManager : MonoBehaviour
 
 	void DialogueForceClose()
     {
-		_endDialogueWithTypeEvent.OnEventRaised = null;
-		DialogueEndedAndCloseDialogueUI();
+		_inputReader.AdvanceDialogueEvent -= OnAdvance;
+		_inputReader.EnableCheatInput();
+		_gameState.ResetToPreviousGameState();
+
+		if (_gameState.CurrentGameState == GameState.Gameplay)
+			_inputReader.EnableGameplayInput();
 	}
 }

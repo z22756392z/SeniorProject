@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
 	[Header("Broadcasting on ")]
 	[SerializeField] private LoadEventChannelSO _loadMenuEvent = default;
 	[SerializeField] private VoidEventChannelSO _onInteractionEndedEvent = default;
-
+	[SerializeField] private VoidEventChannelSO _leaveFromUIPause = default;
 	bool isForCooking = false;
 
 	private void OnEnable()
@@ -94,10 +94,13 @@ public class UIManager : MonoBehaviour
 
 	void ForceCloseUIDialogue()
     {
+		_closeUIDialogueEvent.OnEventRaised = CloseUIDialogue;
+		//raise end dialogue event 
+		if (_closeUIDialogueEvent != null)
+			_closeUIDialogueEvent.RaiseEvent(0);
 		_selectionHandler.Unselect();
 		_dialogueController.gameObject.SetActive(false);
 		_onInteractionEndedEvent.RaiseEvent();
-		_closeUIDialogueEvent.OnEventRaised = CloseUIDialogue;
 	}
 
 	void OpenUIPause()
@@ -136,6 +139,10 @@ public class UIManager : MonoBehaviour
 		{
 			_inputReader.EnableGameplayInput();
 		}
+		else if(_gameStateManager.CurrentGameState == GameState.Dialogue)
+        {
+			_inputReader.EnableDialogueInput();
+        }
 		_inputReader.EnableCheatInput();
 		_selectionHandler.Unselect();
 	}
@@ -184,8 +191,17 @@ public class UIManager : MonoBehaviour
 
 		if (confirm)
 		{
-			CloseUIPause();//close ui pause to unsub from all events 
-			_loadMenuEvent.RaiseEvent(_mainMenu, false); //load main menu
+			CloseUIPause();//close ui pause to unsub from all events
+			if(_gameStateManager.CurrentGameState == GameState.Dialogue) 
+				_forceCloseUIDialogueEvent.RaiseEvent();
+			if(_leaveFromUIPause.OnEventRaised != null)
+            {
+				_leaveFromUIPause.RaiseEvent();
+            }
+            else
+            {
+				_loadMenuEvent.RaiseEvent(_mainMenu, false); //load main menu
+			}
 		}
 	}
 	

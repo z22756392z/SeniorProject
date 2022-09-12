@@ -1504,6 +1504,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""97c0e27e-1b79-4d57-8f0c-d13db37f0ded"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1759,6 +1768,17 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""MoveSelection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6de548d6-6523-4dc9-898c-b9b33f6adaa8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardOrGamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1871,6 +1891,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Dialogues = asset.FindActionMap("Dialogues", throwIfNotFound: true);
         m_Dialogues_MoveSelection = m_Dialogues.FindAction("MoveSelection", throwIfNotFound: true);
         m_Dialogues_AdvanceDialogue = m_Dialogues.FindAction("AdvanceDialogue", throwIfNotFound: true);
+        m_Dialogues_Pause = m_Dialogues.FindAction("Pause", throwIfNotFound: true);
         // Cheats
         m_Cheats = asset.FindActionMap("Cheats", throwIfNotFound: true);
         m_Cheats_OpenCheatMenu = m_Cheats.FindAction("OpenCheatMenu", throwIfNotFound: true);
@@ -2193,12 +2214,14 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private IDialoguesActions m_DialoguesActionsCallbackInterface;
     private readonly InputAction m_Dialogues_MoveSelection;
     private readonly InputAction m_Dialogues_AdvanceDialogue;
+    private readonly InputAction m_Dialogues_Pause;
     public struct DialoguesActions
     {
         private @GameInput m_Wrapper;
         public DialoguesActions(@GameInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveSelection => m_Wrapper.m_Dialogues_MoveSelection;
         public InputAction @AdvanceDialogue => m_Wrapper.m_Dialogues_AdvanceDialogue;
+        public InputAction @Pause => m_Wrapper.m_Dialogues_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Dialogues; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2214,6 +2237,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @AdvanceDialogue.started -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnAdvanceDialogue;
                 @AdvanceDialogue.performed -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnAdvanceDialogue;
                 @AdvanceDialogue.canceled -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnAdvanceDialogue;
+                @Pause.started -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_DialoguesActionsCallbackInterface = instance;
             if (instance != null)
@@ -2224,6 +2250,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @AdvanceDialogue.started += instance.OnAdvanceDialogue;
                 @AdvanceDialogue.performed += instance.OnAdvanceDialogue;
                 @AdvanceDialogue.canceled += instance.OnAdvanceDialogue;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -2306,6 +2335,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     {
         void OnMoveSelection(InputAction.CallbackContext context);
         void OnAdvanceDialogue(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface ICheatsActions
     {
