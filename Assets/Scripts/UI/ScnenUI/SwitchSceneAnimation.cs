@@ -6,6 +6,9 @@ public class SwitchSceneAnimation : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _introEnd = default;
     [SerializeField] private VoidEventChannelSO _closeDialogue = default;
     [SerializeField] private VoidEventChannelSO _leaveScene = default;
+    [SerializeField] private VoidEventChannelSO _hideInspector = default;
+    [SerializeField] private VoidEventChannelSO _showSolution = default;
+
     [Header("Listening on")]
     [SerializeField] private VoidEventChannelSO _leaveFromUIPause = default;
     [SerializeField] private VoidEventChannelSO _leaveFromCurrentScene = default;
@@ -45,9 +48,17 @@ public class SwitchSceneAnimation : MonoBehaviour
     public void CloseMirror()
     {
         MainCanvas.SetTrigger("CloseMirror");
+        _hideInspector?.RaiseEvent();
+        
     }
     public void MirrorOnclick()
     {
         MainCanvas.SetTrigger("MirrorOnclick");
+        
+    }
+
+    public void ShowSolution()
+    {
+        _showSolution?.RaiseEvent();
     }
 }

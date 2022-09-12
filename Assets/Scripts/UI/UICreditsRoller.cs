@@ -16,7 +16,7 @@ public class UICreditsRoller : MonoBehaviour
 	public event UnityAction OnRollingEnded;
 	
 	private float _expectedFinishingPoint;
-
+	private bool _isRolling = true;
 
 	public void StartRolling()
 	{
@@ -36,6 +36,7 @@ public class UICreditsRoller : MonoBehaviour
 
 	void Update()
 	{
+		if (!_isRolling) return;
 		//This make rolling effect
 		if (_textCredits.anchoredPosition.y < _expectedFinishingPoint)
 		{
@@ -62,16 +63,29 @@ public class UICreditsRoller : MonoBehaviour
 		if (direction.y == 0f) //no horizontal movment
 		{
 			_speed = _speedPreset;
+			_isRolling = false;
+			StartCoroutine(SetRolling());
+
 		}
 		else if (direction.y > 0f) //upward movment
 		{
 			_speed = _speed * 2;
+			//_isRolling = false;
+			//StartCoroutine(SetRolling());
 		}
 		else //downward movment
 		{
 			_speed = -_speedPreset;
+			//_isRolling = false;
+			//StartCoroutine(SetRolling());
 		}
 	}
+
+	IEnumerator SetRolling()
+    {
+		yield return new WaitForSeconds(0.7f);
+		_isRolling = true;
+    }
 
 	private void RollingEnd()
 	{

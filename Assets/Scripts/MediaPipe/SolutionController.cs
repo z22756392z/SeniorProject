@@ -6,6 +6,7 @@ namespace Mediapipe.Unity.UI
     {
         [Header("Listening to")]
         [SerializeField] private VoidEventChannelSO _onEventRaisedStartSolution = default;
+        [SerializeField] private VoidEventChannelSO _showSolution = default;
         [SerializeField] private InputReader _inputReader;
         public Solution solution = default;
         public GameObject annotation = default;
@@ -21,6 +22,8 @@ namespace Mediapipe.Unity.UI
             _onEventRaisedStartSolution.OnEventRaised += _Start;
             _inputReader.MenuPauseEvent += PauseSolution;
             _inputReader.MenuCloseEvent += UnpauseSolution;
+            if (_showSolution != null)
+                _showSolution.OnEventRaised += ShowSolution;
         }
 
         private void OnDisable()
@@ -28,6 +31,8 @@ namespace Mediapipe.Unity.UI
             _onEventRaisedStartSolution.OnEventRaised -= _Start;
             _inputReader.MenuPauseEvent -= PauseSolution;
             _inputReader.MenuCloseEvent -= UnpauseSolution;
+            if (_showSolution != null)
+                _showSolution.OnEventRaised -= ShowSolution;
         }
 
         private void _Start()
@@ -43,6 +48,18 @@ namespace Mediapipe.Unity.UI
 
         void UnpauseSolution()
         {
+            solution.Resume();
+        }
+
+        public void HideSolution()
+        {
+            annotation.SetActive(false);
+            solution.Pause();
+        }
+
+        public void ShowSolution()
+        {
+            annotation.SetActive(true);
             solution.Resume();
         }
     }
