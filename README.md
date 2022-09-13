@@ -203,3 +203,4 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 * modify
   * tweaking
   * Head Scene UI add Mask
+  * MultiHandLandmarkListAnnotation
