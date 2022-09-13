@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &17352105 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6070460462320423969, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395270911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 827c4431af677e057aa6f14170d0785c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &69352780
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,12 +469,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314058135}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &395270911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7281226314198004978, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &473437039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,18 +1089,18 @@ MonoBehaviour:
   boostrapEventChannel: {fileID: 11400000, guid: 4180c63abeccd9a44a6ddca284befc29,
     type: 2}
   bootstrap: {fileID: 887620773}
-  screen: {fileID: 17352105}
+  screen: {fileID: 0}
   graphRunner: {fileID: 887620775}
   textureFramePool: {fileID: 887620774}
   runningMode: 2
   AcupuncturePointInventory: {fileID: 11400000, guid: eb4436e20fe73ab4e9398a03c2540da0,
     type: 2}
   _worldAnnotationArea: {fileID: 473437040}
-  _poseDetectionAnnotationController: {fileID: 2003423796}
-  _holisticAnnotationController: {fileID: 2003423797}
+  _poseDetectionAnnotationController: {fileID: 0}
+  _holisticAnnotationController: {fileID: 0}
   _poseWorldLandmarksAnnotationController: {fileID: 473437041}
-  _segmentationMaskAnnotationController: {fileID: 2003423795}
-  _poseRoiAnnotationController: {fileID: 2003423798}
+  _segmentationMaskAnnotationController: {fileID: 0}
+  _poseRoiAnnotationController: {fileID: 0}
 --- !u!1 &1009941143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,9 +1229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onEventRaisedStartSolution: {fileID: 11400000, guid: aeb98ea879f2a4a4791620dc71b56c54,
     type: 2}
+  _showSolution: {fileID: 0}
   _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
   solution: {fileID: 887620778}
-  annotation: {fileID: 395270911}
+  annotation: {fileID: 0}
 --- !u!4 &1015021718
 Transform:
   m_ObjectHideFlags: 0
@@ -2325,54 +2308,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899990733}
   m_CullTransparentMesh: 1
---- !u!114 &2003423795 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5203720248535044180, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece564ad16755f1ef94c4fe04bd7ce2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2003423796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5203720248535044179, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275060fa7ac08c4128c0ea18c71b73dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2003423797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5203720248535044178, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d476bc13b66983ac4b7ac1f48fb6aff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2003423798 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5203720248535044177, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 5203720247707271783}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145060647209d6d1c86b8ccce9fcaf5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2055242951
 PrefabInstance:
   m_ObjectHideFlags: 0
