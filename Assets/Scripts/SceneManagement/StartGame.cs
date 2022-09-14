@@ -34,13 +34,17 @@ public class StartGame : MonoBehaviour
 
 	private void StartNewGame()
 	{
-		_hasSaveData = false;
-
+		StartCoroutine(_StartNewGame());
 		//_saveSystem. WriteEmptySaveFile();
 		//_saveSystem.SetNewGameData();
+		
+	}
+	private IEnumerator _StartNewGame()
+    {
+		yield return StartCoroutine(_saveSystem.LoadSavedInventory());
+		_hasSaveData = false;
 		_loadLocation.RaiseEvent(_locationsToLoad, _showLoadScreen);
 	}
-
 	private IEnumerator LoadSaveGame()
 	{
 		yield return StartCoroutine(_saveSystem.LoadSavedInventory());

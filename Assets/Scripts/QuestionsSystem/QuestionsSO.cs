@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "QuestionsSO", menuName = "Question/QuestionsSO")]
 public class QuestionsSO : ScriptableObject
@@ -10,8 +12,11 @@ public class QuestionsSO : ScriptableObject
 	[SerializeField] private DialogueDataSO _winDialogue;
 	[SerializeField] private DialogueDataSO _loseDialogue;
 
+	[Header("Boardcasting on channels")]
 	[SerializeField] private DialogueDataChannelSO _startDialogueEvent = default;
 	[SerializeField] private VoidEventChannelSO _EndOfChoiceDialogue = default;
+
+	[SerializeField] private ListLocalizedStringEventChannelSO _showAcpunturePoints = default;
 
 	[SerializeField] private VoidEventChannelSO _questionAnswered = default;
 	[SerializeField] private VoidEventChannelSO _questionFinish = default;
@@ -46,14 +51,22 @@ public class QuestionsSO : ScriptableObject
 		_currentDialogue = _currentQuestionGroup.GetQusetion();
 		_winDialogueEvent.OnEventRaised += PlayWinDialogue;
 		_loseDialogueEvent.OnEventRaised += PlayLoseDialogue;
-		
+
 		StartDialogue();
 	}
 
     void StartDialogue()
     {
         _startDialogueEvent.RaiseEvent(_currentDialogue);
-    }
+		List<Choice> choices = _currentDialogue.Lines[_currentDialogue.Lines.Count - 1].Choices;
+		if (choices == null) return;
+		List<LocalizedString> choiceContents = new List<LocalizedString>() ;
+        foreach (var choice in choices)
+        {
+			choiceContents.Add(choice.Response);
+        }
+		_showAcpunturePoints.RaiseEvent(choiceContents);
+	}
 
 	void PlayWinDialogue()
 	{

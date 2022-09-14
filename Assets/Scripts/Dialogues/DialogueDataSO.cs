@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Metadata;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 
 #if UNITY_EDITOR
 using UnityEditor.Localization;
@@ -178,14 +179,17 @@ public class Line
 
 			int choiceIndex = 0;
 			Choice choice = null;
+			StringTable table = LocalizationEditorSettings.GetStringTableCollection("Question").GetTable("zh-TW") as StringTable;
 			do
 			{
 				choiceIndex++;
 				string key = "C" + choiceIndex + "-" + _name;
 
+				
 				if (collection.SharedData.Contains(key))
 				{
-					LocalizedString _choiceLine = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
+					//LocalizedString _choiceLineRef = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
+					LocalizedString _choiceLine = new LocalizedString() { TableReference = "AcupuncturePoint", TableEntryReference = table.GetEntry(key).Value + "_title" };
 					choice = new Choice(_choiceLine);
 					choice.SetChoiceAction(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
 

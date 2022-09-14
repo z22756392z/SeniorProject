@@ -8,21 +8,37 @@ public class ItemCore : MonoBehaviour
     private readonly List<ItemCoreComponent> CoreComponents = new List<ItemCoreComponent>();
     [SerializeField] private InventorySO _inventorySO = default;
     [HideInInspector] public ItemStack _itemStack;
-    public void SetupItemCore(int index)
+    public Color HandnessColor = Color.white;
+    protected UIInventoryItem InventoryItem { get => inventoryItem ??= GetCoreComponent<UIInventoryItem>(); }
+    private UIInventoryItem inventoryItem;
+    //Raised by ListAnnotations -- InstantiateChild
+    private void Awake()
     {
-        if (_inventorySO.Items.Count - 1< index) return;
-        _itemStack = _inventorySO.GetItemsInCurrentInventory(InventoryTabType.AcupuncturePoint)[index];
-
         var comps = GetComponentsInChildren<ItemCoreComponent>();
 
         foreach (var component in comps)
         {
             AddComponent(component);
         }
+    }
+
+    public void SetupItemCore(int index)
+    {
+        if (_inventorySO.Items.Count - 1< index) return;
+        _itemStack = _inventorySO.GetItemsInCurrentInventory(InventoryTabType.AcupuncturePoint)[index];
 
         foreach (var component in CoreComponents)
         {
             component.Init(this);
+        }
+    }
+    //Raised by ListAnnotations -- ApplyColor
+    public void ApplyColorToUI(Color color)
+    {
+        HandnessColor = color;
+        if (InventoryItem != null)
+        {
+            InventoryItem.ApplyColorItemImage(HandnessColor);
         }
     }
 

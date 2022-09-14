@@ -52,17 +52,21 @@ public class SaveSystem : ScriptableObject
 
 	public IEnumerator LoadSavedInventory()
 	{
-		_playerInventory.Items.Clear();
+		//_playerInventory.Items.Clear();
+		/*
 		foreach (var serializedItemStack in saveData._itemStacks)
 		{
-			var loadItemOperationHandle = Addressables.LoadAssetAsync<ItemSO>(serializedItemStack.itemGuid);
+			//Debug.Log(123);
+			var loadItemOperationHandle = Addressables.LoadAssetAsync<ItemAcupuncturePointSO>(serializedItemStack.itemGuid);
 			yield return loadItemOperationHandle;
 			if (loadItemOperationHandle.Status == AsyncOperationStatus.Succeeded)
 			{
 				var itemSO = loadItemOperationHandle.Result;
 				_playerInventory.Add(itemSO, serializedItemStack.amount);
+				//Debug.Log(123);
 			}
-		}
+		}*/
+		yield break;
 	}
 
 	public void SaveDataToDisk()

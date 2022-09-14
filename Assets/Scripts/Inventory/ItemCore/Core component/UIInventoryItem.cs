@@ -25,11 +25,18 @@ public class UIInventoryItem : ItemCoreComponent
 	
 	bool _isSelected = false;
 	bool _isClicked = false;
+	// 正面左手: 3, 背面左手:4 , 正面右手: 5 , 背面右手 6
     public override void Init(ItemCore core)
     {
         base.Init(core);
 		SetItem(core._itemStack, false);
     }
+
+	public void ApplyColorItemImage(Color color)
+    {
+		_itemPreviewImage.color = color;
+
+	}
 
 	public void SetItem(ItemStack itemStack, bool isSelected)
 	{
@@ -49,13 +56,13 @@ public class UIInventoryItem : ItemCoreComponent
 
 		if (itemStack.Item.IsLocalized)
 		{
-			_bgLocalizedImage.enabled = true;
-			_bgLocalizedImage.AssetReference = itemStack.Item.LocalizePreviewImage;
+			//_bgLocalizedImage.enabled = true;
+			//_bgLocalizedImage.AssetReference = itemStack.Item.LocalizePreviewImage;
 		}
 		else
 		{
-			_bgLocalizedImage.enabled = false;
-			_itemPreviewImage.sprite = itemStack.Item.PreviewImage;
+			//_bgLocalizedImage.enabled = false;
+			//_itemPreviewImage.sprite = itemStack.Item.PreviewImage;
 		}
 		_itemCount.text = itemStack.Amount.ToString();
 		_bgImage.color = itemStack.Item.ItemType.TypeColor;
@@ -107,6 +114,7 @@ public class UIInventoryItem : ItemCoreComponent
 
 	public void ClickItem()
 	{
+		
 		_isClicked = !_isClicked;
 		if (ItemClicked != null && currentItem != null && currentItem.Item != null)
 		{

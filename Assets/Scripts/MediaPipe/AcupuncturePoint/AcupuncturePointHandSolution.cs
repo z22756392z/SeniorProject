@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using pbc = global::Google.Protobuf.Collections;
 
 namespace Mediapipe.Unity.HandTracking
@@ -18,6 +19,28 @@ namespace Mediapipe.Unity.HandTracking
         [SerializeField] private NormalizedRectListAnnotationController _handRectsFromPalmDetectionsAnnotationController;
         [SerializeField] private MultiHandLandmarkListAnnotationController _handLandmarksAnnotationController;
         [SerializeField] private NormalizedRectListAnnotationController _handRectsFromLandmarksAnnotationController;
+        [Header("Listening on channel")]
+        [SerializeField] private ListLocalizedStringEventChannelSO _showAcpunturePoints = default;
+        [SerializeField] private List<LocalizedString> _desireAcpunturePoints;
+        private bool _isFirstTime1 = true;
+        private bool _isFirstTime2 = true;
+        private bool _isShowDesireAcpunturePoint = false;
+
+        private void OnEnable()
+        {
+            _showAcpunturePoints.OnEventRaised += SetAcpunturePoints;
+        }
+
+        private void OnDisable()
+        {
+            _showAcpunturePoints.OnEventRaised -= SetAcpunturePoints;
+        }
+
+        void SetAcpunturePoints(List<LocalizedString> value)
+        {
+            _isShowDesireAcpunturePoint = true;
+            _desireAcpunturePoints = value;
+        }
 
         public HandTrackingGraph.ModelComplexity modelComplexity
         {
@@ -69,21 +92,21 @@ namespace Mediapipe.Unity.HandTracking
 
         protected override IEnumerator WaitForNextValue()
         {
-            List<Detection> palmDetections = null;
-            List<NormalizedRect> handRectsFromPalmDetections = null;
+            //List<Detection> palmDetections = null;
+            //List<NormalizedRect> handRectsFromPalmDetections = null;
             List<NormalizedLandmarkList> handLandmarks = null;
-            List<LandmarkList> handWorldLandmarks = null;
-            List<NormalizedRect> handRectsFromLandmarks = null;
+            //List<LandmarkList> handWorldLandmarks = null;
+            //List<NormalizedRect> handRectsFromLandmarks = null;
             List<ClassificationList> handedness = null;
 
             if (runningMode == RunningMode.Sync)
             {
-                var _ = graphRunner.TryGetNext(out handLandmarks, out handedness,true);
+                var _ = graphRunner.TryGetNext(out handLandmarks, out handedness, true);
                 //var _ = graphRunner.TryGetNext(out palmDetections, out handRectsFromPalmDetections, out handLandmarks, out handWorldLandmarks, out handRectsFromLandmarks, out handedness, true);
             }
             else if (runningMode == RunningMode.NonBlockingSync)
             {
-                yield return new WaitUntil(() => graphRunner.TryGetNext(out handLandmarks, out handedness,false));
+                yield return new WaitUntil(() => graphRunner.TryGetNext(out handLandmarks, out handedness, false));
                 //yield return new WaitUntil(() => graphRunner.TryGetNext(out palmDetections, out handRectsFromPalmDetections, out handLandmarks, out handWorldLandmarks, out handRectsFromLandmarks, out handedness, false));
             }
 
@@ -92,6 +115,57 @@ namespace Mediapipe.Unity.HandTracking
             if (handLandmarks != null && handLandmarks.Count > 1)
                 _currentHandLandmark2 = handLandmarks?[1]?.Landmark;
             pbc::RepeatedField<NormalizedLandmarkList> _newHandLandarkList = new pbc::RepeatedField<NormalizedLandmarkList>();
+
+            if (_isFirstTime1 && _currentHandLandmark1 != null)
+            {
+                NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
+                _isFirstTime1 = false;
+                foreach (var itemStack in _handAcupunturePointsInventory.Items)
+                {
+                    NormalizedLandmark landmark = new NormalizedLandmark(_currentHandLandmark1[itemStack.Item.LandMark]);
+                    landmark.X += itemStack.Item.Offest.x / 100;
+                    landmark.Y += itemStack.Item.Offest.y / 100;
+                    normalizedLandmarkList.Landmark.Add(landmark);
+                }
+                _newHandLandarkList.Add(normalizedLandmarkList);
+                if (_isFirstTime2 && _currentHandLandmark2 != null)
+                {
+                    NormalizedLandmarkList normalizedLandmarkList2 = new NormalizedLandmarkList();
+                    _isFirstTime2 = false;
+                    foreach (var itemStack in _handAcupunturePointsInventory.Items)
+                    {
+                        NormalizedLandmark landmark = new NormalizedLandmark(_currentHandLandmark2[itemStack.Item.LandMark]);
+                        landmark.X += itemStack.Item.Offest.x / 100;
+                        landmark.Y += itemStack.Item.Offest.y / 100;
+                        normalizedLandmarkList2.Landmark.Add(landmark);
+                    }
+                    _newHandLandarkList.Add(normalizedLandmarkList2);
+                }
+                _handLandmarksAnnotationController.DrawNow(_newHandLandarkList, handedness);
+                yield break;
+            }
+            if (_isFirstTime2 && _currentHandLandmark2 != null)
+            {
+                NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
+                _isFirstTime2 = false;
+                foreach (var itemStack in _handAcupunturePointsInventory.Items)
+                {
+                    NormalizedLandmark landmark = new NormalizedLandmark(_currentHandLandmark1[itemStack.Item.LandMark]);
+                    landmark.X += itemStack.Item.Offest.x / 100;
+                    landmark.Y += itemStack.Item.Offest.y / 100;
+                    normalizedLandmarkList.Landmark.Add(landmark);
+                }
+                _handLandmarksAnnotationController.DrawNow(_newHandLandarkList, handedness);
+                yield break;
+            }
+            if(_currentHandLandmark1 != null && handedness != null)
+                _newHandLandarkList.Add(Detect(_currentHandLandmark1, handedness[0].Classification[0].Label));
+            if (_currentHandLandmark2 != null && handedness != null && handedness.Count > 1)
+                _newHandLandarkList.Add(Detect(_currentHandLandmark2, handedness[1].Classification[0].Label));
+
+
+            //Debug uses
+            /*
             if (_currentHandLandmark1 != null)
             {
                 NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
@@ -103,26 +177,83 @@ namespace Mediapipe.Unity.HandTracking
                     normalizedLandmarkList.Landmark.Add(landmark);
                 }
                 _newHandLandarkList.Add(normalizedLandmarkList);
+               
             }
-            
             if (_currentHandLandmark2 != null)
             {
                 NormalizedLandmarkList normalizedLandmarkList2 = new NormalizedLandmarkList();
                 foreach (var itemStack in _handAcupunturePointsInventory.Items)
                 {
-                    NormalizedLandmark landmark2 = new NormalizedLandmark(_currentHandLandmark2[itemStack.Item.LandMark]);
-                    landmark2.X += itemStack.Item.Offest.x / 100;
-                    landmark2.Y += itemStack.Item.Offest.y / 100;
-                    normalizedLandmarkList2.Landmark.Add(landmark2);
+                    NormalizedLandmark landmark = new NormalizedLandmark(_currentHandLandmark2[itemStack.Item.LandMark]);
+                    landmark.X += itemStack.Item.Offest.x / 100;
+                    landmark.Y += itemStack.Item.Offest.y / 100;
+                    normalizedLandmarkList2.Landmark.Add(landmark);
                 }
                 _newHandLandarkList.Add(normalizedLandmarkList2);
-            }
+            }*/
 
-            //_palmDetectionsAnnotationController.DrawNow(palmDetections);
-            //_handRectsFromPalmDetectionsAnnotationController.DrawNow(handRectsFromPalmDetections);
             _handLandmarksAnnotationController.DrawNow(_newHandLandarkList, handedness);
-            // TODO: render HandWorldLandmarks annotations
-            //_handRectsFromLandmarksAnnotationController.DrawNow(handRectsFromLandmarks);
+        }
+
+        private NormalizedLandmarkList Detect(IList<NormalizedLandmark> curHandLankmark, string handedness)
+        {
+            if (curHandLankmark == null) return default;
+            if (handedness == "Left")
+            {
+                if (curHandLankmark[2].X > curHandLankmark[1].X)
+                {//左手正面
+                    return HandFacingDetect(curHandLankmark, 3);
+                }
+                else
+                {//左手背面
+                    return HandFacingDetect(curHandLankmark,4);
+                }
+            }
+            else if (handedness == "Right")
+            {
+                if (curHandLankmark[2].X > curHandLankmark[1].X)
+                {//右手背面
+                    return HandFacingDetect(curHandLankmark, 6);
+                }
+                else
+                {//右手正面
+                    return HandFacingDetect(curHandLankmark, 5);
+                }
+            }
+            return default;
+        }
+        // 左手正面: 3, 左手背面:4 , 右手正面: 5 , 右手背面 6
+        NormalizedLandmarkList HandFacingDetect(IList<NormalizedLandmark> curHandLankmark, int Custom)
+        {
+            int i = 0;
+            NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
+            foreach (var itemStack in _handAcupunturePointsInventory.Items)
+            {
+                if (itemStack.Item.Customize == Custom)
+                {
+                    if (_isShowDesireAcpunturePoint)
+                    {
+                        if(_desireAcpunturePoints.Find(o => o.TableEntryReference.Key == itemStack.Item.Name.TableEntryReference.Key) != null)
+                        {
+                            NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
+                            landmark.X += itemStack.Item.Offest.x / 100;
+                            landmark.Y += itemStack.Item.Offest.y / 100;
+                            landmark.index = i;
+                            normalizedLandmarkList.Landmark.Add(landmark);
+                        }
+                    }
+                    else
+                    {
+                        NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
+                        landmark.X += itemStack.Item.Offest.x / 100;
+                        landmark.Y += itemStack.Item.Offest.y / 100;
+                        landmark.index = i;
+                        normalizedLandmarkList.Landmark.Add(landmark);
+                    }
+                }
+                i++;
+            }
+            return normalizedLandmarkList;
         }
 
         private void OnPalmDetectionsOutput(object stream, OutputEventArgs<List<Detection>> eventArgs)

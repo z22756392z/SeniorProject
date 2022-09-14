@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e462d021008e7c24e8bdafb42f80cfcf, type: 3}
+  m_Name: "\u4E09\u9593\u7A74"
+  m_EditorClassIdentifier: 
+  _guid: 
+  _name:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: "\u4E09\u9593\u7A74_title"
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _previewImage: {fileID: 0}
+  _description:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: "\u4E09\u9593\u7A74_description"
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
+  _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
+  _disease: "\u3010\u529F\u6548\u3011\u6CC4\u71B1\u5229\u54BD\uFF0C\u8ABF\u8151\u901A\u4FBF\r\n\u3002\u53E4\u5178\uFF1A\u76EE\u6025\u75DB\u3001\u4E0B\u9F52\u75DB\u3001\u54BD\u5589\u816B\u75DB\u3001\u5589\u75F9\u3001\u54BD\u585E\u3001\u624B\u6307\u624B\u80CC\u7D05\u816B\u3001\u5BD2\u71B1\u3001\u80F8\u6EFF\u8178\u9CF4\u3001\u80A9\u75DB\u3001\u5507\u53E3\u4E7E\u3001\u8EAB\u71B1\u3001\u5598\u606F\u3001\u5927\u4FBF\u4E0D\u901A\u3001\u591A\u81E5\u5584\u553E\u3001\u7627\u75BE\u3001\u624B\u6307\u9EBB\u6728\u3001\u767C\u71B1\u7121\u6C57\u3002\r\n\u73FE\u4EE3\uFF1A\u53E3\u8154\u981C\u9762\u75C5\u75C7\u3001\u4E09\u53C9\u795E\u7D93\u75DB\u3001\u5931\u7720\u3002"
+  _landMark: 5
+  _offset: {x: 0, y: 0}
+  _customize: 4
+  references:
+    version: 2
+    RefIds: []

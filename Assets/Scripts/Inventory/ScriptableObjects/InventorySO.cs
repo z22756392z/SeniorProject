@@ -103,30 +103,6 @@ public class InventorySO : ScriptableObject
 		return 0;
 	}
 
-	public bool[] IngredientsAvailability(List<ItemStack> ingredients)
-	{
-		if (ingredients == null)
-			return null;
-		bool[] availabilityArray = new bool[ingredients.Count];
-
-		for (int i = 0; i < ingredients.Count; i++)
-		{
-			availabilityArray[i] = _items.Exists(o => o.Item == ingredients[i].Item && o.Amount >= ingredients[i].Amount);
-
-		}
-		return availabilityArray;
-
-
-	}
-	public bool hasIngredients(List<ItemStack> ingredients)
-	{
-
-		bool hasIngredients = !ingredients.Exists(j => !_items.Exists(o => o.Item == j.Item && o.Amount >= j.Amount));
-
-		return hasIngredients;
-
-
-	}
 
 	public List<ItemStack> GetItemsInCurrentInventory(InventoryTabType tabType) => _items.FindAll(o => o.Item.ItemType.TabType.TabType == tabType);
     

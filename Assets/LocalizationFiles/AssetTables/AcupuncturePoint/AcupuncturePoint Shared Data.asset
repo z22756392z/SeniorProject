@@ -15,12 +15,12 @@ MonoBehaviour:
   m_TableCollectionName: AcupuncturePoint
   m_TableCollectionNameGuidString: bb01e39152fadc44cb4e86a0d2367bfb
   m_Entries:
-  - m_Id: 13360365522944
-    m_Key: AcupuncturePoint_1_title
+  - m_Id: 18163756665622528
+    m_Key: "\u5C11\u5546\u7A74_title"
     m_Metadata:
       m_Items: []
-  - m_Id: 13360369717248
-    m_Key: AcupuncturePoint_1_description
+  - m_Id: 18163756665622529
+    m_Key: "\u5C11\u5546\u7A74_description"
     m_Metadata:
       m_Items: []
   m_Metadata:

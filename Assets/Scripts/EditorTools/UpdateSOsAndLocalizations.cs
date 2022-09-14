@@ -128,7 +128,7 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "offset_y", out int offset_y)) continue;
                         if (!Read(reader, "customize", out int customize)) continue;
 
-                        name = title + " " + id.ToString();
+                        name = title;
                         if(IsChinese)
                             UpdateAcupuncturePointSO(AcupuncturePointChineseTable,name, title, content, disease, offset_x, offset_y, rel_position, customize);
                         else 
