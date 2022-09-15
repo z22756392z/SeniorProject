@@ -10,6 +10,8 @@ using UnityEngine.UI;
 /// </summary>
 public class BotUI : MonoBehaviour
 {
+    [SerializeField] private InputReader _inputReader;
+
     public GameObject contentDisplayObject;       // Text gameobject where all the conversation is shown
     public TMP_InputField input;                      // InputField gameobject wher user types their message
     public TMP_FontAsset messages_font_asset;                      // InputField gameobject wher user types their message
@@ -33,6 +35,18 @@ public class BotUI : MonoBehaviour
     private void Awake()
     {
         input.onSubmit.AddListener(networkManager.SendNetMessage);
+    }
+
+    public void OnBotInputSelected()
+    {
+        _inputReader.DisalbeCheatInput();
+        _inputReader.EnableMenuInput();
+    }
+
+    public void OnBotInputDeselected()
+    {
+        _inputReader.EnableCheatInput();
+        _inputReader.EnableGameplayInput();
     }
 
     public void UpdateDisplay(string sender, string message, string messageType)

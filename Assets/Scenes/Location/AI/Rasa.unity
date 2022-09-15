@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 911921718}
   - component: {fileID: 911921716}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: BotManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44393b8a48651c245b963704055f4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
   contentDisplayObject: {fileID: 1659261732}
   input: {fileID: 2109669704}
   messages_font_asset: {fileID: 11400000, guid: cab398663d2b224419a008e77b5f0f8f,
@@ -665,7 +666,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -732,6 +733,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2100796995}
     m_Modifications:
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 911921716}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 911921716}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBotInputSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBotInputDeselected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BotUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BotUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109669704, guid: 9ae1830a1b690fc4ba92e801638f429f, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4790034819858822634, guid: 9ae1830a1b690fc4ba92e801638f429f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -745,6 +802,11 @@ PrefabInstance:
     - target: {fileID: 4790034819858822634, guid: 9ae1830a1b690fc4ba92e801638f429f,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790034820089500522, guid: 9ae1830a1b690fc4ba92e801638f429f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4790034820447327056, guid: 9ae1830a1b690fc4ba92e801638f429f,
