@@ -77,6 +77,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Menus/Main.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: eed073cbf2730bc48887e3e50d8fa777
+    m_Address: Assets/Scenes/Location/HandSimulator/Hand Tracking.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

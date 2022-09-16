@@ -486,7 +486,7 @@ namespace Mediapipe.Unity
         [SerializeField] private Color _leftLandmarkColor = Color.green;
         [SerializeField] private Color _rightLandmarkColor = Color.green;
         [SerializeField] private bool _drawConnection = true;
-
+        public GameObject LandMarkExtracter = default;
         public enum Hand
         {
             Left,
@@ -537,6 +537,11 @@ namespace Mediapipe.Unity
                 _connectionListAnnotation.rotationAngle = value;
                 base.rotationAngle = value;
             }
+        }
+        private void OnDisable()
+        {
+            if(LandMarkExtracter != default)
+            LandMarkExtracter.SendMessage(methodName: "ClearHands", value: transform.GetChild(0).GetChild(0).GetComponent<PointAnnotation>());
         }
 
         public PointAnnotation this[int index] => _landmarkListAnnotation[index];
@@ -759,6 +764,7 @@ namespace Mediapipe.Unity
         [SerializeField] private Color _color = Color.green;
         [SerializeField] private float _radius = 15.0f;
         [SerializeField] private bool _setPointDisable = true;
+        public Color Color => _color;
         private void OnEnable()
         {
             ApplyColor(_color);
@@ -1641,7 +1647,7 @@ namespace Mediapipe.Unity
         [SerializeField] private float _landmarkRadius = 15.0f;
         [SerializeField] private Color _connectionColor = Color.white;
         [SerializeField, Range(0, 1)] private float _connectionWidth = 1.0f;
-
+        [SerializeField] private GameObject _landMarkExtracter = default;
         private void OnValidate()
         {
             ApplyLeftLandmarkColor(_leftLandmarkColor);
@@ -1708,6 +1714,7 @@ namespace Mediapipe.Unity
         protected override HandLandmarkListAnnotation InstantiateChild(bool isActive = true)
         {
             var annotation = base.InstantiateChild(isActive);
+            annotation.LandMarkExtracter = _landMarkExtracter;
             annotation.SetLeftLandmarkColor(_leftLandmarkColor);
             annotation.SetRightLandmarkColor(_rightLandmarkColor);
             annotation.SetLandmarkRadius(_landmarkRadius);
@@ -1757,6 +1764,7 @@ namespace Mediapipe.Unity
         }
     }
 }
+
 ```
 
 

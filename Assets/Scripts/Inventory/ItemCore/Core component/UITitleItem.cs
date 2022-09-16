@@ -10,6 +10,7 @@ public class UITitleItem : ItemCoreComponent
     private void OnEnable()
     {
         _acupunturePointUITitleEvent.OnEventRaised += SetTitleDisplay;
+        _title.gameObject.SetActive(false);
     }
 
     private void OnDisable()
@@ -29,11 +30,15 @@ public class UITitleItem : ItemCoreComponent
         if (core._itemStack.Item.Name.GetLocalizedString()[0] == 'N')
         {
             if (_LogOnce)
+            {
+                
                 Mediapipe.Unity.Logger.LogDebug("Localize String: " + core._itemStack.Item.Name.TableEntryReference.Key + " not setup");
+            }
             _LogOnce = false;
         }
         else
         {
+            _title.gameObject.SetActive(true);
             _title.StringReference = core._itemStack.Item.Name;
         }
     }

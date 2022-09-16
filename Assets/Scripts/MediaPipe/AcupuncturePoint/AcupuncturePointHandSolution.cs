@@ -28,12 +28,14 @@ namespace Mediapipe.Unity.HandTracking
 
         private void OnEnable()
         {
+            if(_showAcpunturePoints != null)
             _showAcpunturePoints.OnEventRaised += SetAcpunturePoints;
         }
 
         private void OnDisable()
         {
-            _showAcpunturePoints.OnEventRaised -= SetAcpunturePoints;
+            if (_showAcpunturePoints != null)
+                _showAcpunturePoints.OnEventRaised -= SetAcpunturePoints;
         }
 
         void SetAcpunturePoints(List<LocalizedString> value)
