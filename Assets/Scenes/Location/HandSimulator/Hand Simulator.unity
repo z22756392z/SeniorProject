@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   annotation: {fileID: 1465467706}
-  _visualizeZ: 0
+  _visualizeZ: 1
 --- !u!114 &841116732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,8 +1594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiHandLandmarksAnnotation: {fileID: 1837015370}
-  _leftHandColor: {r: 1, g: 0.5411765, b: 0, a: 0.39215687}
-  _rightHandColor: {r: 0, g: 0.8509804, b: 0.90588236, a: 0.39215687}
+  _leftHandColor: {r: 1, g: 0.5411765, b: 0, a: 1}
+  _rightHandColor: {r: 0, g: 0.8509804, b: 0.90588236, a: 1}
   Landmarks:
   - body: 0
     size: 21

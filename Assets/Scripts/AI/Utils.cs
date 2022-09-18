@@ -170,6 +170,7 @@ public class TextureScale {
 public struct PostData {
 	public string message;
 	public string sender;
+    // public string metadata;
 }
 
 /// <summary>
@@ -185,6 +186,7 @@ public class RecieveData {
 	public string button;
 	public string element;
 	public string quick_replie;
+    public string metadata;
 }
 
 /// <summary>

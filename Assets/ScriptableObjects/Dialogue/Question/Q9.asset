@@ -12,62 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb462aa634fbee640a0f980c72932b1f, type: 3}
   m_Name: Q9
   m_EditorClassIdentifier: 
-  _lines:
-  - _actorID: 0
-    _textList:
-    - m_TableReference:
-        m_TableCollectionName: Question
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: L1-D1-Q9
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-    _choices:
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: AcupuncturePoint
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: "\u9B5A\u969B\u7A74_title"
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-        m_LocalVariables: []
-      _nextDialogue: {fileID: 0}
-      _actionType: 3
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: AcupuncturePoint
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: "\u5C11\u5E9C\u7A74_title"
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-        m_LocalVariables: []
-      _nextDialogue: {fileID: 0}
-      _actionType: 3
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: AcupuncturePoint
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: "\u52DE\u5BAE\u7A74_title"
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-        m_LocalVariables: []
-      _nextDialogue: {fileID: 0}
-      _actionType: 3
-    - _response:
-        m_TableReference:
-          m_TableCollectionName: AcupuncturePoint
-        m_TableEntryReference:
-          m_KeyId: 0
-          m_Key: "\u5408\u8C37\u7A74_title"
-        m_FallbackState: 0
-        m_WaitForCompletion: 0
-        m_LocalVariables: []
-      _nextDialogue: {fileID: 0}
-      _actionType: 2
+  _lines: []
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
   references:

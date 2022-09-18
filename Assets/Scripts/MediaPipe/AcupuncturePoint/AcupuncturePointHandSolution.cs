@@ -20,28 +20,45 @@ namespace Mediapipe.Unity.HandTracking
         [SerializeField] private MultiHandLandmarkListAnnotationController _handLandmarksAnnotationController;
         [SerializeField] private NormalizedRectListAnnotationController _handRectsFromLandmarksAnnotationController;
         [Header("Listening on channel")]
+        [SerializeField] private ListStringEventChannelSO _aiShowAupunturePoints = default;
         [SerializeField] private ListLocalizedStringEventChannelSO _showAcpunturePoints = default;
-        [SerializeField] private List<LocalizedString> _desireAcpunturePoints;
+        [HideInInspector][SerializeField] private List<LocalizedString> _desireAcpunturePoints;
+        private List<string> _aiDesireAcpunturePoints;
         private bool _isFirstTime1 = true;
         private bool _isFirstTime2 = true;
         private bool _isShowDesireAcpunturePoint = false;
+        private bool _aiIsShowDesireAcpunturePoint = false;
 
         private void OnEnable()
         {
             if(_showAcpunturePoints != null)
             _showAcpunturePoints.OnEventRaised += SetAcpunturePoints;
+            if (_aiShowAupunturePoints != null)
+                _aiShowAupunturePoints.OnEventRaised += AISetAcpunturePoints;
         }
 
         private void OnDisable()
         {
             if (_showAcpunturePoints != null)
                 _showAcpunturePoints.OnEventRaised -= SetAcpunturePoints;
+            if (_aiShowAupunturePoints != null)
+                _aiShowAupunturePoints.OnEventRaised -= AISetAcpunturePoints;
         }
 
         void SetAcpunturePoints(List<LocalizedString> value)
         {
             _isShowDesireAcpunturePoint = true;
             _desireAcpunturePoints = value;
+        }
+
+        void AISetAcpunturePoints(List<string> value)
+        {
+            _aiDesireAcpunturePoints = new List<string>();
+            _aiIsShowDesireAcpunturePoint = true;
+            foreach (var item in value)
+            {
+                _aiDesireAcpunturePoints.Add(item);
+            }
         }
 
         public HandTrackingGraph.ModelComplexity modelComplexity
@@ -161,7 +178,10 @@ namespace Mediapipe.Unity.HandTracking
                 yield break;
             }
             if(_currentHandLandmark1 != null && handedness != null)
+            {
                 _newHandLandarkList.Add(Detect(_currentHandLandmark1, handedness[0].Classification[0].Label));
+            }
+                
             if (_currentHandLandmark2 != null && handedness != null && handedness.Count > 1)
                 _newHandLandarkList.Add(Detect(_currentHandLandmark2, handedness[1].Classification[0].Label));
 
@@ -200,31 +220,31 @@ namespace Mediapipe.Unity.HandTracking
         private NormalizedLandmarkList Detect(IList<NormalizedLandmark> curHandLankmark, string handedness)
         {
             if (curHandLankmark == null) return default;
-            if (handedness == "Left")
+            if (handedness[0] == 'L')
             {
                 if (curHandLankmark[2].X > curHandLankmark[1].X)
-                {//左手正面
+                {
                     return HandFacingDetect(curHandLankmark, 3);
                 }
                 else
-                {//左手背面
+                {
                     return HandFacingDetect(curHandLankmark,4);
                 }
             }
-            else if (handedness == "Right")
+            else if(handedness[0] =='R')
             {
                 if (curHandLankmark[2].X > curHandLankmark[1].X)
-                {//右手背面
+                {
                     return HandFacingDetect(curHandLankmark, 6);
                 }
                 else
-                {//右手正面
+                {
                     return HandFacingDetect(curHandLankmark, 5);
                 }
             }
             return default;
         }
-        // 左手正面: 3, 左手背面:4 , 右手正面: 5 , 右手背面 6
+       
         NormalizedLandmarkList HandFacingDetect(IList<NormalizedLandmark> curHandLankmark, int Custom)
         {
             int i = 0;
@@ -235,7 +255,21 @@ namespace Mediapipe.Unity.HandTracking
                 {
                     if (_isShowDesireAcpunturePoint)
                     {
-                        if(_desireAcpunturePoints.Find(o => o.TableEntryReference.Key == itemStack.Item.Name.TableEntryReference.Key) != null)
+                        string key = itemStack.Item.Name.TableEntryReference.Key;
+                        if (_desireAcpunturePoints.Find(o => o.TableEntryReference.Key == key) != null)
+                        {
+                            NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
+                            landmark.X += itemStack.Item.Offest.x / 100;
+                            landmark.Y += itemStack.Item.Offest.y / 100;
+                            landmark.index = i;
+                            normalizedLandmarkList.Landmark.Add(landmark);
+                        }
+                    }
+                    else if (_aiIsShowDesireAcpunturePoint)
+                    {
+                        string localizeString = itemStack.Item.Name.GetLocalizedString();
+                        Debug.Log(_aiDesireAcpunturePoints[0] + " " + localizeString);
+                        if (_aiDesireAcpunturePoints.Find(o => o == localizeString) != null)
                         {
                             NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
                             landmark.X += itemStack.Item.Offest.x / 100;
@@ -246,6 +280,7 @@ namespace Mediapipe.Unity.HandTracking
                     }
                     else
                     {
+                        
                         NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
                         landmark.X += itemStack.Item.Offest.x / 100;
                         landmark.Y += itemStack.Item.Offest.y / 100;
@@ -255,6 +290,7 @@ namespace Mediapipe.Unity.HandTracking
                 }
                 i++;
             }
+            
             return normalizedLandmarkList;
         }
 

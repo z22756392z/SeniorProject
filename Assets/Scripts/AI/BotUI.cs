@@ -31,12 +31,15 @@ public class BotUI : MonoBehaviour
     /// <param name="sender">The one who wrote this message</param>
     /// <param name="message">The message</param>
     /// 
-
+    
     private void Awake()
     {
         input.onSubmit.AddListener(networkManager.SendNetMessage);
     }
-
+    private void Start()
+    {
+        StartConversation();
+    }
     public void OnBotInputSelected()
     {
         _inputReader.DisalbeCheatInput();
@@ -63,7 +66,7 @@ public class BotUI : MonoBehaviour
         // Set chat bubble position
         StartCoroutine(SetChatBubblePosition(chatBubbleChild.transform.parent.GetComponent<RectTransform>(), sender));
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         // Show component after a short animation
         AddChatComponent(chatBubbleChild, message, messageType);
@@ -217,6 +220,13 @@ public class BotUI : MonoBehaviour
             case "quick_replies":
                 break;
         }
+    }
+
+    public void StartConversation()
+    {
+        UpdateDisplay("Bot", "hi~ 我是穴位大師", "text");
+        UpdateDisplay("Bot", "請問有甚麼需要問我的?", "text");
+        UpdateDisplay("Bot", "說出疾病症狀判斷會越精準呦~", "text");
     }
 }
 

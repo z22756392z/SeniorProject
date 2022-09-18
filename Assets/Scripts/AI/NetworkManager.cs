@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 /// <summary>
 /// This class handles all the requests and serialization and
@@ -16,6 +17,8 @@ public class NetworkManager : MonoBehaviour
     public BotUI botUI;
     // the url at which the bot's custom component is hosted
     private const string rasa_url = "http://127.0.0.1:5005/webhooks/unity/webhook";
+    public ListStringEventChannelSO AcupuncturePointEvent;
+    List<string> AcupuncturePointList = new List<string>();
 
     /// <summary>
     /// This method is called when user has entered their message and hits
@@ -32,11 +35,12 @@ public class NetworkManager : MonoBehaviour
         PostData postMessage = new PostData
         {
             sender = "doku",
-            message = message
+            message = message,
+            // metadata = JsonUtility.ToJson("{'id': '000'}"),  // fail
         };
 
         string jsonBody = JsonUtility.ToJson(postMessage);
-        Debug.Log(jsonBody);
+        //Debug.Log(jsonBody);
 
         // Update display
         botUI.UpdateDisplay("Doku", message, "text");
@@ -55,13 +59,27 @@ public class NetworkManager : MonoBehaviour
         RootMessages recieveMessages =
             JsonUtility.FromJson<RootMessages>("{\"messages\":" + response + "}");
 
-        Debug.Log(response);
+        //Debug.Log(response);
         //Debug.Log(ConvertJsonStringToSting(response));
 
         // show message based on message type on UI
         foreach (RecieveData message in recieveMessages.messages)
         {
-            Debug.Log(message.text);
+            //Debug.Log(message.text);
+
+            string[] word;
+            if (message.text.Contains("建議按的穴位"))
+            {
+                word = message.text.Substring(8).Split('、');
+                foreach(string s in word)
+                {
+                    AcupuncturePointList.Add(s);
+                }
+                Debug.Log(AcupuncturePointList.Count);
+                AcupuncturePointEvent.RaiseEvent(AcupuncturePointList);
+                AcupuncturePointList.Clear();
+            }
+
             FieldInfo[] fields = typeof(RecieveData).GetFields();
             foreach (FieldInfo field in fields)
             {
@@ -82,6 +100,8 @@ public class NetworkManager : MonoBehaviour
             }
         }
     }
+
+    
 
     /// <summary>
     /// This is a coroutine to asynchronously hit the server url with users message

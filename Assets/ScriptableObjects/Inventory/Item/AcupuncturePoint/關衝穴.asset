@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e462d021008e7c24e8bdafb42f80cfcf, type: 3}
-  m_Name: "\u4E2D\u885D"
+  m_Name: "\u95DC\u885D\u7A74"
   m_EditorClassIdentifier: 
   _guid: 
   _name:
@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: AcupuncturePoint
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: "\u4E2D\u885D_title"
+      m_Key: "\u95DC\u885D\u7A74_title"
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -28,16 +28,16 @@ MonoBehaviour:
       m_TableCollectionName: AcupuncturePoint
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: "\u4E2D\u885D_description"
+      m_Key: "\u95DC\u885D\u7A74_description"
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
-  _disease: "\u3010\u529F\u6548\u3011\u660F\u8FF7\u3001\u4E2D\u6691\u3001\u660F\u53A5\u7B49\u6025\u75C7\u3002\u5FC3\u75DB\u3002\u5C0F\u5152\u591C\u557C\u3001\u820C\u5F37\u816B\u75DB\u3002"
-  _landMark: 11
+  _disease: "\u3010\u529F\u6548\u3011\u6025\u6027\u6241\u6843\u9AD4\u708E\u3001\u5589\u708E\u3001\u7D50\u819C\u708E\u3002"
+  _landMark: 15
   _offset: {x: 0, y: -4}
-  _customize: 2
+  _customize: 4
   references:
     version: 2
     RefIds: []
