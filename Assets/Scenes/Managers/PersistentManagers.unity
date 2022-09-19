@@ -258,6 +258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugConsole
       objectReference: {fileID: 0}
+    - target: {fileID: 1640579652993643793, guid: 35e3ff767dd741c4e97acd147d5a083b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4569359360448908374, guid: 35e3ff767dd741c4e97acd147d5a083b,
         type: 3}
       propertyPath: m_Pivot.x

@@ -222,7 +222,7 @@ namespace Mediapipe.Unity.HandTracking
             if (curHandLankmark == null) return default;
             if (handedness[0] == 'L')
             {
-                if (curHandLankmark[2].X > curHandLankmark[1].X)
+                if (curHandLankmark[0].X > curHandLankmark[17].X)
                 {
                     return HandFacingDetect(curHandLankmark, 3);
                 }
@@ -233,7 +233,7 @@ namespace Mediapipe.Unity.HandTracking
             }
             else if(handedness[0] =='R')
             {
-                if (curHandLankmark[2].X > curHandLankmark[1].X)
+                if (curHandLankmark[0].X > curHandLankmark[17].X)
                 {
                     return HandFacingDetect(curHandLankmark, 6);
                 }
