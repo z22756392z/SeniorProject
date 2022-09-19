@@ -1895,7 +1895,14 @@ PrefabInstance:
         type: 3}
       propertyPath: _showAcpunturePoints
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: fa5619fdea5699e42b0e68333221f587,
+        type: 2}
+    - target: {fileID: 4272412563121767471, guid: fac0ac00459db684bb6a176f22e09256,
+        type: 3}
+      propertyPath: _aiShowAupunturePoints
+      value: 
+      objectReference: {fileID: 11400000, guid: 345cd9293debb2a41b73cce4079712dc,
+        type: 2}
     - target: {fileID: 4272412563121767471, guid: fac0ac00459db684bb6a176f22e09256,
         type: 3}
       propertyPath: _handLandmarksAnnotationController

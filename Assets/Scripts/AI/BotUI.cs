@@ -226,7 +226,7 @@ public class BotUI : MonoBehaviour
     {
         UpdateDisplay("Bot", "hi~ 我是穴位大師", "text");
         UpdateDisplay("Bot", "請問有甚麼需要問我的?", "text");
-        UpdateDisplay("Bot", "說出疾病症狀判斷會越精準呦~", "text");
+        UpdateDisplay("Bot", "說出疾病症狀判斷會越精準哦~", "text");
     }
 }
 

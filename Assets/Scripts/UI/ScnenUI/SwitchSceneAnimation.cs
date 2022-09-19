@@ -39,11 +39,13 @@ public class SwitchSceneAnimation : MonoBehaviour
         MainCanvas.SetTrigger("GoNextStage");
         _leaveScene?.RaiseEvent();
         _closeDialogue?.RaiseEvent();
+        Debug.Log("exit");
     }
 
     public void TriggerAnimationLeave()
     {
         MainCanvas.SetTrigger("Leave");
+        
     }
     public void CloseMirror()
     {
@@ -54,9 +56,26 @@ public class SwitchSceneAnimation : MonoBehaviour
     public void MirrorOnclick()
     {
         MainCanvas.SetTrigger("MirrorOnclick");
-        
     }
 
+    public void AIStart()
+    {
+        MainCanvas.SetTrigger("AIStart");
+    }
+    public void AIStop()
+    {
+        MainCanvas.SetTrigger("AIStop");
+    }
+
+    public void MirrorEnlarge()
+    {
+        MainCanvas.SetTrigger("enlarge");
+    }
+
+    public void MirrorRecover()
+    {
+        MainCanvas.SetTrigger("recover");
+    }
     public void ShowSolution()
     {
         _showSolution?.RaiseEvent();
