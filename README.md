@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -227,3 +227,11 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 
 * modify
   * add AR in AI scene，AI script Update
+
+
+
+> 9/19
+
+* modify
+  * Add new mirror
+  * add chinese file vacabulary
