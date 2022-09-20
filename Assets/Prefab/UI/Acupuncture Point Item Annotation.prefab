@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1129220799940321149}
   m_Father: {fileID: 6133709255799386536}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6434217369595131942
 MonoBehaviour:
@@ -256,8 +256,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8845491605560686018}
   - {fileID: 1720546566348017490}
+  - {fileID: 8845491605560686018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,6 +378,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7bbd641cc0e80d642bc8fdea3b96c1d7,
         type: 2}
     - target: {fileID: 151566559, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
+      propertyPath: _isItemButtonClickable
+      value: 
+      objectReference: {fileID: 11400000, guid: ecf1d7e6c845a0a409fb2251674d82b0,
+        type: 2}
+    - target: {fileID: 151566559, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a, type: 3}
       propertyPath: _fillInspectorChannelSO
       value: 
       objectReference: {fileID: 11400000, guid: 3fe11b1e0455ce944beabf6db71180eb,
@@ -492,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3436543367045413438, guid: 10fbfe3e0df9cfa48972c4a1e3ad648a,
         type: 3}

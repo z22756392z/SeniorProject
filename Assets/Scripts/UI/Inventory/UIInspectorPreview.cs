@@ -10,4 +10,9 @@ public class UIInspectorPreview : MonoBehaviour
 		_previewImage.gameObject.SetActive(true);
 		_previewImage.sprite = ItemToInspect.PreviewImage;
 	}
+
+	public void HidePreview()
+    {
+		_previewImage.gameObject.SetActive(false);
+	}
 }

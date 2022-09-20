@@ -21,8 +21,10 @@ public class UIInventoryItem : ItemCoreComponent
 	[SerializeField] private LocalizedStringEventChannelSO _fillHintPanel = default;
 	[SerializeField] private VoidEventChannelSO _hideHintPanel = default;
 	[SerializeField] private VoidEventChannelSO _hideInspector = default;
+	[SerializeField] private BoolEventChannelSO _isItemButtonClickable = default;
 	[HideInInspector] public ItemStack currentItem;
-	
+
+	public bool isClickable = true;
 	bool _isSelected = false;
 	bool _isClicked = false;
 	// 正面左手: 3, 背面左手:4 , 正面右手: 5 , 背面右手 6
@@ -93,11 +95,18 @@ public class UIInventoryItem : ItemCoreComponent
 		if (_isSelected)
 		{ ClickItem(); }
 		ItemClicked += ShowItemInformation;
+		_isItemButtonClickable.OnEventRaised += SetClickable;
 	}
     private void OnDisable()
     {
 		ItemClicked -= ShowItemInformation;
+		_isItemButtonClickable.OnEventRaised -= SetClickable;
 	}
+
+	private void SetClickable(bool val)
+    {
+		isClickable = val;
+    }
 
     public void HoverItem()
 	{
@@ -162,7 +171,8 @@ public class UIInventoryItem : ItemCoreComponent
 	}
 	void ShowItemInformation(ItemSO item)
 	{
-		_fillInspectorChannelSO.FillInspector(item,this);
+		if (isClickable)
+			_fillInspectorChannelSO.FillInspector(item);
 	}
 
 	private IEnumerator ShowHint()

@@ -13,17 +13,15 @@ public class UIInspectorDescription : MonoBehaviour
 		_textName.StringReference = itemToInspect.Name;
 		_textName.StringReference.Arguments = new[] { new { Purpose = 0, Amount = 1 } };
 		_textDescription.StringReference = itemToInspect.Description;
-		//if (itemToInspect.HealthResorationValue > 0)
-		//{
-			//_textHealthRestoration.text = "+" + itemToInspect.HealthResorationValue;
-		//}
-		//else
-		//{
-			//_textHealthRestoration.text = "";
-
-		//}
+		
 		_textName.gameObject.SetActive(true);
 		_textDescription.gameObject.SetActive(true);
 		
+	}
+
+	public void HideDescription()
+    {
+		_textName.gameObject.SetActive(false);
+		_textDescription.gameObject.SetActive(false);
 	}
 }

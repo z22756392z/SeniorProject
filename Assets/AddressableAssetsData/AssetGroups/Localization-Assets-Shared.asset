@@ -35,6 +35,15 @@ MonoBehaviour:
     m_Address: Assets/LocalizationFiles/AssetTables/Qusetion/Question Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 416b10faec7a08a4fa1263332c397b32
+    m_Address: Assets/LocalizationFiles/AssetTables/AcupunturePointSprite/AcpunturePointSprite
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 77c82b760b0c25c4387a61407c5821c9
+    m_Address: Assets/LocalizationFiles/AssetTables/UISprite/UISprite Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

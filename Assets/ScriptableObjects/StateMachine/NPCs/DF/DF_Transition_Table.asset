@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: DF_Transition_Table
   m_EditorClassIdentifier: 
   _transitions:
-  - FromState: {fileID: 11400000, guid: 88d9e93dd417f024b99e451b0c023f08, type: 2}
-    ToState: {fileID: 11400000, guid: 721605403f9e22349893259162f8dc18, type: 2}
-    Conditions:
-    - ExpectedResult: 0
-      Condition: {fileID: 11400000, guid: 4a48c8434b05b4745921e30eb20ec879, type: 2}
-      Operator: 0
   - FromState: {fileID: 11400000, guid: 721605403f9e22349893259162f8dc18, type: 2}
     ToState: {fileID: 11400000, guid: ab993c521ba0cce4d97991648cee9fb4, type: 2}
     Conditions:
@@ -29,6 +23,12 @@ MonoBehaviour:
       Condition: {fileID: 11400000, guid: 069e2277d3336c14690805c0172b06c9, type: 2}
       Operator: 0
   - FromState: {fileID: 11400000, guid: ab993c521ba0cce4d97991648cee9fb4, type: 2}
+    ToState: {fileID: 11400000, guid: 721605403f9e22349893259162f8dc18, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 4a48c8434b05b4745921e30eb20ec879, type: 2}
+      Operator: 0
+  - FromState: {fileID: 11400000, guid: 88d9e93dd417f024b99e451b0c023f08, type: 2}
     ToState: {fileID: 11400000, guid: 721605403f9e22349893259162f8dc18, type: 2}
     Conditions:
     - ExpectedResult: 0

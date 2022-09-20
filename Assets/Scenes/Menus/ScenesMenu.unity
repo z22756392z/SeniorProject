@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 86993332}
   - component: {fileID: 86993334}
   - component: {fileID: 86993335}
+  - component: {fileID: 86993336}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -401,6 +402,41 @@ MonoBehaviour:
   _beforeLeaveTime: 1
   _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
     type: 2}
+--- !u!114 &86993336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86993330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:77c82b760b0c25c4387a61407c5821c9
+    m_TableEntryReference:
+      m_KeyId: 127143464960
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 86993332}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &220070892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1232,7 @@ GameObject:
   - component: {fileID: 1105779507}
   - component: {fileID: 1105779509}
   - component: {fileID: 1105779510}
+  - component: {fileID: 1105779511}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1347,6 +1384,41 @@ MonoBehaviour:
   _beforeLeaveTime: 1
   _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
     type: 2}
+--- !u!114 &1105779511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105779505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:77c82b760b0c25c4387a61407c5821c9
+    m_TableEntryReference:
+      m_KeyId: 453258989568
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105779507}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1164297058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1660,7 @@ GameObject:
   - component: {fileID: 1230423936}
   - component: {fileID: 1230423938}
   - component: {fileID: 1230423939}
+  - component: {fileID: 1230423940}
   m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
@@ -1739,6 +1812,41 @@ MonoBehaviour:
   _beforeLeaveTime: 1
   _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
     type: 2}
+--- !u!114 &1230423940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230423934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:77c82b760b0c25c4387a61407c5821c9
+    m_TableEntryReference:
+      m_KeyId: 1153875529728
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1230423936}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1252824287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 815.08}
+  m_AnchoredPosition: {x: 0, y: 1420.0004}
   m_SizeDelta: {x: 0, y: 2500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1345270386
@@ -2212,7 +2320,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 220070894}
   m_HandleRect: {fileID: 220070893}
   m_Direction: 3
-  m_Value: 0.42599994
+  m_Value: -0.00000034386002
   m_Size: 0.432
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2269,6 +2377,7 @@ GameObject:
   - component: {fileID: 1774255983}
   - component: {fileID: 1774255985}
   - component: {fileID: 1774255986}
+  - component: {fileID: 1774255987}
   m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
@@ -2316,7 +2425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 27ae6dd43694c2f45bb0313b552fbdb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83dc13d8baf356e4286395fff0d92f13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2420,6 +2529,41 @@ MonoBehaviour:
   _beforeLeaveTime: 1
   _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
     type: 2}
+--- !u!114 &1774255987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774255981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:77c82b760b0c25c4387a61407c5821c9
+    m_TableEntryReference:
+      m_KeyId: 608108498944
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1774255983}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1824194718
 GameObject:
   m_ObjectHideFlags: 0

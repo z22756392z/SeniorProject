@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e462d021008e7c24e8bdafb42f80cfcf, type: 3}
-  m_Name: "\u5916\u52DE\u5BAE"
+  m_Name: "\u5916\u52DE\u5BAE\u7A74"
   m_EditorClassIdentifier: 
   _guid: 
   _name:
@@ -18,7 +18,7 @@ MonoBehaviour:
       m_TableCollectionName: AcupuncturePoint
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: "\u5916\u52DE\u5BAE_title"
+      m_Key: "\u5916\u52DE\u5BAE\u7A74_title"
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
@@ -28,7 +28,7 @@ MonoBehaviour:
       m_TableCollectionName: AcupuncturePoint
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: "\u5916\u52DE\u5BAE_description"
+      m_Key: "\u5916\u52DE\u5BAE\u7A74_description"
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
