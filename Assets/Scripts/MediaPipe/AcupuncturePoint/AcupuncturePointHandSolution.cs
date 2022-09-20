@@ -29,6 +29,12 @@ namespace Mediapipe.Unity.HandTracking
         private bool _isShowDesireAcpunturePoint = false;
         private bool _aiIsShowDesireAcpunturePoint = false;
 
+        public Vector3 LeftHandNormalVector = default;
+        public Vector3 RightHandNormalVector = default;
+        public float BaseLength = default;
+        public Quaternion PalmDir = default;
+        public Vector3 PalmEular = default;
+        public Vector3 Offset = default;
         private void OnEnable()
         {
             if(_showAcpunturePoints != null)
@@ -220,9 +226,11 @@ namespace Mediapipe.Unity.HandTracking
         private NormalizedLandmarkList Detect(IList<NormalizedLandmark> curHandLankmark, string handedness)
         {
             if (curHandLankmark == null) return default;
+
             if (handedness[0] == 'L')
             {
-                if (curHandLankmark[0].X > curHandLankmark[17].X)
+                NormalVectorCal(curHandLankmark,'L');
+                if (LeftHandNormalVector.z < 0)
                 {
                     return HandFacingDetect(curHandLankmark, 3);
                 }
@@ -233,7 +241,8 @@ namespace Mediapipe.Unity.HandTracking
             }
             else if(handedness[0] =='R')
             {
-                if (curHandLankmark[0].X > curHandLankmark[17].X)
+                NormalVectorCal(curHandLankmark, 'R');
+                if (RightHandNormalVector.z < 0)
                 {
                     return HandFacingDetect(curHandLankmark, 6);
                 }
@@ -244,11 +253,32 @@ namespace Mediapipe.Unity.HandTracking
             }
             return default;
         }
-       
+
+        private void NormalVectorCal(IList<NormalizedLandmark> curHandLankmark, char handness)
+        {
+            
+            Vector3 dir1 = new Vector3(curHandLankmark[5].X, curHandLankmark[5].Y, curHandLankmark[5].Z) - new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, curHandLankmark[0].Z);
+            Vector3 dir2 = new Vector3(curHandLankmark[17].X, curHandLankmark[17].Y, curHandLankmark[17].Z) - new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, curHandLankmark[0].Z);
+            if (handness == 'L') 
+            {
+                LeftHandNormalVector = Vector3.Cross(dir1, dir2).normalized;
+            }
+            else
+            {
+                RightHandNormalVector = Vector3.Cross(dir1, dir2).normalized;
+            }
+        }
+
         NormalizedLandmarkList HandFacingDetect(IList<NormalizedLandmark> curHandLankmark, int Custom)
         {
             int i = 0;
             NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
+            BaseLength = Vector3.Distance(new Vector3(curHandLankmark[0].X,curHandLankmark[0].Y,curHandLankmark[0].Z),
+               new Vector3(curHandLankmark[1].X, curHandLankmark[1].Y, curHandLankmark[1].Z));
+            Quaternion rotation = Quaternion.LookRotation((new Vector3(curHandLankmark[9].X, curHandLankmark[9].Y, 0) -
+                new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, 0)).normalized);
+            PalmDir = rotation;
+            PalmEular = rotation.eulerAngles;
             foreach (var itemStack in _handAcupunturePointsInventory.Items)
             {
                 if (itemStack.Item.Customize == Custom)
@@ -282,8 +312,17 @@ namespace Mediapipe.Unity.HandTracking
                     {
                         
                         NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
-                        landmark.X += itemStack.Item.Offest.x / 100;
-                        landmark.Y += itemStack.Item.Offest.y / 100;
+                        Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y,0);
+                        if (landmark.Z >= 0)
+                        {
+                            landmark.X += Offset.x * BaseLength / 15;
+                            landmark.Y += Offset.y * BaseLength / 15;
+                        }
+                        else
+                        {
+                            landmark.X += Offset.x * BaseLength / 15;
+                            landmark.Y += Offset.y * BaseLength / 15;
+                        }
                         landmark.index = i;
                         normalizedLandmarkList.Landmark.Add(landmark);
                     }

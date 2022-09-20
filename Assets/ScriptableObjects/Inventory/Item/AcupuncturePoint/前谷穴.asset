@@ -36,7 +36,7 @@ MonoBehaviour:
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
   _disease: "\u3010\u529F\u6548\u3011\u6E05\u71B1\u3001\u5229\u7AC5\u3001\u8212\u7B4B\u3002"
   _landMark: 17
-  _offset: {x: 0, y: 0}
+  _offset: {x: -3, y: 1}
   _customize: 6
   references:
     version: 2

@@ -35,8 +35,8 @@ MonoBehaviour:
   _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
   _disease: "\u3010\u529F\u6548\u3011\u9F52\u795E\u7D93\u75DB\uFF0C\u5C0F\u5152\u6D88\u5316\u4E0D\u826F\uFF0C\u6A48\u9AA8\u8396\u7A81\u90E8\u72F9\u7A84\u6027\u8171\u9798\u708E\u3002"
-  _landMark: 0
-  _offset: {x: -2, y: 0}
+  _landMark: 1
+  _offset: {x: 0, y: 0}
   _customize: 4
   references:
     version: 2
