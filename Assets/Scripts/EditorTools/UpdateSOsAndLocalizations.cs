@@ -88,9 +88,30 @@ public class UpdateSOsAndLocalizations
         }
     }
 
+    private static AssetTable _acupPointSpriteChineseTable;
+    private static AssetTable AcupPointSpriteChineseTable
+    {
+        get
+        {
+            var collection = LocalizationEditorSettings.GetAssetTableCollection("AcpunturePointSprite");
+            return _acupPointSpriteChineseTable ??= GetTable<AssetTable>(collection, "zh-TW");
+        }
+    }
+    private static AssetTable _acupPointSpriteEnglishTable;
+    private static AssetTable AcupPointSpriteEnglishTable
+    {
+        get
+        {
+            var collection = LocalizationEditorSettings.GetAssetTableCollection("AcpunturePointSprite");
+            return _acupPointSpriteEnglishTable ??= GetTable<AssetTable>(collection, "en");
+        }
+    }
+
     [MenuItem("SeniorProject/LocalizationAndSO/AcupunturePointSOs Update")]
     public static void UpdateAcupuncturePointSOs()
     {
+        
+        //Debug.Log(GetTable<AssetTable>(LocalizationEditorSettings.GetAssetTableCollection("UISprite"), "en").GetEntry("AR mdoe"));
         ReadAcupunturePointDB("acupuncture_point", true);
         //ReadAcupunturePointDB("EN_acupuncture_point", false);
     }
@@ -117,6 +138,7 @@ public class UpdateSOsAndLocalizations
                 
                 using (IDataReader reader = command.ExecuteReader())
                 {
+                    int index = 0;
                     while (reader.Read())
                     {
                         if (!Read(reader, "id",out int id)) continue;
@@ -127,12 +149,21 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "offset_x", out int offset_x)) continue;
                         if (!Read(reader, "offset_y", out int offset_y)) continue;
                         if (!Read(reader, "customize", out int customize)) continue;
-
+                        string spriteName;
                         name = title;
-                        if(IsChinese)
-                            UpdateAcupuncturePointSO(AcupuncturePointChineseTable,name, title, content, disease, offset_x, offset_y, rel_position, customize);
-                        else 
-                            UpdateAcupuncturePointSO(AcupuncturePointEnglishTable,name, title, content, disease, offset_x, offset_y, rel_position, customize);
+                        if (IsChinese)
+                        {
+                            spriteName = "Acupuncture" + index.ToString();
+                            UpdateAcupuncturePointSO(AcupuncturePointChineseTable,AcupPointSpriteChineseTable ,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
+                        }   
+                        else
+                        {
+                            spriteName = "AcupunctureE" + index.ToString();
+                            
+                            UpdateAcupuncturePointSO(AcupuncturePointEnglishTable, AcupPointSpriteEnglishTable,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
+                        }
+
+                        index++;
                     }
 
                 }
@@ -209,7 +240,7 @@ public class UpdateSOsAndLocalizations
         return true;
     }
 
-    private static void UpdateAcupuncturePointSO(StringTable stringTable, string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position, float customize)
+    private static void UpdateAcupuncturePointSO(StringTable stringTable,AssetTable assetTable ,string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position, float customize,string spriteName,int id)
     {
         string titleKeyID = name + "_title";
         string descritpionKeyID = name + "_description";
@@ -217,16 +248,21 @@ public class UpdateSOsAndLocalizations
         UpdateStringTableEntry(stringTable, titleKeyID, title);
         UpdateStringTableEntry(stringTable, descritpionKeyID, content);
 
-
-
+        
+        Sprite sprite =Resources.Load<Sprite>("Art/AcupuncturePoint/" + spriteName);
+        //Debug.Log(spriteName);
+        //Debug.Log(sprite);
+        var path = AssetDatabase.GetAssetPath(sprite);
+        string spriteGuid = AssetDatabase.AssetPathToGUID(path);
+        UpdateAssetTableEntry(assetTable, spriteName, spriteGuid);
+        
         if (!File.Exists(name))
         {
-            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize);
+            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize, spriteName);
             return;
         }
-
         ItemAcupuncturePointSO acupuncturePoint = (ItemAcupuncturePointSO)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Spots/Spot", typeof(ItemAcupuncturePointSO));
-        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab);
+        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab, spriteName);
     }
 
     public static void UpdateQuestionSOs(int questionIndex)
@@ -239,12 +275,12 @@ public class UpdateSOsAndLocalizations
 
     }
 
-    private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, int rel_position, float customize)
+    private static void CreateAcupunturePointSO(string name, string titleKeyID, string descritpionKeyID, string disease, float offset_x, float offset_y, int rel_position, float customize,string spriteName)
     {
         ItemAcupuncturePointSO asset = ScriptableObject.CreateInstance<ItemAcupuncturePointSO>();
 
 
-        asset.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y,rel_position,customize, AcupuncturePointPrefab);
+        asset.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y,rel_position,customize, AcupuncturePointPrefab, spriteName);
 
         AssetDatabase.CreateAsset(asset, "Assets/ScriptableObjects/Inventory/Item/AcupuncturePoint/" + name + ".asset");  // creat new scriptable
         AssetDatabase.SaveAssets();
@@ -293,6 +329,12 @@ public class UpdateSOsAndLocalizations
             UpdateLocalizeEntry(StringTable, TitleEntry, KeyID, value);
     }
 
+    public static void UpdateAssetTableEntry(AssetTable AssetTalbe, string KeyID, string value)
+    {
+        AssetTableEntry TitleEntry = AssetTalbe.GetEntry(KeyID);
+        UpdateAssetLocalizeEntry(AssetTalbe, TitleEntry,KeyID, value);
+    }
+
     public static void UpdateLocalizeEntry(StringTable table, StringTableEntry Entry, string keyID, string value)
     {
         if (Entry == default)
@@ -304,6 +346,20 @@ public class UpdateSOsAndLocalizations
         {
             //update entry
             Entry.Value = value;
+        }
+    }
+
+    public static void UpdateAssetLocalizeEntry(AssetTable table, AssetTableEntry Entry, string keyID, string value)
+    {
+        if (Entry == default)
+        {
+            //create new entry
+            table.AddEntry(keyID, value);
+        }
+        else
+        {
+            //update entry
+            Entry.Guid = value;
         }
     }
 
@@ -339,6 +395,17 @@ public class UpdateSOsAndLocalizations
         return SO;
     }
 
+    private static string GetGuid(string name)
+    {
+        IEnumerable<string> GUIDs = AssetDatabase.FindAssets(name + " t:Sprite", new string[] { "Assets/Art/UI" }).Where((guid) => Path.GetFileName(AssetDatabase.GUIDToAssetPath(guid)) == name + ".meta");
+        if (GUIDs.Count() == 0)
+        {
+            Debug.LogError("Can't find Sprite named: " + name + " in Assets/Art/UI folder");
+            return default;
+        }
+        return GUIDs.First();
+    }
+
     private static StringTable GetStringTable(StringTableCollection collection, string tableName)
     {
         var StringTable = collection.GetTable(tableName) as StringTable;
@@ -349,6 +416,18 @@ public class UpdateSOsAndLocalizations
             return default;
         }
         return StringTable;
+    }
+
+    private static T GetTable<T>(AssetTableCollection collection, string tableName) where T : LocalizationTable
+    {
+        var Table = collection.GetTable(tableName) as T;
+
+        if (Table == null)
+        {
+            Debug.LogError("Can't find " + tableName + " table in Spot string table collection");
+            return default;
+        }
+        return Table;
     }
 
     private static GameObject GetGameObject(string path)

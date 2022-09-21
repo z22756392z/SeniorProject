@@ -38,6 +38,15 @@ MonoBehaviour:
   _landMark: 1
   _offset: {x: 0, y: 0}
   _customize: 4
+  _isLocalized: 0
+  _localizePreviewImage:
+    m_TableReference:
+      m_TableCollectionName: AcpunturePointSprite
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: Acupuncture25
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
   references:
     version: 2
     RefIds: []

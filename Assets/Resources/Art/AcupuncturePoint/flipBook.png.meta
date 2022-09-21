@@ -112,18 +112,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9f184586e0155044b47517043e79040
-      internalID: -100700022
+      spriteID: 18c976433d401714f8c48384db76372b
+      internalID: -299496440
       vertices: []
       indices: 
       edges: []
@@ -163,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c1d96f874526574da8b6646f29bff6f
-      internalID: 129710813
+      spriteID: 63854112d0c49b14397fb6bd467b9db7
+      internalID: -423569840
       vertices: []
       indices: 
       edges: []
@@ -184,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c856b739112d9c542b84438716c03034
-      internalID: -1938442178
+      spriteID: 6d7a44fa277a0cb47b60eeb085713c50
+      internalID: -866657961
       vertices: []
       indices: 
       edges: []
@@ -205,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b60b15d3861144386ab7761764622e
-      internalID: -1401328630
+      spriteID: 6b4fabf6f6456d2408201e56d7dbc9a8
+      internalID: 448534660
       vertices: []
       indices: 
       edges: []
@@ -226,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b203ea79b5648f439a502e093a6ecb1
-      internalID: -215178234
+      spriteID: 6459822fc8dceab4aafe1e562607c5da
+      internalID: -547091310
       vertices: []
       indices: 
       edges: []
@@ -247,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd3d2ecf5b4741d4496e8d569f79f4d3
-      internalID: -1521225529
+      spriteID: 5aa7fdc91793c024b886203fc0dbb8e1
+      internalID: -1904899181
       vertices: []
       indices: 
       edges: []
@@ -268,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce97f77308707554e8132ef81daccc9a
-      internalID: -688863733
+      spriteID: 7f03897d8cec4984bb1b678e97de4f4c
+      internalID: 385210965
       vertices: []
       indices: 
       edges: []
@@ -289,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc66809d92c9d7a41acdb9d9610e179f
-      internalID: -72549547
+      spriteID: 40865f809798d744889a18302a9c3e6f
+      internalID: 768315983
       vertices: []
       indices: 
       edges: []
@@ -310,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2deefa2e5b249a468085e2138040fcd
-      internalID: 636289487
+      spriteID: b476a9a894761f049a06ac35ed7ec2e4
+      internalID: 551380197
       vertices: []
       indices: 
       edges: []
@@ -331,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cc9312e01178440afe7f140e908220
-      internalID: -620836679
+      spriteID: 89b81e0005b75074a8354222fa0e05e1
+      internalID: 1960935925
       vertices: []
       indices: 
       edges: []
@@ -352,8 +340,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3321e895bdd69da4ba23e65612a20c95
-      internalID: -492723414
+      spriteID: 8c69e230e1068a341b5e34ccd4f05325
+      internalID: -1554346482
       vertices: []
       indices: 
       edges: []
@@ -373,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d5fa6863ec25a4781003ab413f5a1a
-      internalID: 1914618847
+      spriteID: 7b6fc98ca2420ce4ca981907935f2318
+      internalID: 566150644
       vertices: []
       indices: 
       edges: []
@@ -394,8 +382,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d7aebf4cc5b85f4f9bb65c70a04e999
-      internalID: 1761786804
+      spriteID: 38fcd4b7053dc254aa7f0e9774352af5
+      internalID: -706112918
       vertices: []
       indices: 
       edges: []
@@ -415,8 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28b55bd1d7a5cd442b1af148cdbb1aa9
-      internalID: -550155607
+      spriteID: 55c73bcccec30ac4399bcca2dd1d22e7
+      internalID: -224134561
       vertices: []
       indices: 
       edges: []
@@ -424,7 +412,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c33c26d3396536d47bf2cb451559af66
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -432,20 +420,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flipBook_10: -492723414
-      flipBook_3: -1401328630
-      flipBook_9: -620836679
-      flipBook_6: -688863733
-      flipBook_4: -215178234
-      flipBook_5: -1521225529
-      flipBook_12: 1761786804
-      flipBook_8: 636289487
-      flipBook_13: -550155607
-      flipBook_7: -72549547
-      flipBook_0: -100700022
-      flipBook_11: 1914618847
-      flipBook_1: 129710813
-      flipBook_2: -1938442178
+      flipBook_10: -1554346482
+      flipBook_3: 448534660
+      flipBook_9: 1960935925
+      flipBook_6: 385210965
+      flipBook_4: -547091310
+      flipBook_5: -1904899181
+      flipBook_12: -706112918
+      flipBook_8: 551380197
+      flipBook_13: -224134561
+      flipBook_7: 768315983
+      flipBook_0: -299496440
+      flipBook_11: 566150644
+      flipBook_1: -423569840
+      flipBook_2: -866657961
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

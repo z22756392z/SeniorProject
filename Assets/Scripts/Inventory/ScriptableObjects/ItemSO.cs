@@ -37,5 +37,4 @@ public class ItemSO : SerializableScriptableObject
 	public virtual int LandMark { get; }
 	public virtual Vector2 Offest { get; }
 	public virtual float Customize { get; }
-
 }

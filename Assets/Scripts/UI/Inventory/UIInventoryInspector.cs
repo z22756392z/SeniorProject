@@ -9,35 +9,48 @@ public class UIInventoryInspector : MonoBehaviour
     [SerializeField] private FillInspectorChannelSO _fillInspectorChannelSO = default;
     [SerializeField] private GameObject _inspector = default;
 
-
+    private bool clickable = true;
+    private ItemSO _curItem = default;
     private void OnEnable()
     {
-        _fillInspectorChannelSO.OnEventRaised += FillInspector;
-        _hideInspector.OnEventRaised += HideItemInformation;
+        _fillInspectorChannelSO.OnEventRaised += FireAnim;
+        _inspectorAnimation.AnimationEnded += AnimEnd;
+        _inspectorAnimation.ContentChanged += FillInspector;
     }
 
     private void OnDisable()
     {
-        _fillInspectorChannelSO.OnEventRaised -= FillInspector;
-        _hideInspector.OnEventRaised -= HideItemInformation;
+        _fillInspectorChannelSO.OnEventRaised -= FireAnim;
+        _inspectorAnimation.AnimationEnded -= AnimEnd;
+        _inspectorAnimation.ContentChanged -= FillInspector;
     }
 
-    public void FillInspector(ItemSO itemToInspect)
+    public void FireAnim(ItemSO itemToInspect)
     {
-        _inspectorAnimation.SetAnim(itemToInspect);
-
-        _inspectorDescription.FillDescription(itemToInspect);
-        _inspectorPreview.FillPreview(itemToInspect);
-        
+        if (!clickable) return;
+        clickable = false;
         ShowInspector();
+       
+        
+        if (_curItem != default && _curItem == itemToInspect)
+        {
+            _inspectorAnimation.AnimationEnded -= AnimEnd;
+            _inspectorAnimation.AnimationEnded += HideInspector;
+        }
+
+        _curItem = itemToInspect;
+        _inspectorAnimation.SetAnim(itemToInspect);
+    }
+    public void FillInspector()
+    {
+        _inspectorDescription.FillDescription(_curItem);
+        _inspectorPreview.FillPreview(_curItem);
     }
 
-    public void HideInspector()
+    public void HideItemInformation()
     {
-        _inspectorDescription.HideDescription();
-        _inspectorPreview.HidePreview();
-       
-        HideItemInformation();
+        if (!clickable) return;
+        FireAnim(_curItem);
     }
 
     public void ShowInspector()
@@ -45,8 +58,16 @@ public class UIInventoryInspector : MonoBehaviour
         _inspector.SetActive(true);
     }
 
-    public void HideItemInformation()
+    void AnimEnd()
     {
+        clickable = true;
+    }
+    public void HideInspector()
+    {
+        clickable = true;
+        _curItem = default;
+        _inspectorAnimation.AnimationEnded -= HideInspector;
+        _inspectorAnimation.AnimationEnded += AnimEnd;
         _inspector.SetActive(false);
     }
 

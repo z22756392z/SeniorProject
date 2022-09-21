@@ -55,11 +55,12 @@ public class UIInventoryItem : ItemCoreComponent
 		currentItem = itemStack;
 
 		_imgSelected.gameObject.SetActive(isSelected);
-
+		
+		_bgLocalizedImage.enabled = true;
+		_bgLocalizedImage.AssetReference = itemStack.Item.LocalizePreviewImage;
 		if (itemStack.Item.IsLocalized)
 		{
-			//_bgLocalizedImage.enabled = true;
-			//_bgLocalizedImage.AssetReference = itemStack.Item.LocalizePreviewImage;
+			
 		}
 		else
 		{
@@ -123,20 +124,10 @@ public class UIInventoryItem : ItemCoreComponent
 
 	public void ClickItem()
 	{
-		
-		_isClicked = !_isClicked;
 		if (ItemClicked != null && currentItem != null && currentItem.Item != null)
 		{
-			if (_isClicked) {
-				ItemClicked.Invoke(currentItem.Item);
-				_imgSelected.gameObject.SetActive(true);
-			}
-				
-			else
-            {
-				_hideInspector.RaiseEvent();
-				_imgSelected.gameObject.SetActive(false);
-			}
+			ItemClicked.Invoke(currentItem.Item);
+			_imgSelected.gameObject.SetActive(true);
 		}
 	}
 

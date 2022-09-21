@@ -29,6 +29,7 @@ namespace Mediapipe.Unity.HandTracking
         private bool _isShowDesireAcpunturePoint = false;
         private bool _aiIsShowDesireAcpunturePoint = false;
 
+        private static readonly Vector3 _initL1ToL9 = new Vector3(-0.0376609f,-0.3828629f,0f);
         public Vector3 LeftHandNormalVector = default;
         public Vector3 RightHandNormalVector = default;
         public float BaseLength = default;
@@ -143,6 +144,9 @@ namespace Mediapipe.Unity.HandTracking
 
             if (_isFirstTime1 && _currentHandLandmark1 != null)
             {
+                //_initL1ToL9 = new Vector3(_currentHandLandmark1[9].X, _currentHandLandmark1[9].Y, 0) -
+                new Vector3(_currentHandLandmark1[0].X, _currentHandLandmark1[0].Y, 0);
+
                 NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
                 _isFirstTime1 = false;
                 foreach (var itemStack in _handAcupunturePointsInventory.Items)
@@ -273,10 +277,10 @@ namespace Mediapipe.Unity.HandTracking
         {
             int i = 0;
             NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
-            BaseLength = Vector3.Distance(new Vector3(curHandLankmark[0].X,curHandLankmark[0].Y,curHandLankmark[0].Z),
-               new Vector3(curHandLankmark[1].X, curHandLankmark[1].Y, curHandLankmark[1].Z));
-            Quaternion rotation = Quaternion.LookRotation((new Vector3(curHandLankmark[9].X, curHandLankmark[9].Y, 0) -
-                new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, 0)).normalized);
+            BaseLength = Vector2.Distance(new Vector2(curHandLankmark[0].X,curHandLankmark[0].Y),
+               new Vector2(curHandLankmark[1].X, curHandLankmark[1].Y));
+            Quaternion rotation = Quaternion.FromToRotation(_initL1ToL9, new Vector3(curHandLankmark[9].X, curHandLankmark[9].Y, 0) -
+                new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, 0)).normalized;
             PalmDir = rotation;
             PalmEular = rotation.eulerAngles;
             foreach (var itemStack in _handAcupunturePointsInventory.Items)
@@ -313,6 +317,10 @@ namespace Mediapipe.Unity.HandTracking
                         
                         NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
                         Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y,0);
+                        if(i == 19)
+                        {
+                            Debug.Log(Offset.x+ " "+ Offset.y);
+                        }
                         if (landmark.Z >= 0)
                         {
                             landmark.X += Offset.x * BaseLength / 15;

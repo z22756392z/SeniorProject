@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1106,13 +1106,13 @@ RectTransform:
   m_GameObject: {fileID: 250396683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1750342130}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1178152033, guid: 6a2f0769f521bb94bba83a15723f035d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18ee51e10813f1a40904c620d3dfd050, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LocalizedAssetReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:416b10faec7a08a4fa1263332c397b32
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 
@@ -1177,7 +1177,19 @@ MonoBehaviour:
     m_WaitForCompletion: 0
   m_UpdateAsset:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 250396685}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &258808086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -100700022, guid: 9d2dc3af1419ee1448a9b796a86d973a, type: 3}
+  m_Sprite: {fileID: -224134561, guid: 9d2dc3af1419ee1448a9b796a86d973a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3459,7 +3471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1514977116
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3526,8 +3538,8 @@ MonoBehaviour:
   _animator: {fileID: 1514977118}
   _onOpenInspectorAnimParameter: OpenBook
   _onHideInspectorAnimParamter: CloseBook
-  _onFillInspectorAnimParameter1: FlippingR
-  _onFillInspectorAnimParameter2: FlippingL
+  _onFillInspectorAnimParameter1: FlipR
+  _onFillInspectorAnimParameter2: FlipL
 --- !u!212 &1514977120
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3569,7 +3581,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -299496440, guid: 9d2dc3af1419ee1448a9b796a86d973a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3577,7 +3589,7 @@ SpriteRenderer:
   m_Size: {x: 12.800757, y: 6.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1658392948
@@ -3685,7 +3697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7560ea8f7855a448fa1ac2ca4a6fac1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _previewImage: {fileID: 250396685}
+  _previewImage: {fileID: 250396687}
 --- !u!1 &1762012571
 GameObject:
   m_ObjectHideFlags: 0

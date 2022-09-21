@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class UIInspectorPreview : MonoBehaviour
 {
-	[SerializeField] private Image _previewImage = default;
+	[SerializeField] private LocalizeSpriteEvent _previewImage = default;
 
 	public void FillPreview(ItemSO ItemToInspect)
 	{
 		_previewImage.gameObject.SetActive(true);
-		_previewImage.sprite = ItemToInspect.PreviewImage;
+		_previewImage.AssetReference = ItemToInspect.LocalizePreviewImage;
 	}
 
 	public void HidePreview()

@@ -11,13 +11,16 @@ class UIInspectorForAnimation : MonoBehaviour
     [SerializeField] private string _onFillInspectorAnimParameter2 = "FlippingL";
 
     public event UnityAction AnimationEnded;
-
+    public event UnityAction ContentChanged;
     private int _preItemIndex = -1;
     public void SetAnim(ItemSO itemToInspect)
     {
         int index = _inventory.Items.FindIndex(o => o.Item == itemToInspect);
         if (_preItemIndex == -1)
         {
+            _animator.ResetTrigger(_onHideInspectorAnimParamter);
+            _animator.ResetTrigger(_onFillInspectorAnimParameter1);
+            _animator.ResetTrigger(_onFillInspectorAnimParameter2);
             _animator.SetTrigger(_onOpenInspectorAnimParameter);
         }
         else if (_preItemIndex < index)
@@ -28,9 +31,9 @@ class UIInspectorForAnimation : MonoBehaviour
         {
             _animator.SetTrigger(_onFillInspectorAnimParameter1);
         }
-        else
+        else if(_preItemIndex == index)
         {
-            return;
+            _animator.SetTrigger(_onHideInspectorAnimParamter);
         }
         _preItemIndex = index;
     }
@@ -42,6 +45,11 @@ class UIInspectorForAnimation : MonoBehaviour
 
     public void OnAnimationEnded()
     {
-        AnimationEnded.Invoke();
+        AnimationEnded?.Invoke();
+    }
+
+    public void OnChangeContent()
+    {
+        ContentChanged?.Invoke();
     }
 }

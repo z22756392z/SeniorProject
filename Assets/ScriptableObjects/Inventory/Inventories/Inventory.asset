@@ -12,5 +12,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39a296438081ff4c99abec393d12d54, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  _items: []
-  _defaultItems: []
+  _items:
+  - _item: {fileID: 11400000, guid: 7ddb02a37f292424ebabd3de4f4a3ba4, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 763e0078a9ee4de4db25a80c2a907b84, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 1be71166fa3151d4398a718b2a947d2e, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 45b1c76f1d74a364d8824a51517e4675, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 94cef92fd69b0914f9c29ed0eaff1b9a, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0c1536d2cc60d6447b2bddcb71c430e5, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0dcb9536fa1196349acf75058f44ecf7, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 093a24e46d429fd429d6a2ff5abbc50d, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0fc4a47e6550d5e479b93b9dcbcbac2c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0d24b56ee81c244499b7b7fbf91a792f, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 2289ad3302bb72a468750a458f9abaea, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 6f5c1f568eb187d418b3c1571b2e552e, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 94fe6fb27a0a4b5418fdf860053062f9, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 68cc376ee3a482746943857b23e5d97c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: d3202e5bb1a517943afbde1d26acddce, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: e093039aafdd19744ad548e4e6812179, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 56ac7ccc730fe58489ebaf5056283973, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: be485a59b8836a44bb174029ca2b0969, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 1c178d037230ae3418ef4d9d6b8aec1c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 2e277a728d6d9b44997bd8e972a5f7a2, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 9dde3a4fc72184747849108cf48b4747, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: a56b44da19df61a4ba16c35ecfe5918b, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 12addf1ae5e21734b9595b7fb93be024, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 658185df8dfd06e4a87e31645fb2daac, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 973c2fad01f766e42bf68edd1cbdc793, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 777854eb5a57ed94c836b9a667a2479a, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 544f36e1f3cd67c40a19bd5aa576d3ab, type: 2}
+    Amount: 1
+  _defaultItems:
+  - _item: {fileID: 11400000, guid: 7ddb02a37f292424ebabd3de4f4a3ba4, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 763e0078a9ee4de4db25a80c2a907b84, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 1be71166fa3151d4398a718b2a947d2e, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 45b1c76f1d74a364d8824a51517e4675, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 94cef92fd69b0914f9c29ed0eaff1b9a, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0c1536d2cc60d6447b2bddcb71c430e5, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0dcb9536fa1196349acf75058f44ecf7, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 093a24e46d429fd429d6a2ff5abbc50d, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0fc4a47e6550d5e479b93b9dcbcbac2c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 0d24b56ee81c244499b7b7fbf91a792f, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 2289ad3302bb72a468750a458f9abaea, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 6f5c1f568eb187d418b3c1571b2e552e, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 94fe6fb27a0a4b5418fdf860053062f9, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 68cc376ee3a482746943857b23e5d97c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: d3202e5bb1a517943afbde1d26acddce, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: e093039aafdd19744ad548e4e6812179, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 56ac7ccc730fe58489ebaf5056283973, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: be485a59b8836a44bb174029ca2b0969, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 1c178d037230ae3418ef4d9d6b8aec1c, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 2e277a728d6d9b44997bd8e972a5f7a2, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 9dde3a4fc72184747849108cf48b4747, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: a56b44da19df61a4ba16c35ecfe5918b, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 12addf1ae5e21734b9595b7fb93be024, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 658185df8dfd06e4a87e31645fb2daac, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 973c2fad01f766e42bf68edd1cbdc793, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 777854eb5a57ed94c836b9a667a2479a, type: 2}
+    Amount: 1
+  - _item: {fileID: 11400000, guid: 544f36e1f3cd67c40a19bd5aa576d3ab, type: 2}
+    Amount: 1
