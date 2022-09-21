@@ -319,7 +319,7 @@ namespace Mediapipe.Unity.HandTracking
                         Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y,0);
                         if(i == 19)
                         {
-                            Debug.Log(Offset.x+ " "+ Offset.y);
+                           // Debug.Log(Offset.x+ " "+ Offset.y);
                         }
                         if (landmark.Z >= 0)
                         {

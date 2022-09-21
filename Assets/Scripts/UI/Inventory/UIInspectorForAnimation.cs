@@ -15,9 +15,11 @@ class UIInspectorForAnimation : MonoBehaviour
     private int _preItemIndex = -1;
     public void SetAnim(ItemSO itemToInspect)
     {
+
         int index = _inventory.Items.FindIndex(o => o.Item == itemToInspect);
         if (_preItemIndex == -1)
         {
+            Debug.Log("!!!!!!!!!!");
             _animator.ResetTrigger(_onHideInspectorAnimParamter);
             _animator.ResetTrigger(_onFillInspectorAnimParameter1);
             _animator.ResetTrigger(_onFillInspectorAnimParameter2);

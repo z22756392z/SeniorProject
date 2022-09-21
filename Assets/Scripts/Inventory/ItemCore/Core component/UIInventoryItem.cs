@@ -27,7 +27,7 @@ public class UIInventoryItem : ItemCoreComponent
 	public bool isClickable = true;
 	bool _isSelected = false;
 	bool _isClicked = false;
-	// ¥¿­±¥ª¤â: 3, ­I­±¥ª¤â:4 , ¥¿­±¥k¤â: 5 , ­I­±¥k¤â 6
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 3, ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:4 , ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½ï¿½: 5 , ï¿½Iï¿½ï¿½ï¿½kï¿½ï¿½ 6
     public override void Init(ItemCore core)
     {
         base.Init(core);
@@ -126,6 +126,7 @@ public class UIInventoryItem : ItemCoreComponent
 	{
 		if (ItemClicked != null && currentItem != null && currentItem.Item != null)
 		{
+			Debug.Log("@@@@@@@@@");
 			ItemClicked.Invoke(currentItem.Item);
 			_imgSelected.gameObject.SetActive(true);
 		}

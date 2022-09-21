@@ -45,13 +45,13 @@ public class SwitchSceneAnimation : MonoBehaviour
     public void TriggerAnimationLeave()
     {
         MainCanvas.SetTrigger("Leave");
-        
+
     }
     public void CloseMirror()
     {
         MainCanvas.SetTrigger("CloseMirror");
         _hideInspector?.RaiseEvent();
-        
+
     }
     public void MirrorOnclick()
     {
