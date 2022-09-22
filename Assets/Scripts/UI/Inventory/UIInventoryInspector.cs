@@ -49,8 +49,7 @@ public class UIInventoryInspector : MonoBehaviour
 
     public void HideItemInformation()
     {
-        if (!clickable) return;
-        FireAnim(_curItem);
+        _inspector.SetActive(false);
     }
 
     public void ShowInspector()

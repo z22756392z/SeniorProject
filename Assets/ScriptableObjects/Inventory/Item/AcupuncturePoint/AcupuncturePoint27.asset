@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e462d021008e7c24e8bdafb42f80cfcf, type: 3}
+  m_Name: AcupuncturePoint27
+  m_EditorClassIdentifier: 
+  _guid: 
+  _name:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: AcupuncturePoint27_title
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _previewImage: {fileID: 0}
+  _description:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: AcupuncturePoint27_description
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
+  _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
+  _disease: '[Efficacy] Palm finger paralysis, not stretching, indigestion, pillow'
+  _landMark: 9
+  _offset: {x: 0, y: 13}
+  _customize: 4
+  _isLocalized: 0
+  _localizePreviewImage:
+    m_TableReference:
+      m_TableCollectionName: AcpunturePointSprite
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: AcupuncturePoint27
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  references:
+    version: 2
+    RefIds: []

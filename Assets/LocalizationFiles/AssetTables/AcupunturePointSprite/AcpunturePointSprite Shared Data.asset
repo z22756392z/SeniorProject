@@ -15,8 +15,112 @@ MonoBehaviour:
   m_TableCollectionName: AcpunturePointSprite
   m_TableCollectionNameGuidString: 416b10faec7a08a4fa1263332c397b32
   m_Entries:
-  - m_Id: 374110057615360
-    m_Key: Acupuncture0
+  - m_Id: 800088852484096
+    m_Key: AcupuncturePoint1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800091033522176
+    m_Key: AcupuncturePoint2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800092614774784
+    m_Key: AcupuncturePoint3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800094372188160
+    m_Key: AcupuncturePoint4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800096708415488
+    m_Key: AcupuncturePoint5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800098868482048
+    m_Key: AcupuncturePoint6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800100667838464
+    m_Key: AcupuncturePoint7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800102815322112
+    m_Key: AcupuncturePoint8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800105336098816
+    m_Key: AcupuncturePoint9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800108150476800
+    m_Key: AcupuncturePoint10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800110578978816
+    m_Key: AcupuncturePoint11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800112860680192
+    m_Key: AcupuncturePoint12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800115637309440
+    m_Key: AcupuncturePoint13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800118288109568
+    m_Key: AcupuncturePoint14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800120620142592
+    m_Key: AcupuncturePoint15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800122792792064
+    m_Key: AcupuncturePoint16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800125166768128
+    m_Key: AcupuncturePoint17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800127721099264
+    m_Key: AcupuncturePoint18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800129738559488
+    m_Key: AcupuncturePoint19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800131516944384
+    m_Key: AcupuncturePoint20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800133496655872
+    m_Key: AcupuncturePoint21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800135899992064
+    m_Key: AcupuncturePoint22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800138005532672
+    m_Key: AcupuncturePoint23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800140647944192
+    m_Key: AcupuncturePoint24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800143713980416
+    m_Key: AcupuncturePoint25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800146721296384
+    m_Key: AcupuncturePoint26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800149569228800
+    m_Key: AcupuncturePoint27
     m_Metadata:
       m_Items: []
   m_Metadata:

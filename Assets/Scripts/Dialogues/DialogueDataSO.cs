@@ -189,7 +189,7 @@ public class Line
 				if (collection.SharedData.Contains(key))
 				{
 					//LocalizedString _choiceLineRef = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
-					LocalizedString _choiceLine = new LocalizedString() { TableReference = "AcupuncturePoint", TableEntryReference = table.GetEntry(key).Value + "_title" };
+					LocalizedString _choiceLine = new LocalizedString() { TableReference = "AcupuncturePoint", TableEntryReference = "AcupuncturePoint" + table.GetEntry(key).Value + "_title" };
 					choice = new Choice(_choiceLine);
 					choice.SetChoiceAction(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
 

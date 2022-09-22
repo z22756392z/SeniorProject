@@ -113,13 +113,14 @@ public class UpdateSOsAndLocalizations
         
         //Debug.Log(GetTable<AssetTable>(LocalizationEditorSettings.GetAssetTableCollection("UISprite"), "en").GetEntry("AR mdoe"));
         ReadAcupunturePointDB("acupuncture_point", true);
-        //ReadAcupunturePointDB("EN_acupuncture_point", false);
+        ReadAcupunturePointDB("EN_acupuncture_point", false);
     }
 
     [MenuItem("SeniorProject/LocalizationAndSO/Question Locals Update")]
     public static void UpdateQuestionLocals()
     {
         ReadQuestionDB("questioon", true);
+        ReadQuestionDB("EN_questioon", false);
     }
 
     public static void ReadAcupunturePointDB(string TableName, bool IsChinese)
@@ -150,17 +151,17 @@ public class UpdateSOsAndLocalizations
                         if (!Read(reader, "offset_y", out int offset_y)) continue;
                         if (!Read(reader, "customize", out int customize)) continue;
                         string spriteName;
-                        name = title;
+                        name = "AcupuncturePoint" + id.ToString();
                         if (IsChinese)
                         {
                             spriteName = "Acupuncture" + index.ToString();
-                            UpdateAcupuncturePointSO(AcupuncturePointChineseTable,AcupPointSpriteChineseTable ,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
+                            UpdateAcupuncturePointSO(id,AcupuncturePointChineseTable,AcupPointSpriteChineseTable ,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
                         }   
                         else
                         {
                             spriteName = "AcupunctureE" + index.ToString();
                             
-                            UpdateAcupuncturePointSO(AcupuncturePointEnglishTable, AcupPointSpriteEnglishTable,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
+                            UpdateAcupuncturePointSO(id,AcupuncturePointEnglishTable, AcupPointSpriteEnglishTable,name, title, content, disease, offset_x, offset_y, rel_position, customize, spriteName,index);
                         }
 
                         index++;
@@ -240,9 +241,9 @@ public class UpdateSOsAndLocalizations
         return true;
     }
 
-    private static void UpdateAcupuncturePointSO(StringTable stringTable,AssetTable assetTable ,string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position, float customize,string spriteName,int id)
+    private static void UpdateAcupuncturePointSO(int id,StringTable stringTable,AssetTable assetTable ,string name, string title, string content, string disease, float offset_x, float offset_y, int rel_position, float customize,string spriteName,int index)
     {
-        string titleKeyID = name + "_title";
+        string titleKeyID = name  + "_title";
         string descritpionKeyID = name + "_description";
 
         UpdateStringTableEntry(stringTable, titleKeyID, title);
@@ -254,15 +255,15 @@ public class UpdateSOsAndLocalizations
         //Debug.Log(sprite);
         var path = AssetDatabase.GetAssetPath(sprite);
         string spriteGuid = AssetDatabase.AssetPathToGUID(path);
-        UpdateAssetTableEntry(assetTable, spriteName, spriteGuid);
+        UpdateAssetTableEntry(assetTable, name, spriteGuid);
         
         if (!File.Exists(name))
         {
-            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize, spriteName);
+            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize, name);
             return;
         }
         ItemAcupuncturePointSO acupuncturePoint = (ItemAcupuncturePointSO)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Spots/Spot", typeof(ItemAcupuncturePointSO));
-        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab, spriteName);
+        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab, name);
     }
 
     public static void UpdateQuestionSOs(int questionIndex)
