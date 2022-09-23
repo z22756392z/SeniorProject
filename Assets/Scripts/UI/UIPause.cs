@@ -11,6 +11,9 @@ public class UIPause : MonoBehaviour
 	[Header("Listening to")]
 	[SerializeField] private BoolEventChannelSO _onPauseOpened = default;
 
+	[Header("Boardcasting on")]
+	[SerializeField] private VoidEventChannelSO _onResumed = default;
+
 	public event UnityAction Resumed = default;
 	public event UnityAction SettingsScreenOpened = default;
 	public event UnityAction BackToMainRequested = default;
@@ -39,6 +42,7 @@ public class UIPause : MonoBehaviour
 	void Resume()
 	{
 		Resumed.Invoke();
+		_onResumed.OnEventRaised();
 	}
 
 	void OpenSettingsScreen()

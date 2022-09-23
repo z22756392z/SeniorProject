@@ -68,6 +68,7 @@ MonoBehaviour:
     _item: {fileID: 0}
     Amount: 0
   HandnessColor: {r: 1, g: 1, b: 1, a: 1}
+  LeftHandColor: {r: 1, g: 0.5411765, b: 0, a: 0.39215687}
 --- !u!212 &3130529913792088204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -215,11 +216,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 3.5
+  m_fontSizeBase: 3.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 4
+  m_fontSizeMin: 3
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -342,9 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75140b7bf822bb24aa4abda44c32dcb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _title: {fileID: 6294992255141903986}
+  _titleText: {fileID: 2392946237794217885}
+  _titleStringEvent: {fileID: 6294992255141903986}
   _acupunturePointUITitleEvent: {fileID: 11400000, guid: db3f66bb01449ea45a7e4a759b3dc2dc,
     type: 2}
+  baseLength: 0.085
 --- !u!1001 &2665964988570645147
 PrefabInstance:
   m_ObjectHideFlags: 0

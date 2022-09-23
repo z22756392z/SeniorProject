@@ -1194,6 +1194,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
         type: 3}
+      propertyPath: _closeInspector
+      value: 
+      objectReference: {fileID: 11400000, guid: 478b3512f2534724cbcf505e88559cdc,
+        type: 2}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
       propertyPath: elements.Array.data[0]
       value: 
       objectReference: {fileID: 275874966}

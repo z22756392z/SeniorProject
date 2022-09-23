@@ -44,6 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17197f26b0982f044b0092bdaf7a07b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onBootstrapReady: {fileID: 11400000, guid: bd594da1708c85a4ca5cd7b2257fd1b7, type: 2}
-  elements:
-  - {fileID: 0}
+  _closeInspector: {fileID: 0}
+  _onEventRaisedStartSolution: {fileID: 0}
+  _showSolution: {fileID: 0}
+  _hideSolution: {fileID: 0}
+  _inputReader: {fileID: 0}
+  _onResumed: {fileID: 11400000, guid: f0f0aaea299e9de4ea64e759ab25ea20, type: 2}
+  solution: {fileID: 0}
+  annotation: {fileID: 0}

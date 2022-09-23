@@ -1,16 +1,28 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Localization.Components;
 
 public class UITitleItem : ItemCoreComponent
 {
-    [SerializeField] private LocalizeStringEvent _title;
+    [SerializeField] private TextMeshProUGUI _titleText = default;
+    [SerializeField] private LocalizeStringEvent _titleStringEvent = default;
     [SerializeField] private BoolEventChannelSO _acupunturePointUITitleEvent = default;
-    
+
+    [SerializeField] private float baseLength = 0.085f;
+    private float _initalFontSize;
     private bool _LogOnce = true;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _initalFontSize = _titleText.fontSize;
+    }
+
     private void OnEnable()
     {
+       
         _acupunturePointUITitleEvent.OnEventRaised += SetTitleDisplay;
-        _title.gameObject.SetActive(false);
+        _titleStringEvent.gameObject.SetActive(false);
     }
 
     private void OnDisable()
@@ -22,6 +34,22 @@ public class UITitleItem : ItemCoreComponent
     {
         base.Init(core);
         SetTitle();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        float difference;
+        if (core.HandnessColor == core.LeftHandColor)
+        {
+            difference = Mediapipe.Unity.HandTracking.AcupuncturePointHandSolution.LeftBaseLength * 10 - baseLength * 10 + 1;
+            
+        }
+        else
+        {
+            difference = Mediapipe.Unity.HandTracking.AcupuncturePointHandSolution.RightBaseLength * 10 - baseLength * 10 + 1;
+        }
+        _titleText.fontSizeMin = _initalFontSize * difference;
     }
 
     private void SetTitle()
@@ -38,13 +66,13 @@ public class UITitleItem : ItemCoreComponent
         }
         else
         {
-            _title.gameObject.SetActive(true);
-            _title.StringReference = core._itemStack.Item.Name;
+            _titleStringEvent.gameObject.SetActive(true);
+            _titleStringEvent.StringReference = core._itemStack.Item.Name;
         }
     }
 
     private void SetTitleDisplay(bool value)
     {
-        _title.gameObject.SetActive(value);
+        _titleStringEvent.gameObject.SetActive(value);
     }
 }

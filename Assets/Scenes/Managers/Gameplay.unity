@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -605,6 +605,7 @@ MonoBehaviour:
   _inputReader: {fileID: 11400000, guid: 0ba51ea1689c40c488b2b3c7f90e715f, type: 2}
   _mainProtagonist: {fileID: 11400000, guid: 2e642299ec48bd94c9962c6e16f459e6, type: 2}
   _onSceneReady: {fileID: 11400000, guid: bd594da1708c85a4ca5cd7b2257fd1b7, type: 2}
+  _closeInspector: {fileID: 11400000, guid: 478b3512f2534724cbcf505e88559cdc, type: 2}
   _openUIDialogueEvent: {fileID: 11400000, guid: 03e455d9503bb0443a612455126039d7,
     type: 2}
   _closeUIDialogueEvent: {fileID: 11400000, guid: 98ee0c606d126ac4b96a47040d88d337,
@@ -5552,5 +5553,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4179629256207912947, guid: 3aad9d28a52a01c488648fb3c75a2be2,
+        type: 3}
+      propertyPath: _onResumed
+      value: 
+      objectReference: {fileID: 11400000, guid: f0f0aaea299e9de4ea64e759ab25ea20,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aad9d28a52a01c488648fb3c75a2be2, type: 3}

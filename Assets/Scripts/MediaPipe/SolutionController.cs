@@ -4,11 +4,15 @@ namespace Mediapipe.Unity.UI
 {
     public class SolutionController : MonoBehaviour
     {
+        [Header("Broadcasting on")]
+        [SerializeField] private VoidEventChannelSO _closeInspector = default;
+
         [Header("Listening to")]
         [SerializeField] private VoidEventChannelSO _onEventRaisedStartSolution = default;
         [SerializeField] private VoidEventChannelSO _showSolution = default;
         [SerializeField] private VoidEventChannelSO _hideSolution = default;
         [SerializeField] private InputReader _inputReader;
+        [SerializeField] private VoidEventChannelSO _onResumed = default;
         public Solution solution = default;
         public GameObject annotation = default;
 
@@ -25,7 +29,8 @@ namespace Mediapipe.Unity.UI
             if (_hideSolution != null)
                 _hideSolution.OnEventRaised += HideSolution;
             _inputReader.MenuPauseEvent += PauseSolution;
-            _inputReader.MenuCloseEvent += UnpauseSolution;
+            if (_onResumed != null)
+                _onResumed.OnEventRaised += UnpauseSolution;
             if (_showSolution != null)
                 _showSolution.OnEventRaised += ShowSolution;
         }
@@ -37,7 +42,8 @@ namespace Mediapipe.Unity.UI
             if (_hideSolution != null)
                 _hideSolution.OnEventRaised -= HideSolution;
             _inputReader.MenuPauseEvent -= PauseSolution;
-            _inputReader.MenuCloseEvent -= UnpauseSolution;
+            if(_onResumed != null)
+            _onResumed.OnEventRaised -= UnpauseSolution;
             if (_showSolution != null)
                 _showSolution.OnEventRaised -= ShowSolution;
         }
@@ -61,6 +67,7 @@ namespace Mediapipe.Unity.UI
         public void HideSolution()
         {
             annotation.SetActive(false);
+            _closeInspector?.OnEventRaised();
             solution.Pause();
         }
 

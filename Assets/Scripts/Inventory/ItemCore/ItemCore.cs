@@ -9,8 +9,10 @@ public class ItemCore : MonoBehaviour
     [SerializeField] private InventorySO _inventorySO = default;
     [HideInInspector] public ItemStack _itemStack;
     public Color HandnessColor = Color.white;
+    public Color LeftHandColor;
     protected UIInventoryItem InventoryItem { get => inventoryItem ??= GetCoreComponent<UIInventoryItem>(); }
     private UIInventoryItem inventoryItem;
+    private bool _isSetup = false;
     //Raised by ListAnnotations -- InstantiateChild
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class ItemCore : MonoBehaviour
 
     public void SetupItemCore(int index)
     {
+        _isSetup = true;
         if (_inventorySO.Items.Count - 1< index) return;
         _itemStack = _inventorySO.GetItemsInCurrentInventory(InventoryTabType.AcupuncturePoint)[index];
 
@@ -42,8 +45,9 @@ public class ItemCore : MonoBehaviour
         }
     }
 
-    public void LogicUpdate()
+    public void Update()
     {
+        if (!_isSetup) return;
         foreach (ItemCoreComponent component in CoreComponents)
         {
             component.LogicUpdate();

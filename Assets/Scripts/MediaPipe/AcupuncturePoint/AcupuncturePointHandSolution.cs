@@ -32,7 +32,8 @@ namespace Mediapipe.Unity.HandTracking
         private static readonly Vector3 _initL1ToL9 = new Vector3(-0.0376609f,-0.3828629f,0f);
         public Vector3 LeftHandNormalVector = default;
         public Vector3 RightHandNormalVector = default;
-        public float BaseLength = default;
+        public  static float LeftBaseLength = 0.075f;
+        public static float RightBaseLength = 0.075f;
         public Quaternion PalmDir = default;
         public Vector3 PalmEular = default;
         public Vector3 Offset = default;
@@ -187,13 +188,20 @@ namespace Mediapipe.Unity.HandTracking
                 _handLandmarksAnnotationController.DrawNow(_newHandLandarkList, handedness);
                 yield break;
             }
-            if(_currentHandLandmark1 != null && handedness != null)
+            
+            if (_currentHandLandmark1 != null && handedness != null)
             {
+                
                 _newHandLandarkList.Add(Detect(_currentHandLandmark1, handedness[0].Classification[0].Label));
+                
             }
                 
             if (_currentHandLandmark2 != null && handedness != null && handedness.Count > 1)
+            {
+               
                 _newHandLandarkList.Add(Detect(_currentHandLandmark2, handedness[1].Classification[0].Label));
+            }
+               
 
 
             //Debug uses
@@ -234,25 +242,29 @@ namespace Mediapipe.Unity.HandTracking
             if (handedness[0] == 'L')
             {
                 NormalVectorCal(curHandLankmark,'L');
+                LeftBaseLength = Vector2.Distance(new Vector2(curHandLankmark[0].X, curHandLankmark[0].Y),
+               new Vector2(curHandLankmark[1].X, curHandLankmark[1].Y));
                 if (LeftHandNormalVector.z < 0)
                 {
-                    return HandFacingDetect(curHandLankmark, 3);
+                    return HandFacingDetect(curHandLankmark, 3, LeftBaseLength);
                 }
                 else
                 {
-                    return HandFacingDetect(curHandLankmark,4);
+                    return HandFacingDetect(curHandLankmark,4,LeftBaseLength);
                 }
             }
             else if(handedness[0] =='R')
             {
                 NormalVectorCal(curHandLankmark, 'R');
+                RightBaseLength = Vector2.Distance(new Vector2(curHandLankmark[0].X, curHandLankmark[0].Y),
+             new Vector2(curHandLankmark[1].X, curHandLankmark[1].Y));
                 if (RightHandNormalVector.z < 0)
                 {
-                    return HandFacingDetect(curHandLankmark, 6);
+                    return HandFacingDetect(curHandLankmark, 6, RightBaseLength);
                 }
                 else
                 {
-                    return HandFacingDetect(curHandLankmark, 5);
+                    return HandFacingDetect(curHandLankmark, 5,RightBaseLength);
                 }
             }
             return default;
@@ -273,16 +285,14 @@ namespace Mediapipe.Unity.HandTracking
             }
         }
 
-        NormalizedLandmarkList HandFacingDetect(IList<NormalizedLandmark> curHandLankmark, int Custom)
+        NormalizedLandmarkList HandFacingDetect(IList<NormalizedLandmark> curHandLankmark, int Custom, float BaseLength)
         {
             int i = 0;
             NormalizedLandmarkList normalizedLandmarkList = new NormalizedLandmarkList();
-            BaseLength = Vector2.Distance(new Vector2(curHandLankmark[0].X,curHandLankmark[0].Y),
-               new Vector2(curHandLankmark[1].X, curHandLankmark[1].Y));
-            Quaternion rotation = Quaternion.FromToRotation(_initL1ToL9, new Vector3(curHandLankmark[9].X, curHandLankmark[9].Y, 0) -
+            
+            PalmDir = Quaternion.FromToRotation(_initL1ToL9, new Vector3(curHandLankmark[9].X, curHandLankmark[9].Y, 0) -
                 new Vector3(curHandLankmark[0].X, curHandLankmark[0].Y, 0)).normalized;
-            PalmDir = rotation;
-            PalmEular = rotation.eulerAngles;
+            PalmEular = PalmDir.eulerAngles;
             foreach (var itemStack in _handAcupunturePointsInventory.Items)
             {
                 if (itemStack.Item.Customize == Custom)
@@ -293,8 +303,17 @@ namespace Mediapipe.Unity.HandTracking
                         if (_desireAcpunturePoints.Find(o => o.TableEntryReference.Key == key) != null)
                         {
                             NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
-                            landmark.X += itemStack.Item.Offest.x / 100;
-                            landmark.Y += itemStack.Item.Offest.y / 100;
+                            Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y, 0);
+                            if (landmark.Z >= 0)
+                            {
+                                landmark.X += Offset.x * BaseLength / 15;
+                                landmark.Y += Offset.y * BaseLength / 15;
+                            }
+                            else
+                            {
+                                landmark.X += Offset.x * BaseLength / 15;
+                                landmark.Y += Offset.y * BaseLength / 15;
+                            }
                             landmark.index = i;
                             normalizedLandmarkList.Landmark.Add(landmark);
                         }
@@ -306,8 +325,17 @@ namespace Mediapipe.Unity.HandTracking
                         if (_aiDesireAcpunturePoints.Find(o => o == localizeString) != null)
                         {
                             NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
-                            landmark.X += itemStack.Item.Offest.x / 100;
-                            landmark.Y += itemStack.Item.Offest.y / 100;
+                            Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y, 0);
+                            if (landmark.Z >= 0)
+                            {
+                                landmark.X += Offset.x * BaseLength / 15;
+                                landmark.Y += Offset.y * BaseLength / 15;
+                            }
+                            else
+                            {
+                                landmark.X += Offset.x * BaseLength / 15;
+                                landmark.Y += Offset.y * BaseLength / 15;
+                            }
                             landmark.index = i;
                             normalizedLandmarkList.Landmark.Add(landmark);
                         }
@@ -317,10 +345,6 @@ namespace Mediapipe.Unity.HandTracking
                         
                         NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);
                         Offset = PalmDir * new Vector3(itemStack.Item.Offest.x, itemStack.Item.Offest.y,0);
-                        if(i == 19)
-                        {
-                           // Debug.Log(Offset.x+ " "+ Offset.y);
-                        }
                         if (landmark.Z >= 0)
                         {
                             landmark.X += Offset.x * BaseLength / 15;

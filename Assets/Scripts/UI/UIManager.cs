@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
 
 	[Header("Listening on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default;
+	[SerializeField] private VoidEventChannelSO _closeInspector = default;
 
 	[Header("Dialogue Events")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
@@ -40,6 +41,7 @@ public class UIManager : MonoBehaviour
 	private void OnEnable()
 	{
 		_onSceneReady.OnEventRaised += ResetUI;
+		_closeInspector.OnEventRaised += CloseInspector;
 		_inputReader.MenuPauseEvent += OpenUIPause; // subscription to open Pause UI event happens in OnEnabled, but the close Event is only subscribed to when the popup is open
 		_openUIDialogueEvent.OnEventRaised += OpenUIDialogue;
 		_closeUIDialogueEvent.OnEventRaised += CloseUIDialogue;
@@ -53,6 +55,7 @@ public class UIManager : MonoBehaviour
 	private void OnDisable()
 	{
 		_onSceneReady.OnEventRaised -= ResetUI;
+		_closeInspector.OnEventRaised -= CloseInspector;
 		_inputReader.MenuPauseEvent -= OpenUIPause;
 		_openUIDialogueEvent.OnEventRaised -= OpenUIDialogue;
 		_closeUIDialogueEvent.OnEventRaised -= CloseUIDialogue;
@@ -225,6 +228,11 @@ public class UIManager : MonoBehaviour
 			isForCooking = false;
 			OpenInventoryScreen();
 		}
+	}
+
+	void CloseInspector()
+    {
+		_inventoryInspector.HideInspector();
 	}
 
 	void OpenInventoryScreen()
