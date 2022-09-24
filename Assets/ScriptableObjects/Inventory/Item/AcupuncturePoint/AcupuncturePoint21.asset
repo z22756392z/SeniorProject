@@ -37,7 +37,7 @@ MonoBehaviour:
   _disease: '[Efficacy] Cardiitis, gastritis, insomnia, intercostal neuralgia, and
     wrist tunnel syndrome'
   _landMark: 0
-  _offset: {x: 0, y: 3}
+  _offset: {x: 0, y: 5}
   _customize: 3
   _isLocalized: 0
   _localizePreviewImage:

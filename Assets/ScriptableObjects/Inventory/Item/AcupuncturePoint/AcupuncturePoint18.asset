@@ -36,8 +36,8 @@ MonoBehaviour:
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
   _disease: "[Efficacy] Insomnia, neurasthenia, \u7654 disease, schizophrenia, tongue
     muscle paralysis"
-  _landMark: 13
-  _offset: {x: 1, y: 25}
+  _landMark: 0
+  _offset: {x: -7, y: 5}
   _customize: 3
   _isLocalized: 0
   _localizePreviewImage:

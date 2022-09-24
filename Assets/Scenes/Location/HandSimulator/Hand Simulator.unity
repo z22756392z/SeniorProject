@@ -1594,8 +1594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiHandLandmarksAnnotation: {fileID: 1837015370}
-  _leftHandColor: {r: 1, g: 0.5411765, b: 0, a: 1}
-  _rightHandColor: {r: 0, g: 0.8509804, b: 0.90588236, a: 1}
+  _leftHandColor: {r: 1, g: 0.5411765, b: 0, a: 0.39215687}
+  _rightHandColor: {r: 0, g: 0.8509804, b: 0.90588236, a: 0.39215687}
   Landmarks:
   - body: 0
     size: 21
