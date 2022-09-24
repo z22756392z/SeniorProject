@@ -188,8 +188,15 @@ public class Line
 				
 				if (collection.SharedData.Contains(key))
 				{
-					//LocalizedString _choiceLineRef = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
-					LocalizedString _choiceLine = new LocalizedString() { TableReference = "AcupuncturePoint", TableEntryReference = "AcupuncturePoint" + table.GetEntry(key).Value + "_title" };
+					LocalizedString _choiceLine = default;
+					if (int.TryParse(table.GetEntry(key).Value, out int id))
+                    {
+						_choiceLine = new LocalizedString() { TableReference = "AcupuncturePoint", TableEntryReference = "AcupuncturePoint" + table.GetEntry(key).Value + "_title" };
+                    }
+                    else
+                    {
+						_choiceLine = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
+					}
 					choice = new Choice(_choiceLine);
 					choice.SetChoiceAction(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
 

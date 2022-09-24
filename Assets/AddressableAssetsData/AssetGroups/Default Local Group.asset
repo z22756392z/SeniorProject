@@ -37,48 +37,8 @@ MonoBehaviour:
     m_Address: Assets/ScriptableObjects/EventChannels/SceneManagement/ColdStartup_Channel.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: f214dd285385cdb4f9fbe9e559c32e0c
-    m_Address: Assets/Scenes/Location/FaceTracking/FaceTracking.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 31fd033ba207b8245b90e079f497b0b3
-    m_Address: Assets/Scenes/Location/Holistic/Holistic.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 81b0744b75e82534dad4217b9821a9c4
-    m_Address: Assets/Scenes/Location/AcupuncturePoint/AcupuncturePoint.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: dc93d86dec9a18340b9a515f49fa9c9f
-    m_Address: Assets/Scenes/Location/AI/Rasa.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ceb4d719a77aa734e94e3c496fa02029
-    m_Address: Assets/Scenes/Location/Exercise/Exercise.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9fcee4348f7d0824385561080b33470b
-    m_Address: Assets/Scenes/Location/Town/Town.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: af26c2f690a236b469de7afd5fe4b33c
-    m_Address: Assets/Scenes/Location/Stage1/Stage1.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8f8b82961b2c8804cb6039524b854a27
-    m_Address: Assets/Scenes/Location/HandTracking/Hand Tracking.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ec19f85a0771f3944a7e0cbe7825841b
-    m_Address: Assets/Scenes/Location/TeachMode/Teach.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
     m_Address: Assets/Scenes/Menus/Main.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: eed073cbf2730bc48887e3e50d8fa777
-    m_Address: Assets/Scenes/Location/HandSimulator/Hand Tracking.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
