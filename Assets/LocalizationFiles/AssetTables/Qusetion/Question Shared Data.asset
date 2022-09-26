@@ -320,41 +320,6 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8589006768585834505
-  - m_Id: 7233733058318336
-    m_Key: L1-D1-Teach-AcupunturePoint
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834519
-  - m_Id: 7233824385093632
-    m_Key: L2-D1-Teach-AcupunturePoint
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834518
-  - m_Id: 7233882841108480
-    m_Key: L3-D1-Teach-AcupunturePoint
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834517
-  - m_Id: 7233982963339264
-    m_Key: L1-D1-Teach-AI
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834516
-  - m_Id: 7234021655793664
-    m_Key: L2-D1-Teach-AI
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834515
-  - m_Id: 7234081214910464
-    m_Key: L3-D1-Teach-AI
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834514
-  - m_Id: 7336658141138944
-    m_Key: L1-D1-Teach-Exercies
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834513
   - m_Id: 7499759004110848
     m_Key: L1-D1-Teach-Holistic
     m_Metadata:
@@ -370,16 +335,6 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8589006768585834510
-  - m_Id: 7620550567874560
-    m_Key: L2-D1-Teach-Exercies
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834524
-  - m_Id: 7620736702697472
-    m_Key: L3-D1-Teach-Exercies
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834523
   - m_Id: 7620753115009024
     m_Key: L1-D1-Teach-FaceMesh
     m_Metadata:
@@ -410,13 +365,162 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8589006768585834529
+  - m_Id: 14231780084989952
+    m_Key: L1-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784135
+  - m_Id: 14254511367176192
+    m_Key: L2-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784136
+  - m_Id: 14254560461504512
+    m_Key: L3-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784137
+  - m_Id: 14254834295029760
+    m_Key: L4-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784138
+  - m_Id: 14254871678861312
+    m_Key: L5-D1-Teach-AcupunturePoint
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784139
+  - m_Id: 14255014650101760
+    m_Key: L1-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784140
+  - m_Id: 14255068676931584
+    m_Key: L2-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784141
+  - m_Id: 14255108300521472
+    m_Key: L3-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784142
+  - m_Id: 14255151317303296
+    m_Key: L4-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784143
+  - m_Id: 14255190508879872
+    m_Key: L5-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784144
+  - m_Id: 14255229230694400
+    m_Key: L6-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784145
+  - m_Id: 14255271005962240
+    m_Key: L7-D1-Teach-AI
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784146
+  - m_Id: 14255304593948672
+    m_Key: L1-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784147
+  - m_Id: 14255358952128512
+    m_Key: L2-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784148
+  - m_Id: 14255392875659264
+    m_Key: L3-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784149
+  - m_Id: 14255430725058560
+    m_Key: L4-D1-Teach-Exercies
+    m_Metadata:
+      m_Items:
+      - rid: 4239752612868784150
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4239752612868784133
   m_KeyGenerator:
     rid: 6003001847680860162
   references:
     version: 2
     RefIds:
+    - rid: 4239752612868784133
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: Comment Text
+    - rid: 4239752612868784135
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784136
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784137
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784138
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784139
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784140
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784141
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784142
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784143
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784144
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784145
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784146
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784147
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784148
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784149
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
+    - rid: 4239752612868784150
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: D
     - rid: 6003001847680860162
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
@@ -678,34 +782,6 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D
-    - rid: 8589006768585834513
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834514
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834515
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834516
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834517
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834518
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834519
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
     - rid: 8589006768585834520
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
@@ -715,14 +791,6 @@ MonoBehaviour:
       data:
         m_CommentText: D
     - rid: 8589006768585834522
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834523
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834524
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D

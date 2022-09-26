@@ -72,36 +72,36 @@ MonoBehaviour:
       scene'
     m_Metadata:
       m_Items: []
-  - m_Id: 7233733058318336
-    m_Localized: In the AcupuncturePoint scene, put your hand in front of the screen,
-      and acupuncture points will appear on the hand.
+  - m_Id: 14255068676931584
+    m_Localized: When the user tries to turn or move the hands, the acupuncture points
+      are displayed in the correct position.
     m_Metadata:
       m_Items: []
-  - m_Id: 7233824385093632
-    m_Localized: Click on the acupoint to see the medical knowledge and short stories
-      of the it.
+  - m_Id: 14255014650101760
+    m_Localized: Users can stretch out their hands within the scope of the camera,
+      and various acupuncture points on the hands can be seen on the screen.
     m_Metadata:
       m_Items: []
-  - m_Id: 7233882841108480
+  - m_Id: 14254871678861312
     m_Localized: The introduction is complete. Back to category screen.
     m_Metadata:
       m_Items: []
-  - m_Id: 7233982963339264
-    m_Localized: Press B to call this scene. In AI scenarios, medical questions can
-      be asked.
+  - m_Id: 14254834295029760
+    m_Localized: The chatbot will tell the user the recommended acupoints to press,
+      allowing the user to relieve symptoms.
     m_Metadata:
       m_Items: []
-  - m_Id: 7234021655793664
+  - m_Id: 14254560461504512
+    m_Localized: 'The user can interact with the chatbot if the user enters a disease
+      related question like: I have a headache, I have the flu...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14254511367176192
     m_Localized: Rasa artificial intelligence will try to help you solve your problems.
     m_Metadata:
       m_Items: []
-  - m_Id: 7234081214910464
-    m_Localized: The introduction is complete. Back to category screen.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7336658141138944
-    m_Localized: In the practice scene, put your hand in front of the screen, and
-      acupuncture points will appear on the hand.
+  - m_Id: 14231780084989952
+    m_Localized: In an AI scenario, medical questions can be asked.
     m_Metadata:
       m_Items: []
   - m_Id: 7499759004110848
@@ -123,12 +123,15 @@ MonoBehaviour:
       acupuncture points will appear it.
     m_Metadata:
       m_Items: []
-  - m_Id: 7620550567874560
-    m_Localized: This translation has not been completed.
+  - m_Id: 14255151317303296
+    m_Localized: Depending on the hand, the acupuncture points will display different
+      colors to inform the user.
     m_Metadata:
       m_Items: []
-  - m_Id: 7620736702697472
-    m_Localized: This translation has not been completed.
+  - m_Id: 14255108300521472
+    m_Localized: In this scenario, it is possible to determine the front and back
+      of the user's hand, as well as to determine whether it is a left hand or a
+      right hand.
     m_Metadata:
       m_Items: []
   - m_Id: 7620850821320704
@@ -149,6 +152,39 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7628760121036800
     m_Localized: No.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255190508879872
+    m_Localized: This scene also provides acupoint interaction function.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255229230694400
+    m_Localized: When the user clicks on the acupuncture point on the screen, the
+      information and picture of the acupoint will appear for the user to read and
+      further understand the efficacy of the acupuncture point.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255271005962240
+    m_Localized: The introduction is complete. Back to category screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255304593948672
+    m_Localized: In practice mode, the user can select the question bank and answer
+      the questions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255358952128512
+    m_Localized: During the problem solving process, the user can choose an answer
+      from four options.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255392875659264
+    m_Localized: The acupuncture points of the options will be displayed on the screen
+      to enhance the user's memory of answering questions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14255430725058560
+    m_Localized: The introduction is complete. Back to category screen.
     m_Metadata:
       m_Items: []
   references:
