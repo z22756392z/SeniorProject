@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Localization;
+using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,11 +21,13 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameStateSO _gameStateManager = default;
 	[SerializeField] private MenuSO _mainMenu = default;
 	[SerializeField] private InputReader _inputReader = default;
+	[SerializeField] private QuestionsSO _question = default;
 	[SerializeField] private ActorSO _mainProtagonist = default;
 
 	[Header("Listening on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default;
 	[SerializeField] private VoidEventChannelSO _closeInspector = default;
+	[SerializeField] private VoidEventChannelSO _showQuestionInform = default;
 
 	[Header("Dialogue Events")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
@@ -50,6 +54,7 @@ public class UIManager : MonoBehaviour
 		//_inputReader.OpenInventoryEvent += SetInventoryScreen;
 		//_inventoryPanel.Closed += CloseInventoryScreen;
 		_inputReader.OpenChatBotEvent += OpenChatBotScreen;
+		_showQuestionInform.OnEventRaised += ShowQusetionInformPopup;
 	}
 
 	private void OnDisable()
@@ -65,6 +70,7 @@ public class UIManager : MonoBehaviour
 		//_inputReader.OpenInventoryEvent -= SetInventoryScreen;
 		//_inventoryPanel.Closed -= CloseInventoryScreen;
 		_inputReader.OpenChatBotEvent -= OpenChatBotScreen;
+		_showQuestionInform.OnEventRaised -= ShowQusetionInformPopup;
 	}
 
 	void ResetUI()
@@ -188,6 +194,23 @@ public class UIManager : MonoBehaviour
 		_popupPanel.SetPopup(PopupType.BackToMenu);
 	}
 
+	void ShowQusetionInformPopup()
+    {
+		_pauseScreen.gameObject.SetActive(false); // Set pause screen to inactive
+		StringTable table = LocalizationEditorSettings.GetStringTableCollection("UI Misc").GetTable("zh-TW") as StringTable;
+		StringTableEntry entry = table.GetEntry("QuestionFinish_Popup_Description");
+		entry.Value = entry.Value.Replace("?", _question.AnswerCorrectly.ToString());
+		StringTable table2 = LocalizationEditorSettings.GetStringTableCollection("UI Misc").GetTable("en") as StringTable;
+		StringTableEntry entry2 = table2.GetEntry("QuestionFinish_Popup_Description");
+		entry2.Value = entry2.Value.Replace("?", _question.AnswerCorrectly.ToString());
+
+		_popupPanel.ConfirmationResponseAction += HideQuestionInformPopup;
+
+		_inputReader.EnableMenuInput();
+		_popupPanel.gameObject.SetActive(true);
+		_popupPanel.SetPopup(PopupType.QuestionFinish);
+	}
+
 	void BackToMainMenu(bool confirm)
 	{
 		HideBackToMenuConfirmationPopup();// hide confirmation screen, show close UI pause, 
@@ -219,6 +242,12 @@ public class UIManager : MonoBehaviour
 
 		// time is still set to 0 and Input is still set to menuInput 
 		//going out from confirmaiton popup screen gets us back to the pause screen
+	}
+
+	void HideQuestionInformPopup(bool confirm)
+    {
+		_popupPanel.ConfirmationResponseAction -= HideQuestionInformPopup;
+		_popupPanel.gameObject.SetActive(false);
 	}
 
 	void SetInventoryScreen()

@@ -20,13 +20,14 @@ public class QuestionsSO : ScriptableObject
 
 	[SerializeField] private VoidEventChannelSO _questionAnswered = default;
 	[SerializeField] private VoidEventChannelSO _questionFinish = default;
+
 	[Header("Listening to channels")]
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _loseDialogueEvent = default;
 
 	private QuestionsGroup _currentQuestionGroup;
     private DialogueDataSO _currentDialogue;
-
+	public int AnswerCorrectly = 0;
 	public int CurrentQusetionGroupCount => _currentQuestionGroup.questions.Length;
 
     public void OnEnable()
@@ -37,6 +38,10 @@ public class QuestionsSO : ScriptableObject
 	public void OnDisable()
     {
 		_questionFinish.OnEventRaised -= Reset;
+		if (_winDialogueEvent.OnEventRaised != null)
+			_winDialogueEvent.OnEventRaised = null;
+		if (_loseDialogueEvent.OnEventRaised != null)
+			_loseDialogueEvent.OnEventRaised = null;
     }
 
     public void SetCurrentQuestoinGroup(int value)
@@ -52,6 +57,7 @@ public class QuestionsSO : ScriptableObject
 		_winDialogueEvent.OnEventRaised += PlayWinDialogue;
 		_loseDialogueEvent.OnEventRaised += PlayLoseDialogue;
 
+		AnswerCorrectly = 0;
 		StartDialogue();
 	}
 
@@ -72,8 +78,10 @@ public class QuestionsSO : ScriptableObject
 	{
 		if (_winDialogue != null)
 		{
+			AnswerCorrectly++;
 			_currentDialogue = _winDialogue;
 			StartDialogue();
+			_EndOfChoiceDialogue.OnEventRaised = null;
 			_EndOfChoiceDialogue.OnEventRaised += EndChoiceDialogue;
 		}
 	}
@@ -84,12 +92,13 @@ public class QuestionsSO : ScriptableObject
 		{
 			_currentDialogue = _loseDialogue;
 			StartDialogue();
+			_EndOfChoiceDialogue.OnEventRaised = null;
 			_EndOfChoiceDialogue.OnEventRaised += EndChoiceDialogue;
 		}
 	}
 
 	void EndChoiceDialogue()
-	{
+	{ 
 		_EndOfChoiceDialogue.OnEventRaised -= EndChoiceDialogue;
 		_questionAnswered.RaiseEvent();
 	}
@@ -104,6 +113,7 @@ public class QuestionsSO : ScriptableObject
     {
 		_winDialogueEvent.OnEventRaised -= PlayWinDialogue;
 		_loseDialogueEvent.OnEventRaised -= PlayLoseDialogue;
+		AnswerCorrectly = 0;
 	}
 }
 

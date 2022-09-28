@@ -186,6 +186,18 @@ MonoBehaviour:
     m_Localized: Understanded
     m_Metadata:
       m_Items: []
+  - m_Id: 43211175291736064
+    m_Localized: You got ? questions right!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43211007414718464
+    m_Localized: Finish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43212786705584128
+    m_Localized: Comfirm
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

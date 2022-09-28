@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,7 @@ MonoBehaviour:
   _showQuestionButtons: {fileID: 11400000, guid: 12672d3732095dd48ba42db3d82501cc,
     type: 2}
   _onQuestionFinish: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df, type: 2}
+  _leaveScene: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507, type: 2}
 --- !u!1 &41748529
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +298,8 @@ MonoBehaviour:
   _setCurrentQestionCount: {fileID: 11400000, guid: b9eb3a27c09fb074aa307d0ad6b5e83a,
     type: 2}
   _onQuestionFinish: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df, type: 2}
+  _showQuestionInform: {fileID: 11400000, guid: fe919b6eb7414fd4788781d0ad07f5a9,
+    type: 2}
   _onQuestionAnswered: {fileID: 11400000, guid: 1d6050d740e74074bb4069540d3e4a74,
     type: 2}
   _onQestionGroupSelected: {fileID: 11400000, guid: 36670e5d0a8a2424fa985bcdceb7771f,
@@ -350,8 +353,8 @@ RectTransform:
   m_Father: {fileID: 2010891802}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.15, y: 0.4}
+  m_AnchorMax: {x: 0.85, y: 0.6}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -403,11 +406,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 32.75
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -585,7 +588,7 @@ MonoBehaviour:
   MainCanvas: {fileID: 428025544}
   _introEnd: {fileID: 11400000, guid: aeb98ea879f2a4a4791620dc71b56c54, type: 2}
   _closeDialogue: {fileID: 11400000, guid: 31a367ca4f470c148961ad1428407f41, type: 2}
-  _leaveScene: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df, type: 2}
+  _leaveScene: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507, type: 2}
   _hideInspector: {fileID: 0}
   _showSolution: {fileID: 0}
   _leaveFromUIPause: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3, type: 2}
@@ -689,7 +692,7 @@ MonoBehaviour:
   _leadsToPath: {fileID: 11400000, guid: ef2173408fad24744870274317a50d76, type: 2}
   _pathStorage: {fileID: 11400000, guid: 8ded5b803c531e240821692e8fee6f3a, type: 2}
   _beforeLeaveTime: 1
-  _locationExitLoadChannel: {fileID: 11400000, guid: 585169a83f3d0a240a1db30a1d43cabd,
+  _locationExitLoadChannel: {fileID: 11400000, guid: 1fd9347d751c1ea4e87a3f0a8030213c,
     type: 2}
 --- !u!1 &430612398
 GameObject:
@@ -1818,6 +1821,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899717573}
   m_CullTransparentMesh: 1
+--- !u!1 &979412532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2755321644562186051, guid: 03fa216a5e5cfe54193740a6051e9eee,
+    type: 3}
+  m_PrefabInstance: {fileID: 520599670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1053669695 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
@@ -2884,12 +2893,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1590722132 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2755321644562186051, guid: 03fa216a5e5cfe54193740a6051e9eee,
-    type: 3}
-  m_PrefabInstance: {fileID: 520599670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1716877594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,9 +3553,15 @@ PrefabInstance:
       objectReference: {fileID: 1291005293}
     - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
         type: 3}
+      propertyPath: _onResumed
+      value: 
+      objectReference: {fileID: 11400000, guid: f0f0aaea299e9de4ea64e759ab25ea20,
+        type: 2}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
       propertyPath: annotation
       value: 
-      objectReference: {fileID: 1590722132}
+      objectReference: {fileID: 979412532}
     - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
         type: 3}
       propertyPath: _inputReader
@@ -3567,9 +3576,33 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
         type: 3}
+      propertyPath: _showSolution
+      value: 
+      objectReference: {fileID: 11400000, guid: a4f8d1ed18df7d6438f7ebc03e51efcd,
+        type: 2}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
+      propertyPath: _hideSolution.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
+      propertyPath: _hideSolution.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df,
+        type: 2}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
+      propertyPath: _hideSolution.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507,
+        type: 2}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
       propertyPath: _onEventRaisedStartSolution
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: fe919b6eb7414fd4788781d0ad07f5a9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bc5704cf3838744db88cea6744442b6, type: 3}
 --- !u!1001 &2099278616273772983
@@ -3788,6 +3821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Acupuncture Point Item Annotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634688631373073611, guid: 281c557b872ee3e4e8d18284da67611c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2634688631373073615, guid: 281c557b872ee3e4e8d18284da67611c,
         type: 3}

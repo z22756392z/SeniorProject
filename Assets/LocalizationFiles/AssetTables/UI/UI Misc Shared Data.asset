@@ -183,6 +183,18 @@ MonoBehaviour:
     m_Key: Understand
     m_Metadata:
       m_Items: []
+  - m_Id: 43211007414718464
+    m_Key: QuestionFinish_Popup_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43211175291736064
+    m_Key: QuestionFinish_Popup_Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43212786705584128
+    m_Key: Confirm_QuestionFinish
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

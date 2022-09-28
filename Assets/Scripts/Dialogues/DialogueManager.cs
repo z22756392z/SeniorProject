@@ -15,10 +15,10 @@ public class DialogueManager : MonoBehaviour
 	[Header("Listening on")]
 	[SerializeField] private DialogueDataChannelSO _startDialogue = default;
 	[SerializeField] private DialogueChoiceChannelSO _makeDialogueChoiceEvent = default;
-
+	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // before leave scene
 	[Header("Broadcasting on")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
-	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default; // before leave scene
+	
 
 	[SerializeField] private DialogueChoicesChannelSO _showChoicesUIEvent = default;
 	[SerializeField] private IntEventChannelSO _endDialogueWithTypeEvent = default;
@@ -41,6 +41,10 @@ public class DialogueManager : MonoBehaviour
     private void OnDisable()
     {
 		_startDialogue.OnEventRaised -= DisplayDialogueData;
+		if (_makeDialogueChoiceEvent.OnEventRaised != null)
+			_makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
+		if (_closeUIDialogueEvent.OnEventRaised != null)
+			_closeUIDialogueEvent.OnEventRaised -= DialogueForceClose;
 	}
 
     /// <summary>
@@ -81,7 +85,7 @@ public class DialogueManager : MonoBehaviour
 	}
 
 	private void OnAdvance()
-	{
+	{ 
 		_counterLine++;
 		if (!_reachedEndOfLine)
 		{
@@ -116,7 +120,6 @@ public class DialogueManager : MonoBehaviour
 	private void DisplayChoices(List<Choice> choices)
 	{
 		_inputReader.AdvanceDialogueEvent -= OnAdvance;
-
 		_makeDialogueChoiceEvent.OnEventRaised += MakeDialogueChoice;
 		_showChoicesUIEvent.RaiseEvent(choices);
 	}

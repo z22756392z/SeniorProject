@@ -16,7 +16,6 @@ public class ItemSO : SerializableScriptableObject
 	[SerializeField]
 	protected LocalizedString _description = default;
 
-
 	[Tooltip("The type of item")]
 	[SerializeField]
 	protected ItemTypeSO _itemType = default;
@@ -33,7 +32,7 @@ public class ItemSO : SerializableScriptableObject
 	public GameObject Prefab => _prefab;
 	public virtual bool IsLocalized { get; }
 	public virtual LocalizedSprite LocalizePreviewImage { get; }
-	public virtual string Disease { get; }
+	public virtual LocalizedString Disease { get; }
 	public virtual int LandMark { get; }
 	public virtual Vector2 Offest { get; }
 	public virtual float Customize { get; }

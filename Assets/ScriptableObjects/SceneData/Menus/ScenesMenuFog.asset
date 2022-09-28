@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3546e1f9ebb6f054fb677b86f543542b, type: 3}
+  m_Name: ScenesMenuFog
+  m_EditorClassIdentifier: 
+  _guid: 96516ff7bf2ac5e41b17e4ad580d6646
+  description: Main/title menu, the only menu that exists as a standalone scene
+  sceneType: 1
+  sceneReference:
+    m_AssetGUID: 79ccf1b65eb350e4ebce186791439779
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 0}

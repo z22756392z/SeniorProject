@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIMenuManager : MonoBehaviour
@@ -11,12 +12,15 @@ public class UIMenuManager : MonoBehaviour
 	[SerializeField] private SaveSystem _saveSystem = default;
 
 	[SerializeField] private InputReader _inputReader = default;
+	[SerializeField] private Animator _animator = default;
 
+	[Header("Effect")]
+	[SerializeField] private List<GameObject> effects = new List<GameObject>();
 
 	[Header("Broadcasting on")]
 	[SerializeField]
 	private VoidEventChannelSO _startGameEvent = default;
-
+	private bool isStartClicked = false;
 	private IEnumerator Start()
 	{
 		_inputReader.EnableMenuInput();
@@ -26,26 +30,58 @@ public class UIMenuManager : MonoBehaviour
 	void SetMenuScreen()
 	{
 		_saveSystem.LoadSaveDataFromDisk();
-		_mainMenuPanel.StartButtonAction += _startGameEvent.RaiseEvent;
+		_mainMenuPanel.StartButtonAction += OnStartIntroAnim;
 		_mainMenuPanel.SettingsButtonAction += OpenSettingsScreen;
 		_mainMenuPanel.AboutButtonAction += OpenAboutScreen;
 		_mainMenuPanel.ExitButtonAction += ShowExitConfirmationPopup;
 	}
 
+	public void StartGame()
+    {
+		_startGameEvent.RaiseEvent();
+	}
+
+	public void OnStartIntroAnim()
+    {
+        if (!isStartClicked)
+        {
+			isStartClicked = true;
+			_animator.SetTrigger("IntoMain");
+		}		
+	}
+	void CloseEffect()
+    {
+        foreach (var item in effects)
+        {
+			item.SetActive(false);
+        }
+	}
+
+	void OpenEffect()
+    {
+		foreach (var item in effects)
+		{
+			item.SetActive(true);
+		}
+	}
+
 	public void OpenSettingsScreen()
 	{
+		CloseEffect();
 		_settingsPanel.gameObject.SetActive(true);
 		_settingsPanel.Closed += CloseSettingsScreen;
 
 	}
 	public void CloseSettingsScreen()
 	{
+		OpenEffect();
 		_settingsPanel.Closed -= CloseSettingsScreen;
 		_settingsPanel.gameObject.SetActive(false);
 	}
 
 	public void OpenAboutScreen()
     {
+		CloseEffect();
 		_aboutPanel.gameObject.SetActive(true);
 
 		_aboutPanel.OnCloseAbout += CloseAboutScreen;
@@ -53,6 +89,7 @@ public class UIMenuManager : MonoBehaviour
 
 	public void CloseAboutScreen()
 	{
+		OpenEffect();
 		_aboutPanel.OnCloseAbout -= CloseAboutScreen;
 		_aboutPanel.gameObject.SetActive(false);
 	}

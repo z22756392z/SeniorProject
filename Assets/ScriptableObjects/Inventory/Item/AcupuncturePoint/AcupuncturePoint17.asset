@@ -34,7 +34,15 @@ MonoBehaviour:
     m_LocalVariables: []
   _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
-  _disease: '[Efficacy] Evilizing the heat and swallowing, adjusting the laxative'
+  _disease:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: AcupuncturePoint17_disease
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _landMark: 5
   _offset: {x: -2, y: 0}
   _customize: 4

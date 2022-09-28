@@ -1205,6 +1205,11 @@ PrefabInstance:
       objectReference: {fileID: 275874966}
     - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
         type: 3}
+      propertyPath: _hideSolution.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214539408743932795, guid: 2bc5704cf3838744db88cea6744442b6,
+        type: 3}
       propertyPath: _onEventRaisedStartSolution
       value: 
       objectReference: {fileID: 11400000, guid: aeb98ea879f2a4a4791620dc71b56c54,
@@ -1415,6 +1420,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3,
         type: 2}
+    - target: {fileID: 5203720248706126552, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
+        type: 3}
+      propertyPath: _locationExitLoadChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fd9347d751c1ea4e87a3f0a8030213c,
+        type: 2}
     - target: {fileID: 5203720248706126553, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1534,7 +1545,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _leaveScene
       value: 
-      objectReference: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3,
+      objectReference: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507,
         type: 2}
     - target: {fileID: 5203720248706126557, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
         type: 3}
@@ -1547,6 +1558,12 @@ PrefabInstance:
       propertyPath: _hideInspector
       value: 
       objectReference: {fileID: 11400000, guid: 2b10d02a54b0841488a39c67f00ccc02,
+        type: 2}
+    - target: {fileID: 5203720248706126557, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
+        type: 3}
+      propertyPath: _leaveFromUIPause
+      value: 
+      objectReference: {fileID: 11400000, guid: ec3431e294c328e419164ec874a158c3,
         type: 2}
     - target: {fileID: 5203720248706126559, guid: 69d17aaecc88cbc42ba6edbe1f9e9ae5,
         type: 3}

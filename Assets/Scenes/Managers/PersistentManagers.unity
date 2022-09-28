@@ -806,6 +806,7 @@ MonoBehaviour:
   _onSceneReady: {fileID: 11400000, guid: bd594da1708c85a4ca5cd7b2257fd1b7, type: 2}
   _fadeRequestChannel: {fileID: 11400000, guid: 1bd3463b7b0ab6f49b074c73644daacc,
     type: 2}
+  _previouslyScene: {fileID: 11400000, guid: c5967e6f77ae579438a325bf8c449984, type: 2}
 --- !u!4 &1719375649
 Transform:
   m_ObjectHideFlags: 0

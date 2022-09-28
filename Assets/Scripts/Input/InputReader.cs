@@ -164,6 +164,11 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 			MenuPauseEvent.Invoke();
 	}
 
+	public void PauseFromButton()
+    {
+		MenuPauseEvent.Invoke();
+	}
+
 	public void OnRotateCamera(InputAction.CallbackContext context)
 	{
 		CameraMoveEvent.Invoke(context.ReadValue<Vector2>(), IsDeviceMouse(context));

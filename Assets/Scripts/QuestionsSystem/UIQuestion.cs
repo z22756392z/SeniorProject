@@ -15,6 +15,7 @@ public class UIQuestion : MonoBehaviour
     [SerializeField] private IntEventChannelSO _setCurrentQestionCount = default;
     [SerializeField] private VoidEventChannelSO _showQuestionButtons = default;
     [SerializeField] private VoidEventChannelSO _onQuestionFinish = default;
+    [SerializeField] private VoidEventChannelSO _leaveScene = default;
    
     private void OnEnable()
     {
@@ -24,6 +25,7 @@ public class UIQuestion : MonoBehaviour
         _setTotalQestionCount.OnEventRaised += SetTotalQuestionCount;
         _setCurrentQestionCount.OnEventRaised += SetCurrentQuestionCount;
         _onQuestionFinish.OnEventRaised += Close;
+        _leaveScene.OnEventRaised += Close;
     }
 
     private void OnDisable()
@@ -32,6 +34,7 @@ public class UIQuestion : MonoBehaviour
         _setTotalQestionCount.OnEventRaised -= SetTotalQuestionCount;
         _setCurrentQestionCount.OnEventRaised -= SetCurrentQuestionCount;
         _onQuestionFinish.OnEventRaised -= Close;
+        _leaveScene.OnEventRaised -= Close;
     }
 
     public void OnDefaultQuestionClicked()
