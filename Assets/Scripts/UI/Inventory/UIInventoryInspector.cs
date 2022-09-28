@@ -24,6 +24,12 @@ public class UIInventoryInspector : MonoBehaviour
         _inspectorAnimation.AnimationEnded -= AnimEnd;
         _inspectorAnimation.ContentChanged -= FillInspector;
     }
+    public void Close()
+    {
+        _inspectorAnimation.AnimationEnded -= AnimEnd;
+        _inspectorAnimation.AnimationEnded += HideInspector;
+        _inspectorAnimation.SetAnim(_curItem);
+    }
 
     public void FireAnim(ItemSO itemToInspect)
     {

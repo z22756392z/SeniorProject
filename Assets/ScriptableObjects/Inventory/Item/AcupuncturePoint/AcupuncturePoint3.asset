@@ -38,8 +38,8 @@ MonoBehaviour:
     spasm, trigeminal neuralgia, dental nerve pain, pharyngitis, tonsillitis, adverse
     swallowing, nervous weakness, diarrhea, forearm neuralgia, bronchitis, asthma,
     temporal jaw, temporal ja'
-  _landMark: 5
-  _offset: {x: 2, y: 13}
+  _landMark: 2
+  _offset: {x: 4, y: 0}
   _customize: 4
   _isLocalized: 0
   _localizePreviewImage:

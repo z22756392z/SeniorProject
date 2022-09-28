@@ -76,6 +76,11 @@ public class SwitchSceneAnimation : MonoBehaviour
     {
         MainCanvas.SetTrigger("recover");
     }
+
+    public void CloseBook()
+    {
+        MainCanvas.SetTrigger("CloseBook");
+    }
     public void ShowSolution()
     {
         _showSolution?.RaiseEvent();
