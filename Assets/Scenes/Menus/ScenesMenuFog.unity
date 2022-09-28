@@ -504,7 +504,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cam Tex
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2734218218088656349, guid: 0d7ae74218ed38341a2b2cb97213d12b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d7ae74218ed38341a2b2cb97213d12b, type: 3}
 --- !u!1 &131886905 stripped
 GameObject:
@@ -1815,7 +1816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1185034843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2151,7 +2152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1420.4927}
+  m_AnchoredPosition: {x: 0, y: 1420.0002}
   m_SizeDelta: {x: 0, y: 2500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1345270386
@@ -2550,8 +2551,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 220070894}
   m_HandleRect: {fileID: 220070893}
   m_Direction: 3
-  m_Value: -0.00034695477
-  m_Size: 0.35203728
+  m_Value: -0.00000017193001
+  m_Size: 0.43177208
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

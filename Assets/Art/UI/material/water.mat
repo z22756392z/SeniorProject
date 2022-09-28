@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: water
+  m_Name: Water
   m_Shader: {fileID: 10101, guid: 0000000000000000e000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -42,12 +42,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: dff889d6729cbc84da249d85b8c4c1e0, type: 3}
-        m_Scale: {x: 3, y: 3}
-<<<<<<< HEAD
-        m_Offset: {x: 0.8740799, y: 0.8740799}
-=======
-        m_Offset: {x: 3.344444, y: 3.344444}
->>>>>>> c0c82e5f4c9dac98dd4089d234ec1ae6dc47c237
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 2.667631, y: 2.667631}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

@@ -151,7 +151,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 29998700366876672
-    m_Localized: "\u3008 \u9032 \u5165 \u904A \u6232 \u3009"
+    m_Localized: "< \u9032 \u5165 \u904A \u6232 >"
     m_Metadata:
       m_Items: []
   - m_Id: 35454009260593152

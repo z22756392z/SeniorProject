@@ -1,10 +1,11 @@
-﻿using UnityEditor.Localization;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
 
 public class UIManager : MonoBehaviour
 {
+	[SerializeField] private TableReference uiTableReference = default;
 	[Header("Scene UI")]
 	[SerializeField] private MenuSelectionHandler _selectionHandler = default;
 	[SerializeField] private UIPopup _popupPanel = default;
@@ -197,12 +198,10 @@ public class UIManager : MonoBehaviour
 	void ShowQusetionInformPopup()
     {
 		_pauseScreen.gameObject.SetActive(false); // Set pause screen to inactive
-		StringTable table = LocalizationEditorSettings.GetStringTableCollection("UI Misc").GetTable("zh-TW") as StringTable;
+
+		StringTable table = LocalizationSettings.StringDatabase.GetTable(uiTableReference);
 		StringTableEntry entry = table.GetEntry("QuestionFinish_Popup_Description");
 		entry.Value = entry.Value.Replace("?", _question.AnswerCorrectly.ToString());
-		StringTable table2 = LocalizationEditorSettings.GetStringTableCollection("UI Misc").GetTable("en") as StringTable;
-		StringTableEntry entry2 = table2.GetEntry("QuestionFinish_Popup_Description");
-		entry2.Value = entry2.Value.Replace("?", _question.AnswerCorrectly.ToString());
 
 		_popupPanel.ConfirmationResponseAction += HideQuestionInformPopup;
 
