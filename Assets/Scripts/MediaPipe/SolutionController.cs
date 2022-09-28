@@ -10,7 +10,7 @@ namespace Mediapipe.Unity.UI
         [Header("Listening to")]
         [SerializeField] private VoidEventChannelSO _onEventRaisedStartSolution = default;
         [SerializeField] private VoidEventChannelSO _showSolution = default;
-        [SerializeField] private VoidEventChannelSO _hideSolution = default;
+        [SerializeField] private List<VoidEventChannelSO> _hideSolution = new List<VoidEventChannelSO>();
         [SerializeField] private InputReader _inputReader;
         [SerializeField] private VoidEventChannelSO _onResumed = default;
         public Solution solution = default;
@@ -26,8 +26,13 @@ namespace Mediapipe.Unity.UI
         {
             if(_onEventRaisedStartSolution != null)
                 _onEventRaisedStartSolution.OnEventRaised += StartSolution;
-            if (_hideSolution != null)
-                _hideSolution.OnEventRaised += HideSolution;
+            if (_hideSolution.Count != 0)
+            {
+                foreach (var item in _hideSolution)
+                {
+                    item.OnEventRaised += HideSolution;
+                }
+            }
             _inputReader.MenuPauseEvent += PauseSolution;
             if (_onResumed != null)
                 _onResumed.OnEventRaised += UnpauseSolution;
@@ -39,8 +44,13 @@ namespace Mediapipe.Unity.UI
         {
             if (_onEventRaisedStartSolution != null)
                 _onEventRaisedStartSolution.OnEventRaised -= StartSolution;
-            if (_hideSolution != null)
-                _hideSolution.OnEventRaised -= HideSolution;
+            if (_hideSolution.Count != 0)
+            {
+                foreach (var item in _hideSolution)
+                {
+                    item.OnEventRaised -= HideSolution;
+                }
+            }
             _inputReader.MenuPauseEvent -= PauseSolution;
             if(_onResumed != null)
             _onResumed.OnEventRaised -= UnpauseSolution;

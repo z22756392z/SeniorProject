@@ -51,14 +51,18 @@ MonoBehaviour:
         - m_KeyId: 127143464960
           m_TableCodes:
           - en
+          - zh-TW
         - m_KeyId: 453258989568
           m_TableCodes:
           - en
+          - zh-TW
         - m_KeyId: 608108498944
           m_TableCodes:
           - en
+          - zh-TW
         - m_KeyId: 1153875529728
           m_TableCodes:
           - en
+          - zh-TW
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

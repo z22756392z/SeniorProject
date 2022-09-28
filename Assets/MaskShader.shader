@@ -51,7 +51,7 @@ Shader "Custom/Fog"
                 float4 texCol = tex2D(_MainTex, IN.uv_MainTex);
                 float4 pattern = tex2D(_Pattern, IN.uv_MainTex);
                 
-                float4 finalColor = lerp(pattern + 0.3, texCol, saturate(InverseLerp(pattern,0, (_Health-0.1f) * 0.45)));
+                float4 finalColor = lerp(pattern + 0.3, texCol, saturate(InverseLerp(pattern,0, (_Health) * 0.6)));
                 o.Albedo = finalColor.rgb;
                 // Metallic and smoothness come from slider variables
                 o.Metallic = _Metallic;

@@ -245,10 +245,11 @@ public class UpdateSOsAndLocalizations
     {
         string titleKeyID = name  + "_title";
         string descritpionKeyID = name + "_description";
+        string diseaseKeyID = name + "_disease";
 
         UpdateStringTableEntry(stringTable, titleKeyID, title);
         UpdateStringTableEntry(stringTable, descritpionKeyID, content);
-
+        UpdateStringTableEntry(stringTable, diseaseKeyID, disease);
         
         Sprite sprite =Resources.Load<Sprite>("Art/AcupuncturePoint/" + spriteName);
         //Debug.Log(spriteName);
@@ -259,11 +260,11 @@ public class UpdateSOsAndLocalizations
         
         if (!File.Exists(name))
         {
-            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, disease, offset_x, offset_y, rel_position, customize, name);
+            CreateAcupunturePointSO(name, titleKeyID, descritpionKeyID, diseaseKeyID, offset_x, offset_y, rel_position, customize, name);
             return;
         }
         ItemAcupuncturePointSO acupuncturePoint = (ItemAcupuncturePointSO)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Spots/Spot", typeof(ItemAcupuncturePointSO));
-        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, disease, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab, name);
+        acupuncturePoint.Setup(titleKeyID, descritpionKeyID, AcupuncturePoint, diseaseKeyID, offset_x, offset_y, rel_position, customize, AcupuncturePointPrefab, name);
     }
 
     public static void UpdateQuestionSOs(int questionIndex)

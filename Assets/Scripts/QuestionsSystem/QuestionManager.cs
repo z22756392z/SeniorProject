@@ -5,7 +5,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private IntEventChannelSO _setTotalQestionCount = default;
     [SerializeField] private IntEventChannelSO _setCurrentQestionCount = default;
     [SerializeField] private VoidEventChannelSO _onQuestionFinish = default;
-
+    [SerializeField] private VoidEventChannelSO _showQuestionInform = default;
     [Header("Listening to")]
     [SerializeField] private VoidEventChannelSO _onQuestionAnswered = default;
     [SerializeField] private IntEventChannelSO _onQestionGroupSelected = default;
@@ -40,8 +40,10 @@ public class QuestionManager : MonoBehaviour
 
     void OnQuestionAnswered()
     {
+        
         if (_currentQusetionCount + 1> _totalQuestionCount)
         {
+            _showQuestionInform.RaiseEvent();
             _onQuestionFinish.RaiseEvent();
             return;
         }

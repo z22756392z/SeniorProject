@@ -41,6 +41,54 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Menus/Main.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8f8b82961b2c8804cb6039524b854a27
+    m_Address: Assets/Scenes/Location/HandAcupuncturePoint/HandAcupunturePoint.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ec19f85a0771f3944a7e0cbe7825841b
+    m_Address: Assets/Scenes/Location/TeachMode/Teach.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ceb4d719a77aa734e94e3c496fa02029
+    m_Address: Assets/Scenes/Location/Exercise/Exercise.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4b39a5a8d3c816443ab96c80d7df9ddc
+    m_Address: Assets/Scenes/Location/AI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 351381c0e770bf04a89c5f5faf360bb4
+    m_Address: Assets/Scenes/Location/HandAcupuncturePoint
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c3db0709df099de4c8fbcb5f294741bc
+    m_Address: Assets/Scenes/Location/TeachMode
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc93d86dec9a18340b9a515f49fa9c9f
+    m_Address: Assets/Scenes/Location/AI/Rasa.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea3098911b87fcc44be82778601b078d
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/HandAcupunturePoint.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 928d0b3878179754b957efb18599c10d
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/TeachMode.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49e4407f50e8730408df86d83e3ce972
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/Exercise.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4afcd444e5952c24d931b6c77b7ebe9e
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/AI.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 79ccf1b65eb350e4ebce186791439779
+    m_Address: Assets/Scenes/Menus/ScenesMenuFog.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1a5e0e18881fde64184a4562bd8fc6ff, type: 2}
   m_SchemaSet:

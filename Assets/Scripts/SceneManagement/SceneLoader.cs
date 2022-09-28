@@ -29,12 +29,14 @@ public class SceneLoader : MonoBehaviour
 	//Parameters coming from scene loading requests
 	private GameSceneSO _sceneToLoad;
 	private GameSceneSO _currentlyLoadedScene;
+	[SerializeField] private GameSceneStorageSO _previouslyScene;
 	private bool _showLoadingScreen;
 
 	private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
 	private float _fadeDuration = .5f;
 	private bool _isLoading = false; //To prevent a new loading request while already loading a new scene
 	private bool _isFade = false;
+	
 	private void OnEnable()
 	{
 		_loadLocation.OnLoadingRequested += LoadLocation;
@@ -142,6 +144,7 @@ public class SceneLoader : MonoBehaviour
 			if (_currentlyLoadedScene.sceneReference.OperationHandle.IsValid())
 			{
 				//Unload the scene through its AssetReference, i.e. through the Addressable system
+				_previouslyScene.lastGameSceneSO = _currentlyLoadedScene;
 				_currentlyLoadedScene.sceneReference.UnLoadScene();
 			}
 #if UNITY_EDITOR
@@ -150,6 +153,7 @@ public class SceneLoader : MonoBehaviour
 				//Only used when, after a "cold start", the player moves to a new scene
 				//Since the AsyncOperationHandle has not been used (the scene was already open in the editor),
 				//the scene needs to be unloaded using regular SceneManager instead of as an Addressable
+				_previouslyScene.lastGameSceneSO = _currentlyLoadedScene;
 				SceneManager.UnloadSceneAsync(_currentlyLoadedScene.sceneReference.editorAsset.name);
 			}
 #endif

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e577f077b6a2d45834b28371a3578a, type: 3}
   m_Name: Leave
   m_EditorClassIdentifier: 
-  voidEvent: {fileID: 11400000, guid: b3eb4c98646971a4f9736227601c688f, type: 2}
+  voidEvent: {fileID: 11400000, guid: f1a29cf9a5d50d9458740316df21a507, type: 2}

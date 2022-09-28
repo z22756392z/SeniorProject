@@ -30,6 +30,7 @@ public class SaveSystem : ScriptableObject
 
 	private void CacheLoadLocations(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
 	{
+		/*
 		LocationSO locationSO = locationToLoad as LocationSO;
 		if (locationSO)
 		{
@@ -37,6 +38,7 @@ public class SaveSystem : ScriptableObject
 		}
 
 		SaveDataToDisk();
+		*/
 	}
 
 	public bool LoadSaveDataFromDisk()

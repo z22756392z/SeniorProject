@@ -34,9 +34,15 @@ MonoBehaviour:
     m_LocalVariables: []
   _itemType: {fileID: 11400000, guid: 2b775882f67085e4eb03ace16bbd10f2, type: 2}
   _prefab: {fileID: 5105739270100195971, guid: 969d18972c8be0c4f8cba036e12f3eba, type: 3}
-  _disease: '[Efficacy] Head wind toothache, red and swollen arms, numb fingers,
-    strong head pain, sore throat, tooth pain, eye pain, annoying heat, poisonous
-    snake bite'
+  _disease:
+    m_TableReference:
+      m_TableCollectionName: AcupuncturePoint
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: AcupuncturePoint16_disease
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _landMark: 13
   _offset: {x: 2, y: 4}
   _customize: 4
