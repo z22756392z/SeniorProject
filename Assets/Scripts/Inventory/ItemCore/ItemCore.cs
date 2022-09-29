@@ -28,7 +28,9 @@ public class ItemCore : MonoBehaviour
     {
         _isSetup = true;
         if (_inventorySO.Items.Count - 1< index) return;
-        _itemStack = _inventorySO.GetItemsInCurrentInventory(InventoryTabType.AcupuncturePoint)[index];
+        List<ItemStack> itemStacks = _inventorySO.GetItemsInCurrentInventory(InventoryTabType.AcupuncturePoint);
+        if (itemStacks.Count < index) return;
+        _itemStack = itemStacks[index];
 
         foreach (var component in CoreComponents)
         {

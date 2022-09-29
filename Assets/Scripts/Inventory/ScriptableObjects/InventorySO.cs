@@ -104,6 +104,10 @@ public class InventorySO : ScriptableObject
 	}
 
 
-	public List<ItemStack> GetItemsInCurrentInventory(InventoryTabType tabType) => _items.FindAll(o => o.Item.ItemType.TabType.TabType == tabType);
+	public List<ItemStack> GetItemsInCurrentInventory(InventoryTabType tabType)
+	{
+		if (_items.Count == 0) return default;
+		return _items.FindAll(o => o.Item.ItemType.TabType.TabType == tabType);
+	} 
     
 }

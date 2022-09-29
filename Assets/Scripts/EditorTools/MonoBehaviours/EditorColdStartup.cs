@@ -43,7 +43,7 @@ public class EditorColdStartup : MonoBehaviour
 	{
 		if (_saveSystem != null && !_saveSystem.LoadSaveDataFromDisk())
 		{
-			_saveSystem.SetNewGameData();
+			//_saveSystem.SetNewGameData();
 		}
 	}
 	private void LoadEventChannel(AsyncOperationHandle<SceneInstance> obj)
