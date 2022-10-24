@@ -16,6 +16,7 @@ public class UIInventoryInspector : MonoBehaviour
         _fillInspectorChannelSO.OnEventRaised += FireAnim;
         _inspectorAnimation.AnimationEnded += AnimEnd;
         _inspectorAnimation.ContentChanged += FillInspector;
+        _hideInspector.OnEventRaised += CloseInspector;
     }
 
     private void OnDisable()
@@ -33,7 +34,7 @@ public class UIInventoryInspector : MonoBehaviour
 
     public void FireAnim(ItemSO itemToInspect)
     {
-        if (!clickable) return;
+        if (!clickable ) return;
         clickable = false;
         ShowInspector();
        
@@ -76,4 +77,10 @@ public class UIInventoryInspector : MonoBehaviour
         _inspector.SetActive(false);
     }
 
+
+    private void CloseInspector()
+    {
+        if(_curItem != default)
+            FireAnim(_curItem);
+    }
 }

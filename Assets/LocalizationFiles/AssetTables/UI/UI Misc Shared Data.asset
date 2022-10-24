@@ -195,6 +195,10 @@ MonoBehaviour:
     m_Key: Confirm_QuestionFinish
     m_Metadata:
       m_Items: []
+  - m_Id: 52950962928046080
+    m_Key: Skip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
