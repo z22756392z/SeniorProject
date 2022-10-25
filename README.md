@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿# SeniorProject
 
 執行專案之前需要添加或修改的步驟: [Addon](Addon.md)
 
@@ -293,3 +293,13 @@ TODO: Tutorial UI、syn，asyn、Debug Canvas(什麼時間跑出什麼字串)
 > 9/29
 
 * PackageSetting -- addressable
+
+
+
+> 10/25
+
+* add:
+  * scene select scene anmation to main menu
+  * add fog to scene select
+  * add skip button sprite
+  * skip start animation button

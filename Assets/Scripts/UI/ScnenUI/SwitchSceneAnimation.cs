@@ -81,6 +81,11 @@ public class SwitchSceneAnimation : MonoBehaviour
     {
         MainCanvas.SetTrigger("CloseBook");
     }
+
+    public void GoToMainMenu()
+    {
+        MainCanvas.SetTrigger("GoToMainMenu");
+    }
     public void ShowSolution()
     {
         _showSolution?.RaiseEvent();
