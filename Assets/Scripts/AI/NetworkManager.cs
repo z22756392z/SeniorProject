@@ -16,7 +16,8 @@ public class NetworkManager : MonoBehaviour
     // reference to the BotUI class
     public BotUI botUI;
     // the url at which the bot's custom component is hosted
-    private const string rasa_url = "http://127.0.0.1:5005/webhooks/unity/webhook";
+    //private const string rasa_url = "http://127.0.0.1:5005/webhooks/unity/webhook";
+    private const string rasa_url = "http://172.104.91.57:5678/posts";
     public ListStringEventChannelSO AcupuncturePointEvent;
     List<string> AcupuncturePointList = new List<string>();
 
@@ -46,6 +47,7 @@ public class NetworkManager : MonoBehaviour
         botUI.UpdateDisplay("Doku", message, "text");
 
         // Create a post request with the data to send to Rasa server
+        
         StartCoroutine(PostRequest(rasa_url, jsonBody));
     }
 
@@ -136,7 +138,6 @@ public class NetworkManager : MonoBehaviour
             yield break;
         }
         RecieveMessage(request.downloadHandler.text);
-
         // Dispose of this !!!
         request.Dispose();
     }
