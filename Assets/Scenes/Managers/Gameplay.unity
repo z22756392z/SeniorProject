@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2470,7 +2470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textDescription: {fileID: 258808088}
-  _textDescription2: {fileID: 0}
   _textName: {fileID: 1921321860}
 --- !u!1001 &773671631
 PrefabInstance:
@@ -2588,6 +2587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Confirmation_Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892357711482810737, guid: 6f8aa8b7af3a3df4cbb0bd3dab6cad74,
+        type: 3}
+      propertyPath: uiTableReference.m_TableCollectionName
+      value: UI Misc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f8aa8b7af3a3df4cbb0bd3dab6cad74, type: 3}

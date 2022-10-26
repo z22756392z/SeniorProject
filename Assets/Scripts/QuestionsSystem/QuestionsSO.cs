@@ -24,6 +24,7 @@ public class QuestionsSO : ScriptableObject
 	[Header("Listening to channels")]
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _loseDialogueEvent = default;
+	[SerializeField] private VoidEventChannelSO _closeUIDialogueEvent = default;
 
 	private QuestionsGroup _currentQuestionGroup;
     private DialogueDataSO _currentDialogue;
@@ -33,11 +34,13 @@ public class QuestionsSO : ScriptableObject
     public void OnEnable()
     {
 		_questionFinish.OnEventRaised += Reset;
-    }
+		_closeUIDialogueEvent.OnEventRaised += Reset;
+	}
 
 	public void OnDisable()
     {
 		_questionFinish.OnEventRaised -= Reset;
+		_closeUIDialogueEvent.OnEventRaised -= Reset;
 		if (_winDialogueEvent.OnEventRaised != null)
 			_winDialogueEvent.OnEventRaised = null;
 		if (_loseDialogueEvent.OnEventRaised != null)
@@ -64,6 +67,7 @@ public class QuestionsSO : ScriptableObject
     void StartDialogue()
     {
         _startDialogueEvent.RaiseEvent(_currentDialogue);
+		//Debug.Log(213);
 		List<Choice> choices = _currentDialogue.Lines[_currentDialogue.Lines.Count - 1].Choices;
 		if (choices == null) return;
 		List<LocalizedString> choiceContents = new List<LocalizedString>() ;
@@ -111,8 +115,8 @@ public class QuestionsSO : ScriptableObject
 
 	void Reset()
     {
-		_winDialogueEvent.OnEventRaised -= PlayWinDialogue;
-		_loseDialogueEvent.OnEventRaised -= PlayLoseDialogue;
+		_winDialogueEvent.OnEventRaised = null;
+		_loseDialogueEvent.OnEventRaised = null;
 		AnswerCorrectly = 0;
 	}
 }

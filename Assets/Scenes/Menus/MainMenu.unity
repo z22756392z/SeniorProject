@@ -3782,6 +3782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Confirmation_Popup
       objectReference: {fileID: 0}
+    - target: {fileID: 4892357711482810737, guid: 6f8aa8b7af3a3df4cbb0bd3dab6cad74,
+        type: 3}
+      propertyPath: uiTableReference.m_TableCollectionName
+      value: UI Misc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f8aa8b7af3a3df4cbb0bd3dab6cad74, type: 3}
 --- !u!1001 &9077265883098813074

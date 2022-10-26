@@ -40,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-		_startDialogue.OnEventRaised -= DisplayDialogueData;
+		_startDialogue.OnEventRaised = null;
 		if (_makeDialogueChoiceEvent.OnEventRaised != null)
 			_makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
 		if (_closeUIDialogueEvent.OnEventRaised != null)
@@ -85,7 +85,8 @@ public class DialogueManager : MonoBehaviour
 	}
 
 	private void OnAdvance()
-	{ 
+	{
+		//Debug.Log(123);
 		_counterLine++;
 		if (!_reachedEndOfLine)
 		{
@@ -196,5 +197,9 @@ public class DialogueManager : MonoBehaviour
 
 		if (_gameState.CurrentGameState == GameState.Gameplay)
 			_inputReader.EnableGameplayInput();
+		if (_makeDialogueChoiceEvent.OnEventRaised != null)
+        {
+			_makeDialogueChoiceEvent.OnEventRaised = null;
+		}
 	}
 }

@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using System.Text.RegularExpressions;
 
 public enum PopupButtonType
 {
@@ -21,6 +24,8 @@ public enum PopupType
 
 public class UIPopup : MonoBehaviour
 {
+    [SerializeField] private TableReference uiTableReference = default;
+
     [SerializeField] private LocalizeStringEvent _titleText = default;
     [SerializeField] private LocalizeStringEvent _descriptionText = default;
     [SerializeField] private Button _buttonClose = default;
@@ -102,12 +107,16 @@ public class UIPopup : MonoBehaviour
 
     public void ClosePopupButtonClicked()
     {
-        ClosePopupAction.Invoke();
+        ClosePopupAction.Invoke(); 
+        
     }
 
     void ConfirmButtonClicked()
     {
         ConfirmationResponseAction.Invoke(true);
+        StringTable table = LocalizationSettings.StringDatabase.GetTable(uiTableReference);
+        StringTableEntry entry = table.GetEntry("QuestionFinish_Popup_Description");
+        entry.Value = Regex.Replace(entry.Value, "[0-9]", "?");
     }
 
     void CancelButtonClicked()

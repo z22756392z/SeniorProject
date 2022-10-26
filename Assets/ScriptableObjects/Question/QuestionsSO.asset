@@ -39,3 +39,6 @@ MonoBehaviour:
   _questionFinish: {fileID: 11400000, guid: 757f7a6ae4ec4604c969b913e6b9a2df, type: 2}
   _winDialogueEvent: {fileID: 11400000, guid: 81e75c1e072f9774aa007090c260df10, type: 2}
   _loseDialogueEvent: {fileID: 11400000, guid: f247b0e59f8401443a54e776e22c3dbd, type: 2}
+  _closeUIDialogueEvent: {fileID: 11400000, guid: 31a367ca4f470c148961ad1428407f41,
+    type: 2}
+  AnswerCorrectly: 0
