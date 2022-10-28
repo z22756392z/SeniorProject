@@ -299,6 +299,10 @@ namespace Mediapipe.Unity.HandTracking
                 {
                     if (_isShowDesireAcpunturePoint)
                     {
+                        if(_desireAcpunturePoints.Count == 0)
+                        {
+                            continue;
+                        }
                         string key = itemStack.Item.Name.TableEntryReference.Key;
                         if (_desireAcpunturePoints.Find(o => o.TableEntryReference.Key == key) != null)
                         {
@@ -320,8 +324,11 @@ namespace Mediapipe.Unity.HandTracking
                     }
                     else if (_aiIsShowDesireAcpunturePoint)
                     {
+                        if (_aiDesireAcpunturePoints.Count == 0)
+                        {
+                            continue;
+                        }
                         string localizeString = itemStack.Item.Name.GetLocalizedString();
-                        Debug.Log(_aiDesireAcpunturePoints[0] + " " + localizeString);
                         if (_aiDesireAcpunturePoints.Find(o => o == localizeString) != null)
                         {
                             NormalizedLandmark landmark = new NormalizedLandmark(curHandLankmark[itemStack.Item.LandMark]);

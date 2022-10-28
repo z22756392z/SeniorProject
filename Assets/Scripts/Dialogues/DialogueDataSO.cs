@@ -196,6 +196,7 @@ public class Line
                     else
                     {
 						_choiceLine = new LocalizedString() { TableReference = "Question", TableEntryReference = key };
+
 					}
 					choice = new Choice(_choiceLine);
 					choice.SetChoiceAction(collection.SharedData.GetEntry(key).Metadata.GetMetadata<Comment>());
