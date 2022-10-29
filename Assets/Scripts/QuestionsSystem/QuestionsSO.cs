@@ -37,6 +37,12 @@ public class QuestionsSO : ScriptableObject
     {
 		_questionFinish.OnEventRaised += Reset;
 		_closeUIDialogueEvent.OnEventRaised += Reset;
+        foreach (var item in _questionGroups)
+        {
+			item._nextQuestionToPlay = -1;
+			item._lastQuestionPlayed = -1;
+
+		}
 	}
 
 	public void OnDisable()
@@ -51,8 +57,11 @@ public class QuestionsSO : ScriptableObject
 
     public void SetCurrentQuestoinGroup(int value)
     {
-		if(_questionGroups.Length - 1 >= value && value >= 0)
+		if (_questionGroups.Length - 1 >= value && value >= 0)
+        {
 			_currentQuestionGroup = _questionGroups[value];
+		}
+			
     }
 
     public void PlayDefaultQuest()
@@ -137,9 +146,9 @@ public class QuestionsGroup
 	public SequenceMode sequenceMode = SequenceMode.RandomNoImmediateRepeat;
 	public DialogueDataSO[] questions;
 	public int QuestionCount;
-	private int _nextQuestionToPlay = -1;
-	private int _lastQuestionPlayed = -1;
-
+	[HideInInspector] public int _nextQuestionToPlay = -1;
+	[HideInInspector] public int _lastQuestionPlayed = -1;
+	
 	/// <summary>
 	/// Chooses the next clip in the sequence, either following the order or randomly.
 	/// </summary>
@@ -176,7 +185,7 @@ public class QuestionsGroup
 					break;
 			}
 		}
-
+		
 		_lastQuestionPlayed = _nextQuestionToPlay;
 
 		return questions[_nextQuestionToPlay];

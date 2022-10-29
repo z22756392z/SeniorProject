@@ -40,7 +40,7 @@ public class UIQuestion : MonoBehaviour
     public void OnQuestionButtonClicked(int buttonID)
     {
         _questionButtons.SetActive(false);
-        _onQestionGroupSelected.RaiseEvent(buttonID+1);
+        _onQestionGroupSelected.RaiseEvent(buttonID);
         _questionCount.SetActive(true);
     }
 

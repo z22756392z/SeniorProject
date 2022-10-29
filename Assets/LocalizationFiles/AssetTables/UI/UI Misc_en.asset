@@ -159,7 +159,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 35544053128318976
-    m_Localized: Deafult Questions
+    m_Localized: Question bank practice
     m_Metadata:
       m_Items: []
   - m_Id: 35871425383845888
@@ -203,15 +203,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 54375676699430912
-    m_Localized: Default Question2
+    m_Localized: easy practice
     m_Metadata:
       m_Items: []
   - m_Id: 54724961072795648
-    m_Localized: Default Question3
+    m_Localized: standard practice
     m_Metadata:
       m_Items: []
   - m_Id: 54725098474000384
-    m_Localized: Default Question4
+    m_Localized: difficult practice
     m_Metadata:
       m_Items: []
   references:
