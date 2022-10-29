@@ -37,17 +37,10 @@ public class UIQuestion : MonoBehaviour
         _leaveScene.OnEventRaised -= Leave;
     }
 
-    public void OnDefaultQuestionClicked()
+    public void OnQuestionButtonClicked(int buttonID)
     {
         _questionButtons.SetActive(false);
-        _onQestionGroupSelected.RaiseEvent(0);
-        _questionCount.SetActive(true);
-    }
-
-    public void OnDefaultQuestion2Clicked()
-    {
-        _questionButtons.SetActive(false);
-        _onQestionGroupSelected.RaiseEvent(1);
+        _onQestionGroupSelected.RaiseEvent(buttonID+1);
         _questionCount.SetActive(true);
     }
 
