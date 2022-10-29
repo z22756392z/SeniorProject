@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 
 [CreateAssetMenu(fileName = "QuestionsSO", menuName = "Question/QuestionsSO")]
 public class QuestionsSO : ScriptableObject
 {
+	[SerializeField] private TableReference apTableReference = default;
+
 	[SerializeField] private QuestionsGroup[] _questionGroups;
 
 	[SerializeField] private DialogueDataSO _winDialogue;
@@ -29,7 +31,7 @@ public class QuestionsSO : ScriptableObject
 	private QuestionsGroup _currentQuestionGroup;
     private DialogueDataSO _currentDialogue;
 	public int AnswerCorrectly = 0;
-	public int CurrentQusetionGroupCount => _currentQuestionGroup.questions.Length;
+	public int CurrentQusetionGroupCount => _currentQuestionGroup.QuestionCount;
 
     public void OnEnable()
     {
@@ -55,7 +57,7 @@ public class QuestionsSO : ScriptableObject
 
     public void PlayDefaultQuest()
 	{
-		if (_currentDialogue == null) _currentQuestionGroup = _questionGroups[0];
+		//if (_currentDialogue == null) _currentQuestionGroup = _questionGroups[0];
 		_currentDialogue = _currentQuestionGroup.GetQusetion();
 		_winDialogueEvent.OnEventRaised += PlayWinDialogue;
 		_loseDialogueEvent.OnEventRaised += PlayLoseDialogue;
@@ -70,9 +72,16 @@ public class QuestionsSO : ScriptableObject
 		//Debug.Log(213);
 		List<Choice> choices = _currentDialogue.Lines[_currentDialogue.Lines.Count - 1].Choices;
 		if (choices == null) return;
+		
 		List<LocalizedString> choiceContents = new List<LocalizedString>() ;
-        foreach (var choice in choices)
+		
+		foreach (var choice in choices)
         {
+			if (choice.Response.TableReference != apTableReference)
+			{
+				_showAcpunturePoints.RaiseEvent(choiceContents);
+				return;
+			}
 			choiceContents.Add(choice.Response);
         }
 		_showAcpunturePoints.RaiseEvent(choiceContents);
@@ -127,7 +136,7 @@ public class QuestionsGroup
 	[TextArea] public string description;
 	public SequenceMode sequenceMode = SequenceMode.RandomNoImmediateRepeat;
 	public DialogueDataSO[] questions;
-
+	public int QuestionCount;
 	private int _nextQuestionToPlay = -1;
 	private int _lastQuestionPlayed = -1;
 

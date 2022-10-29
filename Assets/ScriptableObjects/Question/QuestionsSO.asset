@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe28c59f6584990449a4d6e429221ab7, type: 3}
   m_Name: QuestionsSO
   m_EditorClassIdentifier: 
+  apTableReference:
+    m_TableCollectionName: AcupuncturePoint
   _questionGroups:
-  - description: "\u9810\u8A2D\u984C\u5EAB\n\u4E4B\u5F8C\u53EF\u80FD\u6703\u6709\u4E0D\u540C\u985E\u578B\u7684\u984C\u5EAB
+  - description: "\u9810\u8A2D\u984C\u5EAB1\n\u4E4B\u5F8C\u53EF\u80FD\u6703\u6709\u4E0D\u540C\u985E\u578B\u7684\u984C\u5EAB
       \u5206\u53EA\u8003\u4EC0\u9EBC\u7D93\u7684\u7B49\u7B49\u7B49\n"
     sequenceMode: 1
     questions:
@@ -27,6 +29,28 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bed40232b46992341ad43e897385e7ba, type: 2}
     - {fileID: 11400000, guid: 8221299e695d8f54ca3c2fcabb793fce, type: 2}
     - {fileID: 11400000, guid: 6f23eb77c717f384e8e2163ee4345525, type: 2}
+    QuestionCount: 10
+  - description: "\u9810\u8A2D\u984C\u5EAB2\n\u4E4B\u5F8C\u53EF\u80FD\u6703\u6709\u4E0D\u540C\u985E\u578B\u7684\u984C\u5EAB
+      \u5206\u53EA\u8003\u4EC0\u9EBC\u7D93\u7684\u7B49\u7B49\u7B49\n"
+    sequenceMode: 1
+    questions:
+    - {fileID: 11400000, guid: a2101d77775662747ac5e23871019f98, type: 2}
+    QuestionCount: 1
+  - description: "\u9810\u8A2D\u984C\u5EAB3\n\u4E4B\u5F8C\u53EF\u80FD\u6703\u6709\u4E0D\u540C\u985E\u578B\u7684\u984C\u5EAB
+      \u5206\u53EA\u8003\u4EC0\u9EBC\u7D93\u7684\u7B49\u7B49\u7B49\n"
+    sequenceMode: 1
+    questions:
+    - {fileID: 11400000, guid: 7b343a275be87aa4bbfcd0b68cde9e65, type: 2}
+    - {fileID: 11400000, guid: 3fe570305362a8e44bb421cead8e0bf3, type: 2}
+    - {fileID: 11400000, guid: 5bb0c4e6671077f49a9a7c5c3b7ccd6a, type: 2}
+    - {fileID: 11400000, guid: 59a8eac8930666044887b5989a9a5177, type: 2}
+    - {fileID: 11400000, guid: a2e4ed863e2ebdd47a73d6b11cf2a958, type: 2}
+    - {fileID: 11400000, guid: b45aaf01188a0ef418ae9f4f6dd4b3b9, type: 2}
+    - {fileID: 11400000, guid: a8aae1f3b0871794c86cb454b7770f2d, type: 2}
+    - {fileID: 11400000, guid: 1194c74328d10da40b21cbf6af7ce7ee, type: 2}
+    - {fileID: 11400000, guid: 0dd2df9488ce2f3418a421e6e4983495, type: 2}
+    - {fileID: 11400000, guid: 585dca700f0cb8248a2ce17abb0981c9, type: 2}
+    QuestionCount: 10
   _winDialogue: {fileID: 11400000, guid: 39ffedee9cefad34cb101ab36f6413ce, type: 2}
   _loseDialogue: {fileID: 11400000, guid: b081b6b479dadb847aa6f35c565f2a0e, type: 2}
   _startDialogueEvent: {fileID: 11400000, guid: 73d200c6f99a4df4b92bda790bcecba4,

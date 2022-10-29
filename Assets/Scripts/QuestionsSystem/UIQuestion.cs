@@ -25,7 +25,7 @@ public class UIQuestion : MonoBehaviour
         _setTotalQestionCount.OnEventRaised += SetTotalQuestionCount;
         _setCurrentQestionCount.OnEventRaised += SetCurrentQuestionCount;
         _onQuestionFinish.OnEventRaised += Close;
-        _leaveScene.OnEventRaised += Close;
+        _leaveScene.OnEventRaised += Leave;
     }
 
     private void OnDisable()
@@ -34,7 +34,7 @@ public class UIQuestion : MonoBehaviour
         _setTotalQestionCount.OnEventRaised -= SetTotalQuestionCount;
         _setCurrentQestionCount.OnEventRaised -= SetCurrentQuestionCount;
         _onQuestionFinish.OnEventRaised -= Close;
-        _leaveScene.OnEventRaised -= Close;
+        _leaveScene.OnEventRaised -= Leave;
     }
 
     public void OnDefaultQuestionClicked()
@@ -43,6 +43,14 @@ public class UIQuestion : MonoBehaviour
         _onQestionGroupSelected.RaiseEvent(0);
         _questionCount.SetActive(true);
     }
+
+    public void OnDefaultQuestion2Clicked()
+    {
+        _questionButtons.SetActive(false);
+        _onQestionGroupSelected.RaiseEvent(1);
+        _questionCount.SetActive(true);
+    }
+
 
     void SetTotalQuestionCount(int value)
     {
@@ -61,6 +69,13 @@ public class UIQuestion : MonoBehaviour
     }
 
     void Close()
+    {
+        _questionButtons.SetActive(false);
+        _questionCount.SetActive(false);
+        ShowQuestoinButtons();
+    }
+
+    void Leave()
     {
         _questionButtons.SetActive(false);
         _questionCount.SetActive(false);
