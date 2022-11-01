@@ -1831,6 +1831,34 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Debug"",
+            ""id"": ""453cc51c-d933-4313-8fad-c72666859c51"",
+            ""actions"": [
+                {
+                    ""name"": ""ShowFPS"",
+                    ""type"": ""Button"",
+                    ""id"": ""292e972c-1248-497d-ac75-73420568683f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""39b3388f-ef18-4ade-8d54-281a5f1759db"",
+                    ""path"": ""<Keyboard>/f2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowFPS"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1895,6 +1923,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         // Cheats
         m_Cheats = asset.FindActionMap("Cheats", throwIfNotFound: true);
         m_Cheats_OpenCheatMenu = m_Cheats.FindAction("OpenCheatMenu", throwIfNotFound: true);
+        // Debug
+        m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
+        m_Debug_ShowFPS = m_Debug.FindAction("ShowFPS", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -2290,6 +2321,39 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         }
     }
     public CheatsActions @Cheats => new CheatsActions(this);
+
+    // Debug
+    private readonly InputActionMap m_Debug;
+    private IDebugActions m_DebugActionsCallbackInterface;
+    private readonly InputAction m_Debug_ShowFPS;
+    public struct DebugActions
+    {
+        private @GameInput m_Wrapper;
+        public DebugActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ShowFPS => m_Wrapper.m_Debug_ShowFPS;
+        public InputActionMap Get() { return m_Wrapper.m_Debug; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DebugActions set) { return set.Get(); }
+        public void SetCallbacks(IDebugActions instance)
+        {
+            if (m_Wrapper.m_DebugActionsCallbackInterface != null)
+            {
+                @ShowFPS.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnShowFPS;
+                @ShowFPS.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnShowFPS;
+                @ShowFPS.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnShowFPS;
+            }
+            m_Wrapper.m_DebugActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ShowFPS.started += instance.OnShowFPS;
+                @ShowFPS.performed += instance.OnShowFPS;
+                @ShowFPS.canceled += instance.OnShowFPS;
+            }
+        }
+    }
+    public DebugActions @Debug => new DebugActions(this);
     private int m_KeyboardOrGamepadSchemeIndex = -1;
     public InputControlScheme KeyboardOrGamepadScheme
     {
@@ -2340,5 +2404,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     public interface ICheatsActions
     {
         void OnOpenCheatMenu(InputAction.CallbackContext context);
+    }
+    public interface IDebugActions
+    {
+        void OnShowFPS(InputAction.CallbackContext context);
     }
 }

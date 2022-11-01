@@ -1809,6 +1809,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Debug",
+            "id": "453cc51c-d933-4313-8fad-c72666859c51",
+            "actions": [
+                {
+                    "name": "ShowFPS",
+                    "type": "Button",
+                    "id": "292e972c-1248-497d-ac75-73420568683f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "39b3388f-ef18-4ade-8d54-281a5f1759db",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowFPS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
-public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameInput.IDialoguesActions, GameInput.IMenusActions, GameInput.ICheatsActions
+public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameInput.IDialoguesActions, GameInput.IMenusActions, GameInput.ICheatsActions,GameInput.IDebugActions
 {
 	[Space]
 	[SerializeField] private GameStateSO _gameStateManager;
@@ -26,7 +26,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 	public event UnityAction DisableMouseControlCameraEvent = delegate { };
 	public event UnityAction StartedRunning = delegate { };
 	public event UnityAction StoppedRunning = delegate { };
-
+	public event UnityAction FPSEvent = delegate { };
 	// Shared between menus and dialogues
 	public event UnityAction MoveSelectionEvent = delegate { };
 
@@ -59,8 +59,9 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 			_gameInput.Gameplay.SetCallbacks(this);
 			_gameInput.Dialogues.SetCallbacks(this);
 			_gameInput.Cheats.SetCallbacks(this);
+			_gameInput.Debug.SetCallbacks(this);
 		}
-
+		_gameInput.Debug.Enable();
 #if UNITY_EDITOR
 	_gameInput.Cheats.Enable();
 #endif
@@ -156,6 +157,11 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 	public void OnCloseChatBot(InputAction.CallbackContext context)
     {
 		CloseChatBotEvent.Invoke();
+	}
+
+	public void OnShowFPS(InputAction.CallbackContext context)
+	{
+		FPSEvent.Invoke();
 	}
 
 	public void OnPause(InputAction.CallbackContext context)

@@ -65,13 +65,6 @@ MonoBehaviour:
     m_Localized: tutorial is over~~
     m_Metadata:
       m_Items: []
-  - m_Id: 7215446110982144
-    m_Localized: 'Press B to call out the robot.
-
-      Press C to choose another
-      scene'
-    m_Metadata:
-      m_Items: []
   - m_Id: 14255068676931584
     m_Localized: When the user tries to turn or move the hands, the acupuncture points
       are displayed in the correct position.

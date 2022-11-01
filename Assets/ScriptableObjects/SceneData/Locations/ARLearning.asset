@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8db63739a6674d74e8e232347422172f, type: 3}
-  m_Name: TeachMode
+  m_Name: ARLearning
   m_EditorClassIdentifier: 
-  _guid: 928d0b3878179754b957efb18599c10d
+  _guid: 49e4407f50e8730408df86d83e3ce972
   description: 
   sceneType: 0
   sceneReference:
-    m_AssetGUID: ec19f85a0771f3944a7e0cbe7825841b
+    m_AssetGUID: ceb4d719a77aa734e94e3c496fa02029
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

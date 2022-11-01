@@ -295,13 +295,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8589006768585834498
-  - m_Id: 7215446110982144
-    m_Key: L3-D1-Teach-Intro
-    m_Metadata:
-      m_Items:
-      - rid: 8589006768585834499
   - m_Id: 7215523181318144
-    m_Key: L4-D1-Teach-Intro
+    m_Key: L3-D1-Teach-Intro
     m_Metadata:
       m_Items:
       - rid: 8589006768585834500
@@ -747,10 +742,6 @@ MonoBehaviour:
       data:
         m_CommentText: D
     - rid: 8589006768585834498
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: D
-    - rid: 8589006768585834499
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: D
