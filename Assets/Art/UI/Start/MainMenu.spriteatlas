@@ -83,6 +83,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e5f4a6e332a1ba945a815303458a7941, type: 3}
   - {fileID: 21300000, guid: bd54c134f96dd0b4bb4adbd8d6965c4a, type: 3}
   - {fileID: 21300000, guid: 11f2c7445969cfe4f907da97cbe55dea, type: 3}
+  - {fileID: 21300000, guid: ce185ea4f5e801d43b55a17b1e654578, type: 3}
   - {fileID: 21300000, guid: 7e2d06e527b61aa41b2373dfea67552e, type: 3}
   - {fileID: 21300000, guid: fb0d04369368239449bc99554354517f, type: 3}
   - {fileID: 21300000, guid: d91c87662b8bfa34496ef05980566f4f, type: 3}
@@ -121,6 +122,7 @@ SpriteAtlas:
   - font
   - person
   - transition
+  - flower
   - tree
   - skip01
   - bird3
