@@ -17,23 +17,23 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 3e2adc752397c4848a71a9fe7159ae75
   m_SerializeEntries:
-  - m_GUID: 6b99a060f3e773c40bd3bb709231e0e2
-    m_Address: titleARE
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-  - m_GUID: 8ec505488a0d85f40bb55bb836484375
-    m_Address: titleExerciseE
+  - m_GUID: 1b8ca5ff39fe7774cbe83670e3787f37
+    m_Address: Assets/Art/UI/title/titleAIE.png
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
   - m_GUID: 82b5725ec88aa724d8215b16a30e1916
-    m_Address: titileSystemE
+    m_Address: Assets/Art/UI/title/titileSystemE.png
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
-  - m_GUID: 1b8ca5ff39fe7774cbe83670e3787f37
-    m_Address: titleAIE
+  - m_GUID: 6b99a060f3e773c40bd3bb709231e0e2
+    m_Address: Assets/Art/UI/title/titleARE.png
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+  - m_GUID: 8ec505488a0d85f40bb55bb836484375
+    m_Address: Assets/Art/UI/title/titleExerciseE.png
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

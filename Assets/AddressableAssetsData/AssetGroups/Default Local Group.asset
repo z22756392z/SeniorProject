@@ -38,7 +38,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
-    m_Address: Assets/Scenes/Menus/Main.unity
+    m_Address: Assets/Scenes/Menus/ScenesMenu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 8f8b82961b2c8804cb6039524b854a27
@@ -46,55 +46,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ec19f85a0771f3944a7e0cbe7825841b
-    m_Address: Assets/Scenes/Location/TeachMode/Teach.unity
+    m_Address: Assets/Scenes/Location/SystemIntro/SystemIntro.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ceb4d719a77aa734e94e3c496fa02029
-    m_Address: Assets/Scenes/Location/Exercise/Exercise.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 71d5c6bd3978b6d498b9c31469a9215a
-    m_Address: Assets/ScriptableObjects/SceneData/Menus/ScenesMenu.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 912640f60c62c324c83528e1575584bd
-    m_Address: Assets/ScriptableObjects/SceneData/Menus/MainMenu.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 96516ff7bf2ac5e41b17e4ad580d6646
-    m_Address: Assets/ScriptableObjects/SceneData/Menus/ScenesMenuFog.asset
+    m_Address: Assets/Scenes/Location/ARLearning/ARLearning.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: dc93d86dec9a18340b9a515f49fa9c9f
     m_Address: Assets/Scenes/Location/AI/Rasa.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ea3098911b87fcc44be82778601b078d
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/HandAcupunturePoint.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 928d0b3878179754b957efb18599c10d
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/TeachMode.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 49e4407f50e8730408df86d83e3ce972
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/Exercise.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4afcd444e5952c24d931b6c77b7ebe9e
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/AI.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 79ccf1b65eb350e4ebce186791439779
     m_Address: Assets/Scenes/Menus/ScenesMenuFog.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7007c842b45fef04a826909ee551d4d5
-    m_Address: Assets/ScriptableObjects/SceneData/Managers/Gameplay.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 17a529e042b99d74f8ab31f1989f5e35
-    m_Address: Assets/ScriptableObjects/SceneData/Managers/PersistentManagers.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 460fb49c98959e5488bc1418a14173df
@@ -141,8 +105,8 @@ MonoBehaviour:
     m_Address: Assets/ScriptableObjects/Question
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 6b1bc8a22d4f6734185456fb0ea064f5
-    m_Address: Assets/ScriptableObjects/SceneData
+  - m_GUID: f213867e75495b940ae69ac3b9db126e
+    m_Address: Assets/ScriptableObjects/SceneData/Locations
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: da675f3b8f833af419ab0495ec1f37bc
@@ -151,6 +115,38 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 73389705b1d02544abaab64b92bea08f
     m_Address: Assets/ScriptableObjects/Narrative
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: abd3b40b326f6914288d3172dc76695c
+    m_Address: Assets/ScriptableObjects/SceneData/Managers
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ddf61d28d4582e4f90b530f810c80ba
+    m_Address: Assets/ScriptableObjects/SceneData/Menus
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c2e4780926e5c5241977ffceb5cbf2f9
+    m_Address: Assets/Art/UI/title/titleStory.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 27ae6dd43694c2f45bb0313b552fbdb3
+    m_Address: Assets/Art/UI/title/titleTeach.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a4af7db34e678a344aa192000bcb0ab3
+    m_Address: Assets/Art/UI/title/titleExercise.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ebcfe2ca80029a84db0bfb685e497d27
+    m_Address: Assets/Art/UI/title/titleAR.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a457c4922d5f84c4882b00e2621815b2
+    m_Address: Assets/Art/UI/title/titleAI.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83dc13d8baf356e4286395fff0d92f13
+    m_Address: Assets/Art/UI/title/titileSystem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

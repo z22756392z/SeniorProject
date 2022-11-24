@@ -1,64 +1,64 @@
-Shader "Custom/Fog"
+Shader "Unlit/BloodStain"
 {
     Properties
     {
-        [NoScaleOffset] _MainTex("Texture", 2D) = "white" {}
-        [NoScaleOffset]_Pattern("Pattern", 2D) = "white"{}
-        _Health("Health",Range(0,1)) = 1.0
-        _Glossiness("Smoothness", Range(0,1)) = 0.5
-        _Metallic("Metallic", Range(0,1)) = 0.0
-            //_BloodGlossiness("BloodSmoothness", Range(0,1)) = 0.5
-            //_BloodMetallic("BloodMetallic", Range(0,1)) = 0.0
+        _MainTex("Main", 2D) = "white" {}
+        [NoScaleOffset] _BloodStain("Blood Stain",2D) = "white" {}
+        _I("Intensity",Range(0,1)) = 0
+        _T("Time",Range(0.9,1.0011)) = 0
     }
         SubShader
         {
-            Tags { "RenderType" = "Opaque" }
+            Tags { "RenderType" = "Transparent" "Queue" = "Transparent+2000" }
 
-            CGPROGRAM
-            // Physically based Standard lighting model, and enable shadows on all light types
-            #pragma surface surf Standard fullforwardshadows
-
-            // Use shader model 3.0 target, to get nicer looking lighting
-            #pragma target 3.0
-
-            sampler2D _MainTex;
-            sampler2D _Pattern;
-            struct Input
+            Pass
             {
-                float2 uv_MainTex;
-            };
+                ZWrite off
+                Cull Back
+                Blend SrcAlpha OneMinusSrcAlpha
+                CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
 
-            float _Health;
-            float _Glossiness;
-            float _Metallic;
-            //float _BloodGlossiness;
-            //float _BloodMetallic;
-            float4 _Color;
+                #include "UnityCG.cginc"
 
-            // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-            // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-            // #pragma instancing_options assumeuniformscaling
-            UNITY_INSTANCING_BUFFER_START(Props)
-                // put more per-instance properties here
-            UNITY_INSTANCING_BUFFER_END(Props)
+                struct appdata
+                {
+                    float4 vertex : POSITION;
+                    float2 uv : TEXCOORD0;
+                };
 
-            float InverseLerp(float4 a, float4 b, float t) {
-                return ((t - a) / (b - a));
+                struct v2f
+                {
+                    float4 vertex: POSITION;
+                    float2 uv : TEXCOORD0;
+                };
+
+                sampler2D _BloodStain;
+                float _T;
+                float _I;
+                float4 _MainTex_ST;
+
+                v2f vert(appdata v)
+                {
+                    v2f o;
+                    o.vertex = UnityObjectToClipPos(v.vertex);
+                    o.uv = v.uv;
+                    return o;
+                }
+
+
+                fixed4 frag(v2f i) : SV_Target
+                {
+                    // sample the texture
+                    float4 col = tex2D(_BloodStain, i.uv);
+                    col = col + float4(_I, _I, _I,0);
+                    float t = _T;
+                    if (t >= col.a)  return 0;
+
+                    return col;
+                }
+                ENDCG
             }
-            void surf(Input IN, inout SurfaceOutputStandard o)
-            {
-                // Albedo comes from a texture tinted by color
-                float4 texCol = tex2D(_MainTex, IN.uv_MainTex);
-                float4 pattern = tex2D(_Pattern, IN.uv_MainTex);
-                
-                float4 finalColor = lerp(pattern + 0.3, texCol, saturate(InverseLerp(pattern,0, (_Health) * 0.6)));
-                o.Albedo = finalColor.rgb;
-                // Metallic and smoothness come from slider variables
-                o.Metallic = _Metallic;
-                o.Smoothness = _Glossiness;
-                o.Alpha = finalColor.a;
-            }
-            ENDCG
         }
-            FallBack "Diffuse"
 }

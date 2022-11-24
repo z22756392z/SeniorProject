@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FogAnim : MonoBehaviour
 {
-    public float Intensity = 0;
-    public string fog = "_Health";
+    [Range(0.9f, 1.0011f)]public float Intensity = 1.0011f;
+    public string Time = "_T";
     public GameObject tex;
-    private MeshRenderer renderer;
+    private Image image;
     private int id;
     void Start()
     {
-        renderer = tex.GetComponent<MeshRenderer>();
-        id = Shader.PropertyToID(fog);
+        image = tex.GetComponent<Image>();
+        image.material.shader = Shader.Find("Unlit/BloodStain");
+        id = Shader.PropertyToID(Time);
+        image.material.SetFloat(id, Intensity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        renderer.material.SetFloat(fog, Intensity);
+        image.material.SetFloat(id, Intensity);
     }
 }

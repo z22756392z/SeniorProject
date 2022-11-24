@@ -10,7 +10,7 @@ public class FogController : MonoBehaviour
     [SerializeField] private Animator _animator;
     private void Awake()
     {
-        _animator.enabled = false;
+        _animator.enabled = true;
     }
     private void OnEnable()
     {

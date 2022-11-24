@@ -27,17 +27,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7217091452555264
-    m_Localized: click space to start teach mode.
+    m_Localized: click space to start system introduction.
     m_Metadata:
       m_Items: []
   - m_Id: 353293747834880
-    m_Localized: 
+    m_Localized: Which of the following acupuncture points more than two
     m_Metadata:
       m_Items: []
   - m_Id: 7215215352958976
-    m_Localized: 'Howdy~  Welcome to tutorial!
+    m_Localized: 'Howdy~  Welcome to system introduction!
 
-      I''m your tutor, @#$%^ !'
+      I''m your tutor,
+      @#$%^ !'
     m_Metadata:
       m_Items: []
   - m_Id: 6868880489664512
@@ -178,6 +179,909 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 14255430725058560
     m_Localized: The introduction is complete. Back to category screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195008
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195009
+    m_Localized: 16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195010
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195011
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195012
+    m_Localized: Which of the following acupoints are not on the wrist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195013
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195014
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195015
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195016
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195017
+    m_Localized: Which of the following acupoints are named Xiaoji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195018
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195019
+    m_Localized: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195020
+    m_Localized: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195021
+    m_Localized: 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195022
+    m_Localized: Which of the following acupoints are located at the back of the
+      hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195023
+    m_Localized: 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195024
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195025
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195026
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195027
+    m_Localized: Which of the following acupoints is called Duanchong
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195028
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195029
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195030
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195031
+    m_Localized: 16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195032
+    m_Localized: Which of the following is hidden in the bone seam, and the acupoint
+      must be changed to get the name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195033
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195034
+    m_Localized: 14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195035
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195036
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195037
+    m_Localized: Which of the following is one of the five sounds of the palace,
+      business, horns, yarns, and feathers, which are gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195038
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195039
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195040
+    m_Localized: 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195041
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195042
+    m_Localized: Which of the following acupoints are named after the depression
+      between the two tendons on the side of the wrist and the back of the wrist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195043
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195044
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195045
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195046
+    m_Localized: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195047
+    m_Localized: "The following people are not belonging to\uFF09 (fire) acupoint"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195048
+    m_Localized: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195049
+    m_Localized: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195050
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195051
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195052
+    m_Localized: 'Which of the following is the Small Intestine Meridian of Hand
+      Taiyang? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195053
+    m_Localized: 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195054
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195055
+    m_Localized: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353293777195056
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941988839411712
+    m_Localized: Which of the following acupuncture points has the effect of calming
+      the mind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941988864577536
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941988864577537
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941988864577538
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941988864577539
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989149790208
+    m_Localized: Which of the following acupoints is aliased "Hukou"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989149790209
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989149790210
+    m_Localized: ' 10'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989149790211
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989149790212
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989527277568
+    m_Localized: Which of the following is named after the acupuncture point acts
+      as the Cunkou artery and is full of blood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989527277569
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989527277570
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989527277571
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989527277572
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989992845312
+    m_Localized: Which of the following points belongs to the original point of the
+      Heart Meridian of Hand Shaoyin, which corresponds to the mind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989992845313
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989992845314
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989992845315
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941989992845316
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990349361152
+    m_Localized: Which of the following acupoints is located on the middle finger
+      like "Zhongchong"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990349361153
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990349361154
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990349361155
+    m_Localized: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990353555456
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990613602304
+    m_Localized: Which of the following points is in the back of the wrist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990613602305
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990613602306
+    m_Localized: 14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990613602307
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990613602308
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990949146624
+    m_Localized: Which of the following burrows at the end of the ring finger, between
+      "Zhongchong" (the end of the middle finger) and "Shaochong" (the end of the
+      little finger)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990949146625
+    m_Localized: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990949146626
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990949146627
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941990949146628
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991209193472
+    m_Localized: Which of the following acupoints is aliased as "Guixin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991209193473
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991209193474
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991209193475
+    m_Localized: 16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991209193476
+    m_Localized: 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991486017536
+    m_Localized: Which of the following acupoints is aliased as "Wuli", "Zhangzhong",
+      "Guilu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991486017537
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991486017538
+    m_Localized: 14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991486017539
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991486017540
+    m_Localized: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991771230208
+    m_Localized: Which of the following points is near the bulge of the carpal bone
+      (lunate)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991771230209
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991771230210
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991771230211
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941991771230212
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992052248576
+    m_Localized: Which of the following is not an alias for Laogong Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992052248577
+    m_Localized: "W\u01D4 l\u01D0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992052248578
+    m_Localized: "gu\u01D0 x\xECn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992052248579
+    m_Localized: "zh\u01CEngzh\u014Dng"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992052248580
+    m_Localized: "gu\u01D0 l\xF9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992329072640
+    m_Localized: The symptoms of the Lung Meridian of Hand Taiyin are related to
+      lung function. Symptoms such as chest tightness, fullness, wheezing, and difficulty
+      breathing may indicate that there is a problem with the Lung Meridian. Problems
+      in the Lung Meridian may also cause pain in the parts along the meridian, such
+      as shoulders, backs and inner arms. Front edge pain, etc. Which of the following
+      is a point on the Lung Meridian of Hand Taiyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992329072641
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992329072642
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992329072643
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992329072644
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992610091008
+    m_Localized: Disorders of the cardiac meridian cause pain in the heart area (precordial
+      area or chest and flank area). Symptoms such as pain in the inner upper arm
+      and fever in the palm may indicate a problem with the heart meridian. Which
+      of the following is not a point on the Heart Meridian of Hand Shaoyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992610091009
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992610091010
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992610091011
+    m_Localized: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992610091012
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992878526464
+    m_Localized: The symptoms of the pericardium meridian are related to the imbalance
+      of cardiovascular function, and the symptoms include pain in the precordial
+      area, chest fullness, palpitations (heartbeat) and so on. It is also associated
+      with epilepsy. Swelling of the armpits and cramps of the elbow and arm both
+      indicate problems with this meridian. Which of the following is an acupuncture
+      point on the pericardium meridian of Hand Jueyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992878526465
+    m_Localized: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992878526466
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992878526467
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941992878526468
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993159544832
+    m_Localized: 'The disorder of the large intestine meridian can lead to diseases
+      related to the function of the large intestine, such as abdominal pain, bowel
+      sounds, diarrhea, constipation, dysentery, etc.
+
+      The large intestine
+      passes through the mouth and nose, so symptoms such as toothache, runny nose,
+      nosebleeds, pain or swelling along the meridian may indicate a problem with
+      this meridian. Which of the following is not a point on the Large Intestine
+      Meridian of Hand Yangming?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993159544833
+    m_Localized: 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993159544834
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993159544835
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993159544836
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993427980288
+    m_Localized: Symptoms of the Sanjiao meridian include abdominal distention, edema,
+      enuresis, dysuria, deafness, and tinnitus. In addition, there may also be pain
+      along the meridians such as throat, eyes, cheeks, behind the ears, shoulders,
+      arms and elbows. Which of the following does not belong to the acupoints of
+      the Sanjiao Meridian of Hand Shaoyang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993427980289
+    m_Localized: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993427980290
+    m_Localized: 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993427980291
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993427980292
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993704804352
+    m_Localized: Disturbances of the Small Intestine Meridian are mainly manifested
+      as problems along the meridian, such as swollen cheeks, sore throat, deafness,
+      and yellow eyes. In addition, shoulder and lateral arm pain also indicates
+      a problem with the small bowel meridian. Which of the following is not an acupoint
+      of the Small Intestine Meridian of Hand Taiyang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993704804353
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993704804354
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993704804355
+    m_Localized: 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941993704804356
+    m_Localized: 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994015182848
+    m_Localized: Among the fourteen meridians, the yin meridian runs on the inside
+      of the limbs, and the yang meridian runs on the outside of the limbs. Which
+      of the following is the acupoint on the yang meridian?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994015182849
+    m_Localized: 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994015182850
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994015182851
+    m_Localized: 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994015182852
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994300395520
+    m_Localized: Among the fourteen meridians, the yin meridian runs on the inside
+      of the limbs, and the yang meridian runs on the outside of the limbs. Which
+      of the following is the acupoint on the yin meridian?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994300395521
+    m_Localized: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994300395522
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994300395523
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994300395524
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994568830976
+    m_Localized: Noon (11:00~13:00) is the season of the Heart Sutra, so people need
+      to sleep for an afternoon nap, it is best to lie down for 15~30 minutes. One
+      of the following acupuncture points on the Heart Meridian of Hand Shaoyin can
+      help calm the mind and mind. Which one is it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994568830977
+    m_Localized: 18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994568830978
+    m_Localized: 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994568830979
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994568830980
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994854043648
+    m_Localized: "\u5348\u6642(11:00~13:00)\u4E43\u5FC3\u7D93\u7576\u4EE4\uFF0C\u6240\u4EE5\u4EBA\u624D\u9700\u8981\u7761\u4E00\u4E0B\u5348\u89BA\uFF0C\u6700\u597D\u5E73\u8EBA15~30\u5206\u9418\u3002\u4E0B\u5217\u67D0\u500B\u624B\u5C11\u9670\u5FC3\u7D93\u4E0A\u7684\u7A74\u9053\u53EF\u4EE5\u5E6B\u52A9\u5B89\u795E\u5B9A\u5FD7\uFF0C\u8ACB\u554F\u662F\u4F55\u8005?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994854043649
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994854043650
+    m_Localized: 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994854043651
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941994854043652
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995122479104
+    m_Localized: The fourteen meridians include two of the twelve meridians and the
+      eight extraordinary meridians. One is the Ren meridian of the eight extraordinary
+      meridians, and the other is which of the eight extraordinary meridians?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995122479105
+    m_Localized: Governor Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995122479106
+    m_Localized: Belt Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995122479107
+    m_Localized: Chong Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995122479108
+    m_Localized: Yinwei Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995403497472
+    m_Localized: The twelve meridians are divided into yin and yang, and the acupoints
+      on the yang meridians include Yangxi, Shangyang, Yanggu, Hegu, etc... Can you
+      tell which side of the body most of the yang meridians are located on? ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995403497473
+    m_Localized: Inner limbs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995403497474
+    m_Localized: outer limbs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995403497475
+    m_Localized: both inner and outer limbs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995403497476
+    m_Localized: front face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995697098752
+    m_Localized: The symptoms of the Lung Meridian of Hand Taiyin are related to
+      lung function. Symptoms such as chest tightness, fullness, wheezing, and difficulty
+      breathing may indicate that there is a problem with the Lung Meridian. Problems
+      in the Lung Meridian may also cause pain in the parts along the meridian, such
+      as shoulders, backs and inner arms. Front edge pain, etc. Which of the following
+      is not located on the acupoints on the Lung Meridian of Hand Taiyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995697098753
+    m_Localized: 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995697098754
+    m_Localized: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995697098755
+    m_Localized: 20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941995697098756
+    m_Localized: 25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996036837376
+    m_Localized: Disorders of the cardiac meridian cause pain in the heart area (precordial
+      area or chest and flank area). Symptoms such as pain in the inner upper arm
+      and fever in the palm may indicate a problem with the heart meridian. Which
+      of the following is an acupuncture point on the Heart Meridian of Hand Shaoyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996036837377
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996036837378
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996036837379
+    m_Localized: 19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996036837380
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996355604480
+    m_Localized: The symptoms of the pericardium meridian are related to the imbalance
+      of cardiovascular function, and the symptoms include pain in the precordial
+      area, chest fullness, palpitations (heartbeat) and so on. It is also associated
+      with epilepsy. Swelling of the armpits and cramps of the elbow and arm both
+      indicate problems with this meridian. Which of the following is not a point
+      on the pericardium meridian of Hand Jueyin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996355604481
+    m_Localized: 21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996355604482
+    m_Localized: 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996355604483
+    m_Localized: 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996355604484
+    m_Localized: 22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996657594368
+    m_Localized: 'The disorder of the large intestine meridian can lead to diseases
+      related to the function of the large intestine, such as abdominal pain, bowel
+      sounds, diarrhea, constipation, dysentery, etc.
+
+      The large intestine
+      passes through the mouth and nose, so symptoms such as toothache, runny nose,
+      nosebleeds, pain or swelling along the meridian may indicate a problem with
+      this meridian. Which of the following is not a point on the Large Intestine
+      Meridian of Hand Yangming?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996657594369
+    m_Localized: 15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996657594370
+    m_Localized: 17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996657594371
+    m_Localized: 26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996657594372
+    m_Localized: 24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996959584256
+    m_Localized: Symptoms of the Sanjiao meridian include abdominal distention, edema,
+      enuresis, dysuria, deafness, and tinnitus. In addition, there may also be pain
+      along the meridians such as throat, eyes, cheeks, behind the ears, shoulders,
+      arms and elbows. Which of the following does not belong to the acupoints of
+      the Sanjiao Meridian of Hand Shaoyang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996959584257
+    m_Localized: 23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996959584258
+    m_Localized: 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996959584259
+    m_Localized: 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941996959584260
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997253185536
+    m_Localized: Disturbances of the Small Intestine Meridian are mainly manifested
+      as problems along the meridian, such as swollen cheeks, sore throat, deafness,
+      and yellow eyes. In addition, shoulder and lateral arm pain also indicates
+      a problem with the small bowel meridian. Which of the following is not an acupoint
+      of the Small Intestine Meridian of Hand Taiyang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997253185537
+    m_Localized: 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997253185538
+    m_Localized: 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997253185539
+    m_Localized: 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997253185540
+    m_Localized: 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997538398208
+    m_Localized: The fourteen meridians include two of the twelve meridians and the
+      eight extraordinary meridians. One is the governor meridian of the eight extraordinary
+      meridians, and the other is which of the eight extraordinary meridians?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997538398209
+    m_Localized: Belt Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997538398210
+    m_Localized: Ren Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997538398211
+    m_Localized: Chong Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997538398212
+    m_Localized: Yinwei Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997844582400
+    m_Localized: The large intestine meridian of Hand Yangming is distributed on
+      the face, and the pressing of Hegu acupoint has a good effect on various symptoms
+      of the head and face. If it is a problem of the right face, which side of the
+      Hegu acupoint should be pressed?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997844582401
+    m_Localized: Left-handed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997844582402
+    m_Localized: right-handed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997844582403
+    m_Localized: press with both hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941997844582404
+    m_Localized: combine the two points together
     m_Metadata:
       m_Items: []
   references:
