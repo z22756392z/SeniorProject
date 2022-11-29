@@ -98,7 +98,7 @@ public class BotUI : MonoBehaviour
         }
 
         // set the chat bubble in correct place
-        allMessagesHeight += 45 + (int)chatBubblePos.sizeDelta.y;
+        allMessagesHeight += (int)(Screen.height/3) + (int)chatBubblePos.sizeDelta.y;
         chatBubblePos.anchoredPosition3D = new Vector3(horizontalPos, -allMessagesHeight, 0);
 
         if (allMessagesHeight > 340)
@@ -173,14 +173,20 @@ public class BotUI : MonoBehaviour
 
         // Add vertical layout group
         VerticalLayoutGroup verticalLayout = chat.AddComponent<VerticalLayoutGroup>();
-        if (sender == "Doku")
+        float h = Screen.height / 30;
+        float w = Screen.width / 30;
+        int s = 2;
+        verticalLayout.padding = new RectOffset((int)w*s, (int)w*s, (int)h*s, (int)h*s);
+        Debug.Log("@@@@@@@@@@" + chat.GetComponent<RectTransform>().rect.width);
+        chat.GetComponent<RectTransform>().rect.Set(0, 0, w, h);
+        /*if (sender == "Doku")
         {
-            verticalLayout.padding = new RectOffset(10, 20, 5, 5);
+            //verticalLayout.padding = new RectOffset(10, 20, 5, 5);
         }
         else if (sender == "Bot")
         {
-            verticalLayout.padding = new RectOffset(20, 10, 5, 5);
-        }
+            //verticalLayout.padding = new RectOffset(20, 10, 5, 5);
+        }*/
         verticalLayout.childAlignment = TextAnchor.MiddleCenter;
 
         // Return empty gameobject on which chat components will be added
@@ -205,6 +211,7 @@ public class BotUI : MonoBehaviour
                 chatMessage.autoSizeTextContainer = true;
                 chatMessage.alignment = TextAlignmentOptions.MidlineLeft;
                 chatMessage.text = message;
+                chatMessage.enableAutoSizing = true;
                 break;
             case "image":
                 // Create and init Image component
